@@ -8,8 +8,8 @@ url:         "http://ccolas.github.io"
 date_format: "%b %-d, %Y"
 header_pages:
  - blog.md
+ - publications.md
  - cv.md
- - about.md
  - contact.html
 
 # Google services
@@ -75,7 +75,7 @@ share_googleplus: false
 share_linkedin: false
 share_digg: false
 share_tumblr: false
-share_reddit: true
+share_reddit: false
 share_stumbleupon: false
 share_hackernews: false
 

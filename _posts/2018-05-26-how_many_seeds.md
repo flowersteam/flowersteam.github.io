@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      How Many Random Seeds ?
-date:       2019-01-08 11:21:29
-summary:    This is an empty post.
+date:       2018-05-26 11:21:29
+summary:    Reproducibility in Machine Learning and Deep Reinforcement Learning in particular has become a serious issue in the recent years. In this blog post, we present a statistical guide to perform rigorous comparison of RL algorithms.
 categories: jekyll
 permalink: how_many_random_seeds
 use_math: true
