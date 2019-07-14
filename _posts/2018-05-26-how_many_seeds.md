@@ -436,6 +436,5 @@ Email: cedric.colas@inria.fr
 -----------------
 
 ###### Subscribe to our [Twitter](https://twitter.com/@flowersINRIA).
-###### Subscribe to our [RSS Feed](https://openlab-flowers.inria.fr/c/blog.rss).
 
 -----------------
