@@ -1,5 +1,5 @@
 # Site settings
-title:       "Cedric Colas's page"
+title:       "Blog"
 email:       cedric.colas@inria.fr
 author:      Cédric Colas
 description: "Personal website of Cédric Colas."
@@ -7,7 +7,6 @@ baseurl:     ""
 url:         "http://ccolas.github.io"
 date_format: "%b %-d, %Y"
 header_pages:
- - blog.md
  - publications.md
  - cv.md
  - contact.html
@@ -27,11 +26,11 @@ show_related_posts:   false
 show_post_footers:    false
 show_social_icons:    true
 ajaxify_contact_form: false
-enable_mathjax: false
+enable_mathjax: true
 extended_fonts: false
 enable_anchorjs: false
 # Preview image for social media aka og:image and twitter:image
-post_preview_image: false
+post_preview_image: true
 
 # Facebook Page integration
 # (for instant articles and other stuff)
@@ -67,7 +66,7 @@ telegram_username:
 vk_id:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 # Change to 'true' to enable individual icons
 share_facebook: true
 share_twitter: true
@@ -75,7 +74,7 @@ share_googleplus: false
 share_linkedin: false
 share_digg: false
 share_tumblr: false
-share_reddit: false
+share_reddit: true
 share_stumbleupon: false
 share_hackernews: false
 
