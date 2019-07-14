@@ -1,14 +1,14 @@
 # Site settings
-title:       "Blog"
-email:       cedric.colas@inria.fr
-author:      Cédric Colas
-description: "Personal website of Cédric Colas."
+title:       "Flowers Blog"
+email:       pierre-yves.oudeyer@inria.fr
+author:      INRIA Flowers Team
+description: "Website of INRIA Flowers Team."
 baseurl:     ""
-url:         "http://ccolas.github.io"
+url:         "http://flowersteam.github.io"
 date_format: "%b %-d, %Y"
 header_pages:
+ - flowers_team.md
  - publications.md
- - cv.md
  - contact.html
 
 # Google services
@@ -48,11 +48,11 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username: ccolas
+github_username: flowersteam
 reddit_username:
 bitbucket_username:
 stackoverflow_id:
-twitter_username:
+twitter_username: FlowersINRIA
 skype_username:
 steam_nickname:
 google_plus_id:
@@ -76,7 +76,7 @@ share_digg: false
 share_tumblr: false
 share_reddit: true
 share_stumbleupon: false
-share_hackernews: false
+share_hackernews: true
 
 text:
   pagination:
