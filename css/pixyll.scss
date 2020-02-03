@@ -13,6 +13,10 @@
 
 @import 'variables';
 
+.post-header h1{
+    color:$flowers-blue;
+}
+
 @import 'basscss';
 
 @import 'base';
@@ -34,3 +38,4 @@
 @import 'gists';
 @import 'measure';
 @import 'pagination';
+
