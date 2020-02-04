@@ -1,5 +1,5 @@
 html {
-  font-size: $base-font-size;
+    font-size: $base-font-size;
 }
 
 abbr {
@@ -8,8 +8,14 @@ abbr {
 }
 
 p {
-  color: #333;
-  line-height: 1.5;
+    color: #333;
+    font-size: 15px;
+    line-height: 2;
+}
+
+li{
+    font-size: 15px;
+    line-height: 2;
 }
 
 small,
