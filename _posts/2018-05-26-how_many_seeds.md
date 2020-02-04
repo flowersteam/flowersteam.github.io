@@ -19,17 +19,13 @@ Reproducibility in Machine Learning and Deep Reinforcement Learning in particula
 
 Perhaps the most surprising thing is this: running the same algorithm 10 times with the same hyper-parameters using 10 different random seeds and averaging performance over two splits of 5 seeds can lead to learning curves seemingly coming from different statistical distributions. Then, they present this table:
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/8/899a492f80f4d77be643094fffdc99375c02275b.png" height="150" />
 <div>
 <sub>
 <i>Figure 1: Number of trials reported during evaluation in various works, from [Henderson et al., 2017].</i></sub>
 </div>
 </div>
-
-
-
-
 
 This table shows that all the deep RL papers reviewed by Henderson et al. use less than 5 seeds. Even worse, some papers actually report the average of the best performing runs! As demonstrated in Henderson et al., these methodologies can lead to claim that two algorithms performances are different when they are not. A solution to this problem is to use more random seeds, to average more different trials to obtain a more robust measure of your algorithm performance. OK, but how many more? Should I use 10, should I use 100 as in [[Mania et al, 2018]](https://arxiv.org/pdf/1803.07055%20in.pdf)? The answer is, of course, <i>it depends</i>.
 
@@ -68,7 +64,7 @@ framework](https://gym.openai.com/). The actual algorithms used are not so impor
 for each and plot the results in Figure 2. This figure shows the average learning curves, with the $$95\%$$ confidence interval. Each point of a learning curve is the average 
 cumulated reward over $$10$$ evaluation episodes. The _measure of performance_ of an algorithm is the average performance over the last $$10$$ points (i.e. last $$100$$ evaluation episodes). From the figure, it seems that $$Algo1$$ performs better than $$Algo2$$. Moreover, the confidence intervals do not overlap much at the end. Of course, we need to run statistical tests before drawing any conclusion.
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/e/e5e46b3919dba623d48357cf0abb05c2d14d2fd3.jpg" height="300"  />
 <div>
 <sub>
@@ -176,7 +172,7 @@ $$
 $$
 
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/7/703b9d4e3037b266e8fc6b20e020eb84d4405a80.png" height="220"  />
 <div>
 <sub>
@@ -230,7 +226,7 @@ Here, the type-I error requirement is set to $$\alpha=0.05$$. Running the Welch'
 each leads to a $$p$$-value of $$0.031$$ and a bootstrap confidence interval such that $$P\big(\mu_{\text{diff}} \in [259, 1564]\big) = 0.05$$. Since the $$p$$-value is below the significance level $$\alpha$$ and the $$CI_1$$ confidence interval does not include $$0$$, both test passed. This means both tests found a significant difference between the performances of $$Algo1$$ and $$Algo2$$ with a $$95\%$$ confidence. There should have been only $$5\%$$ chance to conclude a significant difference if it did not exist. 
 In fact, we did encounter a type-I error. I know that for sure because:
 
-<div align=center>
+<div align="center" style="margin-bottom:20px">
 <b>
 Algo 1 and Algo 2 are the exact same algorithm
 </b>
@@ -272,7 +268,7 @@ Here we run both algorithms with $$n=5$$. We find empirical means $$(\overline{x
 Running preliminary statistical tests at level $$\alpha=0.05$$ lead to a $$p$$-value of $$0.1$$ for the Welch's $$t$$-test, and a bootstrapped confidence interval of $$CI_1=[795, 2692]$$ for the  value of $$\overline{x}_{\text{diff}} = 1382$$. The Welch's $$t$$-test does not reject $$H_0$$ ($$p$$-value $$>\alpha$$) but the bootstrap test does ($$0\not\in CI_1$$). One should compute $$\beta$$ to estimate the chance that the Welch's $$t$$-test missed an underlying performance difference (type-II error).
 
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/2/27f05ba5144eb210118dce202db75232d546f628.png" height="300"  />
 <div>
 <sub>
@@ -290,7 +286,7 @@ For $$N$$ in $$[2,50]$$ and $$\epsilon$$ in $$[0.1,..,1]\times\overline{x}_1$$, 
 
 
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/3/3a3d72a9dbef925bdfa272530e9cf45fc4239c8f.png" height="300"  />
 <div>
 <sub>
@@ -311,7 +307,7 @@ Both algorithms should be run so as to obtain a sample $$x_{\text{diff}}$$ of si
 Here, we take $$N=10$$ and run both the Welch's $$t$$-test and the bootstrap test. We now find empirical means $$(\overline{x}_1, \overline{x}_2) = (3690, 5323)$$ and empirical standard deviations $$(s_1, s_2) = (1086, 1454)$$ for $$Algo1$$ and $$Algo2$$ respectively. Both tests rejected $$H_0$$, with a $$p$$-value of $$0.0037$$ for the Welch's $$t$$-test and a confidence interval for the difference $$\mu_{\text{diff}} \in [732,2612]$$ for the bootstrap test. Both tests passed. In Figure 7, plots for $$N=5$$ and $$N=10$$ can be compared. With a larger number of seeds, the difference that was not found significant with $$N=5$$ is now more clearly visible. With a larger number of seeds, the estimate $$\overline{x}_{\text{diff}}$$ is more robust, more evidence is available to support the claim that $$Algo2$$ outperforms $$Algo1$$, which translates to tighter confidence intervals represented in the figures.
 \end{myex}
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/a/a763133041a1aa96d8a3ed6b9fabb4724d522ae5.png" height="300"  />
 <div>
 <sub>
@@ -351,7 +347,7 @@ Remember, type-I errors occur when the null hypothesis ($$H_0$$) is rejected in 
 **_Example 3_**
 We use $$Algo1$$ from Example 2. From $$42$$ available measures of performance, the above procedure is run for $$N$$ in $$[2,21]$$. Figure 8 presents the results. For small values of $$N$$, empirical estimations of the false positive rate are much larger than the supposedly enforced value $$\alpha=0.05$$.
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/d/de434feebaf9e814b05bdeadc97d593ec4cf3285.png" height="300"  />
 <div>
 <sub>
@@ -369,7 +365,7 @@ The Welch's $$t$$-test computes $$t$$-statistics and the degree of freedom $$\nu
 
 
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/b/bc0a4ca746dbe03c78182969c67ca2bd8a015e80.png" height="300"  />
 <div>
 <sub>
