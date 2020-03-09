@@ -7,9 +7,7 @@ baseurl:     ""
 url:         "http://flowersteam.github.io"
 date_format: "%b %-d, %Y"
 header_pages:
- - flowers_team.md
- - publications.md
- - contact.html
+ - about.md
 
 # Google services
 google_verification:
