@@ -6,7 +6,7 @@ summary:    Reproducibility in Machine Learning and Deep Reinforcement Learning 
 categories: jekyll
 permalink: how_many_random_seeds
 use_math: true
-author: 
+authors: 
   - name: 'Cédric Colas'
     link: 'mailto:cedric.colas@inria.fr'
     next: ''
