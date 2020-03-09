@@ -10,6 +10,9 @@ authors:
   - name: 'Cédric Colas'
     link: 'mailto:cedric.colas@inria.fr'
     next: ''
+  - name: 'Pierre-Yves Oudeyer'
+    link: 'mailto:pierre-yves oudeyer@inria.fr'
+    next: ''
  ---
 
 Reproducibility in Machine Learning and Deep Reinforcement Learning in particular has become a serious issue in the recent years. Reproducing an RL paper can turn out to be much more complicated than you thought, see this blog post about [lessons learned from reproducing a deep RL paper](http://amid.fish/reproducing-deep-rl). Indeed, codebases are not always released and scientific papers often omit parts of the implementation tricks. Recently, Henderson et al. conducted a thorough investigation of various parameters causing this reproducibility crisis [[Henderson et al., 2017]](https://arxiv.org/abs/1709.06560). They used trendy deep RL algorithms such as DDPG, ACKTR, TRPO and PPO with OpenAI Gym popular benchmarks such as Half-Cheetah, Hopper and Swimmer to study the effects of the codebase, the size of the networks, the activation function, the reward scaling or the random seeds. Among other results, they showed that different implementations of the same algorithm with the same set of hyperparameters led to drastically different results. 
