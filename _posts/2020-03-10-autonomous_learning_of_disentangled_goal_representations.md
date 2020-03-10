@@ -95,8 +95,8 @@ In this case, a natural idea is to learn a low dimensional state representation.
 
 <div align="center">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/9/9d719610fa114d384b46916a9e4e3444fad00972.jpg" height="300"  />
-<sub>
 <div align="center">
+<sub>  
 <i>Exploration performances for various representation algorithms.</i></sub></div>
 </div>
   
@@ -106,9 +106,8 @@ In a first paper ([Péré _et al._](https://arxiv.org/abs/1803.00781)), we propo
 
 <div align="center">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/3/3c69b7a714b50309b91b64cfbda8a98bf54b82be.png" height="300"  />
-<sub>
 <div align="center">
-<i>Modular IMGEPs.</i></sub></div>
+<sub> <i>Modular IMGEPs.</i></sub></div>
 </div>
 
 
@@ -147,10 +146,8 @@ The fact that the algorithm is capable of extracting the controllable feature of
 
 <div align="center">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/e/ed508f95cef6499767743ceede87093eae29f80a.png" height="300"  />
-<div>
-<sub>
 <div align="center">
-<i>Exploration performances.</i></sub></div>
+<sub> <i>Exploration performances.</i></sub></div>
 </div>
 
 ## Future work
