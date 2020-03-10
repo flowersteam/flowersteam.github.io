@@ -63,13 +63,13 @@ Those are the questions that we explored in two papers ([Péré _et al_., ICLR 2
 <td>
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/9/97ff79a75af57461e450cef63d79d0bc26fbde93.gif" height="400" />
 <div align="center">
-<i> <sub>The ArmBall environment</sub></i>
+<i> <sub>The ArmBall environment</sub></i></div>
 </td>
 <td>
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/b/bf9e4aebf41dbf516ddd679b8faf0e09912149bd.gif" height="400" />
 <br>
 <div align="center">
-<i><sub>The ArmBall environment with a distractor (gray ball)</sub></i>
+<i><sub>The ArmBall environment with a distractor (gray ball)</sub></i></div>
 </td>
 </tr>
 </table>
@@ -81,12 +81,11 @@ The experiments that we describe have been performed on variants of the _Arm-Bal
 
 <div align="center">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/c/c5e4f84cc167885e86b7898115481f4bcd4b944d.jpg" height="300"  />
-<div>
 <sub>
-<i>Intrinsically Motivated Goal Exploration Process examplified.</i></sub>
+<div align="center">
+<i>Intrinsically Motivated Goal Exploration Process examplified.</i></sub></div>
 </div>
-</div>
-</div>
+
 
 A good exploration strategy for the agent when there is no reward signal is to set for itself goals and to try to reach them. This strategy, known as Intrinsically Motivated Goal Exploration Processes (IMGEPs) ([Forestier _et al._](https://arxiv.org/abs/1708.02190), [Baranes _et al._](https://www.sciencedirect.com/science/article/pii/S0921889012000644?via%3Dihub)), is summarized in the figure above. For example, in this context, a goal could consist in trying to put the ball at a specific position (more generally, in the IMGEP framework, goals can be any target dynamical properties over entire trajectories). An important aspect of this approach is that the agent needs to have a goal space to sample those goals.
 
@@ -96,25 +95,22 @@ In this case, a natural idea is to learn a low dimensional state representation.
 
 <div align="center">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/9/9d719610fa114d384b46916a9e4e3444fad00972.jpg" height="300"  />
-<div>
 <sub>
-<i>Exploration performances for various representation algorithms.</i></sub>
+<div align="center">
+<i>Exploration performances for various representation algorithms.</i></sub></div>
 </div>
-</div>
-</div>
-
+  
 In a first paper ([Péré _et al._](https://arxiv.org/abs/1803.00781)), we proposed to learn a representation of the scene using various unsupervised learning algorithms, such as Variational Auto-Encoders. The general idea consists in letting the agent observe another agent acting on the environment (enabling to observe a distribution of possible outcomes in that environment), and learn a compressed representation of these outcomes, called a latent space. The learned latent space can then be used as a goal space. In this case, instead of sampling as a goal the position of the ball at the end of the episode, the goal consists in reaching a certain point in the latent space (i.e. to obtain an observation at the end of the episode whose representation is as close as possible to the goal in the latent space). In this paper, it was shown that is is possible to use a wide range of representation algorithms to learn the goal space. Most of these algorithms perform almost as well as a true state representation. For instance the figure above shows that **without** any form of supervision or reward signal the agent is capable of learning how to place the ball in many distinct locations. On the contrary when the agent performs random motor commands (RPE) the diversity of outcomes is much smaller.
 
 ## Modular IMGEPs
 
 <div align="center">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/3/3c69b7a714b50309b91b64cfbda8a98bf54b82be.png" height="300"  />
-<div>
 <sub>
-<i>Modular IMGEPs.</i></sub>
+<div align="center">
+<i>Modular IMGEPs.</i></sub></div>
 </div>
-</div>
-</div>
+
 
 The results published in the first paper were obtained in environments containing always a single object. However, in many environments there is often more than one object. These objects can be very different and can be controlled with a varying degree of difficulty (e.g. moving a small object, hard to pick up vs moving a big ball across the environment). Or it can also happen that it is necessary to know how to use one object to use another one (e.g. using a fork to eat something). There can even be objects that are uncontrollable (e.g. moving randomly). As a result it seems natural to separate the exploration of different categories of objects. The intuitive idea is that an algorithm should start with controlling easy to learn objects before moving to more complex objects. It should also ignore objects that cannot be controlled (distractors). This is precisely what [_modular_ IMGEPs](http://sforestier.com/sites/default/files/Forestier2016Modular.pdf) where designed for. The idea is that instead of sampling goals globally (i.e. target value for all dimensions characterizing the world and including all objects), the algorithm samples goals only as target values for particular dimensions of particular objects. For example, in the previously considered experiment the agent could decide to set a goal for the position of the joystick or for the position of the ball. By monitoring how well it performs for each task (the _progress_) the agent would discover that the ball is much harder to control than the joystick since it is necessary to master the joystick before moving the ball. By focusing on tasks (i.e. sampling goals for specific modules) for which the agent has a large learning progress the agent will always set for itself goals with the adequate difficulty. This approach leads to the formation of an automatic curriculum.
 
@@ -128,18 +124,18 @@ Following this idea, in a second paper ([Laversanne-Finot _et al._](https://arxi
 <td>
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/d/dddaa12775f94f00936afbe6edb283f31ca8f9b0.png" height="180" />
 <div align="center">
-<i> <sub>VAE, 5 modules</sub></i>
+<i> <sub>VAE, 5 modules</sub></i></div>
 </td>
 <td>
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/3/327836323698ed0fa84fe981dd77a33b6da9f6fb.png" height="180" />
 <br>
 <div align="center">
-<i><sub>&beta;VAE, 5 modules</sub></i>
+<i><sub>&beta;VAE, 5 modules</sub></i></div>
 </td>
 <td>
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/f/f3add3d665c5c37849d473fda87e69f19eca50b5.png" height="180" />
 <div align="center">
-<i> <sub>&beta;VAE, 10 modules</sub></i>
+<i> <sub>&beta;VAE, 10 modules</sub></i></div>
 </td>
 </tr>
 </table>
@@ -153,9 +149,8 @@ The fact that the algorithm is capable of extracting the controllable feature of
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/e/ed508f95cef6499767743ceede87093eae29f80a.png" height="300"  />
 <div>
 <sub>
-<i>Exploration performances.</i></sub>
-</div>
-</div>
+<div align="center">
+<i>Exploration performances.</i></sub></div>
 </div>
 
 ## Future work
