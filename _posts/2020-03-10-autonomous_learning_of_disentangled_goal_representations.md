@@ -19,13 +19,13 @@ authors:
 <td>
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/d/df2cfa5b26687c1d319b10387923171ab7c4088c.jpg" height="400" />
 <div align="center">
-<i> <sub>An intrinsically motivated agent</sub></i>
+<i> <sub>An intrinsically motivated agent</sub></i></div>
 </td>
 <td>
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/5/5c2d42a7324e60b8c8c7653fac942f2b7570bacf.gif" height="400" />
 <br>
 <div align="center">
-<i><sub>How is it possible to discover what can be controlled from images ?</sub></i>
+<i><sub>How is it possible to discover what can be controlled from images ?</sub></i></div>
 </td>
 </tr>
 </table>
