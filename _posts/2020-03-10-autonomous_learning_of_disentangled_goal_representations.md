@@ -178,5 +178,4 @@ Of course our approach is not the only possible one and the ideas developed in t
 * [Active learning of inverse models with intrinsically motivated goal exploration in robots](https://www.sciencedirect.com/science/article/pii/S0921889012000644?via%3Dihub), Adrien Baranes, Pierre-Yves Oudeyer, Robotics and Autonomous Systems, 2013.
 
 ## Contact
-Email: adrien.laversanne-finot@inria.fr
-Twitter of Flowers lab: [@flowersINRIA](https://twitter.com/@flowersINRIA)
+Email: adrien.laversanne-finot@inria.fr, Twitter of Flowers lab: [@flowersINRIA](https://twitter.com/@flowersINRIA)
