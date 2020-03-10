@@ -81,8 +81,8 @@ The experiments that we describe have been performed on variants of the _Arm-Bal
 
 <div align="center">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/c/c5e4f84cc167885e86b7898115481f4bcd4b944d.jpg" height="300"  />
-<sub>
 <div align="center">
+<sub>
 <i>Intrinsically Motivated Goal Exploration Process examplified.</i></sub></div>
 </div>
 
