@@ -1,12 +1,15 @@
 # Site settings
-title:       "Flowers Blog"
+title:       "Developmental Systems, a Blog of the Flowers Lab"
 email:       pierre-yves.oudeyer@inria.fr
 author:      INRIA Flowers Team
-description: "Website of INRIA Flowers Team."
-baseurl:     ""
+description: "Developmental Systems, a Blog of the Flowers Lab"
+baseurl:     "http://developmentalsystems.org"
 url:         "http://flowersteam.github.io"
 date_format: "%b %-d, %Y"
 header_pages:
+ - publications.md
+ - title: Flowers Lab
+   url: https://flowers.inria.fr
  - about.md
 
 # Google services
