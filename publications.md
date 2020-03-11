@@ -12,6 +12,10 @@ This page links to scientific articles of the Flowers Lab discussed in the blog,
 * Colas, C., Sigaud, O., Oudeyer, P. Y. (2018). [CURIOUS : Intrinsically Motivated Multi-Task,
 Multi-Goal Reinforcement Learning.](https://arxiv.org/abs/1810.06284) Accepted at Deep RL Workshop, NIPS 2018.
 
+* Laversanne-Finot, A., Péré, A., & Oudeyer, P. Y. (2018). [Curiosity driven exploration of learned disentangled goal spaces](https://arxiv.org/pdf/1807.01521). in Conference on Robot Learning (CoRL 2018).
+
+* Péré, A., Forestier, S., Sigaud, O., & Oudeyer, P. Y. (2018). [Unsupervised learning of goal spaces for intrinsically motivated goal exploration](https://arxiv.org/abs/1803.00781). International Conference on Learning Representations (ICLR 2018).
+
 * Colas, C., Sigaud, O., Oudeyer, P. Y. (2019). [A Hitchhiker's Guide to Statistical Comparisons of Reinforcement Learning Algorithms](https://openreview.net/forum?id=ryx0N3IaIV)
 
 * Colas, C., Sigaud, O., Oudeyer, P. Y. (2018). [How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments.](https://arxiv.org/abs/1806.08295) 
@@ -19,13 +23,10 @@ Multi-Goal Reinforcement Learning.](https://arxiv.org/abs/1810.06284) Accepted a
 * Colas, C., Sigaud, O., Oudeyer, P.. (2018). [GEP-PG: Decoupling Exploration and Exploitation in
 Deep Reinforcement Learning Algorithms](https://arxiv.org/abs/1802.05054). Proceedings of the 35th International Conference on Machine Learning, in PMLR 80:1039-1048
 
+
 **Other selected publications**
 
 * Gottlieb, J., & Oudeyer, P. Y. (2018). [Towards a neuroscience of active sampling and curiosity](https://www.dropbox.com/s/oyc4dvjha4s92s6/2018_GottliebOudeyer_ActiveSampling_NatNeuro.pdf?dl=0). Nature Reviews Neuroscience, 19(12), 758-770.
-
-* Laversanne-Finot, A., Péré, A., & Oudeyer, P. Y. (2018). [Curiosity driven exploration of learned disentangled goal spaces](https://arxiv.org/pdf/1807.01521). in Conference on Robot Learning (CoRL 2018).
-
-* Péré, A., Forestier, S., Sigaud, O., & Oudeyer, P. Y. (2018). [Unsupervised learning of goal spaces for intrinsically motivated goal exploration](https://arxiv.org/abs/1803.00781). International Conference on Learning Representations (ICLR 2018).
 
 * Forestier, S., Mollard, Y., & Oudeyer, P. Y. (2017). [Intrinsically motivated goal exploration processes with automatic curriculum learning](https://arxiv.org/abs/1708.02190). arXiv preprint arXiv:1708.02190.
 
