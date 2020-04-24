@@ -4,22 +4,22 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cédric Colas's page</title>
+    <title>Developmental Systems, a Blog of the Flowers Lab</title>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal website of Cédric Colas.">
+    <meta name="description" content="Developmental Systems, a Blog of the Flowers Lab">
     <meta name="robots" content="all">
-    <meta name="author" content="Cédric Colas">
+    <meta name="author" content="INRIA Flowers Team">
     
     
     <link rel="canonical" href="http://localhost:4000/page2/">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Cédric Colas's page" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201903282029" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202004242105" type="text/css">
 
     <!-- Fonts -->
     
@@ -32,6 +32,10 @@
 
     <!-- MathJax -->
     
+    <script type="text/javascript" async
+        src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
 
     <!-- Verifications -->
     
@@ -41,18 +45,25 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Cédric Colas's page">
-    <meta property="og:description" content="Personal website of Cédric Colas.">
+    <meta property="og:title" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta property="og:description" content="Developmental Systems, a Blog of the Flowers Lab">
     <meta property="og:url" content="http://localhost:4000/page2/">
-    <meta property="og:site_name" content="Cédric Colas's page">
+    <meta property="og:site_name" content="Developmental Systems, a Blog of the Flowers Lab">
+    
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
     
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     
-    <meta name="twitter:title" content="Cédric Colas's page" />
-    <meta name="twitter:description" content="Personal website of Cédric Colas." />
+        <meta name="twitter:site" content="@FlowersINRIA" />
+        <meta name="twitter:creator" content="@FlowersINRIA" />
+    
+    <meta name="twitter:title" content="Developmental Systems, a Blog of the Flowers Lab" />
+    <meta name="twitter:description" content="Developmental Systems, a Blog of the Flowers Lab" />
     <meta name="twitter:url" content="http://localhost:4000/page2/" />
+    
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
     
 
     <!-- Icons -->
@@ -73,6 +84,15 @@
     <link rel="shortcut icon" href="/favicon.ico">
 
     
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-44726622-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
 
      <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_HTML"></script>
@@ -81,6 +101,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
     </script>
 
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700&display=swap" rel="stylesheet">
     <!--&lt;!&ndash; Load jQuery &ndash;&gt;-->
     <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
     <!--&lt;!&ndash; Load KaTeX &ndash;&gt;-->
@@ -91,7 +112,17 @@
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>-->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+    
 
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+    <script src="/css/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
 </head>
 
 
@@ -123,45 +154,31 @@
   <div class="site-wrap">
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
-    <div class="measure">
-      <a href="/" class="site-title">Cédric Colas's page</a>
+      <div class="measure">
+          <a href="/" class="site-title">
+              <img src="/flowers-logo.png">
+          </a>
       <nav class="site-nav">
         
 
 
+        <a class="nav-link"  href="https://flowers.inria.fr/"  target="_blank">Flowers Lab</a>
+
 
     
     
-    
-    
-        <a class="nav-link" href="/blog/">Blog</a>
-    
 
     
-
-    
-    
-    
-    
-        <a class="nav-link" href="/about/">About Pixyll</a>
+        <a class="nav-link" href="/publications/">Publications</a>
     
 
     
 
     
     
-    
-    
-        <a class="nav-link" href="/about/">About Pixyll</a>
-    
 
     
-
-    
-    
-    
-    
-        <a class="nav-link" href="/contact/">Say Hello</a>
+        <a class="nav-link" href="/about">About</a>
     
 
     
@@ -173,18 +190,20 @@
         <div class="social-icons">
   <div class="social-icons-right">
     
-      <a class="fa fa-github" href="https://github.com/ccolas"></a>
+      <a class="fa fa-github" href="https://github.com/flowersteam"></a>
     
     
     
     
     <a class="fa fa-rss" href="/feed.xml"></a>
     
+      <a class="fa fa-twitter" href="https://twitter.com/FlowersINRIA"></a>
     
     
     
     
-      <a class="fa fa-envelope" href="mailto:cedric.colas@inria.fr"></a>
+    
+      <a class="fa fa-envelope" href="mailto:pierre-yves.oudeyer@inria.fr"></a>
     
     
     
@@ -217,27 +236,16 @@
         <div class="post py3">
           <p class="post-meta">
 	    
-	      Jun 10, 2014
+	      Feb 15, 2020
 	    
-	  </p>
-          <a href="/jekyll/pixyll/2014/06/10/see-pixyll-in-action/" class="post-link"><h3 class="h1 post-title">Pixyll in Action</h3></a>
+	        </p>
+          <a href="/bootstraping_rl_with_diversity" class="post-link"><h3 class="h1 post-title">Bootstrapping Deep RL with Population-Based Diversity Search</h3></a>
+          <div class="post-meta post-authors">
+               <a href="mailto:cedric.colas@inria.fr">Cédric Colas</a>
+          </div><br>
           <span class="post-summary">
             
-              See what the different elements looks like. Your markdown has never looked better. I promise.
-            
-          </span>
-        </div>
-      
-        <div class="post py3">
-          <p class="post-meta">
-	    
-	      Jun 9, 2014
-	    
-	  </p>
-          <a href="/jekyll/pixyll/2014/06/09/so-what-is-jekyll/" class="post-link"><h3 class="h1 post-title">So, What is Jekyll?</h3></a>
-          <span class="post-summary">
-            
-              Transform your plain text into static websites and blogs. Simple, static, and blog-aware.
+              Standard deep RL algorithms using continuous actions suffer from inefficient exploration when facing sparse or deceptive reward problems. Here we propose to decouple exploration and exploitation. An exploration algorithm first optimizes for diversity in the space of behaviors. Then, a state-of-the art deep RL algorithm uses the collected trajectories for bootstrapping.
             
           </span>
         </div>
