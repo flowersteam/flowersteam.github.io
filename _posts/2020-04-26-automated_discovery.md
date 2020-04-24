@@ -15,7 +15,7 @@ authors:
 
 ## Motivation: Exploration of self-organizing systems
 
-{% include_relative 2020-04-26-automated_discovery/slide_self_organisation.html %}
+{% include 2020-04-26-automated_discovery/slide_self_organisation.html %}
  
  Nature, from its spiral galaxies, shaped landscapes, organized populations, fine inorganic compounds and geometric animal skin patterns to its living cells, is made out of fascinating complex forms and patterns. These natural wonders are the results of a phenomenon called *self-organisation*, that characterizes the spontaneous emergence of some form of global order out of local interactions.
 
@@ -102,7 +102,7 @@ As shown in the below figure, the exploration process iterates N times through:
 
 In this example, the parameter-space was a 32-dimensional dynamic motion primitive and the goal space described the trajectories of the different objects in the world (such as the ball or the white toy). The IMGEP goal-sampling strategy consisted in targeting goals that maximize the learning progress of the robot.
 
-{% include_relative 2020-04-26-automated_discovery/slide_imgeps_robotic_vs_lenia.html %}
+{% include 2020-04-26-automated_discovery/slide_imgeps_robotic_vs_lenia.html %}
 
 As illustrated by the above figure, the IMGEP framework can be transposed to our target application of automated pattern discovery. Here, the actions of our artificial “scientist” agent consist in choosing a set of values for the initial conditions (parameters $\theta$), then let the system rollout and observe the emerging pattern evolve through time (observation $o$). We aim to **maximize the diversity of observations within a limited budget of N experiments**.  
 Different goal and parameter sampling mechanisms can be used within the IMGEP framework. Here, we adopted the following strategy:
@@ -149,7 +149,7 @@ We used our method to identify a high diversity of patterns in Lenia and evaluat
 To get a better insight into the results, this section first provides examples of  "interesting" identified patterns; then discusses the differences between the discovered patterns by several IMGEP variants; and finally proposes a quantitative way to evaluate the obtained diversity.
 
 ### Examples of identified patterns
-{% include_relative 2020-04-26-automated_discovery/video_patterns_array.html %}
+{% include 2020-04-26-automated_discovery/video_patterns_array.html %}
 These videos showcase some patterns that were autonomously discovered by our approach (IMGEP with online learned goal space).
 These results, that we subjectively qualify as *interesting*, seem to suggest that our artificial "scientist" is able to discover complex patterns resembling both the "animal patterns" manually identified by Lenia's creator and "global patterns" with interesting spreading dynamics.
 
@@ -160,7 +160,7 @@ To illustrate this, we show below the complete database of discoveries that were
 * **IMGEP-HGS**: IMGEP variant that uses a hand-defined goal space representation composed of 5 features, proposed in the original Lenia's paper, that characterize typical computer-vision properties of the final patterns (such as the activity, density and (as)symmetry)
 * **IMGEP-RGS**: an ablated IMGEP variant that uses, as goal space representation, a randomly-initialized neural embedding network (with the same architecture than the VAE's encoder of the main variant)
 
-{% include_relative 2020-04-26-automated_discovery/slide_results_database.html %}
+{% include 2020-04-26-automated_discovery/slide_results_database.html %}
 
 As we can see, using a learned (OGL), hand-defined (HGS) or random (RGS) goal space will have a strong influence on the final discoveries of the IMGEP.
 It seems that IMGEP-OGL is more inclined to discover spatially localized patterns whereas IMGEP-HGS is more inclined toward global patterns and IMGEP-RGS toward high-frequency "stripes" patterns.
