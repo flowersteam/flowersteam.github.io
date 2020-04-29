@@ -278,7 +278,7 @@ To illustrate this, we show below the complete database of discoveries that were
 &lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; IMGEP-OGL: goal space learned online with a beta-VAE &lt;/p&gt;
 &lt;p style=&quot;text-align:center; font-size: 16px; margin-top:-20px&quot;&gt; 5000 patterns discovered by IMGEP-OGL visualized with 3D PCA reduction of the original 8D goal space. &lt;/p&gt;
 &lt;div style=&quot;overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;&quot;&gt;
-&lt;iframe name=&quot;visualisation&quot; src=&quot;https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_ogl_config.json&quot; scrolling=&quot;no&quot; style=&quot;height:775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px &quot;&gt;
+&lt;iframe id=&quot;iframe1&quot; name=&quot;visualisation&quot; src=&quot;&quot; scrolling=&quot;no&quot; style=&quot;height:775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px &quot;&gt;
 &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -292,7 +292,7 @@ rotate (left click), pan (right click) and scroll (mouse wheel) through the disc
 &lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; IMGEP-HGS: goal space defined with hand-defined features&lt;/p&gt;
 &lt;p style=&quot;text-align:center; font-size: 16px; margin-top:-20px&quot;&gt; 5000 patterns discovered by IMGEP-OGL visualized with 3D PCA reduction of the original 5D goal space. &lt;/p&gt;
 &lt;div style=&quot;overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;&quot;&gt;
-&lt;iframe name=&quot;visualisation&quot; src=&quot;https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_hgs_config.json&quot; scrolling=&quot;no&quot; style=&quot;height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px &quot;&gt;
+&lt;iframe id=&quot;iframe2&quot; name=&quot;visualisation&quot; src=&quot;&quot; scrolling=&quot;no&quot; style=&quot;height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px &quot;&gt;
 &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -306,7 +306,7 @@ rotate (left click), pan (right click) and scroll (mouse wheel) through the disc
 &lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; IMGEP-RGS: goal space defined with a randomly-initialised NN &lt;/p&gt;
 &lt;p style=&quot;text-align:center; font-size: 16px; margin-top:-20px&quot;&gt; 5000 patterns discovered by IMGEP-RGS visualized with 3D PCA reduction of the original 8D goal space. &lt;/p&gt;
 &lt;div style=&quot;overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;&quot;&gt;
-&lt;iframe name=&quot;visualisation&quot; src=&quot;https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_rgs_config.json&quot; scrolling=&quot;no&quot; style=&quot;height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px &quot;&gt;
+&lt;iframe id=&quot;iframe3&quot; name=&quot;visualisation&quot; src=&quot;&quot; scrolling=&quot;no&quot; style=&quot;height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px &quot;&gt;
 &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -317,6 +317,14 @@ rotate (left click), pan (right click) and scroll (mouse wheel) through the disc
 
 &lt;/ul&gt;
 &lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(window).load(function() {
+$(&quot;#iframe1&quot;).attr(&quot;src&quot;, &quot;https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_ogl_config.json&quot;);
+$(&quot;#iframe2&quot;).attr(&quot;src&quot;, &quot;https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_hgs_config.json&quot;);
+$(&quot;#iframe3&quot;).attr(&quot;src&quot;, &quot;https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_rgs_config.json&quot;);
+});
+&lt;/script&gt;
 
 &lt;p&gt;As we can see, using a learned (OGL), hand-defined (HGS) or random (RGS) goal space will have a strong influence on the final discoveries of the IMGEP.
 It seems that IMGEP-OGL is more inclined to discover spatially localized patterns whereas IMGEP-HGS is more inclined toward global patterns and IMGEP-RGS toward high-frequency “stripes” patterns.
