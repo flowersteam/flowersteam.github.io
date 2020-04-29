@@ -127,4 +127,14 @@
     {% if site.google_analytics and jekyll.environment == 'production' %}
     {% include analytics.html %}
     {% endif %}
+
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="{{ '/css/flexslider.css'  | prepend: site.baseurl }}" type="text/css">
+    <script src="{{ '/css/js/jquery.flexslider.js'  | prepend: site.baseurl }}"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
 </head>

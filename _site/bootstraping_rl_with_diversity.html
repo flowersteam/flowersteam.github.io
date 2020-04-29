@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrapping Deep RL with Population-Based Diversity Search &#8211; Developmental Systems, a Blog of the Flowers Lab</title>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Standard deep RL algorithms using continuous actions suffer from inefficient exploration when facing sparse or deceptive reward problems. Here we propose to decouple exploration and exploitation. An exploration algorithm first optimizes for diversity in the space of behaviors. Then, a state-of-the art deep RL algorithm uses the collected trajectories for bootstrapping.">
+    <meta name="robots" content="all">
+    <meta name="author" content="INRIA Flowers Team">
+    
+    <meta name="keywords" content="jekyll">
+    <link rel="canonical" href="http://localhost:4000/bootstraping_rl_with_diversity">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?202004291649" type="text/css">
+
+    <!-- Fonts -->
+    
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- MathJax -->
+    
+    <script type="text/javascript" async
+        src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <!-- Verifications -->
+    
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Bootstrapping Deep RL with Population-Based Diversity Search">
+    <meta property="og:description" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta property="og:url" content="http://localhost:4000/bootstraping_rl_with_diversity">
+    <meta property="og:site_name" content="Developmental Systems, a Blog of the Flowers Lab">
+    
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
+    
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@FlowersINRIA" />
+        <meta name="twitter:creator" content="@FlowersINRIA" />
+    
+    <meta name="twitter:title" content="Bootstrapping Deep RL with Population-Based Diversity Search" />
+    <meta name="twitter:description" content="Standard deep RL algorithms using continuous actions suffer from inefficient exploration when facing sparse or deceptive reward problems. Here we propose to decouple exploration and exploitation. An exploration algorithm first optimizes for diversity in the space of behaviors. Then, a state-of-the art deep RL algorithm uses the collected trajectories for bootstrapping." />
+    <meta name="twitter:url" content="http://localhost:4000/bootstraping_rl_with_diversity" />
+    
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
+    
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-44726622-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+
+     <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_HTML"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700&display=swap" rel="stylesheet">
+    <!--&lt;!&ndash; Load jQuery &ndash;&gt;-->
+    <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+    <!--&lt;!&ndash; Load KaTeX &ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>&ndash;&gt;-->
+
+    <!--<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+    
+
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+    <script src="/css/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
+</head>
+
+
+<body class="site">
+  
+	
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: 'none',
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [['$$','$$']],
+      processEnvironments: false
+    },
+    // show equation numbers
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    'HTML-CSS': {
+      imageFont: null
+    }
+  });
+</script>
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+      <div class="measure">
+          <a href="/" class="site-title">
+              <img src="/flowers-logo.png">
+          </a>
+      <nav class="site-nav">
+        
+
+
+        <a class="nav-link"  href="https://flowers.inria.fr/"  target="_blank">Flowers Lab</a>
+
+
+    
+    
+
+    
+        <a class="nav-link" href="/publications/">Publications</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/about">About</a>
+    
+
+    
+
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+      <a class="fa fa-github" href="https://github.com/flowersteam"></a>
+    
+    
+    
+    
+    <a class="fa fa-rss" href="/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/FlowersINRIA"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:pierre-yves.oudeyer@inria.fr"></a>
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>Bootstrapping Deep RL with Population-Based Diversity Search</h1>
+  <span class="post-meta">
+       <a href="mailto:cedric.colas@inria.fr">Cédric Colas</a>
+  </span><br>
+  <span class="post-meta">Feb 15, 2020</span><br>
+  
+  <span class="post-meta small">
+  
+    16 minute read
+  
+  </span>
+</div>
+
+<article class="post-content">
+  <div align="center" style="margin-bottom:20px">
+<table>
+<tr>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/2/267081c55036d5900d2b373ed4d67424cd1658a9.gif" height="180" />
+</td>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/6/65d3e42e8e06affb3e37f879b195b907efde84ec.gif" height="180" />
+</td>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/9/94b22b783e1f1de1ccd6cf702d3d9d3392371059.gif" height="180" />
+</td>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/0/0edbf189cb28b08eb85e6fd7b85a74ac72382e60.gif" height="180" />
+</td>
+</tr>
+</table>
+</div>
+
+<p>Deep Reinforcement Learning algorithms have attracted unprecedented attention due to remarkable successes in games like <a href="https://arxiv.org/abs/1312.5602">ATARI</a> and <a href="http://www.ics.uci.edu/~dechter/courses/ics-295/winter-2018/papers/nature-go.pdf">Go</a>, and have been extended to control domains involving  <a href="https://arxiv.org/abs/1509.02971">continuous actions</a>. However, standard deep reinforcement learning algorithms using continuous actions like DDPG suffer from inefficient exploration when facing sparse or deceptive reward problems.</p>
+
+<p>One natural approach is to rely on imitation learning, i.e. leveraging observations of a human solving the problem. However, humans cannot always help. They can be unavailable, or simply unable to demonstrate a good behavior (e.g. how to demonstrate locomotion to a 6-leg robot).</p>
+
+<p>Another approach relies on the use of various forms of curiosity-driven Deep RL. This generally consists in adding an exploration bonus term to the reward function, measuring quantities such as information gain, entropy, uncertainty or prediction errors (e.g. <a href="https://arxiv.org/abs/1606.01868">[Bellemare et al.]</a>) . Sometimes the reward function is even ignored and replaced by such an intrinsic reward <a href="https://arxiv.org/abs/1705.05363">[Pathak et al., 2017]</a>). However, it is challenging to leverage them in environments with complex continuous action spaces, especially on real world robots.</p>
+
+<p>In our recent ICML 2018 <a href="https://arxiv.org/abs/1802.05054">paper</a>, we propose to leverage evolutionary and developmental curiosity-driven exploration methods that were initially designed from a very different perspective. These are population-based approaches like <a href="http://eplex.cs.ucf.edu/papers/lehman_ecj11.pdf">Novelty Search</a>, <a href="https://arxiv.org/abs/1708.09251">Quality-Diversity</a> or <a href="http://www.pyoudeyer.com/ActiveGoalExploration-RAS-2013.pdf">Intrinsically Motivated Goal Exploration Processes</a>. The primary purpose of these methods has been to enable autonomous machines to discover diverse repertoire of skills, i.e. to learn a population of policies that produce maximally diverse behavioral outcomes. Such discoveries have often been used to build good internal world models in a sample efficient manner, e.g. through curiosity-driven goal exploration <a href="http://www.pyoudeyer.com/ActiveGoalExploration-RAS-2013.pdf">[Baranes and Oudeyer, 2013]</a>. This led to a variety of applications where real world robots where capable to learn very fast complex skills <a href="https://arxiv.org/abs/1708.02190">[Forestier et al.,2017]</a> or to adapt to damages <a href="https://arxiv.org/pdf/1407.3501v2.pdf">[Cully et al., 2015]</a>.</p>
+
+<p>Our new paper shows that the strengths of monolithic Deep RL methods and population-based diversity search methods can be combined for solving RL problems with rare or deceptive rewards. The general idea is as follows. In the exploration phase, we use a population-based diversity search approach (in the experiments below, a simple form of Goal Exploration Process <a href="https://arxiv.org/abs/1708.02190">[Forestier et al, 2017]</a>). During this phase, diverse goals are sampled, leading to sampling corresponding small-size neural network policies, which behavioral trajectories are recorded in an archive. While the sampling process is not influenced at all by the extrinsic reward of the RL problem, these rewards are nevertheless observed and memorized. Then, in a second phase, all trajectories (and associated rewards) discovered during the first phase are used to initialize the replay buffer of a Deep RL algorithm.</p>
+
+<p>The general intuition is that population-based pure diversity search enables to find rare rewards faster than Deep RL algorithms, or to collect observation data that is very useful to Deep RL algorithms for getting out of deceptive local minima. However, as Deep RL algorithms are very strong at exploiting reward gradient information when it is available, they can be used to learn policies that refine those found during the diversity search phase.</p>
+
+<p>Our experiments use a simple goal exploration process for the first phase, and several variants of DDPG for the second phase.</p>
+
+<p>We show that, and analyze why:</p>
+
+<ul>
+  <li>DDPG fails on a simple low dimensional deceptive reward problem called Continuous Mountain Car,</li>
+  <li>GEP-PG obtains state-of-the-art performance on the larger Half-Cheetah benchmark, reaching faster and higher performances than DDPG alone,</li>
+  <li>The diversity of outcomes discovered during the first phase correlates with the efficiency of DDPG in the second phase.</li>
+</ul>
+
+<h2 id="the-methodology">The methodology</h2>
+<p>Our experiments follow the methodological guidelines presented in <a href="https://arxiv.org/abs/1709.06560">[Henderson et al, 2017]</a>:</p>
+
+<ol>
+  <li>we use standard baseline implementations and hyperparameters of DDPG,</li>
+  <li>we run robust statistical analysis, averaging our results over 20 different seeds for each algorithm,</li>
+  <li>we provide the code of the algorithm, and the code to make the figures, <a href="https://github.com/flowersteam/geppg">here</a>.</li>
+</ol>
+
+<h2 id="the-environments">The environments</h2>
+<p>Continuous Mountain Car (CMC) is a simple 2D problem available in the OpenAI Gym environments. In this problem, an underpowered car must learn to swing in a valley in order to 
+reach the top of a hill. Success yields a large positive reward (+100) while there is a small penalty for the car energy expenses <script type="math/tex">(-0.1 \times \mid a\mid^2)</script>.</p>
+
+<p>In Half-Cheetah (HC), a 2D biped must learn how to run as fast as possible. It receives observations about its absolute and joints positions and velocities (17D) and can control the torques of all joints (6D).</p>
+
+<div align="center" style="margin-bottom:20px">
+<table>
+<tr>
+
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/d/d0fbf19e533fbf3e0da2b74066aa47bae57a772d.gif" height="220" alt="Continuous Mountain Car" />
+<div align="center">
+<i> <sub> Continuous Mountain Car </sub> </i>
+</div>
+</td>
+
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/0/0edbf189cb28b08eb85e6fd7b85a74ac72382e60.gif" height="220" alt="Half Cheetah" />
+<div align="center">
+<i> <sub> Half Cheetah </sub> </i>
+</div>
+</td>
+
+</tr>
+</table>
+</div>
+
+<h2 id="the-gep-pg-approach">The GEP-PG approach</h2>
+
+<p>GEP-PG, for Goal Exploration Process - Policy Gradient, is a general framework which sequentially combines an algorithm from the Intrinsically Motivated Goal Exploration Process family (IMGEP)  <a href="https://arxiv.org/abs/1708.02190">[Forestier et al, 2017]</a> and Deep Deterministic Policy Gradient (DDPG) <a href="https://arxiv.org/abs/1509.02971">[Lillicrap, 2015]</a>.</p>
+
+<h3 id="ddpg">DDPG</h3>
+<p>DDPG is an actor-critic off-policy method which stores samples in a replay buffer to perform policy gradient descent (see original paper <a href="https://arxiv.org/abs/1509.02971">[Lillicrap, 2015]</a> for detailed explanations of this algorithm). In this paper, we use two variants:</p>
+
+<ol>
+  <li>DDPG with action perturbations, for which an Ornstein-Uhlenbeck noise process is added to the actions.</li>
+  <li>DDPG with parameter perturbations, where an adaptive noise is added directly to the actor’s parameters, see <a href="https://arxiv.org/pdf/1706.01905.pdf">[Plappert, 2018]</a> for details.</li>
+</ol>
+
+<h3 id="gep">GEP</h3>
+<p>Here, we use a very simple form of goal exploration process. First, we consider neural network policies, typically smaller in size than the one learnt in the PG phase. Second, we define a “behavioral representation” or “outcome space” that describes properties of the agent trajectory over the course of an episode (also called “roll-out” of a policy). For CMC, the minimum and maximum position on the x-axis could be used as behavioral features to define the outcome space:</p>
+
+<div align="center" style="margin-bottom:20px">
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/5/507b377d40151bb6668861e30be3a4e2a564d2c1.png" height="250" alt="GEP's outcome space" />
+<div>
+<sub>
+<i>Each trajectory is mapped to an outcome space. Here we use the minimum and maximum.
+positions along the x-axis as behavioral features.</i></sub>
+</div>
+</div>
+
+<p>Every time a roll-out is made with a policy, the policy parameters and the corresponding outcome vector are stored inside an archive. In addition, one stores the full (state, action) trajectory and the extrinsic reward observations: these observations are used in the second phase, but they are not used in the data collection achieved by the goal exploration process.</p>
+
+<p>The GEP algorithm then repeats the following steps (Figure below):</p>
+<ol>
+  <li>sample a goal at random in the outcome space,</li>
+  <li>find the nearest neighbor in outcome space archive and select the associated policy,</li>
+  <li>add Gaussian noise to policy and play it in the environment to obtain a new outcome,</li>
+  <li>save the new (policy, outcome) pair in the archive.</li>
+</ol>
+
+<div align="center" style="margin-bottom:20px">
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/c/c88404f34d073dd751212484a183cdc3ebd1de0d.png" height="300" alt="GEP mechanism" />
+<div>
+<sub>
+<i> GEP performs efficient exploration because the nearest-neighbor selection mechanism introduces a selection bias toward policies showing original outcomes. On the right hand-side figure above, the point in light green has much less chance to be selected as nearest neighbor of a randomly sampled goal than the dark green outcomes. The dark green outcomes located at the frontier of behavioral clusters show more novel behaviors. By selecting them, the algorithm tries to extend these clusters, to cover the whole outcome space. </i></sub>
+</div>
+</div>
+
+<p>Other implementations of goal exploration processes perform curiosity-driven goal sampling (e.g. <a href="http://www.pyoudeyer.com/ActiveGoalExploration-RAS-2013.pdf">maximizing competence progress</a>) in step 1, or use <a href="https://www.frontiersin.org/articles/10.3389/frobt.2016.00008/full">regression-based forward and inverse models</a> in step 2. However, the very simple form of goal exploration used here was previously shown to be already very efficient to discover a diversity of outcomes. This may seem surprising at first as it does not include any explicit measure of behavioral novelty. Yet, when one samples a random goal, there is a high probably that this corresponds to a vector in outcome space that is outside the cloud of outcome vectors already produced. As a consequence, when looking at the nearest-neighbor, there is a high probability to select a an outcome that is on the edge of what has been discovered so far. And thus trying a stochastic variation of the corresponding policy tends to push this edge further, thus discovering novel behaviors. So, this simple GEP implementation behaves similarly to the Novelty-Search algorithm <a href="http://eplex.cs.ucf.edu/papers/lehman_ecj11.pdf">[Lehman &amp; Stanley, 2011]</a>, yet never measuring explicitly novelty.</p>
+
+<p>Besides, one can note that GEP maintains a population of solutions by storing each (policy, outcome) pair in memory. This prevents catastrophic forgetting and enables one-shot learning of novel outcomes. The policies associated to these behaviors can easily be retrieved from memory by using a nearest neighbor search in the space of outcomes and taking the corresponding policy.</p>
+
+<div align="center" style="margin-bottom:20px">
+<table>
+
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/0/0edbf189cb28b08eb85e6fd7b85a74ac72382e60.gif" height="220" alt="Half Cheetah forward" />
+<div align="center">
+<i> <sub> Running forward </sub></i>
+</div>
+</td>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/6/65d3e42e8e06affb3e37f879b195b907efde84ec.gif" height="220" alt="Half Cheetah backward" />
+<div align="center">
+<i> <sub>Running backward </sub></i>
+</div>
+</td>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/9/94b22b783e1f1de1ccd6cf702d3d9d3392371059.gif" height="220" alt="Half Cheetah falling" />
+<div align="center">
+<i><sub> Falling </sub></i>
+</div>
+</td>
+</table>
+</div>
+
+<h3 id="gep-pg">GEP-PG</h3>
+
+<p>After a few GEP episodes, the actions, states and rewards experienced are loaded into the replay buffer of DDPG. DDPG is then run with a randomly initialized actor and critic, but benefits from the content of this replay buffer.</p>
+
+<h2 id="ddpg-fails-on-continuous-mountain-car">DDPG fails on Continuous Mountain Car</h2>
+
+<p>Perhaps, the most surprising result of our study is that DDPG, which is considered as a state-of-the-art method in deep reinforcement learning with continuous actions, does not perform well on the very low dimensional Continuous Mountain Car benchmark, where simple exploration methods can easily find the goal.</p>
+
+<p>In CMC, until the car reaches the top for the first time, the gradient of performance points towards standing still in order to avoid negative penalties corresponding to energy expenses. Thus, the gradient is deceptive as it drives the agent to a local optimum where the policy fails.</p>
+
+<p>Below we show the effect of this deceptive gradient: the form of exploration used in DDPG can escape the local optimum by chance, but the average time to reach the goal for the first time is worse than one would get using purely random exploration. Using noise on the actions, DDPG finds the top in the first 50 episodes only 22% of the time. Using policy parameter perturbations, it happens 42% of the time. By contrast, because its exploration strategy is insensitive to the gradient of performance, GEP is good at quickly reaching the goal for the first time, no matter the complexity of the policy (either a simple linear policy or the same as DDPG).</p>
+
+<div align="center" style="margin-bottom:20px">
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/1/194ade94e5535a5d3304f07484013d8d49dcd9f0.png" height="280" alt="Histograme number of steps before reaching the goal" />
+<div>
+<i> <sub>Number of steps before reaching the goal in Continuous Mountain Car </sub> </i>
+</div>
+</div>
+
+<p>When filling the replay buffer of DDPG with GEP trajectories, good policies are found more consistently. It should be noted that although GEP-PG reached better performance than DDPG alone across learning (see histogram of the performances of best policies found across learning), it sometimes forgets them afterwards (see learning curves) due to known instabilities in DDPG <a href="https://arxiv.org/abs/1709.06560">[Henderson et al, 2017]</a>.</p>
+
+<div align="center">
+<table>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/7/795b0ff4285e54414060636618783a9b3a42ac87.png" height="250" alt="Continuous Mountain Car, learning curves" />
+<div align="center">
+<i> <sub>Learning curves - Continuous Mountain Car </sub></i>
+</div>
+</td>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/2/2ec80bd6f356728a8f9b22775bc1e299512bfa61.png" height="250" alt="Histogram performances of best policies" />
+<br />
+<div align="center">
+<i><sub> Performance of best policies </sub></i>
+</div>
+</td>
+</table>
+</div>
+
+<div align="center" style="margin-bottom:20px">
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/7/780cbecfea0a03d69e899336f220103adbc38727.gif" height="250" alt="Continuous Mountain Car, good GEP-PG policy" />
+<div>
+<i> <sub> Good GEP-PG policy </sub> </i>
+</div>
+</div>
+
+<h2 id="gep-pg-obtains-state-of-the-art-results-on-half-cheetah">GEP-PG obtains state-of-the-art results on Half-Cheetah</h2>
+
+<p>On the Half-Cheetah benchmark, GEP-PG runs 500 episodes of GEP then switches to one of two DDPG variants that we call action and parameter perturbation. The two GEP-PG variants (dark blue and red) significantly outperform their DDPG counterparts (light blue and red), and GEP alone (green). The variance of performance across different runs is also smaller in GEP-PG compared to DDPG alone.</p>
+
+<div align="center" style="margin-bottom:20px">
+<table>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/0/003b4d1d807d0b25abdbeea3af5cd37de5c38339.jpg" height="250" alt="Half-Cheetah, learning curves" />
+<div align="center">
+<i> <sub>Learning curves - Half-Cheetah  </sub></i>
+</div>
+</td>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/c/cc9b7b359adb4915f5cda9bb3223ba7bbe43104f.gif" height="250" alt="Half-Cheetah, good GEP-PG policy" />
+<br />
+<div align="center">
+<i><sub> Good GEP-PG policy </sub></i>
+</div>
+</td>
+</table>
+</div>
+
+<h2 id="what-makes-a-good-replay-buffer">What makes a good replay buffer</h2>
+
+<p>A question that remains unresolved is: what makes a good replay buffer? To answer it, we looked for potential correlations between the final performance of GEP-PG on Half-Cheetah and a list of other factors. We ran GEP-PG with various replay buffer sizes (100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000 episodes) and a fixed budget for the DDPG part (1500 episodes). We found out that GEP-PG’s performance is not a function of the replay buffer size. Filling the replay buffer with 100 GEP episodes is enough to bootstrap DDPG. However, the quality and diversity of the replay buffer are important factors. We found that the performance of GEP-PG correlates significantly to the buffer’s quality:</p>
+
+<ul>
+  <li>the final performance of GEP <script type="math/tex">% <![CDATA[
+(p<2\times10^{-6}) %]]></script></li>
+  <li>the average performance of GEP during training <script type="math/tex">% <![CDATA[
+(p<4\times10^{-8}) %]]></script></li>
+</ul>
+
+<p>but also to the buffer’s diversity, as quantified by various measures:</p>
+
+<ul>
+  <li>the standard deviation of the performances obtained by GEP during training. This measure quantifies the diversity of performances reached during training.  <script type="math/tex">% <![CDATA[
+(p<3\times10^{-10}) %]]></script></li>
+  <li>the standard deviation of the observation vectors averaged across dimensions. This quantifies the diversity of sensory inputs. <script type="math/tex">% <![CDATA[
+(p<3\times10^{-8}) %]]></script></li>
+  <li>outcome diversity measured by the average distance to the k-nearest neighbors in outcome space (for various k). This measure is normalized by the average distance to the 1-nearest neighbor in the case of a uniform distribution, which makes it insensitive to the sample size. This is a measure of outcomes diversity. <script type="math/tex">% <![CDATA[
+(p<4\times10^{-10}) %]]></script></li>
+  <li>the percentage of cells filled when the outcome space is discretized (with various number of cells). We also use a number of cells equal to the number of points, which make the measure insensitive to this number. This is a measure of outcomes diversity. <script type="math/tex">% <![CDATA[
+(p<4\times10^{-5}) %]]></script></li>
+  <li>the discretized entropy with various number of cells. <script type="math/tex">% <![CDATA[
+(p<6\times10^{-7}) %]]></script></li>
+</ul>
+
+<p> </p>
+
+<div align="center" style="margin-bottom:20px">
+<table>
+
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/5/52a1d5bcdad574dfd9cb5bc80481f5ad68e6d0fc.png" height="250" />
+<div align="center">
+<i> <sub>GEP-PG versus GEP performance, color represents the buffer size  </sub></i>
+</div>
+</td>
+<td>
+<img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/0/0036a8036e68572c388896e13853c7f2f4573055.png" height="250" />
+<br />
+<div align="center">
+<i><sub>GEP-PG performance versus diversity score</sub></i>
+</div>
+</td>
+
+</table>
+</div>
+
+<p>These correlations show that a good replay buffer should be both efficient and diverse (in terms of outcomes or observations). This means that implementing more efficient exploration strategies targeting these two objectives would likely further improve the performance of GEP-PG. GEP as used here, only aims at maximizing the diversity of outcomes. On the other hand, <a href="https://arxiv.org/abs/1708.09251">Quality-Diversity</a> algorithms (e.g. <a href="https://arxiv.org/pdf/1504.04909.pdf">MAP-Elites</a>, <a href="http://www.isir.upmc.fr/files/2013ACTI2876.pdf">Behavioral Repertoire Evolution</a>) optimize for these two objectives, and could therefore prove to be strong candidates to replace GEP.</p>
+
+<h2 id="future-work">Future work</h2>
+
+<p>In our work, we have presented the general idea of decoupling exploration and exploitation in deep reinforcement learning algorithms and proposed a specific implementation of this idea using GEP and DDPG. In future work, we will investigate other implementations of this idea using different exploration algorithms (<a href="http://eplex.cs.ucf.edu/papers/lehman_ecj11.pdf">Novelty Search</a>, <a href="https://arxiv.org/pdf/1504.04909.pdf">MAP-Elites</a>, <a href="http://www.isir.upmc.fr/files/2013ACTI2876.pdf">BR-Evo</a> or different gradient-based methods (<a href="https://arxiv.org/abs/1708.05144">ACKTR</a>, <a href="https://arxiv.org/abs/1801.01290">SAC</a>). More sophisticated implementations of IMGEP could also be used to improve the efficiency of exploration (e.g. <a href="http://www.pyoudeyer.com/ActiveGoalExploration-RAS-2013.pdf">curiosity-driven goal exploration</a> or <a href="https://arxiv.org/abs/1708.02190">modular goal exploration</a>).</p>
+
+<p>Another aspect concerns the way GEP and DDPG are combined. Here, we studied the simplest possible combination: filling the replay buffer in DDPG with GEP trajectories. This way to transfer results in a drop in performance at switch time because DDPG starts from new randomly initialized actor and critic networks. In further work, we will try to avoid this drop by bootstrapping the actor network from GEP data at switch time. For instance, using the best GEP policy to generate (observation, action) samples from GEP trajectories, the DDPG actor network could be trained in a supervised manner. We could also call upon a multi-arm bandit paradigm to alternate between GEP and DDPG as required to maximize the learning efficiency, <a href="https://flowers.inria.fr/Nguyen-Oudeyer-Paladyn2013.pdf">actively selecting the best learning strategy</a>.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>Colas, C., Sigaud, O., &amp; Oudeyer, P. Y. (2018). GEP-PG: Decoupling Exploration and Exploitation in Deep Reinforcement Learning Algorithms, ICML 2018 <a href="https://arxiv.org/abs/1802.05054">link</a></li>
+  <li>Mnih, V., Kavukcuoglu, K., Silver, D., Graves, A., Antonoglou, I., Wierstra, D., &amp; Riedmiller, M. (2013). Playing atari with deep reinforcement learning. Nature <a href="https://arxiv.org/abs/1312.5602">link</a></li>
+  <li>Silver, D., Huang, A., Maddison, C. J., Guez, A., Sifre, L., Van Den Driessche, G., … &amp; Dieleman, S. (2016). Mastering the game of Go with deep neural networks and tree search. Nature, 529(7587), 484-489. <a href="https://deepmind.com/documents/119/agz_unformatted_nature.pdf">link</a></li>
+  <li>Lillicrap, T. P., Hunt, J. J., Pritzel, A., Heess, N., Erez, T., Tassa, Y., … &amp; Wierstra, D. (2015). Continuous control with deep reinforcement learning. ICLR 2016 <a href="https://arxiv.org/pdf/1509.02971.pdf">link</a></li>
+  <li>Bellemare, M., Srinivasan, S., Ostrovski, G., Schaul, T., Saxton, D., &amp; Munos, R. (2016). Unifying count-based exploration and intrinsic motivation. In Advances in Neural Information Processing Systems (pp. 1471-1479). <a href="http://papers.nips.cc/paper/6383-unifying-count-based-exploration-and-intrinsic-motivation.pdf">link</a></li>
+  <li>Pathak, D., Agrawal, P., Efros, A. A., &amp; Darrell, T. (2017, May). Curiosity-driven exploration by self-supervised prediction. In International Conference on Machine Learning (ICML) (Vol. 2017). <a href="http://openaccess.thecvf.com/content_cvpr_2017_workshops/w5/papers/Pathak_Curiosity-Driven_Exploration_by_CVPR_2017_paper.pdf">link</a></li>
+  <li>Lehman, J., &amp; Stanley, K. O. (2011). Abandoning objectives: Evolution through the search for novelty alone. Evolutionary computation, 19(2), 189-223. Evolutionary Computation <a href="https://dl.acm.org/citation.cfm?id=2000553">link</a></li>
+  <li>Cully, A., &amp; Demiris, Y. (2018). Quality and diversity optimization: A unifying modular framework. IEEE Transactions on Evolutionary Computation, 22(2), 245-259. <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7959075">link</a></li>
+  <li>Cully, A., Clune, J., Tarapore, D., &amp; Mouret, J. B. (2015). Robots that can adapt like animals. Nature, 521(7553), 503. <a href="https://arxiv.org/pdf/1407.3501.pdf">link</a></li>
+  <li>Forestier, S., Mollard, Y., &amp; Oudeyer, P.-Y. (2017). Intrinsically Motivated Goal Exploration Processes with Automatic Curriculum Learning, 1–21. <a href="https://arxiv.org/pdf/1708.02190.pdf">link</a></li>
+  <li>Benureau, F. C., &amp; Oudeyer, P. Y. (2016). Behavioral diversity generation in autonomous exploration through reuse of past experience. Frontiers in Robotics and AI, 3, 8.<a href="https://www.frontiersin.org/articles/10.3389/frobt.2016.00008/full">link</a></li>
+  <li>Henderson, P., Islam, R., Bachman, P., Pineau, J., Precup, D., &amp; Meger, D. (2017). Deep reinforcement learning that matters. arXiv preprint arXiv:1709.06560. AAAI 2018 <a href="https://arxiv.org/pdf/1709.06560.pdf">link</a></li>
+  <li>Plappert, M., Houthooft, R., Dhariwal, P., Sidor, S., Chen, R. Y., Chen, X., … &amp; Andrychowicz, M. (2017). Parameter space noise for exploration. ICLR 2018 <a href="https://arxiv.org/pdf/1706.01905.pdf">link</a></li>
+  <li>Mouret, J. B., &amp; Clune, J. (2015). Illuminating search spaces by mapping elites. <a href="https://arxiv.org/pdf/1504.04909.pdf">link</a></li>
+  <li>Cully, A., &amp; Mouret, J. B. (2013, July). Behavioral repertoire learning in robotics. In Proceedings of the 15th annual conference on Genetic and evolutionary computation (pp. 175-182). ACM. <a href="https://hal.archives-ouvertes.fr/file/index/docid/841958/filename/t02pap489-cully.pdf">link</a></li>
+  <li>Wu, Y., Mansimov, E., Grosse, R. B., Liao, S., &amp; Ba, J. (2017). Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation. In Advances in neural information processing systems (pp. 5285-5294). <a href="http://papers.nips.cc/paper/7112-scalable-trust-region-method-for-deep-reinforcement-learning-using-kronecker-factored-approximation.pdf">link</a></li>
+  <li>Haarnoja, T., Zhou, A., Abbeel, P., &amp; Levine, S. (2018). Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor. <a href="https://arxiv.org/pdf/1801.01290.pdf">link</a></li>
+  <li>Lopes, M., &amp; Oudeyer, P. Y. (2012, November). The strategic student approach for life-long exploration and learning. In IEEE International Conference on Development and Learning and Epigenetic Robotics (ICDL), (pp. 1-8). <a href="https://hal.inria.fr/file/index/docid/755216/filename/PID2563983.pdf">link</a></li>
+  <li>Nguyen, M., &amp; Oudeyer, P. Y. (2012). Active choice of teachers, learning strategies and goals for a socially guided intrinsic motivation learner. Paladyn Journal of Behavioral Robotics, 3(3), 136-146. <a href="https://www.degruyter.com/downloadpdf/j/pjbr.2012.3.issue-3/s13230-013-0110-z/s13230-013-0110-z.pdf">link</a></li>
+</ul>
+
+<h2 id="contact">Contact</h2>
+<ul>
+  <li>Email: cedric.colas@inria.fr</li>
+</ul>
+
+<hr />
+
+<h6 id="subscribe-to-our-twitter">Subscribe to our <a href="https://twitter.com/@flowersINRIA">Twitter</a>.</h6>
+
+<hr />
+
+</article>
+
+
+  <div class="share-page">
+  Share this post!
+
+  <div class="share-links">
+    
+      <a class="fa fa-facebook" href="https://facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbootstraping_rl_with_diversity" rel="nofollow" target="_blank" title="Share on Facebook"></a>
+    
+
+    
+      <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text=Bootstrapping+Deep+RL+with+Population-Based+Diversity+Search&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fbootstraping_rl_with_diversity" rel="nofollow" target="_blank" title="Share on Twitter"></a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <a class="fa fa-reddit" href="http://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2Fbootstraping_rl_with_diversity&amp;title=Bootstrapping+Deep+RL+with+Population-Based+Diversity+Search" rel="nofollow" target="_blank" title="Share on Reddit"></a>
+    
+
+    
+
+    
+      <a class="fa fa-hacker-news" onclick="parent.postMessage('submit','*')" href="https://news.ycombinator.com/submitlink?u=http%3A%2F%2Flocalhost%3A4000%2Fbootstraping_rl_with_diversity&amp;t=Bootstrapping+Deep+RL+with+Population-Based+Diversity+Search" rel="nofollow" target="_blank" title="Share on Hacker News"></a>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--<footer class="center">
+  <div class="measure">
+    <small>
+      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+      &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">GitHub</a>.
+    </small>
+  </div>
+
+
+
+</footer>
+
+<script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+    }
+</script>
+
+
+    <script type="text/javascript">
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" +
+           katex.renderToString(tex) +
+           "</span>";
+});
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" +
+           katex.renderToString("\\displaystyle "+tex) +
+           "</div>";
+});
+
+
+
+</script>
+
+
+
+<!--<script>-->
+      <!--renderMathInElement(-->
+          <!--document.body,-->
+          <!--{-->
+              <!--delimiters: [-->
+                  <!--{left: "$$", right: "$$", display: true},-->
+                  <!--{left: "\\[", right: "\\]", display: true},-->
+                  <!--{left: "$", right: "$", display: false},-->
+                  <!--{left: "\\(", right: "\\)", display: false}-->
+              <!--]-->
+          <!--}-->
+      <!--);-->
+    <!--</script>-->-->
+</body>
+</html>

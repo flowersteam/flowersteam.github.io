@@ -4,22 +4,22 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cédric Colas's page</title>
+    <title>Developmental Systems, a Blog of the Flowers Lab</title>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal website of Cédric Colas.">
+    <meta name="description" content="Developmental Systems, a Blog of the Flowers Lab">
     <meta name="robots" content="all">
-    <meta name="author" content="Cédric Colas">
+    <meta name="author" content="INRIA Flowers Team">
     
     
     <link rel="canonical" href="http://localhost:4000/">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Cédric Colas's page" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201903282029" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202004291649" type="text/css">
 
     <!-- Fonts -->
     
@@ -32,6 +32,10 @@
 
     <!-- MathJax -->
     
+    <script type="text/javascript" async
+        src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
 
     <!-- Verifications -->
     
@@ -41,18 +45,25 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Cédric Colas's page">
-    <meta property="og:description" content="Personal website of Cédric Colas.">
+    <meta property="og:title" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta property="og:description" content="Developmental Systems, a Blog of the Flowers Lab">
     <meta property="og:url" content="http://localhost:4000/">
-    <meta property="og:site_name" content="Cédric Colas's page">
+    <meta property="og:site_name" content="Developmental Systems, a Blog of the Flowers Lab">
+    
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
     
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     
-    <meta name="twitter:title" content="Cédric Colas's page" />
-    <meta name="twitter:description" content="Personal website of Cédric Colas." />
+        <meta name="twitter:site" content="@FlowersINRIA" />
+        <meta name="twitter:creator" content="@FlowersINRIA" />
+    
+    <meta name="twitter:title" content="Developmental Systems, a Blog of the Flowers Lab" />
+    <meta name="twitter:description" content="Developmental Systems, a Blog of the Flowers Lab" />
     <meta name="twitter:url" content="http://localhost:4000/" />
+    
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
     
 
     <!-- Icons -->
@@ -73,6 +84,15 @@
     <link rel="shortcut icon" href="/favicon.ico">
 
     
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-44726622-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
 
      <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_HTML"></script>
@@ -81,6 +101,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
     </script>
 
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700&display=swap" rel="stylesheet">
     <!--&lt;!&ndash; Load jQuery &ndash;&gt;-->
     <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
     <!--&lt;!&ndash; Load KaTeX &ndash;&gt;-->
@@ -91,7 +112,17 @@
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>-->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+    
 
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+    <script src="/css/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
 </head>
 
 
@@ -123,45 +154,31 @@
   <div class="site-wrap">
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
-    <div class="measure">
-      <a href="/" class="site-title">Cédric Colas's page</a>
+      <div class="measure">
+          <a href="/" class="site-title">
+              <img src="/flowers-logo.png">
+          </a>
       <nav class="site-nav">
         
 
 
+        <a class="nav-link"  href="https://flowers.inria.fr/"  target="_blank">Flowers Lab</a>
+
 
     
     
-    
-    
-        <a class="nav-link" href="/blog/">Blog</a>
-    
 
     
-
-    
-    
-    
-    
-        <a class="nav-link" href="/about/">About Pixyll</a>
+        <a class="nav-link" href="/publications/">Publications</a>
     
 
     
 
     
     
-    
-    
-        <a class="nav-link" href="/about/">About Pixyll</a>
-    
 
     
-
-    
-    
-    
-    
-        <a class="nav-link" href="/contact/">Say Hello</a>
+        <a class="nav-link" href="/about">About</a>
     
 
     
@@ -173,18 +190,20 @@
         <div class="social-icons">
   <div class="social-icons-right">
     
-      <a class="fa fa-github" href="https://github.com/ccolas"></a>
+      <a class="fa fa-github" href="https://github.com/flowersteam"></a>
     
     
     
     
     <a class="fa fa-rss" href="/feed.xml"></a>
     
+      <a class="fa fa-twitter" href="https://twitter.com/FlowersINRIA"></a>
     
     
     
     
-      <a class="fa fa-envelope" href="mailto:cedric.colas@inria.fr"></a>
+    
+      <a class="fa fa-envelope" href="mailto:pierre-yves.oudeyer@inria.fr"></a>
     
     
     
@@ -217,13 +236,16 @@
         <div class="post py3">
           <p class="post-meta">
 	    
-	      Mar 8, 2019
+	      Mar 26, 2020
 	    
-	  </p>
-          <a href="/mock_blog_post" class="post-link"><h3 class="h1 post-title">Mock Blog Post</h3></a>
+	        </p>
+          <a href="/intrinsically_motivated_discovery_of_diverse_patterns" class="post-link"><h3 class="h1 post-title">Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems</h3></a>
+          <div class="post-meta post-authors">
+               <a href="http://mayalenetcheverry.com">Mayalen Etcheverry</a> 
+          </div><br>
           <span class="post-summary">
             
-              This is an empty post.
+              Self-organisation occurs in many physical, chemical and biological systems, as well as in artificial systems like the Game of Life. Yet, these systems are still full of mysteries and we are far from fully grasping what structures can self-organize, how to represent and classify them, and how to predict their evolution. In this blog post, we present our recent paper which formulates the problem of automated discovery of diverse self-organized patterns in such systems. Using a continuous Game of Life as a testbed, we show how intrinsically-motivated goal exploration processes, initially developed for learning of inverse models in robotics, can efficiently be transposed to this novel application area.
             
           </span>
         </div>
@@ -231,41 +253,50 @@
         <div class="post py3">
           <p class="post-meta">
 	    
-	      Jan 8, 2019
+	      Mar 9, 2020
 	    
-	  </p>
+	        </p>
+          <a href="/curious_intrinsically_motivated_multi_modular_goal_rl" class="post-link"><h3 class="h1 post-title">Intrinsically Motivated Modular Multi-Goal RL</h3></a>
+          <div class="post-meta post-authors">
+               <a href="mailto:cedric.colas@inria.fr">Cédric Colas</a>
+          </div><br>
+          <span class="post-summary">
+            
+              In multi-goal RL, agents usually learn multiple variations of a unique task (e.g. reaching different positions). CURIOUS proposes to extend that setting to allow agents to target multiple types of goals within a unique controller (e.g. reach, pick and place, stack). Intrinsic motivations based on learning progress automatically organize learning trajectories, guiding agents to focus on easier goals before moving towards harder ones as the first are solved. Guided by learning progress, agents do not waste time on impossible tasks (with no learning progress) or tasks that are already solved. In case of sensory failure, agent detect a drop in performance (negative LP) and refocus on the corresponding goals to regain control.
+            
+          </span>
+        </div>
+      
+        <div class="post py3">
+          <p class="post-meta">
+	    
+	      Feb 20, 2020
+	    
+	        </p>
+          <a href="/autonomous_learning_of_disentangled_goal_representations" class="post-link"><h3 class="h1 post-title">Discovery of independently controllable features through autonomous goal setting</h3></a>
+          <div class="post-meta post-authors">
+               <a href="mailto:l.neirda@gmail.com">Adrien Laversanne-Finot</a>
+          </div><br>
+          <span class="post-summary">
+            
+              Despite recent breakthroughs in artificial intelligence, machine learning agents remain limited to tasks predefined by human engineers. The autonomous and simultaneous discovery and learning of many-tasks in an open world remains very challenging for reinforcement learning algorithms. In this blog post we explore recent advances in developmental learning to tackle the problem of how an agent can learn to represent, imagine and select its own goals.
+            
+          </span>
+        </div>
+      
+        <div class="post py3">
+          <p class="post-meta">
+	    
+	      Feb 17, 2020
+	    
+	        </p>
           <a href="/how_many_random_seeds" class="post-link"><h3 class="h1 post-title">How Many Random Seeds ?</h3></a>
+          <div class="post-meta post-authors">
+               <a href="mailto:cedric.colas@inria.fr">Cédric Colas</a>
+          </div><br>
           <span class="post-summary">
             
-              This is an empty post.
-            
-          </span>
-        </div>
-      
-        <div class="post py3">
-          <p class="post-meta">
-	    
-	      Jul 11, 2015
-	    
-	  </p>
-          <a href="/jekyll/pixyll/2015/07/11/announcing-pixyll-version-2/" class="post-link"><h3 class="h1 post-title">Announcing Version 2.0</h3></a>
-          <span class="post-summary">
-            
-              Now, Pixyll is lighter weight and more customizable than before.
-            
-          </span>
-        </div>
-      
-        <div class="post py3">
-          <p class="post-meta">
-	    
-	      Jun 11, 2014
-	    
-	  </p>
-          <a href="/jekyll/pixyll/2014/06/11/welcome-to-pixyll/" class="post-link"><h3 class="h1 post-title">Hello, Pixyll</h3></a>
-          <span class="post-summary">
-            
-              Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+              Reproducibility in Machine Learning and Deep Reinforcement Learning in particular has become a serious issue in the recent years. In this blog post, we present a statistical guide to perform rigorous comparison of RL algorithms.
             
           </span>
         </div>

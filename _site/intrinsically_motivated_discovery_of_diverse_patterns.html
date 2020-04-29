@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems &#8211; Developmental Systems, a Blog of the Flowers Lab</title>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Self-organisation occurs in many physical, chemical and biological systems, as well as in artificial systems like the Game of Life. Yet, these systems are still full of mysteries and we are far from fully grasping what structures can self-organize, how to represent and classify them, and how to predict their evolution. In this blog post, we present our recent paper which formulates the problem of automated discovery of diverse self-organized patterns in such systems. Using a continuous Game of Life as a testbed, we show how intrinsically-motivated goal exploration processes, initially developed for learning of inverse models in robotics, can efficiently be transposed to this novel application area.">
+    <meta name="robots" content="all">
+    <meta name="author" content="INRIA Flowers Team">
+    
+    <meta name="keywords" content="jekyll">
+    <link rel="canonical" href="http://localhost:4000/intrinsically_motivated_discovery_of_diverse_patterns">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?202004291649" type="text/css">
+
+    <!-- Fonts -->
+    
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- MathJax -->
+    
+    <script type="text/javascript" async
+        src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <!-- Verifications -->
+    
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems">
+    <meta property="og:description" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta property="og:url" content="http://localhost:4000/intrinsically_motivated_discovery_of_diverse_patterns">
+    <meta property="og:site_name" content="Developmental Systems, a Blog of the Flowers Lab">
+    
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
+    
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@FlowersINRIA" />
+        <meta name="twitter:creator" content="@FlowersINRIA" />
+    
+    <meta name="twitter:title" content="Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems" />
+    <meta name="twitter:description" content="Self-organisation occurs in many physical, chemical and biological systems, as well as in artificial systems like the Game of Life. Yet, these systems are still full of mysteries and we are far from fully grasping what structures can self-organize, how to represent and classify them, and how to predict their evolution. In this blog post, we present our recent paper which formulates the problem of automated discovery of diverse self-organized patterns in such systems. Using a continuous Game of Life as a testbed, we show how intrinsically-motivated goal exploration processes, initially developed for learning of inverse models in robotics, can efficiently be transposed to this novel application area." />
+    <meta name="twitter:url" content="http://localhost:4000/intrinsically_motivated_discovery_of_diverse_patterns" />
+    
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
+    
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-44726622-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+
+     <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_HTML"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700&display=swap" rel="stylesheet">
+    <!--&lt;!&ndash; Load jQuery &ndash;&gt;-->
+    <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+    <!--&lt;!&ndash; Load KaTeX &ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>&ndash;&gt;-->
+
+    <!--<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+    
+
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+    <script src="/css/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
+</head>
+
+
+<body class="site">
+  
+	
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: 'none',
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [['$$','$$']],
+      processEnvironments: false
+    },
+    // show equation numbers
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    'HTML-CSS': {
+      imageFont: null
+    }
+  });
+</script>
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+      <div class="measure">
+          <a href="/" class="site-title">
+              <img src="/flowers-logo.png">
+          </a>
+      <nav class="site-nav">
+        
+
+
+        <a class="nav-link"  href="https://flowers.inria.fr/"  target="_blank">Flowers Lab</a>
+
+
+    
+    
+
+    
+        <a class="nav-link" href="/publications/">Publications</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/about">About</a>
+    
+
+    
+
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+      <a class="fa fa-github" href="https://github.com/flowersteam"></a>
+    
+    
+    
+    
+    <a class="fa fa-rss" href="/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/FlowersINRIA"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:pierre-yves.oudeyer@inria.fr"></a>
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems</h1>
+  <span class="post-meta">
+       <a href="http://mayalenetcheverry.com">Mayalen Etcheverry</a> 
+  </span><br>
+  <span class="post-meta">Mar 26, 2020</span><br>
+  
+  <span class="post-meta small">
+  
+    26 minute read
+  
+  </span>
+</div>
+
+<article class="post-content">
+  <h2 id="motivation-exploration-of-self-organizing-systems">Motivation: Exploration of self-organizing systems</h2>
+
+<div id="white-arrow" class="flexslider">
+  <ul class="slides">
+  <li>
+     <img src="media/jpg/49654884243_85bc40b496_k.jpg" />
+     <p style="text-align:left; font-size: 18px;"> About a third of known galaxies are flat spirals with bulging centers. <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/freetheimage/49654884243/in/photolist-2iDQg8R-PjVxxF-j4Hwby-2fGig3N-priEv3-Te2vqD-dWS2ti-27qQEMT-MBQuvn-28AQvNx-7GGfUM-23ud4dp-NLiSfh-S6ZYQ4-24DvfPw-7RY52N-JgNddt-5SM5dQ-2guKM3y-2iM4HE9-7dzzxf-5SGJQF-2fhspAW-2i2METs-Pf5NUy-JJ5ak7-KmvqnU-2i5YnkF-2iGxdqF-JxGD8s-5SkRZd-2i2HnKx-Y8VN3W-2i2goEu-CgECTm-2iJbE8D-2ibovBC-uTxq2E-tvQXW7-2ik3Q5b-PTHCMo-2f16iq6-2iEerHS-nbxsKE-2iLLrHo-mhaDLa-2hZKfcy-5RhgKU-2itcAfx-2i3191F"> In a galaxy far, far away... </a> / Mark Freeth / CC BY 2.0 </span></p>
+    </li>
+
+    <li>
+     <img src="media/jpg/38422248024_acba4f99f9_k.jpg" />
+       <p style="text-align:left; font-size: 18px;"> The Tatra Mountains were shaped by past glaciations forming peaks, cirques and lakes.  <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/75487768@N04/38422248024/in/photolist-21xf4J9-JRMGJH-N9vpzy-n2oGxj-P7XnpS-23mWx8L-27bd7uE-hnwqti-29Ya3bq-24KY2fh-DMAkpi-bpQQFi-MoREwn-CPreWK-23jNvCZ-bnj5Fr-bnJD1x-PzxcXy-bs7Ma4-bs7Gox-ZuYB1s-NeWcHY-Ep6EqU-bnj3uK-bpQM4p-MGcKRH-MC55mp-NEagFx-273Dhnx-hnvhBS-PfHnSJ-h1ynuW-hagyS5-bnivhX-21SX1iU-buw3HQ-23t9cvG-Pj1c4m-2cuT3sK-hnuNnp-2cVhYFz-ZdkzHW-bpQ3ZK-bpQPnv-bs7RNF-4mi1mx-nLVFM5-buw2qS-29zzdAj-pd2tRn"> moutain </a> / CC BY-NC-ND 2.0 </span></p>
+    </li>
+
+    <li>
+     <img src="media/jpg/23722989626_905f4df63b_b.jpg" />
+       <p style="text-align:left; font-size: 18px;"> Sand dune tend to self-organize in long parallel ripples.  <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/jeffreysullivan/23722989626/in/photolist-C9jwjw-ft4VrM-e1xGwb-o4uzeC-2iLHGDA-DF89Xz-fUSP3q-Sqo2A7-FVpFpV-Ah7HYi-5Rz7xn-cjiV9h-wyWKFL-23oFFDS-2iJTPwX-2vTQ-2a1oy7E-hbP1dB-pKtx5C-28Uph-D9FDKW-26LpXHS-Shxha2-D9FJqC-ye2zNb-Vd3qdz-G6e58p-rQkiYG-Bbbfxj-vrHCrG-2cMfaiw-hadLHs-ADk26A-ySgpV-AP2yyA-26VAyv3-XQUe1m-9aZFHC-BK1p9r-ec591n-226usMa-ya9Qwd-pvhyPt-2gsEw1h-ACDNCT-FvtD6W-oo3s3L-RpoVQZ-2eJrf9W-5BoUXx"> Sand Dune Patterns and Shapes </a> / Jeff Sullivan / CC BY 2.0 </span></p>
+    </li>
+
+     <li>
+      <img src="media/jpg/2124208676_206d76a469_b.jpg" />
+      <p style="text-align:left; font-size: 18px;"> The linear flight formations of a migratory flock of Sandhill Cranes.  <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/10326501@N02/2124208676/in/photolist-4eH8ew-dCMKxK-6aDi3v-SMpd8C-7QvxGy-fwJ4zt-PeNcc9-rxFmP7-BHB5Co-9nxrg4-F62jyL-6QsxP-bny7fe-TeEPAw-5tHPg2-PeNbHy-dMch2r-RB2TJF-7ewoYA-SQZrN6-Nwkeqt-6b8hCa-6NFqj-bmJrpv-Pm19b4-Sc16k7-jEXSw5-pQyoNY-EkRFRa-brsQ1c-77AC8q-Mv69Dv-3oj7kY-q3uraf-7fUEVj-oyUstV-9vKJUm-CtrCb1-48pqbP-dD9pQ1-aLB5Yp-bkGTUL-kRATb6-h91wMQ-7mgRZ8-hGDVCp-3cy1is-darWZV-dCMJDK-boKwC8"> In Flight </a> / CC BY 2.0 </span></p>
+    </li>
+
+     <li>
+      <img src="media/jpg/34944546716_3e7b04a6c9_k.jpg" />
+      <p style="text-align:left; font-size: 18px;"> Honeybee colonies naturally swarm around tree limbs and shrubs.  <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/robbertholf/34944546716/"> Beekeeping Bees </a> / Rob Bertholf/ CC BY 2.0 </span></p>
+    </li>
+
+  <li>
+      <img src="media/jpg/16647036072_69a1355c86_k.jpg" />
+      <p style="text-align:left; font-size: 18px;"> The natural, hexagon geometry of a snowflake. <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/doundounba/16647036072/in/photolist-5TrGuh-dFHbkb-2fauUR7-Cv4J4q-vv5F-PVDWvb-5LU46Q-e6KePo-PRdchG-Te5Yq3-62S1Bc-TnXEYn-jZvBiM-GjfNF5-RQedrb-q6aJ7d-dBqnnT-DdXB8d-rn3pRj-2brWHHu-9aeNRM-PkKwi9-bcBnBK-hVym2E-4DSZj7-23MMdaB-22b4T3q-nFJYdP-r3Ttq4-p7jYyD-9fBFLg-2XUyJs-98NJvp-bWH4K-dTSP9Y-dTM64x-qmqQeS-9hNPnp-dTSpQb-dTgBy6-7BE2Dn-dTSrgC-psWk1S-dTLW9M-dNmZzt-dTLPJM-qU8mUU-dXe5i3-4fpmcf-dTSxsh/">Flakes In Situ</a> / Pascal Gaudette/ CC BY-NC-SA 2.0 </span></p>
+    </li>
+
+    <li>
+      <img src="media/jpg/28006626771_532b5e6488_k.jpg" />
+      <p style="text-align:left; font-size: 18px;"> Spiral stair-stepped structure of bismuth crystal.  <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/19779889@N00/28006626771/"> Bismuth </a> / CC BY-NC-SA 2.0 </span></p>
+    </li>
+    
+    <li>
+      <img src="media/jpg/3816875371_3bf744514e_k.jpg" />
+      <p style="text-align:left; font-size: 18px;"> Every zebra has a unique pattern of black and white stripes. <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/eggshapedkath/3816875371/in/photolist-JTwrKs-9DSoae-dFHKhD-6gQXVd-kdQgET-LhdX6a-druE1f-mJ98pX-bSk3Mr-7TUkZ4-5avEeP-5TZXZN-8gC2oy-UctN-bCMZsa-spKQSJ-7eBSZg-c6rPVU-bbqHmi-SDNyyp-9WuisP-79Btyx-7eFNe5-xqPkWn-gmrBmg-266gEDu-7P717G-g1xWW-88hY3J-b9QFXk-3i8BTn-ctgCMG-79FkDU-6gLJpv-aaHfPa-3i7Mgv-ajdA79-6Phu54-c6rMZ5-amNqct-55RRRM-2wc3oF-wgHqtA-h8ojeg-wwMWDd-kGKw3n-7TUp6H-ah2PY1-FLkyUg-ajaKn2"> zebras </a> / Kathleen Steeden / CC BY 2.0 </span></p>
+    </li>
+
+      <li>
+      <img src="media/jpg/18353178535_b065721df0_k.jpg" />
+      <p style="text-align:left; font-size: 18px;"> Peacock  feathers are decorated with eyelike patterns in bright blue and brown. <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/pamas/18353178535/"> Peacock </a> / Esin Üstün  / CC BY 2.0 </span></p>
+    </li>
+
+      <li>
+      <img src="media/jpg/37403467520_d67679809b_k.jpg" />
+      <p style="text-align:left; font-size: 18px;"> Cells of bur-reed aquatic plants naturally thicken outer walls and arrange in V shape. <span style="float:right; font-size:12px"> <a href="https://www.flickr.com/photos/146824358@N03/37403467520/in/photolist-YZdxM3-oufmBa-WAaZfP-VjCa8Y-2iLHXMo-UpyxVY-26bbZ7b-28y7DjC-29Juavb-2bjAdnk-7C7viq-LnzUqh-8zHjjx-XT2FoC-GZEkjC-HTWGNc-HsQKRN-73NuqB-H93QSu-GCRvBe-HyoMBn-7Se7Zx-HYzip5-7FU7ZH-qLm139-2hTVyV1-rsJEWK-2iJn4aM-CAj4Dn-WKbwym-2eu68YK-KGjEUW-RQAT3D-GQLrMa-p15Gnc-rgZAW8-oJWGeV-EXbjbf-Rg5o5m-GC7S8R-oeRiar-RAb88V-2ggRGu-tx3p97-MFvrUU-nE3riU-wLm2Pg-MKNwz9-ypcZwH-osUJzE/"> Tannin Cells in Sparganium </a> </span></p>
+    </li>
+
+  </ul>
+</div>
+
+<p>Nature, from its spiral galaxies, shaped landscapes, organized populations, fine inorganic compounds and geometric animal skin patterns to its living cells, is made out of fascinating complex forms and patterns. These natural wonders are the results of a phenomenon called <em>self-organisation</em>, that characterizes the spontaneous emergence of some form of global order out of local interactions.</p>
+
+<p>Self-organisation occurs in many physical, chemical and biological systems, as well as in artificial systems like the <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a>, and understanding its processes remains an active area of research. While certain self-organizing systems are now well understood with advanced analytical models (<a href="https://www.philipball.co.uk/the-self-made-tapestry-pattern-formation-in-nature">Ball, 1999</a>, <a href="https://press.princeton.edu/books/paperback/9780691116242/self-organization-in-biological-systems">Camazine et al., 2003</a>), many others are still full of mysteries. Sometimes scientists do not even know yet a good mathematical expression of the basic physico-chemical properties at play, like in <a href="https://www.nature.com/articles/ncomms6571">oil droplet systems</a> used in studying the origins of life. For some other systems, like the Game of Life, one fully knows the simple basic rules at the local level, and yet we are still far from fully grasping what structures can self-organize, how to represent and classify them, and how to predict their evolution. In many cases, the discoveries of scientists about these systems are still relying on ad hoc trial-and-error experimentations.</p>
+
+<blockquote>
+  <p>“Becoming sufficiently familiar with something is a substitute for understanding it”</p>
+
+  <p>– <cite>John Conway, inventor of the Game of Life.</cite></p>
+</blockquote>
+
+<p>This blogpost presents our recent <a href="https://arxiv.org/abs/1908.06663">paper (ICLR 2020)</a>, where we formulate the problem of <strong>automated discovery of diverse self-organized patterns</strong>. 
+Our motivation is to provide novel AI methods to automatically explore and map the diversity of possible emergent structures and, in turn, increase our global understanding of these fundamental systems.</p>
+<div style="background-color: #eee; padding-left: 20px; margin: 0px; text-align: center">
+<p style="text-align: justify;">
+<u>Paper</u>: <b>Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems</b>. <br />
+Chris Reinke, Mayalen Etcheverry and Pierre-Yves Oudeyer. <br />
+In <i>International Conference on Learning Representations</i>, 2020.
+</p>
+</div>
+
+<h2 id="testbed-system-a-continuous-game-of-life">Testbed system: A continuous Game of Life</h2>
+<p>We are interested in developing algorithms to autonomously explore a <strong>given target system</strong> which is characterized by a set of initial conditions (controllable system parameters) and a set of <em>update rules</em> (iteratively applied to evolve the state of the system through time).<br />
+We concentrate on <strong>morphogenetic systems</strong>, referring to processes by which individual parts of a developing system come to self-organize into forming a structured morphological pattern, mimicking the biological process of <em>morphogenesis</em> which governs the spatial distribution of cells during the embryonic development of an organism. Such systems are typically observed as raw high-dimensional images. We leave aside the question of <em>how</em> to design such a system, but for those interested make sure to read the last section of this post which discusses potential target systems for our approach including very exciting recent ones, ranging from “learnable” computational models, “wet” automated systems to “living” biologically synthetized organisms.</p>
+
+<p>In this work, we tested our approach on an existing cellular-automata model. 
+<a href="https://en.wikipedia.org/wiki/Cellular_automaton">Cellular Automata</a> (CA) are rich abstract computational models (capable of universal computation) and yet can be described with only a simple and compact set of rules. 
+CA, despite their apparent simplicity, have shown to <a href="https://www.nature.com/articles/311419a0.pdf?origin=ppub">generate a wide range of complex behaviours and dynamics</a> resembling phenomenas that we can observe in nature, making them very <a href="https://press.princeton.edu/books/paperback/9780691116242/self-organization-in-biological-systems">attractive models to study self-organization</a>.</p>
+
+<div style="float: right; text-align: center; margin-top: 40px; margin-left: 10px;">
+<img src="media/gif/spaceship.gif" style="width: 100px" />
+<br />
+<p style="font-size: 14px;"> The lightweight spaceship </p>
+<br />
+<img src="media/gif/Gosperglidergun.gif" style="width: 150px" />
+<br />
+<p style="font-size: 14px;"> Gosper glider gun </p>
+</div>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life (GoL)</a>, introduced in the 70’s by the mathematician <a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John Conway</a>, is probably the most famous example of cellular automaton. GoL is composed of a 2D grid square of cells, each cell being either “dead” or “alive”. At each time step, every cell interacts with its 8 neighbors and can survive, die or give birth according to very simple rules inspired from real life like <em>“If the cell has enough neighbors (not isolated) and not too many (not overpopulated), the cell stay alive in the next time step (survival)”</em>. Depending on the initial conditions or “seed” of the system (here the initial pattern), the cells can evolve and form various patterns, such as the well-knowns “spaceship” and “glider gun”.</p>
+
+<p>In the paper, we use a recently-developed generalisation of Conway’s Game of Life, called <a href="https://arxiv.org/abs/1812.05433.pdf">Lenia</a>. As shown in the below figure, Lenia extends Conway’s discrete GoL into a <strong>continuous GoL</strong> by:<br />
+1) replacing binary states with continuous float values<br />
+2) extending the 8-neighborhood to a circular neighborhood of parametrized radius <strong>R</strong><br />
+3) weighting the neighbors influence by a parametrized concentric ring kernel <strong>K</strong><br />
+4) replacing the if/else update rule by a smooth rule that computes the next state from a parametrized mapping function <strong>g</strong> and a step size <strong>$\Delta t$</strong>.</p>
+<div style="display: flex; justify-content: space-between; ">
+<div style="display: flex; flex-direction: column; border-style: solid; border-radius: 25px; border-width: 2px; padding: 10px;">
+<img src="media/svg/discrete_gol.svg" /> 
+<img src="media/gif/Gospers_glider_gun.gif" style="margin: 15px; margin-top: 25px;" /> 
+</div>
+<div style="display: flex; flex-direction: column; border-style: solid; border-radius: 25px; border-width: 2px; padding: 10px;">
+<img src="media/svg/continuous_gol.svg" style="padding-top: 12px" />
+<img src="media/gif/lenia.gif" style="margin: 15px;" />
+</div>
+</div>
+
+<p>Lenia (latin for “smooth creatures”) can generate many interesting self-organized patterns. The below video showcases some examples of emerging structures, which have been discovered by its creator <a href="https://chakazul.github.io/">Bert Chan</a> and which seem to look and behave like microscopic organisms:</p>
+<div align="center"><a name="ref_video"><iframe src="https://www.youtube.com/embed/iE46jKYcI4Y" style="width: 720px; height: 405px;"></iframe></a></div>
+
+<p>However, finding these self-organized patterns has so far relied on <strong>manual exploration of the parameters</strong> and <strong>on the human eye to identify what an interesting pattern is.</strong>  A major challenge is how we can <strong>automate this discovery process</strong>, which is the purpose of our method.</p>
+
+<h2 id="automated-discovery-in-complex-systems">Automated discovery in complex systems</h2>
+<p>Naively exploring the parameters with random or systematic grid search is not efficient for the considered pattern-producing systems.
+Their parameter spaces are usually very high dimensional and, in cellular-automata like Lenia, a vast area of the parameters will tend to produce “dead” patterns (with all cells being zeros or ones). Therefore, random exploration will tend to fall into this area and miss out more interesting structures.
+How can we drive exploration in this high-dimensional parameter space in order to discover a high diversity of structures?</p>
+<div style="display: box;  text-align: center; border-style: solid; border-radius: 25px; border-width: 2px; margin-left: auto;">
+<p style="float: left; font-size: 18px; font-weight: bold; text-decoration: underline; margin-left: 20px"> Lenia's "explorable" parameters: </p>
+<img src="media/png/lenia_parameters.png" style="margin-top: -20px" /> 
+</div>
+
+<h3 id="intrinsically-motivated-goal-exploration-processes-imgeps">Intrinsically-Motivated Goal Exploration Processes (IMGEPs)</h3>
+<p>We propose to transpose <em>intrinsically-motivated</em> or <em>curiosity-driven</em> goal exploration processes (<a href="https://arxiv.org/abs/1301.4862">IMGEPs</a>), a recent family of machine learning algorithms initially developed for learning of inverse models in robotics, to our target application of automated pattern discovery. Before diving into the wonderful world of self-organized structures, let’s first explain the basics of IMGEP in a robotics experiment. As we well see, the two domains share many properties.</p>
+
+<p>An IMGEP is an algorithmic process generating a <strong>sequence of experiments</strong> to explore the parameters of a system by <strong>targeting self-generated goals</strong>. Here we focus on population-based IMGEPs, simply denoted IMGEPs, but there also exist goal-conditioned IMGEPs using Deep RL techniques, such as <a href="https://arxiv.org/abs/1810.06284">CURIOUS</a>, <a href="https://arxiv.org/abs/1807.04742">RIG</a> and <a href="https://arxiv.org/abs/1903.03698">Skew-Fit</a>.</p>
+
+<p>Coming from the field of <a href="https://en.wikipedia.org/wiki/Developmental_robotics">developmental robotics</a>, these algorithms have shown to enable robots to autonomously explore their environment and to learn what effects can be produced by their actions.
+For instance, in the below video we see how a humanoid robot, which initially knows nothing about its environment, can explore its body movements and progressively discover how to interact with the various objects and tools in the scene (<a href="https://arxiv.org/abs/1708.02190.pdf">Forestier et al., 2017</a>).</p>
+<div align="center"><iframe src="https://www.youtube.com/embed/NOLAwD4ZTW0" style="width: 720px; height: 405px;"></iframe></div>
+<p>To explore a system, an IMGEP uses a goal space $\mathcal{T}$ that represents relevant features of the observation $o$, computed using an encoding function $\hat{g}=R(o)$.<br />
+As shown in the below figure, the exploration process iterates N times through:</p>
+<ol>
+  <li>sample a goal from a goal sampling distribution $g \sim G(H)$</li>
+  <li>infer corresponding parameter $\theta$ using a parameter sampling policy $\Pi= Pr(\theta;g,H)$</li>
+  <li>roll-out an experiment with $\theta$, observe the outcome $o$, compute encoding $R(o)$</li>
+  <li>store the parameter-outcome pair in an explicit memory of the history $H$</li>
+</ol>
+
+<p>In this example, the parameter-space was a 32-dimensional dynamic motion primitive and the goal space described the trajectories of the different objects in the world (such as the ball or the white toy). The IMGEP goal-sampling strategy consisted in targeting goals that maximize the learning progress of the robot.</p>
+
+<div class="flexslider">
+  <ul class="slides">
+  <li>
+    <div style="border-style: solid; border-radius: 25px; border-width: 2px;">
+      <p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> IMGEPs applied to developmental robotics systems </p>
+      <img src="media/svg/imgep_robotics.svg" />
+    </div>
+  </li>
+
+<li>
+  <div style="border-style: solid; border-radius: 25px; border-width: 2px; margin-bottom: 10px;">
+    <p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> IMGEPs applied to morphogenetic systems </p>
+    <img src="media/svg/imgep_lenia.svg" />
+  </div>
+  </li>
+
+  </ul>
+</div>
+
+<p>As illustrated by the above figure, the IMGEP framework can be transposed to our target application of automated pattern discovery. Here, the actions of our artificial “scientist” agent consist in choosing a set of values for the initial conditions (parameters $\theta$), then let the system rollout and observe the emerging pattern evolve through time (observation $o$). We aim to <strong>maximize the diversity of observations within a limited budget of N experiments</strong>.<br />
+Different goal and parameter sampling mechanisms can be used within the IMGEP framework. Here, we adopted the following strategy:</p>
+<ul>
+  <li>parameters are sampled by 1) given a goal, selecting the parameter from the history whose corresponding outcome is most similar in the goal space; 2) mutating it by a random process.</li>
+  <li>the goal sampling policy is a uniform distribution over a hypercube in $\mathcal{T}$ chosen to be large enough to bias exploration towards the frontiers of known goals and incentivize diversity (thus we do not use learning progress as in the robot experiment above, but such an approach was shown to be already <a href="https://arxiv.org/abs/1301.4862">a strong form of IMGEP</a> with dynamics similar to <a href="https://eplex.cs.ucf.edu/papers/lehman_alife08.pdf">novelty search</a>).</li>
+</ul>
+
+<p>However, several challenges arise in order to successfully apply this strategy.</p>
+
+<h3 id="first-challenge-how-to-characterize-relevant-features-of-the-observed-patterns">First challenge: How to characterize “relevant features” of the observed patterns?</h3>
+<p>For IMGEPs the definition of the goal space $\mathcal{T}$  and its corresponding encoder $R$ are a critical part. In the robotic example, the experimenter had prior knowledge about what are relevant descriptors of the robot trajectory and could use them as goal space. However in our setting, we do not know what are useful features to characterize the patterns. Features that describe their form and extension might be interesting options, but how to define and compute them from the raw pixel observations is unclear.</p>
+
+<p>Another approach is to <strong>learn goal space features by unsupervised representation learning</strong>, using a neural network to learn the mapping $R: O \rightarrow \mathcal{T}$. For instance, recent work in goal-directed exploration for robotics uses <a href="https://arxiv.org/abs/1312.6114">deep variational autoencoders (VAEs)</a> to map the raw pixel perception of a robot’s visual scene to compact goal representations.</p>
+<div style="border-style: solid; border-radius: 25px; border-width: 2px; padding: 5px;">
+<p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> Learning of goal space with deep Variational Auto-Encoder networks (VAE): </p>
+<img src="media/png/betaVAE.png" /> 
+</div>
+<p>VAEs are trained to reconstruct an input image after compressing it into a compact latent representation (only 8 dimensions here). The training criterion is the pixel-wise reconstruction error between the input image and the reconstructed output. VAEs do not need any supervision, removing the need for human expert knowledge to extract descriptors out of the patterns.</p>
+
+<p>In previous population-based IMGEP approaches (<a href="https://arxiv.org/pdf/1803.00781.pdf">Péré et al., 2018</a>; <a href="https://arxiv.org/abs/1807.01521">Laversanne-Finot et al., 2018</a>), the VAE was learned on a prerecorded dataset of observations before the actual start of the exploration, and then kept fixed during exploration. This approach can be problematic in our case, as a fix set of precollected examples can hardly be representative of the actual diversity of patterns that the system can produce, limiting the possibilities to discover novel patterns beyond the distribution of pretraining examples.</p>
+
+<p>Therefore, we incorporate the training of the VAE in an <strong>online manner</strong> during exploration. The autoencoder is trained periodically, for instance every 100 exploration runs,  on all the patterns explored so far. Importance sampling is used to give more weight to recently discovered patterns. A similar framework to ours has also been used in the context of goal-directed reinforcement learning (<a href="https://arxiv.org/abs/1807.04742">Nair et al., 2018</a>; <a href="https://arxiv.org/abs/1903.03698">Pong et al., 2019</a>).</p>
+
+<h3 id="second-challenge-how-to-effectively-parametrize-the-initial-state-">Second challenge: How to effectively parametrize the initial state ?</h3>
+<p>Another critical part for the success of IMGEPs in systems with high-dimensional parameter spaces, is the ability to effectively encode and initialize the initial state. A key ingredient in the case of  robots to explore their surroundings was the use of <a href="https://www.sciencedirect.com/science/article/pii/S0921889012001716?casa_token=eMuS_v0yy68AAAAA:cHWY6-Qb0iFMbeV4M6PgfTezPv9r5ROAFgIcGI1SpQhRgDa2_8VKXTTSSCJxwnXZ2FS0MaE">dynamic motion primitives (DMPs)</a> to encode the space of body motions and produce structured movements over time.</p>
+
+<p>In the same way as it is inefficient for a robot to explore its body actions from the perspective of low-level actuator commands, it is inefficient in our case to explore and generate patterns from the pixel-wise perspective. We need an efficient way to encode and randomly initialize Lenia’s initial state (256x256 grid cell). Using a simple random initialization of each individual cell will generate white noise patterns which tend to evolve into dead or global patterns spanning the whole grid, missing out other structures such as spatially localized patterns.</p>
+<div style="display: box;  text-align: center; border-style: solid; border-radius: 25px; border-width: 2px; margin-left: auto; margin-top: -10px; margin-bottom: 10px; ">
+<p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline; margin-left: 20px"> Problem with random sampling of initial states: </p>
+<img src="media/png/white_noise_initialization.png" style="margin-top: -20px;" /> 
+</div>
+
+<p>We solved the sampling problem for the initial states by transposing the idea of structured primitives into a similar mechanism using <a href="https://aaai.org/Library/Symposia/Fall/2006/fs06-03-008.php">Compositional Pattern Producing Networks (CPPNs)</a>. CPPNs are recurrent neural networks that allow us to generate structured patterns, as shown in the above figure. The CPPNs are used as part of the parameters $\theta$ and are defined by their network structure (number of neurons, connections between neurons) and their connection weights. 
+CPPNs can be “evolved” using random mutations for their weights and structure. We use this process of random mutations in our parameter sampling strategy. To summarize, <strong>CPPNs provide us an efficient way to produce structured patterns and to smoothly evolve already explored configurations</strong>.</p>
+<div style="border-style: solid; border-radius: 25px; border-width: 2px; padding: 5px;">
+<p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> Compositional Pattern Producing Networks (CPPN): </p>
+<img src="media/png/cppn_1.png" style="width: 55%;" /> 
+<img src="media/png/cppn_2.png" style="width: 40%; margin-left: 20px;" /> 
+</div>
+
+<p>For a better understanding on CPPN and how they can be used, we recommend <a href="https://towardsdatascience.com/understanding-compositional-pattern-producing-networks-810f6bef1b88">this blogpost</a>.</p>
+
+<h2 id="results-of-our-automated-discoveries">Results of our automated discoveries</h2>
+<p>We used our method to identify a high diversity of patterns in Lenia and evaluated its performance with other algorithms.<br />
+To get a better insight into the results, this section first provides examples of  “interesting” identified patterns; then discusses the differences between the discovered patterns by several IMGEP variants; and finally proposes a quantitative way to evaluate the obtained diversity.</p>
+
+<h3 id="examples-of-identified-patterns">Examples of identified patterns</h3>
+<div style="display: flex;  justify-content: space-between;">
+<video muted="" autoplay="" loop="" style="width: 24%; border-style: solid; border-radius: 25px; border-width: 2px;">
+<source src="media/video/pattern1.webm" type="video/webm" />
+Your browser does not support the video tag.
+</video> 
+<video muted="" autoplay="" loop="" style="width: 24%; border-style: solid; border-radius: 25px; border-width: 2px;">
+<source src="media/video/pattern6.webm" type="video/webm" />
+Your browser does not support the video tag.
+</video> 
+<video muted="" autoplay="" loop="" style="width: 24%; border-style: solid; border-radius: 25px; border-width: 2px;">
+<source src="media/video/pattern3.webm" type="video/webm" />
+Your browser does not support the video tag.
+</video> 
+<video muted="" autoplay="" loop="" style="width: 24%; border-style: solid; border-radius: 25px; border-width: 2px;">
+<source src="media/video/pattern7.webm" type="video/webm" />
+Your browser does not support the video tag.
+</video> 
+</div>
+
+<div style="margin-top: 5px; margin-bottom: 10px; display: flex; justify-content: space-between;">
+<video muted="" autoplay="" loop="" style="width: 24%; border-style: solid; border-radius: 25px; border-width: 2px; padding-bottom: 2px;">
+<source src="media/video/pattern5.webm" type="video/webm" />
+Your browser does not support the video tag.
+</video> 
+<video muted="" autoplay="" loop="" style="width: 24%; border-style: solid; border-radius: 25px; border-width: 2px; padding-bottom: 2px;">
+<source src="media/video/pattern2.webm" type="video/webm" />
+Your browser does not support the video tag.
+</video> 
+<video muted="" autoplay="" loop="" style="width: 24%; border-style: solid; border-radius: 25px; border-width: 2px; padding-bottom: 2px;">
+<source src="media/video/pattern8.webm" type="video/webm" />
+Your browser does not support the video tag.
+</video> 
+<video muted="" autoplay="" loop="" style="width: 24%; border-style: solid; border-radius: 25px; border-width: 2px; padding-bottom: 2px;">
+<source src="media/video/pattern4.webm" type="video/webm" />
+Your browser does not support the video tag.
+</video> 
+</div>
+
+<p>These videos showcase some patterns that were autonomously discovered by our approach (IMGEP with online learned goal space).
+These results, that we subjectively qualify as <em>interesting</em>, seem to suggest that our artificial “scientist” is able to discover complex patterns resembling both the “animal patterns” manually identified by Lenia’s creator and “global patterns” with interesting spreading dynamics.</p>
+
+<h3 id="impact-of-the-choice-of-the-representation">Impact of the choice of the representation</h3>
+<p>One of the most striking points of our results  is that the <strong>choice of the representation</strong> for the goal space will <strong>strongly bias the results of exploration</strong>. <br />
+To illustrate this, we show below the complete database of discoveries that were made by three variants of our IMGEP algorithm, namely:</p>
+<ul>
+  <li><strong>IMGEP-OGL</strong>: main IMGEP variant that uses, as goal space representation, a VAE that is trained in an online manner on the patterns discovered during the exploration process</li>
+  <li><strong>IMGEP-HGS</strong>: IMGEP variant that uses a hand-defined goal space representation composed of 5 features, proposed in the original Lenia’s paper, that characterize typical computer-vision properties of the final patterns (such as the activity, density and (as)symmetry)</li>
+  <li><strong>IMGEP-RGS</strong>: an ablated IMGEP variant that uses, as goal space representation, a randomly-initialized neural embedding network (with the same architecture than the VAE’s encoder of the main variant)</li>
+</ul>
+
+<div class="flexslider">
+<ul class="slides">
+
+<li>
+<div style="border-style: solid; border-radius: 25px; border-width: 2px;">
+<p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> IMGEP-OGL: goal space learned online with a beta-VAE </p>
+<p style="text-align:center; font-size: 16px; margin-top:-20px"> 5000 patterns discovered by IMGEP-OGL visualized with 3D PCA reduction of the original 8D goal space. </p>
+<div style="overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">
+<iframe id="iframe1" name="visualisation" src="" scrolling="no" style="height:775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px ">
+</iframe>
+</div>
+</div>
+<p style="text-align:center; font-size: 16px;"> <i class="fa fa-hand-pointer-o"></i> 
+rotate (left click), pan (right click) and scroll (mouse wheel) through the discovered patterns
+</p>
+</li>
+
+<li>
+<div style="border-style: solid; border-radius: 25px; border-width: 2px;">
+<p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> IMGEP-HGS: goal space defined with hand-defined features</p>
+<p style="text-align:center; font-size: 16px; margin-top:-20px"> 5000 patterns discovered by IMGEP-OGL visualized with 3D PCA reduction of the original 5D goal space. </p>
+<div style="overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">
+<iframe id="iframe2" name="visualisation" src="" scrolling="no" style="height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px ">
+</iframe>
+</div>
+</div>
+<p style="text-align:center; font-size: 16px;"> <i class="fa fa-hand-pointer-o"></i> 
+rotate (left click), pan (right click) and scroll (mouse wheel) through the discovered patterns
+</p>
+</li>
+
+<li>
+<div style="border-style: solid; border-radius: 25px; border-width: 2px;">
+<p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> IMGEP-RGS: goal space defined with a randomly-initialised NN </p>
+<p style="text-align:center; font-size: 16px; margin-top:-20px"> 5000 patterns discovered by IMGEP-RGS visualized with 3D PCA reduction of the original 8D goal space. </p>
+<div style="overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">
+<iframe id="iframe3" name="visualisation" src="" scrolling="no" style="height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px ">
+</iframe>
+</div>
+</div>
+<p style="text-align:center; font-size: 16px;"> <i class="fa fa-hand-pointer-o"></i> 
+rotate (left click), pan (right click) and scroll (mouse wheel) through the discovered patterns
+</p>
+</li>
+
+</ul>
+</div>
+
+<script type="text/javascript">
+$(window).load(function() {
+$("#iframe1").attr("src", "https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_ogl_config.json");
+$("#iframe2").attr("src", "https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_hgs_config.json");
+$("#iframe3").attr("src", "https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_rgs_config.json");
+});
+</script>
+
+<p>As we can see, using a learned (OGL), hand-defined (HGS) or random (RGS) goal space will have a strong influence on the final discoveries of the IMGEP.
+It seems that IMGEP-OGL is more inclined to discover spatially localized patterns whereas IMGEP-HGS is more inclined toward global patterns and IMGEP-RGS toward high-frequency “stripes” patterns.
+These findings strongly suggest that the ability of a representation R to better describe and discriminate a certain <em>type</em> of patterns will drive the IMGEP to find a high diversity for this <em>type</em> of patterns. For instance, in our IMGEP-OGL experiment the VAE learned to encode the general form and shape of patterns but ignored fine-grained structures (as it is well known VAEs can poorly reconstruct high-frequency details). As a consequence, all the fine-grained “texture” patterns are occupying a small area of the goal space, and therefore are less often sampled as target goals during the IMGEP exploration process.</p>
+
+<h3 id="diversity-of-identified-patterns">Diversity of identified patterns</h3>
+<p>Our main motivation is to find a high <strong>diversity</strong> of patterns. 
+To evaluate if our approach discovers a higher diversity than other approaches we propose to measure the diversity of a discovered set of patterns by the area it covers when projected in an <em>analytic behavior space</em>.
+This space is externally defined by the experimenter and the covered area is measured by binning the space and counting the number of explored bins. <br />
+Because we do not have access to an easily interpretable low-dimensional <em>behavior space</em>, we constructed it by concatenating (i) features learned by a VAE trained on a very large dataset of Lenia patterns (allowing to cover order of magnitude more patterns that what could be found in any single algorithm experiment); and (ii) 5 hand-defined features from the original Lenia’s paper.<br />
+We also measured the diversity in the space of parameters <script type="math/tex">\Theta</script> by concatenating Lenia’s parameters $(R, T, \mu, \sigma, \beta_1, \beta_2, \beta_3)$ and the latent representation of a VAE trained on a large dataset of initial Lenia states ($A^{t=1}$).<br />
+Additionally, we categorized the patterns into 3 families: <em>dead</em> (the activity of all grid cells being either 0 or 1), <em>animal</em> (finite and connected pattern of activity) and <em>non-animal</em> (remaining - usually spread over the whole state space). This categorization follows the identification of <em>spatially localized patterns</em> (SLPs)  or <em>solitons</em> in Conway’s Game of Life, equivalent to what we call “animals” in Lenia, versus other global patterns. These categories allow us to analyze the exploration behaviors of the different IMGEP variants in identifying a certain <em>type</em> of pattern (as we could qualitatively observe by visually browsing the results).<br />
+Using this procedure, the exploration behaviors of different IMGEP variants were evaluated and compared to a naive random exploration.</p>
+<div style="border-style: solid; border-radius: 25px; border-width: 2px; padding: 10px;">
+<div style="display: flex; justify-content: space-between; ">
+<div style="display: flex; flex-direction: column;">
+<p style="text-align:center; font-size: 18px; text-decoration: underline;  font-weight: bold;"> (a) Diversity in Parameter Space:</p>
+<img src="media/png/diversity_runparamspace_all_adapted.png" /> 
+</div>
+<div style="display: flex; flex-direction: column;">
+<p style="text-align:center; font-size: 18px; text-decoration: underline;  font-weight: bold;"> (b) Diversity in Statistic Space:</p>
+<img src="media/png/diversity_statisticspace_all_adapted.png" />
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; ">
+<div style="display: flex; flex-direction: column;">
+<p style="text-align:center; font-size: 18px; text-decoration: underline;  font-weight: bold;"> (c) Statistic Space Diversity for Animals:</p>
+<img src="media/png/diversity_statisticspace_animals_adapted.png" />
+</div>
+<div style="display: flex; flex-direction: column;">
+<p style="text-align:center; font-size: 18px; text-decoration: underline;  font-weight: bold;"> (d) Statistic Space Diversity for Non-Animals:</p>
+ <img src="media/png/diversity_statisticspace_nonanimals_adapted.png" />
+</div>
+</div>
+</div>
+<p>The above graphs show the evolution of the diversity for each algorithm over the 5000 explorations that they performed. We draw the following conclusions:</p>
+<ul>
+  <li>(a-b): Even though random parameter exploration tries more diverse configurations in the input parameter space (a),  IMGEP with hand-defined (HGS) or learned (PGL/OGL) goal space find a higher diversity in the analytic behavior space than random exploration (b). This confirm that <strong>goal exploration algorithms outperforms random parameter exploration to discover diverse patterns</strong>.</li>
+  <li>(b-c-d): using random features (RGS) collapsed the performance of goal exploration, and did not even outperform random parameter exploration for all kinds of behavioural diversity, showing the <strong>importance of having informative goal spaces</strong>.</li>
+  <li>(c):  IMGEPs with a learned goal space (PGL/OGL) discovered a larger diversity of animals compared to a hand-defined goal space (HGS). These results uncover an <strong>interesting bias of using learned features with a VAE architecture, which strongly incentivizes discovery of diverse spatially localized patterns</strong> (called “animal” patterns).</li>
+  <li>(b-c): The new online approach (IMGEP-OGL) is as efficient as a pretrained approach (IMGEP-PGL) to discover diverse pattern, even though PGL was pretrained on a dataset containing already 50% animal. This showed that it is feasible to learn goal spaces for such systems in an online manner <strong>removing the need to collect preliminary data</strong>.</li>
+  <li>(d): Learned goal spaces (PGL/OGL) are as efficient as a hand-defined space for finding diverse non-animals patterns.</li>
+</ul>
+
+<h2 id="related-work--research-perspectives">Related work &amp; Research perspectives</h2>
+<h3 id="simulate-self-organizing-systems-toward-more-expressive-models">Simulate self-organizing systems: toward more expressive models</h3>
+<p>To better understand relations between the individual cell dynamics and the global pattern formation processes, many mathematical and computational models have been proposed. These models can be categorized into three main families: <a href="https://en.wikipedia.org/wiki/Partial_differential_equation">partial differential equations (PDEs)</a>, <a href="https://en.wikipedia.org/wiki/Cellular_automaton">cellular automata (CAs)</a>, and <a href="https://en.wikipedia.org/wiki/Agent-based_model">agent-based models (ABM)</a>:</p>
+<ul>
+  <li>PDEs are based on continuous mathematical descriptions (differential equations) that describe the space-time evolution of chemical morphogens substances. From <a href="https://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a>’s influential paper <a href="http://www.dna.caltech.edu/courses/cs191/paperscs191/turing.pdf">“The Chemical Basis of Morphogenesis”</a> in 1952, which introduced a prototype model of reaction-diffusion equations for describing pattern-formation mechanisms of animals’ skins, this family of models is pioneer in modelling self-organizing systems.</li>
+  <li>CAs, contrary to continuous approaches that study populations at a global level, model each element or <em>cell</em> individually, as well as their interactions. The concept of cellular automata was introduced by <a href="https://en.wikipedia.org/wiki/John_von_Neumann">John von Neumann</a> in the 40’s and became very popular in the 70’s with Conway’s Game of Life.</li>
+  <li>ABMs are multi-agent systems that consider cells as <em>entities</em> or <em>agents</em> (no shape constraints contrary to CAs fixed-square grid) which are locally interacting in their environment. Various ABM systems have been proposed in computational biology to study tissue formation (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1629079/">Chaturvedi et al., 2005</a>, <a href="http://hal.elte.hu/~vicsek/downloads/papers/chate-sell-sortingt.pdf">Belmonte et al., 2008</a>), mainly differing by the choice of the physical representation of the <em>agent</em> and of its behaviors.</li>
+</ul>
+
+<p>All these approaches to model real-word complex systems are abstract simplifications of reality. However, these numerical models have permitted to study key aspects of collective behaviors (<a href="https://arxiv.org/abs/1010.5017">Viksek &amp; Zafeiris, 2010</a>), spontaneous formation of spatial patterns (<a href="https://www.jstor.org/stable/24925832">Gardner, 1970</a>) and self-replication (<a href="https://www.sciencedirect.com/science/article/abs/pii/0167278984902562">Langton, 1984</a>), as well as bringing clear experimental advantages in terms of time, budget and controllability.</p>
+
+<p>Moreover, we observe a recent renewal of interest in research around these models, with the rise of extended versions of the traditional models (<a href="https://arxiv.org/abs/1111.1567">SmoothLife</a>, <a href="https://arxiv.org/abs/1812.05433.pdf">Lenia</a>) and the introduction of novel data structures such as convolutional neural networks (CNNs) (<a href="https://arxiv.org/abs/1809.02942">Cellular automata as convolutional neural networks</a>) and graph neural networks (GNNs) (<a href="https://pathak22.github.io/modular-assemblies/">Pathak et al, 2019</a>). These recent models bring a new level of expressivity and show the emergence of more complex life-like structures (such as Lenia’s “lifeforms”).</p>
+
+<h3 id="understand-self-organizing-systems-novel-machine-learning-perspectives">Understand self-organizing systems: novel machine learning perspectives</h3>
+<p>Designing such systems, that show desirable properties (e.g. self-regeneration, self-replication) without any form of centralized control, brings a lot of engineering / programming challenges, especially when moving toward richer models (with more neighbors and continuous state/space like Lenia). For these reasons recent work proposes to rely on powerful optimization techniques, such as evolutionary strategies (<a href="https://ieeexplore.ieee.org/document/8004527">CA-NEAT</a>, <a href="https://pathak22.github.io/modular-assemblies/">Learning to Control Self-Assembling Morphologies</a>) or deep learning techniques (<a href="https://distill.pub/2020/growing-ca/">Growing Neural Cellular Automata</a>) to help designing and/or controlling such systems.</p>
+
+<p>We position ourselves in this pan of literature, but with a different perspective: rather than optimizing a given system to achieve a desired property, we are interested in exploring the system to discover a diversity of interesting properties.
+However, in the same way that reinforcement learning optimization has been successfully coupled to IMGEPs goal-generation algorithms in robotics, a promising future direction is to couple (i) IMGEPs to automatically discover “interesting” behaviors of a system (ii) evolutionary / deep learning / reinforcement learning based optimization techniques to understand and replicate these behaviors from different initial conditions.</p>
+
+<h3 id="manipulate-self-organizing-systems-high-precision-automated-laboratory">Manipulate self-organizing systems: high-precision automated laboratory</h3>
+<p>There has also been recent developments for automating robotic platforms in the experimental laboratory (<a href="https://github.com/croningp/dropfactory">Dropfactory</a>, <a href="https://www.nature.com/articles/s41586-018-0307-8">organic synthesis robot</a>), once again going in pair with the introduction of novel machine learning algorithms for advanced optimization in the experimentations (<a href="https://www.nature.com/articles/nature17439">ML-assisted material discovery</a>, <a href="https://www.sciencedirect.com/science/article/pii/S1385894718312634">ML meets continuous flow chemistry</a>).
+These automated experimental platforms offer novel levels of precision and control and open new opportunities to review the way scientific experiments can be performed.</p>
+
+<p>A parallel work to ours, <a href="https://advances.sciencemag.org/content/6/5/eaay4237">Grizou et al., 2020</a>, showed how intrinsically motivated goal exploration can be used to automate discovery of novel patterns in wet chemical systems. The system of interest is here an oil droplet system, used to study questions about the origins of cells. Depending on the chemical composition of the droplets, the system shows patterns like division, chaining or grouping. Scientists do not fully understand their underlying dynamics and it takes too long to explore all possible chemical combinations. This work has shown that IMGEPs, combined with a robotic experimentation platform, could discover a larger diversity of behaviors in the chemical droplet system.</p>
+
+<p>We plan, in future work, to apply our novel algorithmic contributions (automatic learning of goal space representations) to more complex “wet” systems.</p>
+
+<h3 id="in-silico-in-vitro-soon-in-vivo"><em>In silico</em>, <em>in vitro</em>, soon <em>in vivo</em>?</h3>
+<p>Finally, near future research will probably happen at the frontier of simulated machine environments (“in silico”), controlled experimental conditions (“in vitro”) and potentially directly in living organisms (“in vivo”).
+With the advances in synthetic biology and powerful novel technologies such as <a href="https://en.wikipedia.org/wiki/3D_bioprinting">bio-printing</a>, we can hope to create functional tissues or organs for in vivo applications such as regenerative medicine and drug discovery.
+The recent work of <a href="https://www.pnas.org/content/117/4/1853">Kriegman et al., 2020</a>, into which evolutionary algorithms at the computer level where directly transposed to “engineer” a new kind of living organism, the so-called <a href="https://en.wikipedia.org/wiki/Xenobot">xenobots</a>, is an exciting proof of concept in that direction.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Our paper demonstrates how intrinsically-motivated goal exploration processes algorithms can efficiently be transposed to a new kind of problem: automatic discovery of diverse self-organized patterns in morphogenetic systems such as the Game of Life. In further work, we plan to apply this approach to “wet” systems and aim to better understand the (fundamental) process behind proto-cells self-organization.</p>
+
+<h2 id="aknowledgements">Aknowledgements</h2>
+<p>We would like to thank <a href="https://chakazul.github.io/">Bert Chan</a> and <a href="https://jgrizou.com/">Jonathan Grizou</a> for valuable discussions.</p>
+
+<h2 id="additional-material">Additional Material</h2>
+<ul>
+  <li>Paper: <a href="https://arxiv.org/abs/1908.06663">Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems</a>. Reinke, Etcheverry and Oudeyer, 2020. In International Conference on Learning Representations (ICLR 2020).</li>
+  <li><a href="https://automated-discovery.github.io/">Project Website</a> with additional videos and complete database of the results</li>
+  <li><a href="https://github.com/flowersteam/automated_discovery_of_lenia_patterns">Code</a></li>
+</ul>
+
+<h2 id="references">References</h2>
+<ul>
+  <li><a href="https://www.philipball.co.uk/the-self-made-tapestry-pattern-formation-in-nature">The Self-Made Tapestry: Pattern Formation in Nature</a>. Philip Ball, 1999.</li>
+  <li><a href="https://press.princeton.edu/books/paperback/9780691116242/self-organization-in-biological-systems">Self-organization in biological systems</a>. Camazine et al., 2003.</li>
+  <li><a href="https://www.nature.com/articles/ncomms6571">Evolution of oil droplets in a chemorobotic platform</a>. Gutierrez et al., 2014.</li>
+  <li><a href="https://www.nature.com/articles/311419a0.pdf?origin=ppub">Cellular automata as models of complexity</a>. Wolfram, 1984.</li>
+  <li><a href="https://arxiv.org/abs/1812.05433.pdf">Lenia-biology of artificial life</a>. Bert Chan, 2018.</li>
+  <li><a href="https://arxiv.org/abs/1301.4862">Active Learning of Inverse Models with Intrinsically Motivated Goal Exploration in Robots</a>. Baranes &amp; Oudeyer, 2013.</li>
+  <li><a href="https://arxiv.org/abs/1810.06284">CURIOUS: Intrinsically Motivated Modular Multi-Goal Reinforcement Learning</a>. Colas et al., 2018.</li>
+  <li><a href="https://arxiv.org/abs/1807.04742">Visual reinforcement learning with imagined goals</a>. Nair et al., 2018.</li>
+  <li><a href="https://arxiv.org/abs/1903.03698">Skew-Fit: State-Covering Self-Supervised Reinforcement Learning</a>. Pong et al., 2019.</li>
+  <li><a href="https://arxiv.org/abs/1708.02190.pdf">Intrinsically Motivated Goal Exploration Processes with Automatic Curriculum Learning</a>. Forestier et al., 2017.</li>
+  <li><a href="https://eplex.cs.ucf.edu/papers/lehman_alife08.pdf">Exploiting Open-Endedness to Solve Problems Through the Search for Novelty</a>. Lehman &amp; Stanley, 2008.</li>
+  <li><a href="https://arxiv.org/abs/1312.6114">Auto-Encoding Variational Bayes</a>. Kingma &amp; Welling, 2013.</li>
+  <li><a href="https://arxiv.org/pdf/1803.00781.pdf">Unsupervised Learning of Goal Spaces for Intrinsically Motivated Goal Exploration</a>. Péré et al., 2018.</li>
+  <li><a href="https://arxiv.org/abs/1807.01521">Curiosity Driven Exploration of Learned Disentangled Goal Spaces</a>. Laversanne-Finot et al., 2018.</li>
+  <li><a href="https://www.sciencedirect.com/science/article/pii/S0921889012001716?casa_token=eMuS_v0yy68AAAAA:cHWY6-Qb0iFMbeV4M6PgfTezPv9r5ROAFgIcGI1SpQhRgDa2_8VKXTTSSCJxwnXZ2FS0MaE">From dynamic movement primitives to associative skill memories</a>. Pastor et al., 2013.</li>
+  <li><a href="https://aaai.org/Library/Symposia/Fall/2006/fs06-03-008.php">Exploiting regularity without development</a>. Stanley, 2006.</li>
+  <li><a href="http://www.dna.caltech.edu/courses/cs191/paperscs191/turing.pdf">“The Chemical Basis of Morphogenesis”</a>. Turing, 1952.</li>
+  <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1629079/">On multiscale approaches to three-dimensional modelling of morphogenesis</a>. Chaturvedi et al., 2005.</li>
+  <li><a href="http://hal.elte.hu/~vicsek/downloads/papers/chate-sell-sortingt.pdf">Self-Propelled Particle Model for Cell-Sorting Phenomena</a>. Belmonte et al., 2008.</li>
+  <li><a href="https://arxiv.org/abs/1010.5017">Collective motion</a>. Viksek &amp; Zafeiris, 2010.</li>
+  <li><a href="https://www.jstor.org/stable/24925832">Mathematical games: the fantastic combinations of John Conway’s new solitaire game ‘Life’</a>. Gardner, 1970.</li>
+  <li><a href="https://www.sciencedirect.com/science/article/abs/pii/0167278984902562">Self-reproduction  in  cellular  automata</a>. Langton, 1984.</li>
+  <li><a href="https://arxiv.org/abs/1111.1567">Generalization of Conway’s “Game of Life” to a continuous domain - SmoothLife</a>. Rafler, 2011.</li>
+  <li><a href="https://arxiv.org/abs/1809.02942">Cellular automata as convolutional neural networks</a>. Gilpin, 2018.</li>
+  <li><a href="https://pathak22.github.io/modular-assemblies/">Learning to Control Self-Assembling Morphologies: A Study of Generalization via Modularity</a>. Pathak et al., 2019.</li>
+  <li><a href="https://ieeexplore.ieee.org/document/8004527">CA-NEAT: Evolved Compositional Pattern Producing Networks for Cellular Automata Morphogenesis and Replication</a>. Nichele et al., 2018.</li>
+  <li><a href="https://distill.pub/2020/growing-ca/">Growing Neural Cellular Automata</a>. Mordvintsev et al., 2020.</li>
+  <li><a href="https://advances.sciencemag.org/content/6/5/eaay4237">A curious formulation robot enables the discovery of a novel protocell behavior</a>. Grizou et al., 2020.</li>
+  <li><a href="https://www.nature.com/articles/s41586-018-0307-8">Controlling an organic synthesis robot with machine learning to search for new reactivity</a>. Granda et al., 2018.</li>
+  <li><a href="https://www.nature.com/articles/nature17439">Machine-learning-assisted materials discovery using failed experiments</a>. Raccuglia et al., 2016.</li>
+  <li><a href="https://www.sciencedirect.com/science/article/pii/S1385894718312634">Machine learning meets continuous flow chemistry: Automated optimization towards the Pareto front of multiple objectives</a>. Schweidtmann et al., 2018.</li>
+  <li><a href="https://www.pnas.org/content/117/4/1853">A scalable pipeline for designing reconfigurable organisms</a>. Kriegman et al., 2020.</li>
+</ul>
+
+<h2 id="contact">Contact</h2>
+<p>Email: mayalen.etcheverry@inria.fr, chris.reinke@inria.fr, pierre-yves.oudeyer@inria.fr</p>
+
+<hr />
+<h6 id="subscribe-to-our-twitter">Subscribe to our <a href="https://twitter.com/@flowersINRIA">Twitter</a>.</h6>
+<hr />
+
+</article>
+
+
+  <div class="share-page">
+  Share this post!
+
+  <div class="share-links">
+    
+      <a class="fa fa-facebook" href="https://facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fintrinsically_motivated_discovery_of_diverse_patterns" rel="nofollow" target="_blank" title="Share on Facebook"></a>
+    
+
+    
+      <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text=Intrinsically+Motivated+Discovery+of+Diverse+Patterns+in+Self-Organizing+Systems&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fintrinsically_motivated_discovery_of_diverse_patterns" rel="nofollow" target="_blank" title="Share on Twitter"></a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <a class="fa fa-reddit" href="http://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2Fintrinsically_motivated_discovery_of_diverse_patterns&amp;title=Intrinsically+Motivated+Discovery+of+Diverse+Patterns+in+Self-Organizing+Systems" rel="nofollow" target="_blank" title="Share on Reddit"></a>
+    
+
+    
+
+    
+      <a class="fa fa-hacker-news" onclick="parent.postMessage('submit','*')" href="https://news.ycombinator.com/submitlink?u=http%3A%2F%2Flocalhost%3A4000%2Fintrinsically_motivated_discovery_of_diverse_patterns&amp;t=Intrinsically+Motivated+Discovery+of+Diverse+Patterns+in+Self-Organizing+Systems" rel="nofollow" target="_blank" title="Share on Hacker News"></a>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--<footer class="center">
+  <div class="measure">
+    <small>
+      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+      &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">GitHub</a>.
+    </small>
+  </div>
+
+
+
+</footer>
+
+<script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+    }
+</script>
+
+
+    <script type="text/javascript">
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" +
+           katex.renderToString(tex) +
+           "</span>";
+});
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" +
+           katex.renderToString("\\displaystyle "+tex) +
+           "</div>";
+});
+
+
+
+</script>
+
+
+
+<!--<script>-->
+      <!--renderMathInElement(-->
+          <!--document.body,-->
+          <!--{-->
+              <!--delimiters: [-->
+                  <!--{left: "$$", right: "$$", display: true},-->
+                  <!--{left: "\\[", right: "\\]", display: true},-->
+                  <!--{left: "$", right: "$", display: false},-->
+                  <!--{left: "\\(", right: "\\)", display: false}-->
+              <!--]-->
+          <!--}-->
+      <!--);-->
+    <!--</script>-->-->
+</body>
+</html>

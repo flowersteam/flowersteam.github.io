@@ -1,0 +1,55 @@
+<div class="flexslider">
+<ul class="slides">
+
+<li>
+<div style="border-style: solid; border-radius: 25px; border-width: 2px;">
+<p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> IMGEP-OGL: goal space learned online with a beta-VAE </p>
+<p style="text-align:center; font-size: 16px; margin-top:-20px"> 5000 patterns discovered by IMGEP-OGL visualized with 3D PCA reduction of the original 8D goal space. </p>
+<div style="overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">
+<iframe id="iframe1" name="visualisation" src="" scrolling="no" style="height:775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px ">
+</iframe>
+</div>
+</div>
+<p style="text-align:center; font-size: 16px;"> <i class="fa fa-hand-pointer-o"></i> 
+rotate (left click), pan (right click) and scroll (mouse wheel) through the discovered patterns
+</p>
+</li>
+
+<li>
+<div style="border-style: solid; border-radius: 25px; border-width: 2px;">
+<p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> IMGEP-HGS: goal space defined with hand-defined features</p>
+<p style="text-align:center; font-size: 16px; margin-top:-20px"> 5000 patterns discovered by IMGEP-OGL visualized with 3D PCA reduction of the original 5D goal space. </p>
+<div style="overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">
+<iframe id="iframe2" name="visualisation" src="" scrolling="no" style="height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px ">
+</iframe>
+</div>
+</div>
+<p style="text-align:center; font-size: 16px;"> <i class="fa fa-hand-pointer-o"></i> 
+rotate (left click), pan (right click) and scroll (mouse wheel) through the discovered patterns
+</p>
+</li>
+
+<li>
+<div style="border-style: solid; border-radius: 25px; border-width: 2px;">
+<p style="text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;"> IMGEP-RGS: goal space defined with a randomly-initialised NN </p>
+<p style="text-align:center; font-size: 16px; margin-top:-20px"> 5000 patterns discovered by IMGEP-RGS visualized with 3D PCA reduction of the original 8D goal space. </p>
+<div style="overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">
+<iframe id="iframe3" name="visualisation" src="" scrolling="no" style="height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px ">
+</iframe>
+</div>
+</div>
+<p style="text-align:center; font-size: 16px;"> <i class="fa fa-hand-pointer-o"></i> 
+rotate (left click), pan (right click) and scroll (mouse wheel) through the discovered patterns
+</p>
+</li>
+
+</ul>
+</div>
+
+<script type="text/javascript">
+$(window).load(function() {
+$("#iframe1").attr("src", "https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_ogl_config.json");
+$("#iframe2").attr("src", "https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_hgs_config.json");
+$("#iframe3").attr("src", "https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_rgs_config.json");
+});
+</script>

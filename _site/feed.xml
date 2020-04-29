@@ -1,18 +1,848 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cédric Colas's page</title>
-    <description>Personal website of Cédric Colas.</description>
+    <title>Developmental Systems, a Blog of the Flowers Lab</title>
+    <description>Developmental Systems, a Blog of the Flowers Lab</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Mock Blog Post</title>
-        <description>&lt;p&gt;This is an empty post to illustrate the pagination component with Pixyll.&lt;/p&gt;
+        <title>Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems</title>
+        <description>&lt;h2 id=&quot;motivation-exploration-of-self-organizing-systems&quot;&gt;Motivation: Exploration of self-organizing systems&lt;/h2&gt;
+
+&lt;div id=&quot;white-arrow&quot; class=&quot;flexslider&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+  &lt;li&gt;
+     &lt;img src=&quot;media/jpg/49654884243_85bc40b496_k.jpg&quot; /&gt;
+     &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; About a third of known galaxies are flat spirals with bulging centers. &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/freetheimage/49654884243/in/photolist-2iDQg8R-PjVxxF-j4Hwby-2fGig3N-priEv3-Te2vqD-dWS2ti-27qQEMT-MBQuvn-28AQvNx-7GGfUM-23ud4dp-NLiSfh-S6ZYQ4-24DvfPw-7RY52N-JgNddt-5SM5dQ-2guKM3y-2iM4HE9-7dzzxf-5SGJQF-2fhspAW-2i2METs-Pf5NUy-JJ5ak7-KmvqnU-2i5YnkF-2iGxdqF-JxGD8s-5SkRZd-2i2HnKx-Y8VN3W-2i2goEu-CgECTm-2iJbE8D-2ibovBC-uTxq2E-tvQXW7-2ik3Q5b-PTHCMo-2f16iq6-2iEerHS-nbxsKE-2iLLrHo-mhaDLa-2hZKfcy-5RhgKU-2itcAfx-2i3191F&quot;&gt; In a galaxy far, far away... &lt;/a&gt; / Mark Freeth / CC BY 2.0 &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+     &lt;img src=&quot;media/jpg/38422248024_acba4f99f9_k.jpg&quot; /&gt;
+       &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; The Tatra Mountains were shaped by past glaciations forming peaks, cirques and lakes.  &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/75487768@N04/38422248024/in/photolist-21xf4J9-JRMGJH-N9vpzy-n2oGxj-P7XnpS-23mWx8L-27bd7uE-hnwqti-29Ya3bq-24KY2fh-DMAkpi-bpQQFi-MoREwn-CPreWK-23jNvCZ-bnj5Fr-bnJD1x-PzxcXy-bs7Ma4-bs7Gox-ZuYB1s-NeWcHY-Ep6EqU-bnj3uK-bpQM4p-MGcKRH-MC55mp-NEagFx-273Dhnx-hnvhBS-PfHnSJ-h1ynuW-hagyS5-bnivhX-21SX1iU-buw3HQ-23t9cvG-Pj1c4m-2cuT3sK-hnuNnp-2cVhYFz-ZdkzHW-bpQ3ZK-bpQPnv-bs7RNF-4mi1mx-nLVFM5-buw2qS-29zzdAj-pd2tRn&quot;&gt; moutain &lt;/a&gt; / CC BY-NC-ND 2.0 &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+     &lt;img src=&quot;media/jpg/23722989626_905f4df63b_b.jpg&quot; /&gt;
+       &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; Sand dune tend to self-organize in long parallel ripples.  &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/jeffreysullivan/23722989626/in/photolist-C9jwjw-ft4VrM-e1xGwb-o4uzeC-2iLHGDA-DF89Xz-fUSP3q-Sqo2A7-FVpFpV-Ah7HYi-5Rz7xn-cjiV9h-wyWKFL-23oFFDS-2iJTPwX-2vTQ-2a1oy7E-hbP1dB-pKtx5C-28Uph-D9FDKW-26LpXHS-Shxha2-D9FJqC-ye2zNb-Vd3qdz-G6e58p-rQkiYG-Bbbfxj-vrHCrG-2cMfaiw-hadLHs-ADk26A-ySgpV-AP2yyA-26VAyv3-XQUe1m-9aZFHC-BK1p9r-ec591n-226usMa-ya9Qwd-pvhyPt-2gsEw1h-ACDNCT-FvtD6W-oo3s3L-RpoVQZ-2eJrf9W-5BoUXx&quot;&gt; Sand Dune Patterns and Shapes &lt;/a&gt; / Jeff Sullivan / CC BY 2.0 &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+
+     &lt;li&gt;
+      &lt;img src=&quot;media/jpg/2124208676_206d76a469_b.jpg&quot; /&gt;
+      &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; The linear flight formations of a migratory flock of Sandhill Cranes.  &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/10326501@N02/2124208676/in/photolist-4eH8ew-dCMKxK-6aDi3v-SMpd8C-7QvxGy-fwJ4zt-PeNcc9-rxFmP7-BHB5Co-9nxrg4-F62jyL-6QsxP-bny7fe-TeEPAw-5tHPg2-PeNbHy-dMch2r-RB2TJF-7ewoYA-SQZrN6-Nwkeqt-6b8hCa-6NFqj-bmJrpv-Pm19b4-Sc16k7-jEXSw5-pQyoNY-EkRFRa-brsQ1c-77AC8q-Mv69Dv-3oj7kY-q3uraf-7fUEVj-oyUstV-9vKJUm-CtrCb1-48pqbP-dD9pQ1-aLB5Yp-bkGTUL-kRATb6-h91wMQ-7mgRZ8-hGDVCp-3cy1is-darWZV-dCMJDK-boKwC8&quot;&gt; In Flight &lt;/a&gt; / CC BY 2.0 &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+
+     &lt;li&gt;
+      &lt;img src=&quot;media/jpg/34944546716_3e7b04a6c9_k.jpg&quot; /&gt;
+      &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; Honeybee colonies naturally swarm around tree limbs and shrubs.  &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/robbertholf/34944546716/&quot;&gt; Beekeeping Bees &lt;/a&gt; / Rob Bertholf/ CC BY 2.0 &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+
+  &lt;li&gt;
+      &lt;img src=&quot;media/jpg/16647036072_69a1355c86_k.jpg&quot; /&gt;
+      &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; The natural, hexagon geometry of a snowflake. &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/doundounba/16647036072/in/photolist-5TrGuh-dFHbkb-2fauUR7-Cv4J4q-vv5F-PVDWvb-5LU46Q-e6KePo-PRdchG-Te5Yq3-62S1Bc-TnXEYn-jZvBiM-GjfNF5-RQedrb-q6aJ7d-dBqnnT-DdXB8d-rn3pRj-2brWHHu-9aeNRM-PkKwi9-bcBnBK-hVym2E-4DSZj7-23MMdaB-22b4T3q-nFJYdP-r3Ttq4-p7jYyD-9fBFLg-2XUyJs-98NJvp-bWH4K-dTSP9Y-dTM64x-qmqQeS-9hNPnp-dTSpQb-dTgBy6-7BE2Dn-dTSrgC-psWk1S-dTLW9M-dNmZzt-dTLPJM-qU8mUU-dXe5i3-4fpmcf-dTSxsh/&quot;&gt;Flakes In Situ&lt;/a&gt; / Pascal Gaudette/ CC BY-NC-SA 2.0 &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+      &lt;img src=&quot;media/jpg/28006626771_532b5e6488_k.jpg&quot; /&gt;
+      &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; Spiral stair-stepped structure of bismuth crystal.  &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/19779889@N00/28006626771/&quot;&gt; Bismuth &lt;/a&gt; / CC BY-NC-SA 2.0 &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    
+    &lt;li&gt;
+      &lt;img src=&quot;media/jpg/3816875371_3bf744514e_k.jpg&quot; /&gt;
+      &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; Every zebra has a unique pattern of black and white stripes. &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/eggshapedkath/3816875371/in/photolist-JTwrKs-9DSoae-dFHKhD-6gQXVd-kdQgET-LhdX6a-druE1f-mJ98pX-bSk3Mr-7TUkZ4-5avEeP-5TZXZN-8gC2oy-UctN-bCMZsa-spKQSJ-7eBSZg-c6rPVU-bbqHmi-SDNyyp-9WuisP-79Btyx-7eFNe5-xqPkWn-gmrBmg-266gEDu-7P717G-g1xWW-88hY3J-b9QFXk-3i8BTn-ctgCMG-79FkDU-6gLJpv-aaHfPa-3i7Mgv-ajdA79-6Phu54-c6rMZ5-amNqct-55RRRM-2wc3oF-wgHqtA-h8ojeg-wwMWDd-kGKw3n-7TUp6H-ah2PY1-FLkyUg-ajaKn2&quot;&gt; zebras &lt;/a&gt; / Kathleen Steeden / CC BY 2.0 &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+
+      &lt;li&gt;
+      &lt;img src=&quot;media/jpg/18353178535_b065721df0_k.jpg&quot; /&gt;
+      &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; Peacock  feathers are decorated with eyelike patterns in bright blue and brown. &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/pamas/18353178535/&quot;&gt; Peacock &lt;/a&gt; / Esin Üstün  / CC BY 2.0 &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+
+      &lt;li&gt;
+      &lt;img src=&quot;media/jpg/37403467520_d67679809b_k.jpg&quot; /&gt;
+      &lt;p style=&quot;text-align:left; font-size: 18px;&quot;&gt; Cells of bur-reed aquatic plants naturally thicken outer walls and arrange in V shape. &lt;span style=&quot;float:right; font-size:12px&quot;&gt; &lt;a href=&quot;https://www.flickr.com/photos/146824358@N03/37403467520/in/photolist-YZdxM3-oufmBa-WAaZfP-VjCa8Y-2iLHXMo-UpyxVY-26bbZ7b-28y7DjC-29Juavb-2bjAdnk-7C7viq-LnzUqh-8zHjjx-XT2FoC-GZEkjC-HTWGNc-HsQKRN-73NuqB-H93QSu-GCRvBe-HyoMBn-7Se7Zx-HYzip5-7FU7ZH-qLm139-2hTVyV1-rsJEWK-2iJn4aM-CAj4Dn-WKbwym-2eu68YK-KGjEUW-RQAT3D-GQLrMa-p15Gnc-rgZAW8-oJWGeV-EXbjbf-Rg5o5m-GC7S8R-oeRiar-RAb88V-2ggRGu-tx3p97-MFvrUU-nE3riU-wLm2Pg-MKNwz9-ypcZwH-osUJzE/&quot;&gt; Tannin Cells in Sparganium &lt;/a&gt; &lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Nature, from its spiral galaxies, shaped landscapes, organized populations, fine inorganic compounds and geometric animal skin patterns to its living cells, is made out of fascinating complex forms and patterns. These natural wonders are the results of a phenomenon called &lt;em&gt;self-organisation&lt;/em&gt;, that characterizes the spontaneous emergence of some form of global order out of local interactions.&lt;/p&gt;
+
+&lt;p&gt;Self-organisation occurs in many physical, chemical and biological systems, as well as in artificial systems like the &lt;a href=&quot;https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life&quot;&gt;Game of Life&lt;/a&gt;, and understanding its processes remains an active area of research. While certain self-organizing systems are now well understood with advanced analytical models (&lt;a href=&quot;https://www.philipball.co.uk/the-self-made-tapestry-pattern-formation-in-nature&quot;&gt;Ball, 1999&lt;/a&gt;, &lt;a href=&quot;https://press.princeton.edu/books/paperback/9780691116242/self-organization-in-biological-systems&quot;&gt;Camazine et al., 2003&lt;/a&gt;), many others are still full of mysteries. Sometimes scientists do not even know yet a good mathematical expression of the basic physico-chemical properties at play, like in &lt;a href=&quot;https://www.nature.com/articles/ncomms6571&quot;&gt;oil droplet systems&lt;/a&gt; used in studying the origins of life. For some other systems, like the Game of Life, one fully knows the simple basic rules at the local level, and yet we are still far from fully grasping what structures can self-organize, how to represent and classify them, and how to predict their evolution. In many cases, the discoveries of scientists about these systems are still relying on ad hoc trial-and-error experimentations.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Becoming sufficiently familiar with something is a substitute for understanding it”&lt;/p&gt;
+
+  &lt;p&gt;– &lt;cite&gt;John Conway, inventor of the Game of Life.&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This blogpost presents our recent &lt;a href=&quot;https://arxiv.org/abs/1908.06663&quot;&gt;paper (ICLR 2020)&lt;/a&gt;, where we formulate the problem of &lt;strong&gt;automated discovery of diverse self-organized patterns&lt;/strong&gt;. 
+Our motivation is to provide novel AI methods to automatically explore and map the diversity of possible emergent structures and, in turn, increase our global understanding of these fundamental systems.&lt;/p&gt;
+&lt;div style=&quot;background-color: #eee; padding-left: 20px; margin: 0px; text-align: center&quot;&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;
+&lt;u&gt;Paper&lt;/u&gt;: &lt;b&gt;Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems&lt;/b&gt;. &lt;br /&gt;
+Chris Reinke, Mayalen Etcheverry and Pierre-Yves Oudeyer. &lt;br /&gt;
+In &lt;i&gt;International Conference on Learning Representations&lt;/i&gt;, 2020.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;testbed-system-a-continuous-game-of-life&quot;&gt;Testbed system: A continuous Game of Life&lt;/h2&gt;
+&lt;p&gt;We are interested in developing algorithms to autonomously explore a &lt;strong&gt;given target system&lt;/strong&gt; which is characterized by a set of initial conditions (controllable system parameters) and a set of &lt;em&gt;update rules&lt;/em&gt; (iteratively applied to evolve the state of the system through time).&lt;br /&gt;
+We concentrate on &lt;strong&gt;morphogenetic systems&lt;/strong&gt;, referring to processes by which individual parts of a developing system come to self-organize into forming a structured morphological pattern, mimicking the biological process of &lt;em&gt;morphogenesis&lt;/em&gt; which governs the spatial distribution of cells during the embryonic development of an organism. Such systems are typically observed as raw high-dimensional images. We leave aside the question of &lt;em&gt;how&lt;/em&gt; to design such a system, but for those interested make sure to read the last section of this post which discusses potential target systems for our approach including very exciting recent ones, ranging from “learnable” computational models, “wet” automated systems to “living” biologically synthetized organisms.&lt;/p&gt;
+
+&lt;p&gt;In this work, we tested our approach on an existing cellular-automata model. 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Cellular_automaton&quot;&gt;Cellular Automata&lt;/a&gt; (CA) are rich abstract computational models (capable of universal computation) and yet can be described with only a simple and compact set of rules. 
+CA, despite their apparent simplicity, have shown to &lt;a href=&quot;https://www.nature.com/articles/311419a0.pdf?origin=ppub&quot;&gt;generate a wide range of complex behaviours and dynamics&lt;/a&gt; resembling phenomenas that we can observe in nature, making them very &lt;a href=&quot;https://press.princeton.edu/books/paperback/9780691116242/self-organization-in-biological-systems&quot;&gt;attractive models to study self-organization&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div style=&quot;float: right; text-align: center; margin-top: 40px; margin-left: 10px;&quot;&gt;
+&lt;img src=&quot;media/gif/spaceship.gif&quot; style=&quot;width: 100px&quot; /&gt;
+&lt;br /&gt;
+&lt;p style=&quot;font-size: 14px;&quot;&gt; The lightweight spaceship &lt;/p&gt;
+&lt;br /&gt;
+&lt;img src=&quot;media/gif/Gosperglidergun.gif&quot; style=&quot;width: 150px&quot; /&gt;
+&lt;br /&gt;
+&lt;p style=&quot;font-size: 14px;&quot;&gt; Gosper glider gun &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life&quot;&gt;Game of Life (GoL)&lt;/a&gt;, introduced in the 70’s by the mathematician &lt;a href=&quot;https://en.wikipedia.org/wiki/John_Horton_Conway&quot;&gt;John Conway&lt;/a&gt;, is probably the most famous example of cellular automaton. GoL is composed of a 2D grid square of cells, each cell being either “dead” or “alive”. At each time step, every cell interacts with its 8 neighbors and can survive, die or give birth according to very simple rules inspired from real life like &lt;em&gt;“If the cell has enough neighbors (not isolated) and not too many (not overpopulated), the cell stay alive in the next time step (survival)”&lt;/em&gt;. Depending on the initial conditions or “seed” of the system (here the initial pattern), the cells can evolve and form various patterns, such as the well-knowns “spaceship” and “glider gun”.&lt;/p&gt;
+
+&lt;p&gt;In the paper, we use a recently-developed generalisation of Conway’s Game of Life, called &lt;a href=&quot;https://arxiv.org/abs/1812.05433.pdf&quot;&gt;Lenia&lt;/a&gt;. As shown in the below figure, Lenia extends Conway’s discrete GoL into a &lt;strong&gt;continuous GoL&lt;/strong&gt; by:&lt;br /&gt;
+1) replacing binary states with continuous float values&lt;br /&gt;
+2) extending the 8-neighborhood to a circular neighborhood of parametrized radius &lt;strong&gt;R&lt;/strong&gt;&lt;br /&gt;
+3) weighting the neighbors influence by a parametrized concentric ring kernel &lt;strong&gt;K&lt;/strong&gt;&lt;br /&gt;
+4) replacing the if/else update rule by a smooth rule that computes the next state from a parametrized mapping function &lt;strong&gt;g&lt;/strong&gt; and a step size &lt;strong&gt;$\Delta t$&lt;/strong&gt;.&lt;/p&gt;
+&lt;div style=&quot;display: flex; justify-content: space-between; &quot;&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; border-style: solid; border-radius: 25px; border-width: 2px; padding: 10px;&quot;&gt;
+&lt;img src=&quot;media/svg/discrete_gol.svg&quot; /&gt; 
+&lt;img src=&quot;media/gif/Gospers_glider_gun.gif&quot; style=&quot;margin: 15px; margin-top: 25px;&quot; /&gt; 
+&lt;/div&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; border-style: solid; border-radius: 25px; border-width: 2px; padding: 10px;&quot;&gt;
+&lt;img src=&quot;media/svg/continuous_gol.svg&quot; style=&quot;padding-top: 12px&quot; /&gt;
+&lt;img src=&quot;media/gif/lenia.gif&quot; style=&quot;margin: 15px;&quot; /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Lenia (latin for “smooth creatures”) can generate many interesting self-organized patterns. The below video showcases some examples of emerging structures, which have been discovered by its creator &lt;a href=&quot;https://chakazul.github.io/&quot;&gt;Bert Chan&lt;/a&gt; and which seem to look and behave like microscopic organisms:&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;a name=&quot;ref_video&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/iE46jKYcI4Y&quot; style=&quot;width: 720px; height: 405px;&quot;&gt;&lt;/iframe&gt;&lt;/a&gt;&lt;/div&gt;
+
+&lt;p&gt;However, finding these self-organized patterns has so far relied on &lt;strong&gt;manual exploration of the parameters&lt;/strong&gt; and &lt;strong&gt;on the human eye to identify what an interesting pattern is.&lt;/strong&gt;  A major challenge is how we can &lt;strong&gt;automate this discovery process&lt;/strong&gt;, which is the purpose of our method.&lt;/p&gt;
+
+&lt;h2 id=&quot;automated-discovery-in-complex-systems&quot;&gt;Automated discovery in complex systems&lt;/h2&gt;
+&lt;p&gt;Naively exploring the parameters with random or systematic grid search is not efficient for the considered pattern-producing systems.
+Their parameter spaces are usually very high dimensional and, in cellular-automata like Lenia, a vast area of the parameters will tend to produce “dead” patterns (with all cells being zeros or ones). Therefore, random exploration will tend to fall into this area and miss out more interesting structures.
+How can we drive exploration in this high-dimensional parameter space in order to discover a high diversity of structures?&lt;/p&gt;
+&lt;div style=&quot;display: box;  text-align: center; border-style: solid; border-radius: 25px; border-width: 2px; margin-left: auto;&quot;&gt;
+&lt;p style=&quot;float: left; font-size: 18px; font-weight: bold; text-decoration: underline; margin-left: 20px&quot;&gt; Lenia's &quot;explorable&quot; parameters: &lt;/p&gt;
+&lt;img src=&quot;media/png/lenia_parameters.png&quot; style=&quot;margin-top: -20px&quot; /&gt; 
+&lt;/div&gt;
+
+&lt;h3 id=&quot;intrinsically-motivated-goal-exploration-processes-imgeps&quot;&gt;Intrinsically-Motivated Goal Exploration Processes (IMGEPs)&lt;/h3&gt;
+&lt;p&gt;We propose to transpose &lt;em&gt;intrinsically-motivated&lt;/em&gt; or &lt;em&gt;curiosity-driven&lt;/em&gt; goal exploration processes (&lt;a href=&quot;https://arxiv.org/abs/1301.4862&quot;&gt;IMGEPs&lt;/a&gt;), a recent family of machine learning algorithms initially developed for learning of inverse models in robotics, to our target application of automated pattern discovery. Before diving into the wonderful world of self-organized structures, let’s first explain the basics of IMGEP in a robotics experiment. As we well see, the two domains share many properties.&lt;/p&gt;
+
+&lt;p&gt;An IMGEP is an algorithmic process generating a &lt;strong&gt;sequence of experiments&lt;/strong&gt; to explore the parameters of a system by &lt;strong&gt;targeting self-generated goals&lt;/strong&gt;. Here we focus on population-based IMGEPs, simply denoted IMGEPs, but there also exist goal-conditioned IMGEPs using Deep RL techniques, such as &lt;a href=&quot;https://arxiv.org/abs/1810.06284&quot;&gt;CURIOUS&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/1807.04742&quot;&gt;RIG&lt;/a&gt; and &lt;a href=&quot;https://arxiv.org/abs/1903.03698&quot;&gt;Skew-Fit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Coming from the field of &lt;a href=&quot;https://en.wikipedia.org/wiki/Developmental_robotics&quot;&gt;developmental robotics&lt;/a&gt;, these algorithms have shown to enable robots to autonomously explore their environment and to learn what effects can be produced by their actions.
+For instance, in the below video we see how a humanoid robot, which initially knows nothing about its environment, can explore its body movements and progressively discover how to interact with the various objects and tools in the scene (&lt;a href=&quot;https://arxiv.org/abs/1708.02190.pdf&quot;&gt;Forestier et al., 2017&lt;/a&gt;).&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/NOLAwD4ZTW0&quot; style=&quot;width: 720px; height: 405px;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;p&gt;To explore a system, an IMGEP uses a goal space $\mathcal{T}$ that represents relevant features of the observation $o$, computed using an encoding function $\hat{g}=R(o)$.&lt;br /&gt;
+As shown in the below figure, the exploration process iterates N times through:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;sample a goal from a goal sampling distribution $g \sim G(H)$&lt;/li&gt;
+  &lt;li&gt;infer corresponding parameter $\theta$ using a parameter sampling policy $\Pi= Pr(\theta;g,H)$&lt;/li&gt;
+  &lt;li&gt;roll-out an experiment with $\theta$, observe the outcome $o$, compute encoding $R(o)$&lt;/li&gt;
+  &lt;li&gt;store the parameter-outcome pair in an explicit memory of the history $H$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In this example, the parameter-space was a 32-dimensional dynamic motion primitive and the goal space described the trajectories of the different objects in the world (such as the ball or the white toy). The IMGEP goal-sampling strategy consisted in targeting goals that maximize the learning progress of the robot.&lt;/p&gt;
+
+&lt;div class=&quot;flexslider&quot;&gt;
+  &lt;ul class=&quot;slides&quot;&gt;
+  &lt;li&gt;
+    &lt;div style=&quot;border-style: solid; border-radius: 25px; border-width: 2px;&quot;&gt;
+      &lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; IMGEPs applied to developmental robotics systems &lt;/p&gt;
+      &lt;img src=&quot;media/svg/imgep_robotics.svg&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+
+&lt;li&gt;
+  &lt;div style=&quot;border-style: solid; border-radius: 25px; border-width: 2px; margin-bottom: 10px;&quot;&gt;
+    &lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; IMGEPs applied to morphogenetic systems &lt;/p&gt;
+    &lt;img src=&quot;media/svg/imgep_lenia.svg&quot; /&gt;
+  &lt;/div&gt;
+  &lt;/li&gt;
+
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As illustrated by the above figure, the IMGEP framework can be transposed to our target application of automated pattern discovery. Here, the actions of our artificial “scientist” agent consist in choosing a set of values for the initial conditions (parameters $\theta$), then let the system rollout and observe the emerging pattern evolve through time (observation $o$). We aim to &lt;strong&gt;maximize the diversity of observations within a limited budget of N experiments&lt;/strong&gt;.&lt;br /&gt;
+Different goal and parameter sampling mechanisms can be used within the IMGEP framework. Here, we adopted the following strategy:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;parameters are sampled by 1) given a goal, selecting the parameter from the history whose corresponding outcome is most similar in the goal space; 2) mutating it by a random process.&lt;/li&gt;
+  &lt;li&gt;the goal sampling policy is a uniform distribution over a hypercube in $\mathcal{T}$ chosen to be large enough to bias exploration towards the frontiers of known goals and incentivize diversity (thus we do not use learning progress as in the robot experiment above, but such an approach was shown to be already &lt;a href=&quot;https://arxiv.org/abs/1301.4862&quot;&gt;a strong form of IMGEP&lt;/a&gt; with dynamics similar to &lt;a href=&quot;https://eplex.cs.ucf.edu/papers/lehman_alife08.pdf&quot;&gt;novelty search&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, several challenges arise in order to successfully apply this strategy.&lt;/p&gt;
+
+&lt;h3 id=&quot;first-challenge-how-to-characterize-relevant-features-of-the-observed-patterns&quot;&gt;First challenge: How to characterize “relevant features” of the observed patterns?&lt;/h3&gt;
+&lt;p&gt;For IMGEPs the definition of the goal space $\mathcal{T}$  and its corresponding encoder $R$ are a critical part. In the robotic example, the experimenter had prior knowledge about what are relevant descriptors of the robot trajectory and could use them as goal space. However in our setting, we do not know what are useful features to characterize the patterns. Features that describe their form and extension might be interesting options, but how to define and compute them from the raw pixel observations is unclear.&lt;/p&gt;
+
+&lt;p&gt;Another approach is to &lt;strong&gt;learn goal space features by unsupervised representation learning&lt;/strong&gt;, using a neural network to learn the mapping $R: O \rightarrow \mathcal{T}$. For instance, recent work in goal-directed exploration for robotics uses &lt;a href=&quot;https://arxiv.org/abs/1312.6114&quot;&gt;deep variational autoencoders (VAEs)&lt;/a&gt; to map the raw pixel perception of a robot’s visual scene to compact goal representations.&lt;/p&gt;
+&lt;div style=&quot;border-style: solid; border-radius: 25px; border-width: 2px; padding: 5px;&quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; Learning of goal space with deep Variational Auto-Encoder networks (VAE): &lt;/p&gt;
+&lt;img src=&quot;media/png/betaVAE.png&quot; /&gt; 
+&lt;/div&gt;
+&lt;p&gt;VAEs are trained to reconstruct an input image after compressing it into a compact latent representation (only 8 dimensions here). The training criterion is the pixel-wise reconstruction error between the input image and the reconstructed output. VAEs do not need any supervision, removing the need for human expert knowledge to extract descriptors out of the patterns.&lt;/p&gt;
+
+&lt;p&gt;In previous population-based IMGEP approaches (&lt;a href=&quot;https://arxiv.org/pdf/1803.00781.pdf&quot;&gt;Péré et al., 2018&lt;/a&gt;; &lt;a href=&quot;https://arxiv.org/abs/1807.01521&quot;&gt;Laversanne-Finot et al., 2018&lt;/a&gt;), the VAE was learned on a prerecorded dataset of observations before the actual start of the exploration, and then kept fixed during exploration. This approach can be problematic in our case, as a fix set of precollected examples can hardly be representative of the actual diversity of patterns that the system can produce, limiting the possibilities to discover novel patterns beyond the distribution of pretraining examples.&lt;/p&gt;
+
+&lt;p&gt;Therefore, we incorporate the training of the VAE in an &lt;strong&gt;online manner&lt;/strong&gt; during exploration. The autoencoder is trained periodically, for instance every 100 exploration runs,  on all the patterns explored so far. Importance sampling is used to give more weight to recently discovered patterns. A similar framework to ours has also been used in the context of goal-directed reinforcement learning (&lt;a href=&quot;https://arxiv.org/abs/1807.04742&quot;&gt;Nair et al., 2018&lt;/a&gt;; &lt;a href=&quot;https://arxiv.org/abs/1903.03698&quot;&gt;Pong et al., 2019&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h3 id=&quot;second-challenge-how-to-effectively-parametrize-the-initial-state-&quot;&gt;Second challenge: How to effectively parametrize the initial state ?&lt;/h3&gt;
+&lt;p&gt;Another critical part for the success of IMGEPs in systems with high-dimensional parameter spaces, is the ability to effectively encode and initialize the initial state. A key ingredient in the case of  robots to explore their surroundings was the use of &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0921889012001716?casa_token=eMuS_v0yy68AAAAA:cHWY6-Qb0iFMbeV4M6PgfTezPv9r5ROAFgIcGI1SpQhRgDa2_8VKXTTSSCJxwnXZ2FS0MaE&quot;&gt;dynamic motion primitives (DMPs)&lt;/a&gt; to encode the space of body motions and produce structured movements over time.&lt;/p&gt;
+
+&lt;p&gt;In the same way as it is inefficient for a robot to explore its body actions from the perspective of low-level actuator commands, it is inefficient in our case to explore and generate patterns from the pixel-wise perspective. We need an efficient way to encode and randomly initialize Lenia’s initial state (256x256 grid cell). Using a simple random initialization of each individual cell will generate white noise patterns which tend to evolve into dead or global patterns spanning the whole grid, missing out other structures such as spatially localized patterns.&lt;/p&gt;
+&lt;div style=&quot;display: box;  text-align: center; border-style: solid; border-radius: 25px; border-width: 2px; margin-left: auto; margin-top: -10px; margin-bottom: 10px; &quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline; margin-left: 20px&quot;&gt; Problem with random sampling of initial states: &lt;/p&gt;
+&lt;img src=&quot;media/png/white_noise_initialization.png&quot; style=&quot;margin-top: -20px;&quot; /&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;We solved the sampling problem for the initial states by transposing the idea of structured primitives into a similar mechanism using &lt;a href=&quot;https://aaai.org/Library/Symposia/Fall/2006/fs06-03-008.php&quot;&gt;Compositional Pattern Producing Networks (CPPNs)&lt;/a&gt;. CPPNs are recurrent neural networks that allow us to generate structured patterns, as shown in the above figure. The CPPNs are used as part of the parameters $\theta$ and are defined by their network structure (number of neurons, connections between neurons) and their connection weights. 
+CPPNs can be “evolved” using random mutations for their weights and structure. We use this process of random mutations in our parameter sampling strategy. To summarize, &lt;strong&gt;CPPNs provide us an efficient way to produce structured patterns and to smoothly evolve already explored configurations&lt;/strong&gt;.&lt;/p&gt;
+&lt;div style=&quot;border-style: solid; border-radius: 25px; border-width: 2px; padding: 5px;&quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; Compositional Pattern Producing Networks (CPPN): &lt;/p&gt;
+&lt;img src=&quot;media/png/cppn_1.png&quot; style=&quot;width: 55%;&quot; /&gt; 
+&lt;img src=&quot;media/png/cppn_2.png&quot; style=&quot;width: 40%; margin-left: 20px;&quot; /&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;For a better understanding on CPPN and how they can be used, we recommend &lt;a href=&quot;https://towardsdatascience.com/understanding-compositional-pattern-producing-networks-810f6bef1b88&quot;&gt;this blogpost&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;results-of-our-automated-discoveries&quot;&gt;Results of our automated discoveries&lt;/h2&gt;
+&lt;p&gt;We used our method to identify a high diversity of patterns in Lenia and evaluated its performance with other algorithms.&lt;br /&gt;
+To get a better insight into the results, this section first provides examples of  “interesting” identified patterns; then discusses the differences between the discovered patterns by several IMGEP variants; and finally proposes a quantitative way to evaluate the obtained diversity.&lt;/p&gt;
+
+&lt;h3 id=&quot;examples-of-identified-patterns&quot;&gt;Examples of identified patterns&lt;/h3&gt;
+&lt;div style=&quot;display: flex;  justify-content: space-between;&quot;&gt;
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; loop=&quot;&quot; style=&quot;width: 24%; border-style: solid; border-radius: 25px; border-width: 2px;&quot;&gt;
+&lt;source src=&quot;media/video/pattern1.webm&quot; type=&quot;video/webm&quot; /&gt;
+Your browser does not support the video tag.
+&lt;/video&gt; 
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; loop=&quot;&quot; style=&quot;width: 24%; border-style: solid; border-radius: 25px; border-width: 2px;&quot;&gt;
+&lt;source src=&quot;media/video/pattern6.webm&quot; type=&quot;video/webm&quot; /&gt;
+Your browser does not support the video tag.
+&lt;/video&gt; 
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; loop=&quot;&quot; style=&quot;width: 24%; border-style: solid; border-radius: 25px; border-width: 2px;&quot;&gt;
+&lt;source src=&quot;media/video/pattern3.webm&quot; type=&quot;video/webm&quot; /&gt;
+Your browser does not support the video tag.
+&lt;/video&gt; 
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; loop=&quot;&quot; style=&quot;width: 24%; border-style: solid; border-radius: 25px; border-width: 2px;&quot;&gt;
+&lt;source src=&quot;media/video/pattern7.webm&quot; type=&quot;video/webm&quot; /&gt;
+Your browser does not support the video tag.
+&lt;/video&gt; 
+&lt;/div&gt;
+
+&lt;div style=&quot;margin-top: 5px; margin-bottom: 10px; display: flex; justify-content: space-between;&quot;&gt;
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; loop=&quot;&quot; style=&quot;width: 24%; border-style: solid; border-radius: 25px; border-width: 2px; padding-bottom: 2px;&quot;&gt;
+&lt;source src=&quot;media/video/pattern5.webm&quot; type=&quot;video/webm&quot; /&gt;
+Your browser does not support the video tag.
+&lt;/video&gt; 
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; loop=&quot;&quot; style=&quot;width: 24%; border-style: solid; border-radius: 25px; border-width: 2px; padding-bottom: 2px;&quot;&gt;
+&lt;source src=&quot;media/video/pattern2.webm&quot; type=&quot;video/webm&quot; /&gt;
+Your browser does not support the video tag.
+&lt;/video&gt; 
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; loop=&quot;&quot; style=&quot;width: 24%; border-style: solid; border-radius: 25px; border-width: 2px; padding-bottom: 2px;&quot;&gt;
+&lt;source src=&quot;media/video/pattern8.webm&quot; type=&quot;video/webm&quot; /&gt;
+Your browser does not support the video tag.
+&lt;/video&gt; 
+&lt;video muted=&quot;&quot; autoplay=&quot;&quot; loop=&quot;&quot; style=&quot;width: 24%; border-style: solid; border-radius: 25px; border-width: 2px; padding-bottom: 2px;&quot;&gt;
+&lt;source src=&quot;media/video/pattern4.webm&quot; type=&quot;video/webm&quot; /&gt;
+Your browser does not support the video tag.
+&lt;/video&gt; 
+&lt;/div&gt;
+
+&lt;p&gt;These videos showcase some patterns that were autonomously discovered by our approach (IMGEP with online learned goal space).
+These results, that we subjectively qualify as &lt;em&gt;interesting&lt;/em&gt;, seem to suggest that our artificial “scientist” is able to discover complex patterns resembling both the “animal patterns” manually identified by Lenia’s creator and “global patterns” with interesting spreading dynamics.&lt;/p&gt;
+
+&lt;h3 id=&quot;impact-of-the-choice-of-the-representation&quot;&gt;Impact of the choice of the representation&lt;/h3&gt;
+&lt;p&gt;One of the most striking points of our results  is that the &lt;strong&gt;choice of the representation&lt;/strong&gt; for the goal space will &lt;strong&gt;strongly bias the results of exploration&lt;/strong&gt;. &lt;br /&gt;
+To illustrate this, we show below the complete database of discoveries that were made by three variants of our IMGEP algorithm, namely:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;IMGEP-OGL&lt;/strong&gt;: main IMGEP variant that uses, as goal space representation, a VAE that is trained in an online manner on the patterns discovered during the exploration process&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;IMGEP-HGS&lt;/strong&gt;: IMGEP variant that uses a hand-defined goal space representation composed of 5 features, proposed in the original Lenia’s paper, that characterize typical computer-vision properties of the final patterns (such as the activity, density and (as)symmetry)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;IMGEP-RGS&lt;/strong&gt;: an ablated IMGEP variant that uses, as goal space representation, a randomly-initialized neural embedding network (with the same architecture than the VAE’s encoder of the main variant)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;flexslider&quot;&gt;
+&lt;ul class=&quot;slides&quot;&gt;
+
+&lt;li&gt;
+&lt;div style=&quot;border-style: solid; border-radius: 25px; border-width: 2px;&quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; IMGEP-OGL: goal space learned online with a beta-VAE &lt;/p&gt;
+&lt;p style=&quot;text-align:center; font-size: 16px; margin-top:-20px&quot;&gt; 5000 patterns discovered by IMGEP-OGL visualized with 3D PCA reduction of the original 8D goal space. &lt;/p&gt;
+&lt;div style=&quot;overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;&quot;&gt;
+&lt;iframe id=&quot;iframe1&quot; name=&quot;visualisation&quot; src=&quot;&quot; scrolling=&quot;no&quot; style=&quot;height:775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px &quot;&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p style=&quot;text-align:center; font-size: 16px;&quot;&gt; &lt;i class=&quot;fa fa-hand-pointer-o&quot;&gt;&lt;/i&gt; 
+rotate (left click), pan (right click) and scroll (mouse wheel) through the discovered patterns
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;div style=&quot;border-style: solid; border-radius: 25px; border-width: 2px;&quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; IMGEP-HGS: goal space defined with hand-defined features&lt;/p&gt;
+&lt;p style=&quot;text-align:center; font-size: 16px; margin-top:-20px&quot;&gt; 5000 patterns discovered by IMGEP-OGL visualized with 3D PCA reduction of the original 5D goal space. &lt;/p&gt;
+&lt;div style=&quot;overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;&quot;&gt;
+&lt;iframe id=&quot;iframe2&quot; name=&quot;visualisation&quot; src=&quot;&quot; scrolling=&quot;no&quot; style=&quot;height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px &quot;&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p style=&quot;text-align:center; font-size: 16px;&quot;&gt; &lt;i class=&quot;fa fa-hand-pointer-o&quot;&gt;&lt;/i&gt; 
+rotate (left click), pan (right click) and scroll (mouse wheel) through the discovered patterns
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;div style=&quot;border-style: solid; border-radius: 25px; border-width: 2px;&quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; font-weight: bold; text-decoration: underline;&quot;&gt; IMGEP-RGS: goal space defined with a randomly-initialised NN &lt;/p&gt;
+&lt;p style=&quot;text-align:center; font-size: 16px; margin-top:-20px&quot;&gt; 5000 patterns discovered by IMGEP-RGS visualized with 3D PCA reduction of the original 8D goal space. &lt;/p&gt;
+&lt;div style=&quot;overflow: hidden; margin-top:-20px; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;&quot;&gt;
+&lt;iframe id=&quot;iframe3&quot; name=&quot;visualisation&quot; src=&quot;&quot; scrolling=&quot;no&quot; style=&quot;height: 775px; width: 1450px; margin-top: -108px; margin-left: -340px; margin-bottom: -15px; margin-right: -330px &quot;&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p style=&quot;text-align:center; font-size: 16px;&quot;&gt; &lt;i class=&quot;fa fa-hand-pointer-o&quot;&gt;&lt;/i&gt; 
+rotate (left click), pan (right click) and scroll (mouse wheel) through the discovered patterns
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(window).load(function() {
+$(&quot;#iframe1&quot;).attr(&quot;src&quot;, &quot;https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_ogl_config.json&quot;);
+$(&quot;#iframe2&quot;).attr(&quot;src&quot;, &quot;https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_hgs_config.json&quot;);
+$(&quot;#iframe3&quot;).attr(&quot;src&quot;, &quot;https://projector.tensorflow.org/?config=https://raw.githubusercontent.com/intrinsically-motivated-discovery/intrinsically-motivated-discovery.github.io/master/assets/media/tensorboard/projector_rgs_config.json&quot;);
+});
+&lt;/script&gt;
+
+&lt;p&gt;As we can see, using a learned (OGL), hand-defined (HGS) or random (RGS) goal space will have a strong influence on the final discoveries of the IMGEP.
+It seems that IMGEP-OGL is more inclined to discover spatially localized patterns whereas IMGEP-HGS is more inclined toward global patterns and IMGEP-RGS toward high-frequency “stripes” patterns.
+These findings strongly suggest that the ability of a representation R to better describe and discriminate a certain &lt;em&gt;type&lt;/em&gt; of patterns will drive the IMGEP to find a high diversity for this &lt;em&gt;type&lt;/em&gt; of patterns. For instance, in our IMGEP-OGL experiment the VAE learned to encode the general form and shape of patterns but ignored fine-grained structures (as it is well known VAEs can poorly reconstruct high-frequency details). As a consequence, all the fine-grained “texture” patterns are occupying a small area of the goal space, and therefore are less often sampled as target goals during the IMGEP exploration process.&lt;/p&gt;
+
+&lt;h3 id=&quot;diversity-of-identified-patterns&quot;&gt;Diversity of identified patterns&lt;/h3&gt;
+&lt;p&gt;Our main motivation is to find a high &lt;strong&gt;diversity&lt;/strong&gt; of patterns. 
+To evaluate if our approach discovers a higher diversity than other approaches we propose to measure the diversity of a discovered set of patterns by the area it covers when projected in an &lt;em&gt;analytic behavior space&lt;/em&gt;.
+This space is externally defined by the experimenter and the covered area is measured by binning the space and counting the number of explored bins. &lt;br /&gt;
+Because we do not have access to an easily interpretable low-dimensional &lt;em&gt;behavior space&lt;/em&gt;, we constructed it by concatenating (i) features learned by a VAE trained on a very large dataset of Lenia patterns (allowing to cover order of magnitude more patterns that what could be found in any single algorithm experiment); and (ii) 5 hand-defined features from the original Lenia’s paper.&lt;br /&gt;
+We also measured the diversity in the space of parameters &lt;script type=&quot;math/tex&quot;&gt;\Theta&lt;/script&gt; by concatenating Lenia’s parameters $(R, T, \mu, \sigma, \beta_1, \beta_2, \beta_3)$ and the latent representation of a VAE trained on a large dataset of initial Lenia states ($A^{t=1}$).&lt;br /&gt;
+Additionally, we categorized the patterns into 3 families: &lt;em&gt;dead&lt;/em&gt; (the activity of all grid cells being either 0 or 1), &lt;em&gt;animal&lt;/em&gt; (finite and connected pattern of activity) and &lt;em&gt;non-animal&lt;/em&gt; (remaining - usually spread over the whole state space). This categorization follows the identification of &lt;em&gt;spatially localized patterns&lt;/em&gt; (SLPs)  or &lt;em&gt;solitons&lt;/em&gt; in Conway’s Game of Life, equivalent to what we call “animals” in Lenia, versus other global patterns. These categories allow us to analyze the exploration behaviors of the different IMGEP variants in identifying a certain &lt;em&gt;type&lt;/em&gt; of pattern (as we could qualitatively observe by visually browsing the results).&lt;br /&gt;
+Using this procedure, the exploration behaviors of different IMGEP variants were evaluated and compared to a naive random exploration.&lt;/p&gt;
+&lt;div style=&quot;border-style: solid; border-radius: 25px; border-width: 2px; padding: 10px;&quot;&gt;
+&lt;div style=&quot;display: flex; justify-content: space-between; &quot;&gt;
+&lt;div style=&quot;display: flex; flex-direction: column;&quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; text-decoration: underline;  font-weight: bold;&quot;&gt; (a) Diversity in Parameter Space:&lt;/p&gt;
+&lt;img src=&quot;media/png/diversity_runparamspace_all_adapted.png&quot; /&gt; 
+&lt;/div&gt;
+&lt;div style=&quot;display: flex; flex-direction: column;&quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; text-decoration: underline;  font-weight: bold;&quot;&gt; (b) Diversity in Statistic Space:&lt;/p&gt;
+&lt;img src=&quot;media/png/diversity_statisticspace_all_adapted.png&quot; /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: flex; justify-content: space-between; &quot;&gt;
+&lt;div style=&quot;display: flex; flex-direction: column;&quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; text-decoration: underline;  font-weight: bold;&quot;&gt; (c) Statistic Space Diversity for Animals:&lt;/p&gt;
+&lt;img src=&quot;media/png/diversity_statisticspace_animals_adapted.png&quot; /&gt;
+&lt;/div&gt;
+&lt;div style=&quot;display: flex; flex-direction: column;&quot;&gt;
+&lt;p style=&quot;text-align:center; font-size: 18px; text-decoration: underline;  font-weight: bold;&quot;&gt; (d) Statistic Space Diversity for Non-Animals:&lt;/p&gt;
+ &lt;img src=&quot;media/png/diversity_statisticspace_nonanimals_adapted.png&quot; /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The above graphs show the evolution of the diversity for each algorithm over the 5000 explorations that they performed. We draw the following conclusions:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;(a-b): Even though random parameter exploration tries more diverse configurations in the input parameter space (a),  IMGEP with hand-defined (HGS) or learned (PGL/OGL) goal space find a higher diversity in the analytic behavior space than random exploration (b). This confirm that &lt;strong&gt;goal exploration algorithms outperforms random parameter exploration to discover diverse patterns&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;(b-c-d): using random features (RGS) collapsed the performance of goal exploration, and did not even outperform random parameter exploration for all kinds of behavioural diversity, showing the &lt;strong&gt;importance of having informative goal spaces&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;(c):  IMGEPs with a learned goal space (PGL/OGL) discovered a larger diversity of animals compared to a hand-defined goal space (HGS). These results uncover an &lt;strong&gt;interesting bias of using learned features with a VAE architecture, which strongly incentivizes discovery of diverse spatially localized patterns&lt;/strong&gt; (called “animal” patterns).&lt;/li&gt;
+  &lt;li&gt;(b-c): The new online approach (IMGEP-OGL) is as efficient as a pretrained approach (IMGEP-PGL) to discover diverse pattern, even though PGL was pretrained on a dataset containing already 50% animal. This showed that it is feasible to learn goal spaces for such systems in an online manner &lt;strong&gt;removing the need to collect preliminary data&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;(d): Learned goal spaces (PGL/OGL) are as efficient as a hand-defined space for finding diverse non-animals patterns.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;related-work--research-perspectives&quot;&gt;Related work &amp;amp; Research perspectives&lt;/h2&gt;
+&lt;h3 id=&quot;simulate-self-organizing-systems-toward-more-expressive-models&quot;&gt;Simulate self-organizing systems: toward more expressive models&lt;/h3&gt;
+&lt;p&gt;To better understand relations between the individual cell dynamics and the global pattern formation processes, many mathematical and computational models have been proposed. These models can be categorized into three main families: &lt;a href=&quot;https://en.wikipedia.org/wiki/Partial_differential_equation&quot;&gt;partial differential equations (PDEs)&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Cellular_automaton&quot;&gt;cellular automata (CAs)&lt;/a&gt;, and &lt;a href=&quot;https://en.wikipedia.org/wiki/Agent-based_model&quot;&gt;agent-based models (ABM)&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;PDEs are based on continuous mathematical descriptions (differential equations) that describe the space-time evolution of chemical morphogens substances. From &lt;a href=&quot;https://en.wikipedia.org/wiki/Alan_Turing&quot;&gt;Alan Turing&lt;/a&gt;’s influential paper &lt;a href=&quot;http://www.dna.caltech.edu/courses/cs191/paperscs191/turing.pdf&quot;&gt;“The Chemical Basis of Morphogenesis”&lt;/a&gt; in 1952, which introduced a prototype model of reaction-diffusion equations for describing pattern-formation mechanisms of animals’ skins, this family of models is pioneer in modelling self-organizing systems.&lt;/li&gt;
+  &lt;li&gt;CAs, contrary to continuous approaches that study populations at a global level, model each element or &lt;em&gt;cell&lt;/em&gt; individually, as well as their interactions. The concept of cellular automata was introduced by &lt;a href=&quot;https://en.wikipedia.org/wiki/John_von_Neumann&quot;&gt;John von Neumann&lt;/a&gt; in the 40’s and became very popular in the 70’s with Conway’s Game of Life.&lt;/li&gt;
+  &lt;li&gt;ABMs are multi-agent systems that consider cells as &lt;em&gt;entities&lt;/em&gt; or &lt;em&gt;agents&lt;/em&gt; (no shape constraints contrary to CAs fixed-square grid) which are locally interacting in their environment. Various ABM systems have been proposed in computational biology to study tissue formation (&lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1629079/&quot;&gt;Chaturvedi et al., 2005&lt;/a&gt;, &lt;a href=&quot;http://hal.elte.hu/~vicsek/downloads/papers/chate-sell-sortingt.pdf&quot;&gt;Belmonte et al., 2008&lt;/a&gt;), mainly differing by the choice of the physical representation of the &lt;em&gt;agent&lt;/em&gt; and of its behaviors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All these approaches to model real-word complex systems are abstract simplifications of reality. However, these numerical models have permitted to study key aspects of collective behaviors (&lt;a href=&quot;https://arxiv.org/abs/1010.5017&quot;&gt;Viksek &amp;amp; Zafeiris, 2010&lt;/a&gt;), spontaneous formation of spatial patterns (&lt;a href=&quot;https://www.jstor.org/stable/24925832&quot;&gt;Gardner, 1970&lt;/a&gt;) and self-replication (&lt;a href=&quot;https://www.sciencedirect.com/science/article/abs/pii/0167278984902562&quot;&gt;Langton, 1984&lt;/a&gt;), as well as bringing clear experimental advantages in terms of time, budget and controllability.&lt;/p&gt;
+
+&lt;p&gt;Moreover, we observe a recent renewal of interest in research around these models, with the rise of extended versions of the traditional models (&lt;a href=&quot;https://arxiv.org/abs/1111.1567&quot;&gt;SmoothLife&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/1812.05433.pdf&quot;&gt;Lenia&lt;/a&gt;) and the introduction of novel data structures such as convolutional neural networks (CNNs) (&lt;a href=&quot;https://arxiv.org/abs/1809.02942&quot;&gt;Cellular automata as convolutional neural networks&lt;/a&gt;) and graph neural networks (GNNs) (&lt;a href=&quot;https://pathak22.github.io/modular-assemblies/&quot;&gt;Pathak et al, 2019&lt;/a&gt;). These recent models bring a new level of expressivity and show the emergence of more complex life-like structures (such as Lenia’s “lifeforms”).&lt;/p&gt;
+
+&lt;h3 id=&quot;understand-self-organizing-systems-novel-machine-learning-perspectives&quot;&gt;Understand self-organizing systems: novel machine learning perspectives&lt;/h3&gt;
+&lt;p&gt;Designing such systems, that show desirable properties (e.g. self-regeneration, self-replication) without any form of centralized control, brings a lot of engineering / programming challenges, especially when moving toward richer models (with more neighbors and continuous state/space like Lenia). For these reasons recent work proposes to rely on powerful optimization techniques, such as evolutionary strategies (&lt;a href=&quot;https://ieeexplore.ieee.org/document/8004527&quot;&gt;CA-NEAT&lt;/a&gt;, &lt;a href=&quot;https://pathak22.github.io/modular-assemblies/&quot;&gt;Learning to Control Self-Assembling Morphologies&lt;/a&gt;) or deep learning techniques (&lt;a href=&quot;https://distill.pub/2020/growing-ca/&quot;&gt;Growing Neural Cellular Automata&lt;/a&gt;) to help designing and/or controlling such systems.&lt;/p&gt;
+
+&lt;p&gt;We position ourselves in this pan of literature, but with a different perspective: rather than optimizing a given system to achieve a desired property, we are interested in exploring the system to discover a diversity of interesting properties.
+However, in the same way that reinforcement learning optimization has been successfully coupled to IMGEPs goal-generation algorithms in robotics, a promising future direction is to couple (i) IMGEPs to automatically discover “interesting” behaviors of a system (ii) evolutionary / deep learning / reinforcement learning based optimization techniques to understand and replicate these behaviors from different initial conditions.&lt;/p&gt;
+
+&lt;h3 id=&quot;manipulate-self-organizing-systems-high-precision-automated-laboratory&quot;&gt;Manipulate self-organizing systems: high-precision automated laboratory&lt;/h3&gt;
+&lt;p&gt;There has also been recent developments for automating robotic platforms in the experimental laboratory (&lt;a href=&quot;https://github.com/croningp/dropfactory&quot;&gt;Dropfactory&lt;/a&gt;, &lt;a href=&quot;https://www.nature.com/articles/s41586-018-0307-8&quot;&gt;organic synthesis robot&lt;/a&gt;), once again going in pair with the introduction of novel machine learning algorithms for advanced optimization in the experimentations (&lt;a href=&quot;https://www.nature.com/articles/nature17439&quot;&gt;ML-assisted material discovery&lt;/a&gt;, &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S1385894718312634&quot;&gt;ML meets continuous flow chemistry&lt;/a&gt;).
+These automated experimental platforms offer novel levels of precision and control and open new opportunities to review the way scientific experiments can be performed.&lt;/p&gt;
+
+&lt;p&gt;A parallel work to ours, &lt;a href=&quot;https://advances.sciencemag.org/content/6/5/eaay4237&quot;&gt;Grizou et al., 2020&lt;/a&gt;, showed how intrinsically motivated goal exploration can be used to automate discovery of novel patterns in wet chemical systems. The system of interest is here an oil droplet system, used to study questions about the origins of cells. Depending on the chemical composition of the droplets, the system shows patterns like division, chaining or grouping. Scientists do not fully understand their underlying dynamics and it takes too long to explore all possible chemical combinations. This work has shown that IMGEPs, combined with a robotic experimentation platform, could discover a larger diversity of behaviors in the chemical droplet system.&lt;/p&gt;
+
+&lt;p&gt;We plan, in future work, to apply our novel algorithmic contributions (automatic learning of goal space representations) to more complex “wet” systems.&lt;/p&gt;
+
+&lt;h3 id=&quot;in-silico-in-vitro-soon-in-vivo&quot;&gt;&lt;em&gt;In silico&lt;/em&gt;, &lt;em&gt;in vitro&lt;/em&gt;, soon &lt;em&gt;in vivo&lt;/em&gt;?&lt;/h3&gt;
+&lt;p&gt;Finally, near future research will probably happen at the frontier of simulated machine environments (“in silico”), controlled experimental conditions (“in vitro”) and potentially directly in living organisms (“in vivo”).
+With the advances in synthetic biology and powerful novel technologies such as &lt;a href=&quot;https://en.wikipedia.org/wiki/3D_bioprinting&quot;&gt;bio-printing&lt;/a&gt;, we can hope to create functional tissues or organs for in vivo applications such as regenerative medicine and drug discovery.
+The recent work of &lt;a href=&quot;https://www.pnas.org/content/117/4/1853&quot;&gt;Kriegman et al., 2020&lt;/a&gt;, into which evolutionary algorithms at the computer level where directly transposed to “engineer” a new kind of living organism, the so-called &lt;a href=&quot;https://en.wikipedia.org/wiki/Xenobot&quot;&gt;xenobots&lt;/a&gt;, is an exciting proof of concept in that direction.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Our paper demonstrates how intrinsically-motivated goal exploration processes algorithms can efficiently be transposed to a new kind of problem: automatic discovery of diverse self-organized patterns in morphogenetic systems such as the Game of Life. In further work, we plan to apply this approach to “wet” systems and aim to better understand the (fundamental) process behind proto-cells self-organization.&lt;/p&gt;
+
+&lt;h2 id=&quot;aknowledgements&quot;&gt;Aknowledgements&lt;/h2&gt;
+&lt;p&gt;We would like to thank &lt;a href=&quot;https://chakazul.github.io/&quot;&gt;Bert Chan&lt;/a&gt; and &lt;a href=&quot;https://jgrizou.com/&quot;&gt;Jonathan Grizou&lt;/a&gt; for valuable discussions.&lt;/p&gt;
+
+&lt;h2 id=&quot;additional-material&quot;&gt;Additional Material&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Paper: &lt;a href=&quot;https://arxiv.org/abs/1908.06663&quot;&gt;Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems&lt;/a&gt;. Reinke, Etcheverry and Oudeyer, 2020. In International Conference on Learning Representations (ICLR 2020).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://automated-discovery.github.io/&quot;&gt;Project Website&lt;/a&gt; with additional videos and complete database of the results&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/flowersteam/automated_discovery_of_lenia_patterns&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.philipball.co.uk/the-self-made-tapestry-pattern-formation-in-nature&quot;&gt;The Self-Made Tapestry: Pattern Formation in Nature&lt;/a&gt;. Philip Ball, 1999.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://press.princeton.edu/books/paperback/9780691116242/self-organization-in-biological-systems&quot;&gt;Self-organization in biological systems&lt;/a&gt;. Camazine et al., 2003.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nature.com/articles/ncomms6571&quot;&gt;Evolution of oil droplets in a chemorobotic platform&lt;/a&gt;. Gutierrez et al., 2014.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nature.com/articles/311419a0.pdf?origin=ppub&quot;&gt;Cellular automata as models of complexity&lt;/a&gt;. Wolfram, 1984.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1812.05433.pdf&quot;&gt;Lenia-biology of artificial life&lt;/a&gt;. Bert Chan, 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1301.4862&quot;&gt;Active Learning of Inverse Models with Intrinsically Motivated Goal Exploration in Robots&lt;/a&gt;. Baranes &amp;amp; Oudeyer, 2013.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1810.06284&quot;&gt;CURIOUS: Intrinsically Motivated Modular Multi-Goal Reinforcement Learning&lt;/a&gt;. Colas et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1807.04742&quot;&gt;Visual reinforcement learning with imagined goals&lt;/a&gt;. Nair et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1903.03698&quot;&gt;Skew-Fit: State-Covering Self-Supervised Reinforcement Learning&lt;/a&gt;. Pong et al., 2019.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1708.02190.pdf&quot;&gt;Intrinsically Motivated Goal Exploration Processes with Automatic Curriculum Learning&lt;/a&gt;. Forestier et al., 2017.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://eplex.cs.ucf.edu/papers/lehman_alife08.pdf&quot;&gt;Exploiting Open-Endedness to Solve Problems Through the Search for Novelty&lt;/a&gt;. Lehman &amp;amp; Stanley, 2008.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1312.6114&quot;&gt;Auto-Encoding Variational Bayes&lt;/a&gt;. Kingma &amp;amp; Welling, 2013.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/pdf/1803.00781.pdf&quot;&gt;Unsupervised Learning of Goal Spaces for Intrinsically Motivated Goal Exploration&lt;/a&gt;. Péré et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1807.01521&quot;&gt;Curiosity Driven Exploration of Learned Disentangled Goal Spaces&lt;/a&gt;. Laversanne-Finot et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0921889012001716?casa_token=eMuS_v0yy68AAAAA:cHWY6-Qb0iFMbeV4M6PgfTezPv9r5ROAFgIcGI1SpQhRgDa2_8VKXTTSSCJxwnXZ2FS0MaE&quot;&gt;From dynamic movement primitives to associative skill memories&lt;/a&gt;. Pastor et al., 2013.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://aaai.org/Library/Symposia/Fall/2006/fs06-03-008.php&quot;&gt;Exploiting regularity without development&lt;/a&gt;. Stanley, 2006.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.dna.caltech.edu/courses/cs191/paperscs191/turing.pdf&quot;&gt;“The Chemical Basis of Morphogenesis”&lt;/a&gt;. Turing, 1952.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1629079/&quot;&gt;On multiscale approaches to three-dimensional modelling of morphogenesis&lt;/a&gt;. Chaturvedi et al., 2005.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://hal.elte.hu/~vicsek/downloads/papers/chate-sell-sortingt.pdf&quot;&gt;Self-Propelled Particle Model for Cell-Sorting Phenomena&lt;/a&gt;. Belmonte et al., 2008.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1010.5017&quot;&gt;Collective motion&lt;/a&gt;. Viksek &amp;amp; Zafeiris, 2010.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jstor.org/stable/24925832&quot;&gt;Mathematical games: the fantastic combinations of John Conway’s new solitaire game ‘Life’&lt;/a&gt;. Gardner, 1970.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/abs/pii/0167278984902562&quot;&gt;Self-reproduction  in  cellular  automata&lt;/a&gt;. Langton, 1984.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1111.1567&quot;&gt;Generalization of Conway’s “Game of Life” to a continuous domain - SmoothLife&lt;/a&gt;. Rafler, 2011.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1809.02942&quot;&gt;Cellular automata as convolutional neural networks&lt;/a&gt;. Gilpin, 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pathak22.github.io/modular-assemblies/&quot;&gt;Learning to Control Self-Assembling Morphologies: A Study of Generalization via Modularity&lt;/a&gt;. Pathak et al., 2019.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/8004527&quot;&gt;CA-NEAT: Evolved Compositional Pattern Producing Networks for Cellular Automata Morphogenesis and Replication&lt;/a&gt;. Nichele et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://distill.pub/2020/growing-ca/&quot;&gt;Growing Neural Cellular Automata&lt;/a&gt;. Mordvintsev et al., 2020.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://advances.sciencemag.org/content/6/5/eaay4237&quot;&gt;A curious formulation robot enables the discovery of a novel protocell behavior&lt;/a&gt;. Grizou et al., 2020.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nature.com/articles/s41586-018-0307-8&quot;&gt;Controlling an organic synthesis robot with machine learning to search for new reactivity&lt;/a&gt;. Granda et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nature.com/articles/nature17439&quot;&gt;Machine-learning-assisted materials discovery using failed experiments&lt;/a&gt;. Raccuglia et al., 2016.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S1385894718312634&quot;&gt;Machine learning meets continuous flow chemistry: Automated optimization towards the Pareto front of multiple objectives&lt;/a&gt;. Schweidtmann et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.pnas.org/content/117/4/1853&quot;&gt;A scalable pipeline for designing reconfigurable organisms&lt;/a&gt;. Kriegman et al., 2020.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;contact&quot;&gt;Contact&lt;/h2&gt;
+&lt;p&gt;Email: mayalen.etcheverry@inria.fr, chris.reinke@inria.fr, pierre-yves.oudeyer@inria.fr&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h6 id=&quot;subscribe-to-our-twitter&quot;&gt;Subscribe to our &lt;a href=&quot;https://twitter.com/@flowersINRIA&quot;&gt;Twitter&lt;/a&gt;.&lt;/h6&gt;
+&lt;hr /&gt;
 </description>
-        <pubDate>Fri, 08 Mar 2019 12:21:29 +0100</pubDate>
-        <link>http://localhost:4000/mock_blog_post</link>
-        <guid isPermaLink="true">http://localhost:4000/mock_blog_post</guid>
+        <pubDate>Thu, 26 Mar 2020 12:21:29 +0100</pubDate>
+        <link>http://localhost:4000/intrinsically_motivated_discovery_of_diverse_patterns</link>
+        <guid isPermaLink="true">http://localhost:4000/intrinsically_motivated_discovery_of_diverse_patterns</guid>
+      </item>
+    
+      <item>
+        <title>Intrinsically Motivated Modular Multi-Goal RL</title>
+        <description>&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;iframe width=&quot;70%&quot; height=&quot;300&quot; src=&quot;https://www.youtube.com/embed/SLYeRDpWa5k&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;In Reinforcement Learning (RL), agents are usually provided a unique goal, well-defined by an associated reward function that provides positive feedbacks when the goal is fullfilled, negative feedbacks otherwise. If a domestic robot sets the table, it is rewarded, if the plates are on the floor, it is not. The objective of that agent is to maximize the sum of collected rewards.&lt;/p&gt;
+
+&lt;p&gt;In the more realistic open-ended and changing environments, agents face a wide range of potential goals that might not come with associated reward functions. Such autonomous learning agents must set their own goals and build their own curriculum through an &lt;strong&gt;intrinsically motivated exploration&lt;/strong&gt;. They must decide for themselves what to practice and what to  learn. Because some goals might prove easy and some impossible, agents must actively select which goal to practice at any given moment, to maximize their overall mastery on the set of learnable goals.&lt;/p&gt;
+
+&lt;p&gt;This blog post presents CURIOUS, an algorithm rooted in developmental robotics that builds on two main fields:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Multi-goal RL.&lt;/strong&gt; Agents traditionally learn to perform one well-defined goal. On the contrary, Multi-Goal RL trains agents on a goal-parameterized setup. Instead of training a robot to bring the TV remote at this special spot on the table, we can now train it to bring it at any given location (goal), in the living room, on the sofa etc. Learning  about a precise goal benefits learning about others as well, which speeds up learning.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Curriculum Learning.&lt;/strong&gt; When facing different possible goals (e.g. going to the kitchen, fetching the remote, cleaning the floor), the agent needs to prioritize and decide which goal to practice at any given moment. Developmental Robotics presents mechanisms to help this goal arbitration. Optimizing for learning progress for example, enables an automatic curriculum to emerge. First, train on simple goals. When they are mastered, move on to others where progress is made.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All details can be found in the &lt;a href=&quot;https://arxiv.org/abs/1810.06284&quot;&gt;paper&lt;/a&gt;. The &lt;a href=&quot;https://github.com/flowersteam/curious&quot;&gt;algorithm&lt;/a&gt; and the &lt;a href=&quot;https://github.com/flowersteam/gym_flowers&quot;&gt;environment&lt;/a&gt; can be found on Github.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem-of-intrinsically-motivated-modular-multi-goal-reinforcement-learning&quot;&gt;The Problem of Intrinsically Motivated Modular Multi-Goal Reinforcement Learning&lt;/h2&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img class=&quot;80&quot; src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/1/15ea4a22bd3ebbe32ad0b9afddd36b9647563c34.png&quot; width=&quot;80%&quot; alt=&quot;The Multi-Task, Multi-Goal Fetch Arm environment.&quot; /&gt;
+&lt;div&gt;
+&lt;sub&gt;
+&lt;i&gt;&lt;b&gt;Modular Multi-Goal Fetch Arm&lt;/b&gt;: an environment with multiple modular goals with various levels of difficulty, from simple to impossible. One module correspond to a type of goals (Reach, Push, Pick and Place, Stack, Push out-of-reach cube). For each module there is an infinity of potential goals (targets).&lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Agents in the real world might face a large number of potential &lt;em&gt;goals&lt;/em&gt; that might be of different types. A domestic robot might want to clean up a table, to prepare the meal, to set the table etc. Some of these goals might be regrouped into modules where particular goals are seen as targets of a same general behavior: e.g. “move the plates” can be seen as a module where particular goals would be “move the plates on the table”, or “move the plates in the cupboard”. The modules here can be more generally defined as constraints on the state  or trajectory of states. “Move the plate” requires a modification of the position of these plates, the particular goal requires an additional parameter speciying &lt;em&gt;where&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;This modular multi-goal setting is simulated in our Modular Multi-Goal Fetch Arm environment. Adapted from &lt;a href=&quot;https://github.com/openai/gym&quot;&gt;OpenAI Gym&lt;/a&gt;’s Fetch Arm environments, the robotic arm faces a table and several cubes, and can decide to &lt;em&gt;Reach&lt;/em&gt; a 3D target (goal) with its gripper, to &lt;em&gt;Push&lt;/em&gt; a cube on a 2D target, to &lt;em&gt;Pick and Place&lt;/em&gt; a cube on a   3D target or to &lt;em&gt;Stack&lt;/em&gt; one cube on top of another. Several out-of-reach cubes are added to the scene to represent &lt;em&gt;distacting modules&lt;/em&gt;: modules that are impossible to solve by the agent. These cubes are moving randomly and perceived by the agent.&lt;/p&gt;
+
+&lt;p&gt;This problem is seen through the lens of the &lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;Intrinsically Motivated Goal Exploration Process&lt;/a&gt; (IMGEP)  framework. The agent decides itself which goal to target, which goal to train on at any given moment. It is intrinsically motivated to set its own goals to explore its surroundings, with the objective of mastering all goals that can be mastered. The number of potential modules might be large, some goals might be easy, others difficult or even impossible. This advocates for curriculum learning mechanisms to enable efficient experience collection and training.&lt;/p&gt;
+
+&lt;h2 id=&quot;previous-work&quot;&gt;Previous Work&lt;/h2&gt;
+
+&lt;p&gt;As mentioned above, CURIOUS integrates and extends two lines of research: Multi-Goal RL and Curriculum Learning.&lt;/p&gt;
+
+&lt;p&gt;The state-of-the-art Multi-Goal RL architecture is &lt;a href=&quot;http://proceedings.mlr.press/v37/schaul15.pdf&quot;&gt;Universal Value Function Approximators&lt;/a&gt; (UVFA). It proposes to condition the 
+policy (controller) and the value function (predictor of future rewards) by the current goal in a multi-goal setting. This enables to target goals drawn from a continuous space (e.g. target maze location, target gripper position) and efficient generalization across goals. &lt;a href=&quot;https://arxiv.org/abs/1707.01495&quot;&gt;Hindsight Experience Replay&lt;/a&gt; (HER) proposed to generate imagined goals to learn about, when a trajectory did not achieve its original goal (counterfactual learning, see figure below). &lt;a href=&quot;https://arxiv.org/abs/1802.08294&quot;&gt;UNICORN&lt;/a&gt; introduced a discrete-goal-conditioned policy to target a finite set of discrete goals and used discrete counterfactual learning (replacing the original goal by a random imagined goal from the goal-set). All these algorithms are based on UVFA and the idea of having a controller that uses the goal as input. Although the term &lt;em&gt;goal&lt;/em&gt; is defined quite generally in the paper, previous research has mostly used simple goal representations. In the original UVFA paper, a goal is a target position in a maze, in HER it is a 3D target position for the gripper, in UNICORN it is the type of object to reach. Furthermore, the multi-goal RL community has focused on goal defined externally, provided by the experimenter for the agent to execute.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img class=&quot;80&quot; src=&quot;/images/posts/curious/her.png&quot; width=&quot;80%&quot; alt=&quot;Counterfactual learning.&quot; /&gt;
+&lt;div&gt;
+&lt;sub&gt;
+&lt;i&gt;&lt;b&gt;Counterfactual Learning with HER&lt;/b&gt;. From &lt;a href=&quot;https://openai.com/blog/ingredients-for-robotics-research/&quot;&gt; OpenAI blog &lt;/a&gt;.&lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;CURIOUS builds on the developmental robotics research and considers the agents to be empowered to select their own goals. We use previously defined mechanisms for autonomous curriculum generation. As in &lt;a href=&quot;https://hal.archives-ouvertes.fr/hal-01384566/document&quot;&gt;MACOB&lt;/a&gt; and the &lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;IMGEP&lt;/a&gt; framework, CURIOUS tracks its competence and learning progress on each module and maximizes the absolute learning progress based on a multi-armed bandit algorithm. Learning progress was previously used  in combination with memory-based learning algorithms. For each episode, the agent stores a pair made of a controller and a description of the outcome of the episode. This type of algorithm is hard to scale because of memory issues and is generally quite sensitive to the distribution of initial conditions.&lt;/p&gt;
+
+&lt;p&gt;The CURIOUS agent extends these two lines of work with two main contributions. First, it enables to target multiple modular goals settings in a unique controller by proposing a new encoding for modular goals. The policy is therefore conditionnd by both the current module and the current goal in that module, enabling efficient generalisation across multiple goals of different types. Second, we use mechanisms based on learning progress in combination with an RL algorithm. In addition to using learning progress to select the next module to target, we also use learning progress to decide which module to train on.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-modular-goal-encoding-m-uvfa&quot;&gt;A Modular Goal Encoding: M-UVFA&lt;/h2&gt;
+
+&lt;p&gt;The most intuitive way to target multiple modular goals would be to use a multi-goal policy for each module. We call this architecture &lt;em&gt;Multi-Goal Module Expert&lt;/em&gt; (MG-ME). With CURIOUS, we propose the &lt;em&gt;Modular-UVFA&lt;/em&gt; encoding to target multiple modular goals in a single policy. The input of the policy (and value function) is now the concatenation of the current state, a one-hot encoding of the module and a goal vector. The goal vector is the concatenation of the goals in each module, where the goals of unconsidered modules are set to $0$. In the toy example presented in the figure, the agent targets module $M_1$ $(m_d=[1, 0])$ out of $2$ modules and targets the 2D goal $g_1 = [g_{11}, g_{12}]$ for   module $M_1$, e.g. Pushing the yellow cube at position $g_1$ on the table. The underlying learning algorithm is &lt;a href=&quot;https://arxiv.org/abs/1509.02971&quot;&gt;Deep Deterministic Policy Gradient&lt;/a&gt; (DDPG). We use discrete counterfactual learning for cross-module learning and HER for counterfactual goal learning. This consists in replacing the original module   descriptor and goal in the transition by others. HER replaces the original goal by an outcome achieved later in the trajectory. UNICORN replaces the original goal by a random goal from the finite finite goal-set. In other words, our agent can use any past experience to train on any goal from any module by pretending it was targeting them originally.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img src=&quot;/images/posts/curious/policy.png&quot; width=&quot;70%&quot; alt=&quot;The M-UVFA architecture&quot; /&gt;
+&lt;div&gt;
+&lt;sub&gt;
+&lt;i&gt;&lt;b&gt;Actor-Critic networks using the M-UVFA architecture&lt;/b&gt;: In green a discrete one-hot encoding of the current module. In yellow the goal vector, concatenation of the goal 
+vectors (targets) of each module. When a module is selected, only the sub-vector corresponding to that module is activated. &lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The figure below demonstrates the advantage of using a unique policy and value function to target all goals from all modules at once. We run $10$ trials for each architecture on a set of $4$ modules and report the average success rate over the four modules. As a sanity check demonstrating the need to use a modular representation of goals, we try the HER 
+ algorithm, where goals are drawn from a flat representation (e.g. put the cube at position $x_1$, while reaching position $x_2$ with the gripper). As almost none of these goals can be reached in practice, the performance of HER stays null.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img src=&quot;/images/posts/curious/archi.png&quot; width=&quot;80%&quot; alt=&quot;The E-UVFA architecture&quot; /&gt;
+&lt;div&gt;
+&lt;sub&gt;
+&lt;i&gt;&lt;b&gt;Impact of the policy and value function architecture.&lt;/b&gt; Average success rates computed over achievable modules. Mean +/- standard deviation over 10 trials are plotted, 
+while dots indicate significance when testing M-UVFA against MG-ME with a Welch's t-test. &lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;automatic-curriculum-with-learning-progress&quot;&gt;Automatic Curriculum with Learning Progress&lt;/h2&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img class=&quot;80&quot; src=&quot;/images/posts/curious/lp.png&quot; width=&quot;100%&quot; alt=&quot;Counterfactual learning.&quot; /&gt;
+&lt;div&gt;
+&lt;sub&gt;
+&lt;i&gt;&lt;b&gt;Computing competence, learning progress, and module probabilities.&lt;/b&gt;. The agent keeps track of past successes and failures using a limited_size history per module ($N=6$ here)(top). Using these histories, it can compute its own competence on each module using the success rate over the last 6 attempts (left). It can also track its learning progress as the difference between success rates computed over the last 3 attempts and the previous 3 attempts. Finally, the agent computes selection probabilities based on these measures (right).&lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Our agent tracks its competence and learning progress (LP) on each module. To do that, it performs self-evaluation episodes without exploration noise, and records for each module the list of past successes and failures. The competence in a module is simply the success rate over the recent history. The learning progress is defined as the derivative of the competence, and is empirically computed using a difference of success rates computed over two consecutive and non-overlapping windows from the recent history. The figure below presents an example of these self-evaluations.&lt;/p&gt;
+
+&lt;p&gt;The learning progress measures are used for two purposes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;To select which module to target next (as in MACOB).&lt;/li&gt;
+  &lt;li&gt;To select which module to train on (new).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The problem of module selection can be seen as a non-stationary multi-armed bandit problem, where the value to maximize is the absolute learning progress. We compute selection probabilities using an epsilon-greedy proportion rule based on the absolute measures of learning progress:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(T_i) = \frac{\epsilon}{N} + (1-\epsilon) \frac{\mid LP(M_i)\mid}{\sum_j \mid LP(M_j)\mid},&lt;/script&gt;
+
+&lt;p&gt;where $N$ is the number of modules, $LP(M_i)$ is the learning progress computed on module $M_i$.&lt;/p&gt;
+
+&lt;p&gt;These probabilities are used to select the next module to target, and to bias the counterfactual learning of modules. Substituting the original module by another enables to focus learning on the substitute module. When the agent thinks about that time it was trying to lift the glass but tries to pretend it was pushing the glass, it learns about pushing the glass. If the agent tries to think about many experiences with the imagined goal of pushing the glass, it might learn how to do it. It might even learn that goal without having ever targeted it before! Using LP measures enables the agent to control on which module to focus its learning. It first focuses on simple goals where it is making progress. When they are mastered, they become less interesting and the agent focuses on new goals. Following the learning progress automatically builds a curriculum learning strategy.&lt;/p&gt;
+
+&lt;p&gt;The figure below shows the competence, learning progress and selection probabilities computed internally by the agent over the whole run. It is like having access to the inner variables it uses to make decisions. We interpret these curves as a developmental trajectory of the agent. First, it learns how to control its gripper ($M_1$, blue). When it knows how to, learning progress drops, making this module less interesting. It then focuses on another module where it has started to make progress (pushing the cube, orange). Finally, it learns to pick and place and stack cubes (green and yellow respectively).&lt;/p&gt;
+
+&lt;p&gt;Around $75.10^3$ episodes, the agent detects a drop in its competence in the Pick and Place module, this triggers an increase of the absolute progress which ultimately results in a renewed focus on that module, enabling to mitigate the performance drop. Using the absolute value of learning progress helps to resist forgetting.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;img class=&quot;special&quot; src=&quot;/images/posts/curious/plot_c.png&quot; height=&quot;150&quot; /&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img class=&quot;special&quot; src=&quot;/images/posts/curious/plot_cp.png&quot; height=&quot;150&quot; /&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img class=&quot;special&quot; src=&quot;/images/posts/curious/plot_buffer_cp_proba.png&quot; height=&quot;150&quot; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;sub&gt;
+&lt;i&gt;&lt;b&gt;Competence, learning progress and developmental trajectories&lt;/b&gt;: Left: competence for each module in one run of the algorithm. Middle: corresponding absolute learning progress. Right: corresponding module probabilities.&lt;/i&gt;&lt;/sub&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;resilience-to-distracting-tasks&quot;&gt;Resilience to Distracting Tasks&lt;/h2&gt;
+
+&lt;p&gt;In the real world, not all goals can be achieved. We simulate this with extra modules where the agent needs to push out-of-reach cubes on 2D locations. As these modules are impossible, the learning progress measure stays flat, which enables the agent to focus on more relevant modules. When the number of distracting modules increases $(0,4,7)$ in addition to the set of four modules described earlier, the use of the learning progress module selection and replay (CURIOUS) improves over the random module selection and replay (M-UVFA only).&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/7/73e801d28a024ea602c765a97abea092e5e3e6df.png&quot; width=&quot;80%&quot; alt=&quot;The E-UVFA architecture&quot; /&gt;
+&lt;div&gt;
+&lt;sub&gt;
+&lt;i&gt;&lt;b&gt;Resilience to distracting modules&lt;/b&gt;: Different colors represent different number of distracting moduesl (Pushing an out-o-reach cube). There are four achievable modules. Dots indicate significant differences between CURIOUS (intrinsically motivated) and M-UVFA (random module), using a Welch's t-test and 10 seeds. Mean and standard error of the mean plotted. &lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;resilience-to-forgetting-and-sensory-failures&quot;&gt;Resilience to Forgetting and Sensory Failures&lt;/h2&gt;
+
+&lt;p&gt;Using absolute learning progress measures enables the agent to detect drops in performance. Here, we simulate a time-locked sensory failure: the sensor reporting the position of one of the cube is shifted by the size of a cube. The performance on the Push module related to that cube (one of the four modules) suddenly drops, making the average success rate  over all modules drop by a quarter (see figure below). We then compare M-UVFA (random module selection and replay) and CURIOUS (using LP) during the recovery. CURIOUS manages to recover $95\%$ of its pre-perturbation performance $45\%$ faster than its random counterpart.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img src=&quot;/images/posts/curious/perturb.png&quot; width=&quot;80%&quot; alt=&quot;Resilient to sensory failures&quot; /&gt;
+&lt;div&gt;
+&lt;sub&gt;
+&lt;i&gt;&lt;b&gt;Resilience to sensory failure&lt;/b&gt;: Recovery following a sensory failure. CURIOUS recovers 90% of its original performance twice as fast as M-UVFA. Dots indicate significant differences in mean performance (Welch's t-test, 10 random seeds). Mean and standard deviations are reported.&lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;p&gt;As noted in &lt;a href=&quot;https://arxiv.org/abs/1802.08294&quot;&gt;Mankowitz et al., 2018&lt;/a&gt;, representations of the world state are learned in the first layers of a neural network policy/value function. Sharing these representations across all modular goals explains the important difference between the M-UVFA encoding and the use of multiple module-expert policies. However, learning all modules in the same policy might become difficult as the number of modules increases, and when modules are different from one another (e.g. using different sensory modalities). Catastrophic forgetting can also play a role, as previously mastered modules might be forgotten because the agent targets them less often. Although this last point is partially mitigated by the use of absolute learning progress for module replay, it might be a good idea to consider several modular multi-goal policies when the number of modules increases.&lt;/p&gt;
+
+&lt;p&gt;CURIOUS is an algorithm able to tackle the problem of intrinsically motivated modular multi-goal reinforcement learning. This problem has rarely been considered in the past, only &lt;a href=&quot;https://hal.archives-ouvertes.fr/hal-01384566/document&quot;&gt;MACOB&lt;/a&gt; targeted that problem and proposed a solution based on population-based and memory-based algorithms. It is a problem of importance for autonomous lifelong learning, where agents must learn and act in a realistic world with multiple goals of different types and different difficulties, without having access to the reward functions.&lt;/p&gt;
+
+&lt;p&gt;In the future, CURIOUS could be used in a hierarchical manner. A higher-level policy could feed the sequence of modules and goals for the lower level policy to target. This would replace the current one-step policy implemented by a multi-armed bandit algorithm.&lt;/p&gt;
+
+&lt;p&gt;CURIOUS is given prior information about the set of potential modules, their associated goal space and the reward function parameterized by modules and goals. Further work should aim at reducing the importance of these priors. Several works go in that direction and propose autonomous learning of goal representation (&lt;a href=&quot;https://arxiv.org/abs/1807.01521&quot;&gt;Laversanne-Finot et al., 2018&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/1807.04742&quot;&gt;Nair et al., 2018&lt;/a&gt;). Goal selectione policies inside each modul could also be learned online using algorithms such as &lt;a href=&quot;https://arxiv.org/abs/1301.4862&quot;&gt;SAGG-RIAC&lt;/a&gt; or &lt;a href=&quot;https://arxiv.org/abs/1705.06366&quot;&gt;GoalGAN&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This blog post presents CURIOUS, a learning algorithm that combines an extension of UVFA to enable modular multi-goal RL in a single policy (M-UVFA), and active mechanisms that bias the agent’s attention towards modules where the absolute LP is maximized. With this mechanism, agents spend less time on impossible goals and focus on achievable ones. It also helps to deal with forgetting, by refocusing learning on modules that are being forgotten because of model faults, changes in the environment or body changes (e.g. sensory failures). This mechanism is important for autonomous continual learning in the real world, where agents must set their own goals and might face goals with diverse levels of difficulty, some of which might be required to solve others later on.&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1810.06284&quot;&gt;Paper&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/flowersteam/curious&quot;&gt;Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/flowersteam/gym_flowers&quot;&gt;Modular Multi-Goal Fetch Arm Environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;Intrinsically Motivated Goal Exploration Process&lt;/a&gt;. Forestier et al., 2017.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://proceedings.mlr.press/v37/schaul15.pdf&quot;&gt;Universal Value Function Approximators&lt;/a&gt;. Schaul et al., 2015.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1707.01495&quot;&gt;Hindsight Experience Replay&lt;/a&gt;. Andrychowicz et al., 2017.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1802.08294&quot;&gt;Unicorn: Continual Learning with a Universal, Off-policy Agent&lt;/a&gt;. Mankowitz et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hal.archives-ouvertes.fr/hal-01384566/document&quot;&gt;Modular Active Curiosity-Driven Discovery of Tool Use&lt;/a&gt;. Forestier et al., 2016.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1509.02971&quot;&gt;Continuous Control with Deep Reinforcement Learning&lt;/a&gt;. Lillicrap et al., 2015.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1807.01521&quot;&gt;Curiosity Driven Exploration of Learned Disentangled Goal Spaces&lt;/a&gt;. Laversanne-Finot et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1807.04742&quot;&gt;Visual Reinforcement Learning with Imagined Goals&lt;/a&gt;. Nair et al., 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1705.06366&quot;&gt;Automatic Goal Generation for Reinforcement Learning Agents&lt;/a&gt;. Florensa et al., 2017.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1301.4862&quot;&gt;Active Learning of Inverse Models with Intrinsically Motivated Goal Exploration in Robots&lt;/a&gt;. Baranes and Oudeyer, 2013.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;contact&quot;&gt;Contact&lt;/h2&gt;
+&lt;p&gt;Email: cedric.colas@inria.fr&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h6 id=&quot;subscribe-to-our-twitter&quot;&gt;Subscribe to our &lt;a href=&quot;https://twitter.com/@flowersINRIA&quot;&gt;Twitter&lt;/a&gt;.&lt;/h6&gt;
+&lt;hr /&gt;
+</description>
+        <pubDate>Mon, 09 Mar 2020 12:21:29 +0100</pubDate>
+        <link>http://localhost:4000/curious_intrinsically_motivated_multi_modular_goal_rl</link>
+        <guid isPermaLink="true">http://localhost:4000/curious_intrinsically_motivated_multi_modular_goal_rl</guid>
+      </item>
+    
+      <item>
+        <title>Discovery of independently controllable features through autonomous goal setting</title>
+        <description>&lt;div align=&quot;center&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/d/df2cfa5b26687c1d319b10387923171ab7c4088c.jpg&quot; height=&quot;400&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt;An intrinsically motivated agent&lt;/sub&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/5/5c2d42a7324e60b8c8c7653fac942f2b7570bacf.gif&quot; height=&quot;400&quot; /&gt;
+&lt;br /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt;&lt;sub&gt;How is it possible to discover what can be controlled from images ?&lt;/sub&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;This blog post is accompanied with a &lt;a href=&quot;https://colab.research.google.com/drive/176q8pnshfiQx4WFHPc4PiwmsijM4pKiz&quot;&gt;colab notebook&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Despite recent breakthroughs in artificial intelligence, machine learning agents remain limited to tasks predefined by human engineers. The autonomous and simultaneous discovery and learning of many-tasks in an open world remains very challenging for reinforcement learning algorithms. In this blog post we explore recent advances in developmental learning to tackle the problems of autonomous exploration and learning.&lt;/p&gt;
+
+&lt;p&gt;Consider a robot like the one depicted on the first picture. In this environment it can do many things: it can move its arms around, use its arms to play with the joysticks, move the ball in the arena using the joysticks. Imagine that we want to teach this robot how to move the ball to various locations. We could craft a reward function that rewards the agent for putting the ball at a given location, and launch our favorite deep RL algorithm. Without going into details, this popular approach has several drawbacks:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the algorithm would require a lot of trials before sampling an action which might move the ball&lt;/li&gt;
+  &lt;li&gt;the robot would only learn how to move the ball but not how to move its arms to many locations, and even less how to move other objects that are unrelated to the ball&lt;/li&gt;
+  &lt;li&gt;we would need to specifically craft a reward for this task (this may be hard in itself (&lt;a href=&quot;https://arxiv.org/abs/1706.03741&quot;&gt;Christiano &lt;em&gt;et al&lt;/em&gt;.&lt;/a&gt;))&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now imagine that we want the agent to learn all these tasks, i.e. learn to control various objects,  &lt;strong&gt;without&lt;/strong&gt; any supervision or reward. One strategy inspired by infants’ development that was shown to be efficient in this case consists in modeling the robot as a curiosity driven agent that wants to explore the world, by autonomously generating and selecting goals that provide maximal learning progress (&lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;Forestier &lt;em&gt;et al&lt;/em&gt;.&lt;/a&gt;). Concretely, the robot sets for itself goals that it then tries to achieve, in an episodic fashion. For example one goal could be to put its arm at a specific place, or achieve a specific trajectory, or to try and move the ball to a certain location. Using this strategy the robot will soon realize that some goals are easier to reach than others, focusing on them and progressively shifting to learn more and more complex goals and associated policies. At the same time, it will also avoid spending too much time exploring goals that are either trivial or impossible to learn (e.g. distractor objects that move independently of the actions of the robot).&lt;/p&gt;
+
+&lt;p&gt;This idealized situation is fine, but what if we want our robot to learn all these skills using only raw pixels from a camera? What would a goal look like in this case? The robot could sample goals uniformly in the pixel space. This is clearly a poor strategy, as it amounts to sample noise which is by definition not reproducible. The robot could also sample images from a database of observed situations, and try to reproduce them. It could then try to compare the results of its actions with the goals. However, computing distances in the pixel space is a bad idea, as noise and changes in the scene (due to distractors for example) could put large distances between perceptually equivalent scenes.&lt;/p&gt;
+
+&lt;p&gt;From our perspective, we know that the world is structured and made of independent entities, with distinct properties. There are much fewer entities than the number of pixels in an image. As such it makes more sense to set goals for the entities rather than for the pixels that represent them. As humans we are very good at detecting those entities in an image and that’s what allows us to be efficient even in an unseen environment.&lt;/p&gt;
+
+&lt;p&gt;Coming back to our robot, is it possible for it to discover and learn to represent the entities in the environment from raw images? Can the robot use them to set goals that it can try to achieve? Will this lead to an efficient exploration of the environment? Can it discriminate between entities that can be controlled and those that cannot?&lt;/p&gt;
+
+&lt;p&gt;Those are the questions that we explored in two papers (&lt;a href=&quot;https://arxiv.org/abs/1803.00781&quot;&gt;Péré &lt;em&gt;et al&lt;/em&gt;., ICLR 2018&lt;/a&gt; and &lt;a href=&quot;https://arxiv.org/abs/1807.01521&quot;&gt;Laversanne-Finot &lt;em&gt;et al&lt;/em&gt;. CoRL 2018&lt;/a&gt;). In particular, we show that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;It is possible to leverage tools from the representation learning literature in order to extract features that can serve as goals for intrinsically motivated goal exploration algorithms.&lt;/li&gt;
+    &lt;li&gt;Using a representation of the environment as a goal space can provide performances as good as engineered features for exploration algorithms.&lt;/li&gt;
+    &lt;li&gt;Using disentangled representation is beneficial for exploration algorithms in the presence of distractors: using a disentangled representation as a goal space allows the agent to explore its environment more widely in a shorter amount of time.&lt;/li&gt;
+    &lt;li&gt;Curiosity driven exploration allows to extract high level controllable features of the environment when the representation is disentangled.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;environments&quot;&gt;Environments&lt;/h3&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/9/97ff79a75af57461e450cef63d79d0bc26fbde93.gif&quot; height=&quot;400&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt;The ArmBall environment&lt;/sub&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/b/bf9e4aebf41dbf516ddd679b8faf0e09912149bd.gif&quot; height=&quot;400&quot; /&gt;
+&lt;br /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt;&lt;sub&gt;The ArmBall environment with a distractor (gray ball)&lt;/sub&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The experiments that we describe have been performed on variants of the &lt;em&gt;Arm-Ball&lt;/em&gt; environment. In this environment a 7-joint robotic arm evolves in a scene containing a ball that can be grasped and moved around by the robotic arm. The agent perceives the scene as a $64 \times 64$ pixels image. Simple as it may be, this environment is challenging since the action space is highly redundant. Random motor commands will most of the time produce the same dynamic: the arm moving around and the ball staying in the same position. Here we consider two variants of this environment: one where there is only the ball and one with an additional distractor: a ball that cannot be controlled and moves randomly across the scene. Examples of motor commands performed on these environments are presented on the figure above.&lt;/p&gt;
+
+&lt;h2 id=&quot;intrinsically-motivated-goal-exploration-process-imgeps&quot;&gt;Intrinsically Motivated Goal Exploration Process (IMGEPs)&lt;/h2&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/c/c5e4f84cc167885e86b7898115481f4bcd4b944d.jpg&quot; height=&quot;300&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;sub&gt;
+&lt;i&gt;Intrinsically Motivated Goal Exploration Process examplified.&lt;/i&gt;&lt;/sub&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A good exploration strategy for the agent when there is no reward signal is to set for itself goals and to try to reach them. This strategy, known as Intrinsically Motivated Goal Exploration Processes (IMGEPs) (&lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;Forestier &lt;em&gt;et al.&lt;/em&gt;&lt;/a&gt;, &lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0921889012000644?via%3Dihub&quot;&gt;Baranes &lt;em&gt;et al.&lt;/em&gt;&lt;/a&gt;), is summarized in the figure above. For example, in this context, a goal could consist in trying to put the ball at a specific position (more generally, in the IMGEP framework, goals can be any target dynamical properties over entire trajectories). An important aspect of this approach is that the agent needs to have a goal space to sample those goals.&lt;/p&gt;
+
+&lt;p&gt;Up to now the Intrinsically Motivated Goal Exploration Process approach has only been applied in experiments where we have access hand-designed representations of the state of the system. Now, consider a problem where a robot has to move an object from the raw images that it gets from a camera. The images are naturally living in a high dimensional space. However, we know that the underlying state is low dimensional (the number of degrees of freedom of the object).&lt;/p&gt;
+
+&lt;p&gt;In this case, a natural idea is to learn a low dimensional state representation. Having a state representation is advantageous in many ways &lt;a href=&quot;https://arxiv.org/abs/1802.04181&quot;&gt;Lesort &lt;em&gt;et al.&lt;/em&gt;&lt;/a&gt;: to overcome the curse of dimensionality, it is easier to understand and interpret from a human point of view and it might improve performance and learning speed in machine learning scenarios. Another advantage of using state representation is that a policy learned on a representation is often more robust to changes in the environment. For example, if we consider a typical transfer learning scenario where the relevant parameters of the problem are kept fixed (e.g. shape and size of the object) but some irrelevant parameters may have changed (e.g. the color of the object that must be grasped by the robot) a policy learned on the pixel space is bound to fail when transferred, whereas the representation may still capture the relevant parameters.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/9/9d719610fa114d384b46916a9e4e3444fad00972.jpg&quot; height=&quot;300&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;sub&gt;  
+&lt;i&gt;Exploration performances for various representation algorithms.&lt;/i&gt;&lt;/sub&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In a first paper (&lt;a href=&quot;https://arxiv.org/abs/1803.00781&quot;&gt;Péré &lt;em&gt;et al.&lt;/em&gt;&lt;/a&gt;), we proposed to learn a representation of the scene using various unsupervised learning algorithms, such as Variational Auto-Encoders. The general idea consists in letting the agent observe another agent acting on the environment (enabling to observe a distribution of possible outcomes in that environment), and learn a compressed representation of these outcomes, called a latent space. The learned latent space can then be used as a goal space. In this case, instead of sampling as a goal the position of the ball at the end of the episode, the goal consists in reaching a certain point in the latent space (i.e. to obtain an observation at the end of the episode whose representation is as close as possible to the goal in the latent space). In this paper, it was shown that is is possible to use a wide range of representation algorithms to learn the goal space. Most of these algorithms perform almost as well as a true state representation. For instance the figure above shows that &lt;strong&gt;without&lt;/strong&gt; any form of supervision or reward signal the agent is capable of learning how to place the ball in many distinct locations. On the contrary when the agent performs random motor commands (RPE) the diversity of outcomes is much smaller.&lt;/p&gt;
+
+&lt;h2 id=&quot;modular-imgeps&quot;&gt;Modular IMGEPs&lt;/h2&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/3/3c69b7a714b50309b91b64cfbda8a98bf54b82be.png&quot; height=&quot;300&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;sub&gt; &lt;i&gt;Modular IMGEPs.&lt;/i&gt;&lt;/sub&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The results published in the first paper were obtained in environments containing always a single object. However, in many environments there is often more than one object. These objects can be very different and can be controlled with a varying degree of difficulty (e.g. moving a small object, hard to pick up vs moving a big ball across the environment). Or it can also happen that it is necessary to know how to use one object to use another one (e.g. using a fork to eat something). There can even be objects that are uncontrollable (e.g. moving randomly). As a result it seems natural to separate the exploration of different categories of objects. The intuitive idea is that an algorithm should start with controlling easy to learn objects before moving to more complex objects. It should also ignore objects that cannot be controlled (distractors). This is precisely what &lt;a href=&quot;http://sforestier.com/sites/default/files/Forestier2016Modular.pdf&quot;&gt;&lt;em&gt;modular&lt;/em&gt; IMGEPs&lt;/a&gt; where designed for. The idea is that instead of sampling goals globally (i.e. target value for all dimensions characterizing the world and including all objects), the algorithm samples goals only as target values for particular dimensions of particular objects. For example, in the previously considered experiment the agent could decide to set a goal for the position of the joystick or for the position of the ball. By monitoring how well it performs for each task (the &lt;em&gt;progress&lt;/em&gt;) the agent would discover that the ball is much harder to control than the joystick since it is necessary to master the joystick before moving the ball. By focusing on tasks (i.e. sampling goals for specific modules) for which the agent has a large learning progress the agent will always set for itself goals with the adequate difficulty. This approach leads to the formation of an automatic curriculum.&lt;/p&gt;
+
+&lt;p&gt;Ideally, in the case of goal spaces learned with a representation algorithm, if the representation is disentangled, then each latent variable corresponds to one factor of variation (&lt;a href=&quot;https://www.iro.umontreal.ca/~lisa/pointeurs/TR1312.pdf&quot;&gt;Bengio&lt;/a&gt;). It is thus natural to see one, or a group, of latent variables as an independent module in which to set goals that could be explored by the agent. If the disentanglement properties of the representation are good, then it should in principle lead the agent to discover, through the representation, which objects can and which cannot be controlled. On the contrary, using an entangled representation will introduce spurious correlations between the action of the agent and the outcomes, which in turn will lead the agent to sample more frequently actions that in fact did not have any impact on the outcome.&lt;/p&gt;
+
+&lt;p&gt;Following this idea, in a second paper (&lt;a href=&quot;https://arxiv.org/abs/1807.01521&quot;&gt;Laversanne-Finot &lt;em&gt;et al.&lt;/em&gt;&lt;/a&gt;), we adopted the architecture in the above picture. The architecture is composed of a representation algorithm (in our case a VAE/$\beta$-VAE (&lt;a href=&quot;https://arxiv.org/abs/1606.05579&quot;&gt;Higgins &lt;em&gt;et al.&lt;/em&gt;&lt;/a&gt;)) which learns a representation of the world. Using this representation we define modules by grouping some of the latent variables together. For example a module could be made of the first and second latent variables. A goal for this module would be to reach a position where the first and second latent variables have certain values. The idea behind this definition of modules is that if the modules are made of latent variables encoding for independent degrees of freedom/objects, then the algorithm should be able, by monitoring the progress, to understand which latent variables can or cannot be controlled. In other words, it will discover independently controllable features of the world.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/d/dddaa12775f94f00936afbe6edb283f31ca8f9b0.png&quot; height=&quot;180&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt;VAE, 5 modules&lt;/sub&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/3/327836323698ed0fa84fe981dd77a33b6da9f6fb.png&quot; height=&quot;180&quot; /&gt;
+&lt;br /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt;&lt;sub&gt;&amp;beta;VAE, 5 modules&lt;/sub&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/f/f3add3d665c5c37849d473fda87e69f19eca50b5.png&quot; height=&quot;180&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt;&amp;beta;VAE, 10 modules&lt;/sub&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is illustrated in the figure above. For example, when the goal space is disentangled and the modules are defined by groups of two latent variables, we see that the interest of the agent is high only for the module encoding for the ball position. On the other hand when the representation is entangled all the latent variables encode for the ball and distractor positions and thus the interest is low for all latent variables. Similar results are obtained if we define modules made of only one latent variable: when the goal space is disentangled the interest is high only for modules which encode the ball position, whereas when the representation is entangled all the modules have similar interest. The high interest is thus a marker that this latent variable is an independantly controllable feature of the environment.&lt;/p&gt;
+
+&lt;p&gt;The fact that the algorithm is capable of extracting the controllable feature of the environments is reflected on its exploration performance. As seen on the figure below, modular goal exploration (MGE) algorithms with disentangled representations ($\beta$-VAE) explore much more than their entangled (VAE) counterparts, with performances similar to modular goal exploration with engineered features (EFR) (x and y positions of the ball and the distractor). We also see that in the presence of a distractor the performances of flat architecture (RGE) is negatively impacted.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/e/ed508f95cef6499767743ceede87093eae29f80a.png&quot; height=&quot;300&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;sub&gt; &lt;i&gt;Exploration performances.&lt;/i&gt;&lt;/sub&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;future-work&quot;&gt;Future work&lt;/h2&gt;
+
+&lt;p&gt;In this series of works we studied how handcrafted goal spaces can be replaced by embeddings learnt from raw observations of images in IMGEPs. We have shown that, while entangled representations are a good baseline as goal spaces for IMGEPs, when the representation possesses good disentanglement properties, they can be leveraged by a curiosity-driven modular goal exploration architecture and lead to highly efficient exploration. In particular, this enables exploration performances as good as when using engineered features. In addition, the monitoring of learning progress enables the agent to discover which latent features can be controlled by its actions, and focus its exploration by setting goals in their corresponding subspace. This allows the agent to learn which are the controllable features of the environment.&lt;/p&gt;
+
+&lt;p&gt;An interesting line of work beyond using learning progress to discover controllable features during exploration, would be to re-use this knowledge to acquire more abstract representations and skills. For example, once we know which latent variables can be controlled, we can use a RL algorithm to learn to use them to acquire a specific skill in that environment.&lt;/p&gt;
+
+&lt;p&gt;Another interesting perspective would be to apply the ideas developed in these papers to real world robotic experiments. We are currently working on such a project. The setup that we are working on is very similar to the one presented throughout this blog post (see first picture): a robot can play with two joysticks. These two joysticks control the position of a robotic arm that can move a ball inside an arena. Currently the position of the ball and of the arm is extracted from the images using handcrafted features. Modular IMGEPs using those extracted features have been shown to be very efficient for exploration in this setup (&lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;Forestier &lt;em&gt;et al.&lt;/em&gt;&lt;/a&gt;). The focus of our work is to remove this part and replace it with an embedding that would serve as a goal space.&lt;/p&gt;
+
+&lt;p&gt;Of course our approach is not the only possible one and the ideas developed in these papers may be applicable in other domains. In fact, similar ideas have been experimented in the context of Deep Reinforcement Learning. For example, it was suggested (&lt;a href=&quot;https://arxiv.org/abs/1807.04742&quot;&gt;Nair &lt;em&gt;et al.&lt;/em&gt;&lt;/a&gt;) to rather train the RL algorithm in the embedding space obtained after training a Variational Auto Encoder (VAE) on images of the scene. Using this approach, it was shown that a robot can learn how to manipulate a simple object across a plane. However this paper did not study how the algorithm would perform in the presence of a distractor (an object that cannot be controlled by the robot but can move across the scene). In this case it is not clear that the RL algorithm would succeed since the embedding for two similar positions of the ball can vary wildly due to the distractor. See also (&lt;a href=&quot;https://arxiv.org/abs/1703.07718&quot;&gt;Bengio &lt;em&gt;et al&lt;/em&gt;.&lt;/a&gt;) for another approach to discovering independently controllable features.&lt;/p&gt;
+
+&lt;h2 id=&quot;code-and-notebook&quot;&gt;Code and notebook&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/flowersteam/Curiosity_Driven_Goal_Exploration&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://colab.research.google.com/drive/176q8pnshfiQx4WFHPc4PiwmsijM4pKiz&quot;&gt;Colab Notebook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1807.01521&quot;&gt;Curiosity Driven Exploration of Learned Disentangled Goal Spaces&lt;/a&gt;, Laversanne-Finot, A., Péré, A., &amp;amp; Oudeyer, P. Y., CoRL, 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1803.00781&quot;&gt;Unsupervised Learning of Goal Spaces for Intrinsically Motivated Goal Exploration&lt;/a&gt;, Alexandre Péré, Sébastien Forestier, Olivier Sigaud, Pierre-Yves Oudeyer, ICLR, 2018.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1707.01495&quot;&gt;Hindsight Experience Replay&lt;/a&gt;, Marcin Andrychowicz, Filip Wolski, Alex Ray, Jonas Schneider, Rachel Fong, Peter Welinder, Bob McGrew, Josh Tobin, Pieter Abbeel, Wojciech Zaremba.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1706.03741&quot;&gt;Deep reinforcement learning from human preferences&lt;/a&gt;, Paul Christiano, Jan Leike, Tom B. Brown, Miljan Martic, Shane Legg, Dario Amodei.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1606.05579&quot;&gt;Early Visual Concept Learning with Unsupervised Deep Learning&lt;/a&gt;, Irina Higgins, Loic Matthey, Xavier Glorot, Arka Pal, Benigno Uria, Charles Blundell, Shakir Mohamed, Alexander Lerchner.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1807.04742&quot;&gt;Visual Reinforcement Learning with Imagined Goals&lt;/a&gt;, Ashvin Nair, Vitchyr Pong, Murtaza Dalal, Shikhar Bahl, Steven Lin, Sergey Levine.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.iro.umontreal.ca/~lisa/pointeurs/TR1312.pdf&quot;&gt;Learning Deep Architectures for AI&lt;/a&gt;, Yoshua Bengio.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1802.04181&quot;&gt;State Representation Learning for Control: An Overview&lt;/a&gt;, Timothée Lesort, Natalia Díaz-Rodríguez, Jean-François Goudou, David Filliat.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1703.07718&quot;&gt;Independently Controllable Features&lt;/a&gt;, Emmanuel Bengio, Valentin Thomas, Joelle Pineau, Doina Precup, Yoshua Bengio.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;Intrinsically Motivated Goal Exploration Processes with Automatic Curriculum Learning&lt;/a&gt;, Sébastien Forestier, Yoan Mollard, Pierre-Yves Oudeyer.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0921889012000644?via%3Dihub&quot;&gt;Active learning of inverse models with intrinsically motivated goal exploration in robots&lt;/a&gt;, Adrien Baranes, Pierre-Yves Oudeyer, Robotics and Autonomous Systems, 2013.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;contact&quot;&gt;Contact&lt;/h2&gt;
+&lt;p&gt;Email: adrien.laversanne-finot@inria.fr, Twitter of Flowers lab: &lt;a href=&quot;https://twitter.com/@flowersINRIA&quot;&gt;@flowersINRIA&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 20 Feb 2020 12:21:29 +0100</pubDate>
+        <link>http://localhost:4000/autonomous_learning_of_disentangled_goal_representations</link>
+        <guid isPermaLink="true">http://localhost:4000/autonomous_learning_of_disentangled_goal_representations</guid>
       </item>
     
       <item>
@@ -21,7 +851,7 @@
 
 &lt;p&gt;Perhaps the most surprising thing is this: running the same algorithm 10 times with the same hyper-parameters using 10 different random seeds and averaging performance over two splits of 5 seeds can lead to learning curves seemingly coming from different statistical distributions. Then, they present this table:&lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/8/899a492f80f4d77be643094fffdc99375c02275b.png&quot; height=&quot;150&quot; /&gt;
 &lt;div&gt;
 &lt;sub&gt;
@@ -59,7 +889,7 @@ framework&lt;/a&gt;. The actual algorithms used are not so important here, and w
 for each and plot the results in Figure 2. This figure shows the average learning curves, with the &lt;script type=&quot;math/tex&quot;&gt;95\%&lt;/script&gt; confidence interval. Each point of a learning curve is the average 
 cumulated reward over &lt;script type=&quot;math/tex&quot;&gt;10&lt;/script&gt; evaluation episodes. The &lt;em&gt;measure of performance&lt;/em&gt; of an algorithm is the average performance over the last &lt;script type=&quot;math/tex&quot;&gt;10&lt;/script&gt; points (i.e. last &lt;script type=&quot;math/tex&quot;&gt;100&lt;/script&gt; evaluation episodes). From the figure, it seems that &lt;script type=&quot;math/tex&quot;&gt;Algo1&lt;/script&gt; performs better than &lt;script type=&quot;math/tex&quot;&gt;Algo2&lt;/script&gt;. Moreover, the confidence intervals do not overlap much at the end. Of course, we need to run statistical tests before drawing any conclusion.&lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/e/e5e46b3919dba623d48357cf0abb05c2d14d2fd3.jpg&quot; height=&quot;300&quot; /&gt;
 &lt;div&gt;
 &lt;sub&gt;
@@ -161,7 +991,7 @@ sample under hypothesis &lt;script type=&quot;math/tex&quot;&gt;H_0&lt;/script&g
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;p\text{-value} = 1-CDF_{H_0}(t) = 1-\int_{-\infty}^{t} T_{distrib}^{\nu}(\tau) \cdot d\tau.&lt;/script&gt;
 
-&lt;div align=&quot;center&quot;&gt;
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/7/703b9d4e3037b266e8fc6b20e020eb84d4405a80.png&quot; height=&quot;220&quot; /&gt;
 &lt;div&gt;
 &lt;sub&gt;
@@ -211,11 +1041,11 @@ Here, the type-I error requirement is set to &lt;script type=&quot;math/tex&quot
 each leads to a &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;-value of &lt;script type=&quot;math/tex&quot;&gt;0.031&lt;/script&gt; and a bootstrap confidence interval such that &lt;script type=&quot;math/tex&quot;&gt;P\big(\mu_{\text{diff}} \in [259, 1564]\big) = 0.05&lt;/script&gt;. Since the &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;-value is below the significance level &lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt; and the &lt;script type=&quot;math/tex&quot;&gt;CI_1&lt;/script&gt; confidence interval does not include &lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt;, both test passed. This means both tests found a significant difference between the performances of &lt;script type=&quot;math/tex&quot;&gt;Algo1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Algo2&lt;/script&gt; with a &lt;script type=&quot;math/tex&quot;&gt;95\%&lt;/script&gt; confidence. There should have been only &lt;script type=&quot;math/tex&quot;&gt;5\%&lt;/script&gt; chance to conclude a significant difference if it did not exist. 
 In fact, we did encounter a type-I error. I know that for sure because:&lt;/p&gt;
 
-&lt;p&gt;&amp;lt;div align=center&amp;gt;
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;b&gt;
 Algo 1 and Algo 2 are the exact same algorithm
 &lt;/b&gt;
-&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;/div&gt;
 
 &lt;p&gt;They are both the canonical implementation of DDPG &lt;a href=&quot;https://arxiv.org/pdf/1509.02971.pdf&quot;&gt;[Lillicrap et al., 2015]&lt;/a&gt;. The codebase can be found on this &lt;a href=&quot;https://github.com/openai/baselines&quot;&gt;repository&lt;/a&gt;. This means that &lt;script type=&quot;math/tex&quot;&gt;H_0&lt;/script&gt; was the true hypothesis, there is no possible difference in the true means of the two algorithms. Our first conclusion was wrong, we committed a type-I error, rejecting &lt;script type=&quot;math/tex&quot;&gt;H_0&lt;/script&gt; when it was true. In our case, we selected the two tests so as to set the type-I error probability &lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;5\%&lt;/script&gt;. However, statistical tests often make assumptions, which results in wrong estimations of the probability of the type-I error. We will see in the last section that the false positive rate was strongly under-evaluated.&lt;/p&gt;
 
@@ -250,7 +1080,7 @@ To illustrate, we compare two DDPG variants: one with action perturbations (&lt;
 Here we run both algorithms with &lt;script type=&quot;math/tex&quot;&gt;n=5&lt;/script&gt;. We find empirical means &lt;script type=&quot;math/tex&quot;&gt;(\overline{x}_1, \overline{x}_2) = (3523, 4905)&lt;/script&gt; and empirical standard deviations &lt;script type=&quot;math/tex&quot;&gt;(s_1, s_2) = (1341, 990)&lt;/script&gt; for &lt;script type=&quot;math/tex&quot;&gt;Algo1&lt;/script&gt; (blue) and &lt;script type=&quot;math/tex&quot;&gt;Algo2&lt;/script&gt; (red) respectively. From Figure 4, it seems there is a slight difference in the mean performances  &lt;script type=&quot;math/tex&quot;&gt;\overline{x}_{\text{diff}} =\overline{x}_2-\overline{x}_1 &gt;0&lt;/script&gt;. 
 Running preliminary statistical tests at level &lt;script type=&quot;math/tex&quot;&gt;\alpha=0.05&lt;/script&gt; lead to a &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;-value of &lt;script type=&quot;math/tex&quot;&gt;0.1&lt;/script&gt; for the Welch’s &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;-test, and a bootstrapped confidence interval of &lt;script type=&quot;math/tex&quot;&gt;CI_1=[795, 2692]&lt;/script&gt; for the  value of &lt;script type=&quot;math/tex&quot;&gt;\overline{x}_{\text{diff}} = 1382&lt;/script&gt;. The Welch’s &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;-test does not reject &lt;script type=&quot;math/tex&quot;&gt;H_0&lt;/script&gt; (&lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;-value &lt;script type=&quot;math/tex&quot;&gt;&gt;\alpha&lt;/script&gt;) but the bootstrap test does (&lt;script type=&quot;math/tex&quot;&gt;0\not\in CI_1&lt;/script&gt;). One should compute &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; to estimate the chance that the Welch’s &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;-test missed an underlying performance difference (type-II error).&lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/2/27f05ba5144eb210118dce202db75232d546f628.png&quot; height=&quot;300&quot; /&gt;
 &lt;div&gt;
 &lt;sub&gt;
@@ -264,7 +1094,7 @@ Running preliminary statistical tests at level &lt;script type=&quot;math/tex&qu
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Example 2 (continued)&lt;/em&gt;&lt;/strong&gt;
 For &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;[2,50]&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;[0.1,..,1]\times\overline{x}_1&lt;/script&gt;, we compute &lt;script type=&quot;math/tex&quot;&gt;t_\alpha&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\nu&lt;/script&gt; using the formulas given in Section \ref{sec:ttest}, as well as &lt;script type=&quot;math/tex&quot;&gt;t_{\epsilon}&lt;/script&gt; for each &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt;. Finally, we compute the corresponding probability of type-II error &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; using Equation~\ref{eq:beta}. Figure 5 shows the evolution of &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; as a function of &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; for the different &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt;. Considering the semi-dashed black line for &lt;script type=&quot;math/tex&quot;&gt;\epsilon=\overline{x}_{\text{diff}}=1382&lt;/script&gt;, we find &lt;script type=&quot;math/tex&quot;&gt;\beta=0.51&lt;/script&gt; for &lt;script type=&quot;math/tex&quot;&gt;N=5&lt;/script&gt;: there is &lt;script type=&quot;math/tex&quot;&gt;51\%&lt;/script&gt; chance of making a type-II error when trying to detect an effect &lt;script type=&quot;math/tex&quot;&gt;\epsilon=1382&lt;/script&gt;. To meet the requirement &lt;script type=&quot;math/tex&quot;&gt;\beta=0.2&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; should be increased to &lt;script type=&quot;math/tex&quot;&gt;N=10&lt;/script&gt; (&lt;script type=&quot;math/tex&quot;&gt;\beta=0.19&lt;/script&gt;).&lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/3/3a3d72a9dbef925bdfa272530e9cf45fc4239c8f.png&quot; height=&quot;300&quot; /&gt;
 &lt;div&gt;
 &lt;sub&gt;
@@ -281,7 +1111,7 @@ For &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; in &lt;script type=
 Here, we take &lt;script type=&quot;math/tex&quot;&gt;N=10&lt;/script&gt; and run both the Welch’s &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;-test and the bootstrap test. We now find empirical means &lt;script type=&quot;math/tex&quot;&gt;(\overline{x}_1, \overline{x}_2) = (3690, 5323)&lt;/script&gt; and empirical standard deviations &lt;script type=&quot;math/tex&quot;&gt;(s_1, s_2) = (1086, 1454)&lt;/script&gt; for &lt;script type=&quot;math/tex&quot;&gt;Algo1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Algo2&lt;/script&gt; respectively. Both tests rejected &lt;script type=&quot;math/tex&quot;&gt;H_0&lt;/script&gt;, with a &lt;script type=&quot;math/tex&quot;&gt;p&lt;/script&gt;-value of &lt;script type=&quot;math/tex&quot;&gt;0.0037&lt;/script&gt; for the Welch’s &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;-test and a confidence interval for the difference &lt;script type=&quot;math/tex&quot;&gt;\mu_{\text{diff}} \in [732,2612]&lt;/script&gt; for the bootstrap test. Both tests passed. In Figure 7, plots for &lt;script type=&quot;math/tex&quot;&gt;N=5&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;N=10&lt;/script&gt; can be compared. With a larger number of seeds, the difference that was not found significant with &lt;script type=&quot;math/tex&quot;&gt;N=5&lt;/script&gt; is now more clearly visible. With a larger number of seeds, the estimate &lt;script type=&quot;math/tex&quot;&gt;\overline{x}_{\text{diff}}&lt;/script&gt; is more robust, more evidence is available to support the claim that &lt;script type=&quot;math/tex&quot;&gt;Algo2&lt;/script&gt; outperforms &lt;script type=&quot;math/tex&quot;&gt;Algo1&lt;/script&gt;, which translates to tighter confidence intervals represented in the figures.
 \end{myex}&lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/a/a763133041a1aa96d8a3ed6b9fabb4724d522ae5.png&quot; height=&quot;300&quot; /&gt;
 &lt;div&gt;
 &lt;sub&gt;
@@ -311,7 +1141,7 @@ The sample size &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; should 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Example 3&lt;/em&gt;&lt;/strong&gt;
 We use &lt;script type=&quot;math/tex&quot;&gt;Algo1&lt;/script&gt; from Example 2. From &lt;script type=&quot;math/tex&quot;&gt;42&lt;/script&gt; available measures of performance, the above procedure is run for &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; in &lt;script type=&quot;math/tex&quot;&gt;[2,21]&lt;/script&gt;. Figure 8 presents the results. For small values of &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt;, empirical estimations of the false positive rate are much larger than the supposedly enforced value &lt;script type=&quot;math/tex&quot;&gt;\alpha=0.05&lt;/script&gt;.&lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/d/de434feebaf9e814b05bdeadc97d593ec4cf3285.png&quot; height=&quot;300&quot; /&gt;
 &lt;div&gt;
 &lt;sub&gt;
@@ -326,7 +1156,7 @@ We use &lt;script type=&quot;math/tex&quot;&gt;Algo1&lt;/script&gt; from Example
 &lt;h3 id=&quot;influence-of-the-empirical-standard-deviations&quot;&gt;Influence of the empirical standard deviations&lt;/h3&gt;
 &lt;p&gt;The Welch’s &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;-test computes &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;-statistics and the degree of freedom &lt;script type=&quot;math/tex&quot;&gt;\nu&lt;/script&gt; based on the sample size &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; and the empirical estimations of standard deviations &lt;script type=&quot;math/tex&quot;&gt;s_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;s_2&lt;/script&gt;. When &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; is low, estimations &lt;script type=&quot;math/tex&quot;&gt;s_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;s_2&lt;/script&gt; under-estimate the true standard deviation in average. Under-estimating &lt;script type=&quot;math/tex&quot;&gt;(s_1,s_2)&lt;/script&gt; leads to smaller &lt;script type=&quot;math/tex&quot;&gt;\nu&lt;/script&gt; and lower &lt;script type=&quot;math/tex&quot;&gt;t_\alpha&lt;/script&gt;, which in turn leads to lower estimations of &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt;. Finally, finding lower &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; leads to the selection of smaller sample size &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; to meet &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; requirements. We found this had a significant effect on the computation of &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt;. Figure 9 shows &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; the false negative rate when trying to detect effects of size &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; between two normal distributions &lt;script type=&quot;math/tex&quot;&gt;\mathcal{N}(3,1)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\mathcal{N}(3+\epsilon,1)&lt;/script&gt;. The only difference between both figures is that the left one uses the true values of &lt;script type=&quot;math/tex&quot;&gt;\sigma_1, \sigma_2&lt;/script&gt; to compute &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt;, whereas the right figure uses (inaccurate) empirical evaluations &lt;script type=&quot;math/tex&quot;&gt;s_1,s_2&lt;/script&gt; to compute &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt;. We can see that the estimation of standard deviations influences the computation of &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt;, and the subsequent choice of an appropriate sample size &lt;script type=&quot;math/tex&quot;&gt;N&lt;/script&gt; to meet requirements on &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt;. See our &lt;a href=&quot;&quot;&gt;paper&lt;/a&gt; for further details.&lt;/p&gt;
 
-&lt;div align=&quot;center&quot;&gt;
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/b/bc0a4ca746dbe03c78182969c67ca2bd8a015e80.png&quot; height=&quot;300&quot; /&gt;
 &lt;div&gt;
 &lt;sub&gt;
@@ -405,317 +1235,326 @@ and Levine, S. 2017. Interpolated policy gradient: Merging on-policy and off-pol
 
 &lt;hr /&gt;
 
-&lt;h6 id=&quot;subscribe-to-our-rss-feed&quot;&gt;Subscribe to our &lt;a href=&quot;https://openlab-flowers.inria.fr/c/blog.rss&quot;&gt;RSS Feed&lt;/a&gt;.&lt;/h6&gt;
-&lt;h6 id=&quot;subscribe-to-our-mailing-list&quot;&gt;Subscribe to our &lt;a href=&quot;https://sympa.inria.fr/sympa/subscribe/flowers-blog&quot;&gt;mailing list&lt;/a&gt;.&lt;/h6&gt;
+&lt;h6 id=&quot;subscribe-to-our-twitter&quot;&gt;Subscribe to our &lt;a href=&quot;https://twitter.com/@flowersINRIA&quot;&gt;Twitter&lt;/a&gt;.&lt;/h6&gt;
+
+&lt;hr /&gt;
 </description>
-        <pubDate>Tue, 08 Jan 2019 12:21:29 +0100</pubDate>
+        <pubDate>Mon, 17 Feb 2020 12:21:29 +0100</pubDate>
         <link>http://localhost:4000/how_many_random_seeds</link>
         <guid isPermaLink="true">http://localhost:4000/how_many_random_seeds</guid>
       </item>
     
       <item>
-        <title>Announcing Version 2.0</title>
-        <description>&lt;p&gt;In an effort to make Pixyll easier to customize and more aesthetically pleasing, we’ve released version &lt;code class=&quot;highlighter-rouge&quot;&gt;2.0&lt;/code&gt;.&lt;/p&gt;
+        <title>Bootstrapping Deep RL with Population-Based Diversity Search</title>
+        <description>&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/2/267081c55036d5900d2b373ed4d67424cd1658a9.gif&quot; height=&quot;180&quot; /&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/6/65d3e42e8e06affb3e37f879b195b907efde84ec.gif&quot; height=&quot;180&quot; /&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/9/94b22b783e1f1de1ccd6cf702d3d9d3392371059.gif&quot; height=&quot;180&quot; /&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/0/0edbf189cb28b08eb85e6fd7b85a74ac72382e60.gif&quot; height=&quot;180&quot; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Pixyll now features:&lt;/p&gt;
+&lt;p&gt;Deep Reinforcement Learning algorithms have attracted unprecedented attention due to remarkable successes in games like &lt;a href=&quot;https://arxiv.org/abs/1312.5602&quot;&gt;ATARI&lt;/a&gt; and &lt;a href=&quot;http://www.ics.uci.edu/~dechter/courses/ics-295/winter-2018/papers/nature-go.pdf&quot;&gt;Go&lt;/a&gt;, and have been extended to control domains involving  &lt;a href=&quot;https://arxiv.org/abs/1509.02971&quot;&gt;continuous actions&lt;/a&gt;. However, standard deep reinforcement learning algorithms using continuous actions like DDPG suffer from inefficient exploration when facing sparse or deceptive reward problems.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Line anchors in code blocks and new syntax highlighting&lt;/li&gt;
-  &lt;li&gt;A customizable variables file&lt;/li&gt;
-  &lt;li&gt;Modular, and lighter weight CSS&lt;/li&gt;
-  &lt;li&gt;No more &lt;code class=&quot;highlighter-rouge&quot;&gt;max-width&lt;/code&gt; media queries&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 11 Jul 2015 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/jekyll/pixyll/2015/07/11/announcing-pixyll-version-2/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/pixyll/2015/07/11/announcing-pixyll-version-2/</guid>
-      </item>
-    
-      <item>
-        <title>Hello, Pixyll</title>
-        <description>&lt;p&gt;Hello.&lt;/p&gt;
+&lt;p&gt;One natural approach is to rely on imitation learning, i.e. leveraging observations of a human solving the problem. However, humans cannot always help. They can be unavailable, or simply unable to demonstrate a good behavior (e.g. how to demonstrate locomotion to a 6-leg robot).&lt;/p&gt;
 
-&lt;p&gt;Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff. It’s mobile &lt;em&gt;first&lt;/em&gt;, fluidly responsive, and delightfully lightweight.&lt;/p&gt;
+&lt;p&gt;Another approach relies on the use of various forms of curiosity-driven Deep RL. This generally consists in adding an exploration bonus term to the reward function, measuring quantities such as information gain, entropy, uncertainty or prediction errors (e.g. &lt;a href=&quot;https://arxiv.org/abs/1606.01868&quot;&gt;[Bellemare et al.]&lt;/a&gt;) . Sometimes the reward function is even ignored and replaced by such an intrinsic reward &lt;a href=&quot;https://arxiv.org/abs/1705.05363&quot;&gt;[Pathak et al., 2017]&lt;/a&gt;). However, it is challenging to leverage them in environments with complex continuous action spaces, especially on real world robots.&lt;/p&gt;
 
-&lt;p&gt;It’s pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.&lt;/p&gt;
+&lt;p&gt;In our recent ICML 2018 &lt;a href=&quot;https://arxiv.org/abs/1802.05054&quot;&gt;paper&lt;/a&gt;, we propose to leverage evolutionary and developmental curiosity-driven exploration methods that were initially designed from a very different perspective. These are population-based approaches like &lt;a href=&quot;http://eplex.cs.ucf.edu/papers/lehman_ecj11.pdf&quot;&gt;Novelty Search&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/1708.09251&quot;&gt;Quality-Diversity&lt;/a&gt; or &lt;a href=&quot;http://www.pyoudeyer.com/ActiveGoalExploration-RAS-2013.pdf&quot;&gt;Intrinsically Motivated Goal Exploration Processes&lt;/a&gt;. The primary purpose of these methods has been to enable autonomous machines to discover diverse repertoire of skills, i.e. to learn a population of policies that produce maximally diverse behavioral outcomes. Such discoveries have often been used to build good internal world models in a sample efficient manner, e.g. through curiosity-driven goal exploration &lt;a href=&quot;http://www.pyoudeyer.com/ActiveGoalExploration-RAS-2013.pdf&quot;&gt;[Baranes and Oudeyer, 2013]&lt;/a&gt;. This led to a variety of applications where real world robots where capable to learn very fast complex skills &lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;[Forestier et al.,2017]&lt;/a&gt; or to adapt to damages &lt;a href=&quot;https://arxiv.org/pdf/1407.3501v2.pdf&quot;&gt;[Cully et al., 2015]&lt;/a&gt;.&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
-  &lt;/p&gt;
-  &lt;footer&gt;&lt;cite title=&quot;Antoine de Saint-Exupéry&quot;&gt;Antoine de Saint-Exupéry&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Our new paper shows that the strengths of monolithic Deep RL methods and population-based diversity search methods can be combined for solving RL problems with rare or deceptive rewards. The general idea is as follows. In the exploration phase, we use a population-based diversity search approach (in the experiments below, a simple form of Goal Exploration Process &lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;[Forestier et al, 2017]&lt;/a&gt;). During this phase, diverse goals are sampled, leading to sampling corresponding small-size neural network policies, which behavioral trajectories are recorded in an archive. While the sampling process is not influenced at all by the extrinsic reward of the RL problem, these rewards are nevertheless observed and memorized. Then, in a second phase, all trajectories (and associated rewards) discovered during the first phase are used to initialize the replay buffer of a Deep RL algorithm.&lt;/p&gt;
 
-&lt;h2 id=&quot;where-is-it&quot;&gt;Where is it?&lt;/h2&gt;
+&lt;p&gt;The general intuition is that population-based pure diversity search enables to find rare rewards faster than Deep RL algorithms, or to collect observation data that is very useful to Deep RL algorithms for getting out of deceptive local minima. However, as Deep RL algorithms are very strong at exploiting reward gradient information when it is available, they can be used to learn policies that refine those found during the diversity search phase.&lt;/p&gt;
 
-&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/johnotander/pixyll&quot;&gt;Github repository&lt;/a&gt; to download it, request a feature, or report a bug.&lt;/p&gt;
+&lt;p&gt;Our experiments use a simple goal exploration process for the first phase, and several variants of DDPG for the second phase.&lt;/p&gt;
 
-&lt;p&gt;It’s free, and open source (&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;MIT&lt;/a&gt;).&lt;/p&gt;
-</description>
-        <pubDate>Wed, 11 Jun 2014 17:31:19 +0200</pubDate>
-        <link>http://localhost:4000/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</guid>
-      </item>
-    
-      <item>
-        <title>Pixyll in Action</title>
-        <description>&lt;p&gt;There is a significant amount of subtle, yet precisely calibrated, styling to ensure
-that your content is emphasized while still looking aesthetically pleasing.&lt;/p&gt;
-
-&lt;p&gt;All links are easy to &lt;a href=&quot;#&quot;&gt;locate and discern&lt;/a&gt;, yet don’t detract from the &lt;a href=&quot;#&quot;&gt;harmony
-of a paragraph&lt;/a&gt;. The &lt;em&gt;same&lt;/em&gt; goes for italics and &lt;strong&gt;bold&lt;/strong&gt; elements. Even the the strikeout
-works if &lt;del&gt;for some reason you need to update your post&lt;/del&gt;. For consistency’s sake,
-&lt;ins&gt;The same goes for insertions&lt;/ins&gt;, of course.&lt;/p&gt;
-
-&lt;h3 id=&quot;code-with-syntax-highlighting&quot;&gt;Code, with syntax highlighting&lt;/h3&gt;
-
-&lt;p&gt;Here’s an example of some ruby code with line anchors.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# The most awesome of classes&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Awesome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
-  &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;EvenMoreAwesome&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;validates_presence_of&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:something&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;validates&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;email_format: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;favorite_number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'created awesomeness'&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;email_format&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=~&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/\S+@\S+\.\S+/&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Here’s some CSS:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.foobar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;/* Named colors rule */&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;tomato&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Here’s some JavaScript:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isPresent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'is-present'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doStuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;things&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPresent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;things&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;doOtherStuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;things&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Here’s some HTML:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;m0 p0 bg-blue white&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;h1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Hello, world!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;headings&quot;&gt;Headings!&lt;/h1&gt;
-
-&lt;p&gt;They’re responsive, and well-proportioned (in &lt;code class=&quot;highlighter-rouge&quot;&gt;padding&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;line-height&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;margin&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt;).
-They also heavily rely on the awesome utility, &lt;a href=&quot;http://www.basscss.com/&quot;&gt;BASSCSS&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h5 id=&quot;they-draw-the-perfect-amount-of-attention&quot;&gt;They draw the perfect amount of attention&lt;/h5&gt;
-
-&lt;p&gt;This allows your content to have the proper informational and contextual hierarchy. Yay.&lt;/p&gt;
-
-&lt;h3 id=&quot;there-are-lists-too&quot;&gt;There are lists, too&lt;/h3&gt;
+&lt;p&gt;We show that, and analyze why:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Apples&lt;/li&gt;
-  &lt;li&gt;Oranges&lt;/li&gt;
-  &lt;li&gt;Potatoes&lt;/li&gt;
-  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;DDPG fails on a simple low dimensional deceptive reward problem called Continuous Mountain Car,&lt;/li&gt;
+  &lt;li&gt;GEP-PG obtains state-of-the-art performance on the larger Half-Cheetah benchmark, reaching faster and higher performances than DDPG alone,&lt;/li&gt;
+  &lt;li&gt;The diversity of outcomes discovered during the first phase correlates with the efficiency of DDPG in the second phase.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;the-methodology&quot;&gt;The methodology&lt;/h2&gt;
+&lt;p&gt;Our experiments follow the methodological guidelines presented in &lt;a href=&quot;https://arxiv.org/abs/1709.06560&quot;&gt;[Henderson et al, 2017]&lt;/a&gt;:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Mow the lawn&lt;/li&gt;
-  &lt;li&gt;Feed the dog&lt;/li&gt;
-  &lt;li&gt;Dance&lt;/li&gt;
+  &lt;li&gt;we use standard baseline implementations and hyperparameters of DDPG,&lt;/li&gt;
+  &lt;li&gt;we run robust statistical analysis, averaging our results over 20 different seeds for each algorithm,&lt;/li&gt;
+  &lt;li&gt;we provide the code of the algorithm, and the code to make the figures, &lt;a href=&quot;https://github.com/flowersteam/geppg&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;images-look-great-too&quot;&gt;Images look great, too&lt;/h3&gt;
+&lt;h2 id=&quot;the-environments&quot;&gt;The environments&lt;/h2&gt;
+&lt;p&gt;Continuous Mountain Car (CMC) is a simple 2D problem available in the OpenAI Gym environments. In this problem, an underpowered car must learn to swing in a valley in order to 
+reach the top of a hill. Success yields a large positive reward (+100) while there is a small penalty for the car energy expenses &lt;script type=&quot;math/tex&quot;&gt;(-0.1 \times \mid a\mid^2)&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png&quot; alt=&quot;desk&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In Half-Cheetah (HC), a 2D biped must learn how to run as fast as possible. It receives observations about its absolute and joints positions and velocities (17D) and can control the torques of all joints (6D).&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png&quot; alt=&quot;desk&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;there-are-also-pretty-colors&quot;&gt;There are also pretty colors&lt;/h3&gt;
-
-&lt;p&gt;Also the result of &lt;a href=&quot;http://www.basscss.com/&quot;&gt;BASSCSS&lt;/a&gt;, you can &lt;span class=&quot;bg-dark-gray white&quot;&gt;highlight&lt;/span&gt; certain components
-of a &lt;span class=&quot;red&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;mid-gray&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;green&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;orange&quot;&gt;classes&lt;/span&gt;.&lt;/p&gt;
-
-&lt;p&gt;I don’t recommend using blue, though. It looks like a &lt;span class=&quot;blue&quot;&gt;link&lt;/span&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;footnotes&quot;&gt;Footnotes!&lt;/h3&gt;
-
-&lt;p&gt;Markdown footnotes are supported, and they look great! Simply put e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;[^1]&lt;/code&gt; where you want the footnote to appear,&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and then add
-the reference at the end of your markdown.&lt;/p&gt;
-
-&lt;h3 id=&quot;stylish-blockquotes-included&quot;&gt;Stylish blockquotes included&lt;/h3&gt;
-
-&lt;p&gt;You can use the markdown quote syntax, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; for simple quotes.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis porta mauris.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;However, you need to inject html if you’d like a citation footer. I will be working on a way to
-hopefully sidestep this inconvenience.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
-  &lt;/p&gt;
-  &lt;footer&gt;&lt;cite title=&quot;Antoine de Saint-Exupéry&quot;&gt;Antoine de Saint-Exupéry&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;tables&quot;&gt;Tables&lt;/h3&gt;
-
-&lt;p&gt;Tables represent tabular data and can be built using markdown syntax.  They are rendered responsively in Pixyll for a variety of screen widths.&lt;/p&gt;
-
-&lt;p&gt;Here’s a simple example of a table:&lt;/p&gt;
-
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Quantity&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Price&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;Orange&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$0.99&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Pineapple&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$2.99&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;Banana&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$0.39&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;strong&gt;$6.14&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
+&lt;tr&gt;
+
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/d/d0fbf19e533fbf3e0da2b74066aa47bae57a772d.gif&quot; height=&quot;220&quot; alt=&quot;Continuous Mountain Car&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt; Continuous Mountain Car &lt;/sub&gt; &lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/0/0edbf189cb28b08eb85e6fd7b85a74ac72382e60.gif&quot; height=&quot;220&quot; alt=&quot;Half Cheetah&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt; Half Cheetah &lt;/sub&gt; &lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+
+&lt;/tr&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 
-&lt;p&gt;A table must have a body of one or more rows, but can optionally also have a header or footer.&lt;/p&gt;
+&lt;h2 id=&quot;the-gep-pg-approach&quot;&gt;The GEP-PG approach&lt;/h2&gt;
 
-&lt;p&gt;The cells in a column, including the header row cell, can either be aligned:&lt;/p&gt;
+&lt;p&gt;GEP-PG, for Goal Exploration Process - Policy Gradient, is a general framework which sequentially combines an algorithm from the Intrinsically Motivated Goal Exploration Process family (IMGEP)  &lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;[Forestier et al, 2017]&lt;/a&gt; and Deep Deterministic Policy Gradient (DDPG) &lt;a href=&quot;https://arxiv.org/abs/1509.02971&quot;&gt;[Lillicrap, 2015]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;ddpg&quot;&gt;DDPG&lt;/h3&gt;
+&lt;p&gt;DDPG is an actor-critic off-policy method which stores samples in a replay buffer to perform policy gradient descent (see original paper &lt;a href=&quot;https://arxiv.org/abs/1509.02971&quot;&gt;[Lillicrap, 2015]&lt;/a&gt; for detailed explanations of this algorithm). In this paper, we use two variants:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;DDPG with action perturbations, for which an Ornstein-Uhlenbeck noise process is added to the actions.&lt;/li&gt;
+  &lt;li&gt;DDPG with parameter perturbations, where an adaptive noise is added directly to the actor’s parameters, see &lt;a href=&quot;https://arxiv.org/pdf/1706.01905.pdf&quot;&gt;[Plappert, 2018]&lt;/a&gt; for details.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;gep&quot;&gt;GEP&lt;/h3&gt;
+&lt;p&gt;Here, we use a very simple form of goal exploration process. First, we consider neural network policies, typically smaller in size than the one learnt in the PG phase. Second, we define a “behavioral representation” or “outcome space” that describes properties of the agent trajectory over the course of an episode (also called “roll-out” of a policy). For CMC, the minimum and maximum position on the x-axis could be used as behavioral features to define the outcome space:&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/5/507b377d40151bb6668861e30be3a4e2a564d2c1.png&quot; height=&quot;250&quot; alt=&quot;GEP's outcome space&quot; /&gt;
+&lt;div&gt;
+&lt;sub&gt;
+&lt;i&gt;Each trajectory is mapped to an outcome space. Here we use the minimum and maximum.
+positions along the x-axis as behavioral features.&lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Every time a roll-out is made with a policy, the policy parameters and the corresponding outcome vector are stored inside an archive. In addition, one stores the full (state, action) trajectory and the extrinsic reward observations: these observations are used in the second phase, but they are not used in the data collection achieved by the goal exploration process.&lt;/p&gt;
+
+&lt;p&gt;The GEP algorithm then repeats the following steps (Figure below):&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;sample a goal at random in the outcome space,&lt;/li&gt;
+  &lt;li&gt;find the nearest neighbor in outcome space archive and select the associated policy,&lt;/li&gt;
+  &lt;li&gt;add Gaussian noise to policy and play it in the environment to obtain a new outcome,&lt;/li&gt;
+  &lt;li&gt;save the new (policy, outcome) pair in the archive.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/c/c88404f34d073dd751212484a183cdc3ebd1de0d.png&quot; height=&quot;300&quot; alt=&quot;GEP mechanism&quot; /&gt;
+&lt;div&gt;
+&lt;sub&gt;
+&lt;i&gt; GEP performs efficient exploration because the nearest-neighbor selection mechanism introduces a selection bias toward policies showing original outcomes. On the right hand-side figure above, the point in light green has much less chance to be selected as nearest neighbor of a randomly sampled goal than the dark green outcomes. The dark green outcomes located at the frontier of behavioral clusters show more novel behaviors. By selecting them, the algorithm tries to extend these clusters, to cover the whole outcome space. &lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Other implementations of goal exploration processes perform curiosity-driven goal sampling (e.g. &lt;a href=&quot;http://www.pyoudeyer.com/ActiveGoalExploration-RAS-2013.pdf&quot;&gt;maximizing competence progress&lt;/a&gt;) in step 1, or use &lt;a href=&quot;https://www.frontiersin.org/articles/10.3389/frobt.2016.00008/full&quot;&gt;regression-based forward and inverse models&lt;/a&gt; in step 2. However, the very simple form of goal exploration used here was previously shown to be already very efficient to discover a diversity of outcomes. This may seem surprising at first as it does not include any explicit measure of behavioral novelty. Yet, when one samples a random goal, there is a high probably that this corresponds to a vector in outcome space that is outside the cloud of outcome vectors already produced. As a consequence, when looking at the nearest-neighbor, there is a high probability to select a an outcome that is on the edge of what has been discovered so far. And thus trying a stochastic variation of the corresponding policy tends to push this edge further, thus discovering novel behaviors. So, this simple GEP implementation behaves similarly to the Novelty-Search algorithm &lt;a href=&quot;http://eplex.cs.ucf.edu/papers/lehman_ecj11.pdf&quot;&gt;[Lehman &amp;amp; Stanley, 2011]&lt;/a&gt;, yet never measuring explicitly novelty.&lt;/p&gt;
+
+&lt;p&gt;Besides, one can note that GEP maintains a population of solutions by storing each (policy, outcome) pair in memory. This prevents catastrophic forgetting and enables one-shot learning of novel outcomes. The policies associated to these behaviors can easily be retrieved from memory by using a nearest neighbor search in the space of outcomes and taking the corresponding policy.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;table&gt;
+
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/0/0edbf189cb28b08eb85e6fd7b85a74ac72382e60.gif&quot; height=&quot;220&quot; alt=&quot;Half Cheetah forward&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt; Running forward &lt;/sub&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/6/65d3e42e8e06affb3e37f879b195b907efde84ec.gif&quot; height=&quot;220&quot; alt=&quot;Half Cheetah backward&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt;Running backward &lt;/sub&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/9/94b22b783e1f1de1ccd6cf702d3d9d3392371059.gif&quot; height=&quot;220&quot; alt=&quot;Half Cheetah falling&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt;&lt;sub&gt; Falling &lt;/sub&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;gep-pg&quot;&gt;GEP-PG&lt;/h3&gt;
+
+&lt;p&gt;After a few GEP episodes, the actions, states and rewards experienced are loaded into the replay buffer of DDPG. DDPG is then run with a randomly initialized actor and critic, but benefits from the content of this replay buffer.&lt;/p&gt;
+
+&lt;h2 id=&quot;ddpg-fails-on-continuous-mountain-car&quot;&gt;DDPG fails on Continuous Mountain Car&lt;/h2&gt;
+
+&lt;p&gt;Perhaps, the most surprising result of our study is that DDPG, which is considered as a state-of-the-art method in deep reinforcement learning with continuous actions, does not perform well on the very low dimensional Continuous Mountain Car benchmark, where simple exploration methods can easily find the goal.&lt;/p&gt;
+
+&lt;p&gt;In CMC, until the car reaches the top for the first time, the gradient of performance points towards standing still in order to avoid negative penalties corresponding to energy expenses. Thus, the gradient is deceptive as it drives the agent to a local optimum where the policy fails.&lt;/p&gt;
+
+&lt;p&gt;Below we show the effect of this deceptive gradient: the form of exploration used in DDPG can escape the local optimum by chance, but the average time to reach the goal for the first time is worse than one would get using purely random exploration. Using noise on the actions, DDPG finds the top in the first 50 episodes only 22% of the time. Using policy parameter perturbations, it happens 42% of the time. By contrast, because its exploration strategy is insensitive to the gradient of performance, GEP is good at quickly reaching the goal for the first time, no matter the complexity of the policy (either a simple linear policy or the same as DDPG).&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/1/194ade94e5535a5d3304f07484013d8d49dcd9f0.png&quot; height=&quot;280&quot; alt=&quot;Histograme number of steps before reaching the goal&quot; /&gt;
+&lt;div&gt;
+&lt;i&gt; &lt;sub&gt;Number of steps before reaching the goal in Continuous Mountain Car &lt;/sub&gt; &lt;/i&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When filling the replay buffer of DDPG with GEP trajectories, good policies are found more consistently. It should be noted that although GEP-PG reached better performance than DDPG alone across learning (see histogram of the performances of best policies found across learning), it sometimes forgets them afterwards (see learning curves) due to known instabilities in DDPG &lt;a href=&quot;https://arxiv.org/abs/1709.06560&quot;&gt;[Henderson et al, 2017]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;table&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/7/795b0ff4285e54414060636618783a9b3a42ac87.png&quot; height=&quot;250&quot; alt=&quot;Continuous Mountain Car, learning curves&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt;Learning curves - Continuous Mountain Car &lt;/sub&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/2/2ec80bd6f356728a8f9b22775bc1e299512bfa61.png&quot; height=&quot;250&quot; alt=&quot;Histogram performances of best policies&quot; /&gt;
+&lt;br /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt;&lt;sub&gt; Performance of best policies &lt;/sub&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/7/780cbecfea0a03d69e899336f220103adbc38727.gif&quot; height=&quot;250&quot; alt=&quot;Continuous Mountain Car, good GEP-PG policy&quot; /&gt;
+&lt;div&gt;
+&lt;i&gt; &lt;sub&gt; Good GEP-PG policy &lt;/sub&gt; &lt;/i&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;gep-pg-obtains-state-of-the-art-results-on-half-cheetah&quot;&gt;GEP-PG obtains state-of-the-art results on Half-Cheetah&lt;/h2&gt;
+
+&lt;p&gt;On the Half-Cheetah benchmark, GEP-PG runs 500 episodes of GEP then switches to one of two DDPG variants that we call action and parameter perturbation. The two GEP-PG variants (dark blue and red) significantly outperform their DDPG counterparts (light blue and red), and GEP alone (green). The variance of performance across different runs is also smaller in GEP-PG compared to DDPG alone.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
+&lt;table&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/0/003b4d1d807d0b25abdbeea3af5cd37de5c38339.jpg&quot; height=&quot;250&quot; alt=&quot;Half-Cheetah, learning curves&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt;Learning curves - Half-Cheetah  &lt;/sub&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/c/cc9b7b359adb4915f5cda9bb3223ba7bbe43104f.gif&quot; height=&quot;250&quot; alt=&quot;Half-Cheetah, good GEP-PG policy&quot; /&gt;
+&lt;br /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt;&lt;sub&gt; Good GEP-PG policy &lt;/sub&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;what-makes-a-good-replay-buffer&quot;&gt;What makes a good replay buffer&lt;/h2&gt;
+
+&lt;p&gt;A question that remains unresolved is: what makes a good replay buffer? To answer it, we looked for potential correlations between the final performance of GEP-PG on Half-Cheetah and a list of other factors. We ran GEP-PG with various replay buffer sizes (100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000 episodes) and a fixed budget for the DDPG part (1500 episodes). We found out that GEP-PG’s performance is not a function of the replay buffer size. Filling the replay buffer with 100 GEP episodes is enough to bootstrap DDPG. However, the quality and diversity of the replay buffer are important factors. We found that the performance of GEP-PG correlates significantly to the buffer’s quality:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;left,&lt;/li&gt;
-  &lt;li&gt;right or&lt;/li&gt;
-  &lt;li&gt;center.&lt;/li&gt;
+  &lt;li&gt;the final performance of GEP &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+(p&lt;2\times10^{-6}) %]]&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;the average performance of GEP during training &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+(p&lt;4\times10^{-8}) %]]&gt;&lt;/script&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Most inline text formatting is available in table cells, block-level formatting are not.&lt;/p&gt;
+&lt;p&gt;but also to the buffer’s diversity, as quantified by various measures:&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;the standard deviation of the performances obtained by GEP during training. This measure quantifies the diversity of performances reached during training.  &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+(p&lt;3\times10^{-10}) %]]&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;the standard deviation of the observation vectors averaged across dimensions. This quantifies the diversity of sensory inputs. &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+(p&lt;3\times10^{-8}) %]]&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;outcome diversity measured by the average distance to the k-nearest neighbors in outcome space (for various k). This measure is normalized by the average distance to the 1-nearest neighbor in the case of a uniform distribution, which makes it insensitive to the sample size. This is a measure of outcomes diversity. &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+(p&lt;4\times10^{-10}) %]]&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;the percentage of cells filled when the outcome space is discretized (with various number of cells). We also use a number of cells equal to the number of points, which make the measure insensitive to this number. This is a measure of outcomes diversity. &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+(p&lt;4\times10^{-5}) %]]&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;the discretized entropy with various number of cells. &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+(p&lt;6\times10^{-7}) %]]&gt;&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom:20px&quot;&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Default header&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Left header&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Center header&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Right header&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Default&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Left&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Center&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;Right&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;em&gt;Italic&lt;/em&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Bold&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;&lt;em&gt;Bold italic&lt;/em&gt;&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;monospace&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;#&quot;&gt;link text&lt;/a&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;del&gt;Strikeout&lt;/del&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;ins&gt;Insertion&lt;ins&gt;&lt;/ins&gt;&lt;/ins&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;line&lt;br /&gt;break&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;“Smart quotes”&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;mark&gt;highlight&lt;/mark&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;span class=&quot;green&quot;&gt;green&lt;/span&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Footnote&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;sub&gt;subscript&lt;/sub&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;sup&gt;superscript&lt;/sup&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;&lt;span class=&quot;red&quot;&gt;red&lt;/span&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Footer row&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
+
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/5/52a1d5bcdad574dfd9cb5bc80481f5ad68e6d0fc.png&quot; height=&quot;250&quot; /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt; &lt;sub&gt;GEP-PG versus GEP performance, color represents the buffer size  &lt;/sub&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;img src=&quot;https://openlab-flowers.inria.fr/uploads/default/original/2X/0/0036a8036e68572c388896e13853c7f2f4573055.png&quot; height=&quot;250&quot; /&gt;
+&lt;br /&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;i&gt;&lt;sub&gt;GEP-PG performance versus diversity score&lt;/sub&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+
 &lt;/table&gt;
+&lt;/div&gt;
 
-&lt;h3 id=&quot;theres-more-being-added-all-the-time&quot;&gt;There’s more being added all the time&lt;/h3&gt;
+&lt;p&gt;These correlations show that a good replay buffer should be both efficient and diverse (in terms of outcomes or observations). This means that implementing more efficient exploration strategies targeting these two objectives would likely further improve the performance of GEP-PG. GEP as used here, only aims at maximizing the diversity of outcomes. On the other hand, &lt;a href=&quot;https://arxiv.org/abs/1708.09251&quot;&gt;Quality-Diversity&lt;/a&gt; algorithms (e.g. &lt;a href=&quot;https://arxiv.org/pdf/1504.04909.pdf&quot;&gt;MAP-Elites&lt;/a&gt;, &lt;a href=&quot;http://www.isir.upmc.fr/files/2013ACTI2876.pdf&quot;&gt;Behavioral Repertoire Evolution&lt;/a&gt;) optimize for these two objectives, and could therefore prove to be strong candidates to replace GEP.&lt;/p&gt;
 
-&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/johnotander/pixyll&quot;&gt;Github repository&lt;/a&gt; to request,
-or add, features.&lt;/p&gt;
+&lt;h2 id=&quot;future-work&quot;&gt;Future work&lt;/h2&gt;
 
-&lt;p&gt;Happy writing.&lt;/p&gt;
+&lt;p&gt;In our work, we have presented the general idea of decoupling exploration and exploitation in deep reinforcement learning algorithms and proposed a specific implementation of this idea using GEP and DDPG. In future work, we will investigate other implementations of this idea using different exploration algorithms (&lt;a href=&quot;http://eplex.cs.ucf.edu/papers/lehman_ecj11.pdf&quot;&gt;Novelty Search&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/pdf/1504.04909.pdf&quot;&gt;MAP-Elites&lt;/a&gt;, &lt;a href=&quot;http://www.isir.upmc.fr/files/2013ACTI2876.pdf&quot;&gt;BR-Evo&lt;/a&gt; or different gradient-based methods (&lt;a href=&quot;https://arxiv.org/abs/1708.05144&quot;&gt;ACKTR&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/1801.01290&quot;&gt;SAC&lt;/a&gt;). More sophisticated implementations of IMGEP could also be used to improve the efficiency of exploration (e.g. &lt;a href=&quot;http://www.pyoudeyer.com/ActiveGoalExploration-RAS-2013.pdf&quot;&gt;curiosity-driven goal exploration&lt;/a&gt; or &lt;a href=&quot;https://arxiv.org/abs/1708.02190&quot;&gt;modular goal exploration&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Another aspect concerns the way GEP and DDPG are combined. Here, we studied the simplest possible combination: filling the replay buffer in DDPG with GEP trajectories. This way to transfer results in a drop in performance at switch time because DDPG starts from new randomly initialized actor and critic networks. In further work, we will try to avoid this drop by bootstrapping the actor network from GEP data at switch time. For instance, using the best GEP policy to generate (observation, action) samples from GEP trajectories, the DDPG actor network could be trained in a supervised manner. We could also call upon a multi-arm bandit paradigm to alternate between GEP and DDPG as required to maximize the learning efficiency, &lt;a href=&quot;https://flowers.inria.fr/Nguyen-Oudeyer-Paladyn2013.pdf&quot;&gt;actively selecting the best learning strategy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Colas, C., Sigaud, O., &amp;amp; Oudeyer, P. Y. (2018). GEP-PG: Decoupling Exploration and Exploitation in Deep Reinforcement Learning Algorithms, ICML 2018 &lt;a href=&quot;https://arxiv.org/abs/1802.05054&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Mnih, V., Kavukcuoglu, K., Silver, D., Graves, A., Antonoglou, I., Wierstra, D., &amp;amp; Riedmiller, M. (2013). Playing atari with deep reinforcement learning. Nature &lt;a href=&quot;https://arxiv.org/abs/1312.5602&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Silver, D., Huang, A., Maddison, C. J., Guez, A., Sifre, L., Van Den Driessche, G., … &amp;amp; Dieleman, S. (2016). Mastering the game of Go with deep neural networks and tree search. Nature, 529(7587), 484-489. &lt;a href=&quot;https://deepmind.com/documents/119/agz_unformatted_nature.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Lillicrap, T. P., Hunt, J. J., Pritzel, A., Heess, N., Erez, T., Tassa, Y., … &amp;amp; Wierstra, D. (2015). Continuous control with deep reinforcement learning. ICLR 2016 &lt;a href=&quot;https://arxiv.org/pdf/1509.02971.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Bellemare, M., Srinivasan, S., Ostrovski, G., Schaul, T., Saxton, D., &amp;amp; Munos, R. (2016). Unifying count-based exploration and intrinsic motivation. In Advances in Neural Information Processing Systems (pp. 1471-1479). &lt;a href=&quot;http://papers.nips.cc/paper/6383-unifying-count-based-exploration-and-intrinsic-motivation.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Pathak, D., Agrawal, P., Efros, A. A., &amp;amp; Darrell, T. (2017, May). Curiosity-driven exploration by self-supervised prediction. In International Conference on Machine Learning (ICML) (Vol. 2017). &lt;a href=&quot;http://openaccess.thecvf.com/content_cvpr_2017_workshops/w5/papers/Pathak_Curiosity-Driven_Exploration_by_CVPR_2017_paper.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Lehman, J., &amp;amp; Stanley, K. O. (2011). Abandoning objectives: Evolution through the search for novelty alone. Evolutionary computation, 19(2), 189-223. Evolutionary Computation &lt;a href=&quot;https://dl.acm.org/citation.cfm?id=2000553&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Cully, A., &amp;amp; Demiris, Y. (2018). Quality and diversity optimization: A unifying modular framework. IEEE Transactions on Evolutionary Computation, 22(2), 245-259. &lt;a href=&quot;https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7959075&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Cully, A., Clune, J., Tarapore, D., &amp;amp; Mouret, J. B. (2015). Robots that can adapt like animals. Nature, 521(7553), 503. &lt;a href=&quot;https://arxiv.org/pdf/1407.3501.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Forestier, S., Mollard, Y., &amp;amp; Oudeyer, P.-Y. (2017). Intrinsically Motivated Goal Exploration Processes with Automatic Curriculum Learning, 1–21. &lt;a href=&quot;https://arxiv.org/pdf/1708.02190.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Benureau, F. C., &amp;amp; Oudeyer, P. Y. (2016). Behavioral diversity generation in autonomous exploration through reuse of past experience. Frontiers in Robotics and AI, 3, 8.&lt;a href=&quot;https://www.frontiersin.org/articles/10.3389/frobt.2016.00008/full&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Henderson, P., Islam, R., Bachman, P., Pineau, J., Precup, D., &amp;amp; Meger, D. (2017). Deep reinforcement learning that matters. arXiv preprint arXiv:1709.06560. AAAI 2018 &lt;a href=&quot;https://arxiv.org/pdf/1709.06560.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Plappert, M., Houthooft, R., Dhariwal, P., Sidor, S., Chen, R. Y., Chen, X., … &amp;amp; Andrychowicz, M. (2017). Parameter space noise for exploration. ICLR 2018 &lt;a href=&quot;https://arxiv.org/pdf/1706.01905.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Mouret, J. B., &amp;amp; Clune, J. (2015). Illuminating search spaces by mapping elites. &lt;a href=&quot;https://arxiv.org/pdf/1504.04909.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Cully, A., &amp;amp; Mouret, J. B. (2013, July). Behavioral repertoire learning in robotics. In Proceedings of the 15th annual conference on Genetic and evolutionary computation (pp. 175-182). ACM. &lt;a href=&quot;https://hal.archives-ouvertes.fr/file/index/docid/841958/filename/t02pap489-cully.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Wu, Y., Mansimov, E., Grosse, R. B., Liao, S., &amp;amp; Ba, J. (2017). Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation. In Advances in neural information processing systems (pp. 5285-5294). &lt;a href=&quot;http://papers.nips.cc/paper/7112-scalable-trust-region-method-for-deep-reinforcement-learning-using-kronecker-factored-approximation.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Haarnoja, T., Zhou, A., Abbeel, P., &amp;amp; Levine, S. (2018). Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor. &lt;a href=&quot;https://arxiv.org/pdf/1801.01290.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Lopes, M., &amp;amp; Oudeyer, P. Y. (2012, November). The strategic student approach for life-long exploration and learning. In IEEE International Conference on Development and Learning and Epigenetic Robotics (ICDL), (pp. 1-8). &lt;a href=&quot;https://hal.inria.fr/file/index/docid/755216/filename/PID2563983.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Nguyen, M., &amp;amp; Oudeyer, P. Y. (2012). Active choice of teachers, learning strategies and goals for a socially guided intrinsic motivation learner. Paladyn Journal of Behavioral Robotics, 3(3), 136-146. &lt;a href=&quot;https://www.degruyter.com/downloadpdf/j/pjbr.2012.3.issue-3/s13230-013-0110-z/s13230-013-0110-z.pdf&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;contact&quot;&gt;Contact&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Email: cedric.colas@inria.fr&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Important information that may distract from the main text can go in footnotes. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;Footnotes will work in tables since they’re just links. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 10 Jun 2014 14:31:19 +0200</pubDate>
-        <link>http://localhost:4000/jekyll/pixyll/2014/06/10/see-pixyll-in-action/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/pixyll/2014/06/10/see-pixyll-in-action/</guid>
-      </item>
-    
-      <item>
-        <title>So, What is Jekyll?</title>
-        <description>&lt;p&gt;Jekyll is a tool for transforming your plain text into static websites and 
-blogs. It is simple, static, and blog-aware. Jekyll uses the 
-&lt;a href=&quot;http://docs.shopify.com/themes/liquid-basics&quot;&gt;Liquid&lt;/a&gt; templating
-language and has builtin &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;
-and &lt;a href=&quot;http://en.wikipedia.org/wiki/Textile_(markup_language)&quot;&gt;Textile&lt;/a&gt; support.&lt;/p&gt;
+&lt;h6 id=&quot;subscribe-to-our-twitter&quot;&gt;Subscribe to our &lt;a href=&quot;https://twitter.com/@flowersINRIA&quot;&gt;Twitter&lt;/a&gt;.&lt;/h6&gt;
 
-&lt;p&gt;It also ties in nicely to &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Learn more about Jekyll on their &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
 </description>
-        <pubDate>Mon, 09 Jun 2014 14:32:18 +0200</pubDate>
-        <link>http://localhost:4000/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</guid>
+        <pubDate>Sat, 15 Feb 2020 12:21:29 +0100</pubDate>
+        <link>http://localhost:4000/bootstraping_rl_with_diversity</link>
+        <guid isPermaLink="true">http://localhost:4000/bootstraping_rl_with_diversity</guid>
       </item>
     
   </channel>

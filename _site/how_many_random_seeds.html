@@ -4,22 +4,22 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>How Many Random Seeds ? &#8211; Cédric Colas's page</title>
+    <title>How Many Random Seeds ? &#8211; Developmental Systems, a Blog of the Flowers Lab</title>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is an empty post.">
+    <meta name="description" content="Reproducibility in Machine Learning and Deep Reinforcement Learning in particular has become a serious issue in the recent years. In this blog post, we present a statistical guide to perform rigorous comparison of RL algorithms.">
     <meta name="robots" content="all">
-    <meta name="author" content="Cédric Colas">
+    <meta name="author" content="INRIA Flowers Team">
     
     <meta name="keywords" content="jekyll">
     <link rel="canonical" href="http://localhost:4000/how_many_random_seeds">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Cédric Colas's page" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201903282029" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202004291649" type="text/css">
 
     <!-- Fonts -->
     
@@ -32,6 +32,10 @@
 
     <!-- MathJax -->
     
+    <script type="text/javascript" async
+        src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
 
     <!-- Verifications -->
     
@@ -42,17 +46,24 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
     <meta property="og:title" content="How Many Random Seeds ?">
-    <meta property="og:description" content="Personal website of Cédric Colas.">
+    <meta property="og:description" content="Developmental Systems, a Blog of the Flowers Lab">
     <meta property="og:url" content="http://localhost:4000/how_many_random_seeds">
-    <meta property="og:site_name" content="Cédric Colas's page">
+    <meta property="og:site_name" content="Developmental Systems, a Blog of the Flowers Lab">
+    
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
     
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     
+        <meta name="twitter:site" content="@FlowersINRIA" />
+        <meta name="twitter:creator" content="@FlowersINRIA" />
+    
     <meta name="twitter:title" content="How Many Random Seeds ?" />
-    <meta name="twitter:description" content="This is an empty post." />
+    <meta name="twitter:description" content="Reproducibility in Machine Learning and Deep Reinforcement Learning in particular has become a serious issue in the recent years. In this blog post, we present a statistical guide to perform rigorous comparison of RL algorithms." />
     <meta name="twitter:url" content="http://localhost:4000/how_many_random_seeds" />
+    
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
     
 
     <!-- Icons -->
@@ -73,6 +84,15 @@
     <link rel="shortcut icon" href="/favicon.ico">
 
     
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-44726622-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
 
      <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_HTML"></script>
@@ -81,6 +101,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
     </script>
 
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700&display=swap" rel="stylesheet">
     <!--&lt;!&ndash; Load jQuery &ndash;&gt;-->
     <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
     <!--&lt;!&ndash; Load KaTeX &ndash;&gt;-->
@@ -91,7 +112,17 @@
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>-->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+    
 
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+    <script src="/css/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
 </head>
 
 
@@ -123,45 +154,31 @@
   <div class="site-wrap">
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
-    <div class="measure">
-      <a href="/" class="site-title">Cédric Colas's page</a>
+      <div class="measure">
+          <a href="/" class="site-title">
+              <img src="/flowers-logo.png">
+          </a>
       <nav class="site-nav">
         
 
 
+        <a class="nav-link"  href="https://flowers.inria.fr/"  target="_blank">Flowers Lab</a>
+
 
     
     
-    
-    
-        <a class="nav-link" href="/blog/">Blog</a>
-    
 
     
-
-    
-    
-    
-    
-        <a class="nav-link" href="/about/">About Pixyll</a>
+        <a class="nav-link" href="/publications/">Publications</a>
     
 
     
 
     
     
-    
-    
-        <a class="nav-link" href="/about/">About Pixyll</a>
-    
 
     
-
-    
-    
-    
-    
-        <a class="nav-link" href="/contact/">Say Hello</a>
+        <a class="nav-link" href="/about">About</a>
     
 
     
@@ -173,18 +190,20 @@
         <div class="social-icons">
   <div class="social-icons-right">
     
-      <a class="fa fa-github" href="https://github.com/ccolas"></a>
+      <a class="fa fa-github" href="https://github.com/flowersteam"></a>
     
     
     
     
     <a class="fa fa-rss" href="/feed.xml"></a>
     
+      <a class="fa fa-twitter" href="https://twitter.com/FlowersINRIA"></a>
     
     
     
     
-      <a class="fa fa-envelope" href="mailto:cedric.colas@inria.fr"></a>
+    
+      <a class="fa fa-envelope" href="mailto:pierre-yves.oudeyer@inria.fr"></a>
     
     
     
@@ -213,7 +232,10 @@
 
 <div class="post-header mb2">
   <h1>How Many Random Seeds ?</h1>
-  <span class="post-meta">Jan 8, 2019</span><br>
+  <span class="post-meta">
+       <a href="mailto:cedric.colas@inria.fr">Cédric Colas</a>
+  </span><br>
+  <span class="post-meta">Feb 17, 2020</span><br>
   
   <span class="post-meta small">
   
@@ -227,7 +249,7 @@
 
 <p>Perhaps the most surprising thing is this: running the same algorithm 10 times with the same hyper-parameters using 10 different random seeds and averaging performance over two splits of 5 seeds can lead to learning curves seemingly coming from different statistical distributions. Then, they present this table:</p>
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/8/899a492f80f4d77be643094fffdc99375c02275b.png" height="150" />
 <div>
 <sub>
@@ -265,7 +287,7 @@ framework</a>. The actual algorithms used are not so important here, and will be
 for each and plot the results in Figure 2. This figure shows the average learning curves, with the <script type="math/tex">95\%</script> confidence interval. Each point of a learning curve is the average 
 cumulated reward over <script type="math/tex">10</script> evaluation episodes. The <em>measure of performance</em> of an algorithm is the average performance over the last <script type="math/tex">10</script> points (i.e. last <script type="math/tex">100</script> evaluation episodes). From the figure, it seems that <script type="math/tex">Algo1</script> performs better than <script type="math/tex">Algo2</script>. Moreover, the confidence intervals do not overlap much at the end. Of course, we need to run statistical tests before drawing any conclusion.</p>
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/e/e5e46b3919dba623d48357cf0abb05c2d14d2fd3.jpg" height="300" />
 <div>
 <sub>
@@ -367,7 +389,7 @@ sample under hypothesis <script type="math/tex">H_0</script> results in its reje
 
 <script type="math/tex; mode=display">p\text{-value} = 1-CDF_{H_0}(t) = 1-\int_{-\infty}^{t} T_{distrib}^{\nu}(\tau) \cdot d\tau.</script>
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/7/703b9d4e3037b266e8fc6b20e020eb84d4405a80.png" height="220" />
 <div>
 <sub>
@@ -417,11 +439,11 @@ Here, the type-I error requirement is set to <script type="math/tex">\alpha=0.05
 each leads to a <script type="math/tex">p</script>-value of <script type="math/tex">0.031</script> and a bootstrap confidence interval such that <script type="math/tex">P\big(\mu_{\text{diff}} \in [259, 1564]\big) = 0.05</script>. Since the <script type="math/tex">p</script>-value is below the significance level <script type="math/tex">\alpha</script> and the <script type="math/tex">CI_1</script> confidence interval does not include <script type="math/tex">0</script>, both test passed. This means both tests found a significant difference between the performances of <script type="math/tex">Algo1</script> and <script type="math/tex">Algo2</script> with a <script type="math/tex">95\%</script> confidence. There should have been only <script type="math/tex">5\%</script> chance to conclude a significant difference if it did not exist. 
 In fact, we did encounter a type-I error. I know that for sure because:</p>
 
-<p>&lt;div align=center&gt;
+<div align="center" style="margin-bottom:20px">
 <b>
 Algo 1 and Algo 2 are the exact same algorithm
 </b>
-&lt;/div&gt;</p>
+</div>
 
 <p>They are both the canonical implementation of DDPG <a href="https://arxiv.org/pdf/1509.02971.pdf">[Lillicrap et al., 2015]</a>. The codebase can be found on this <a href="https://github.com/openai/baselines">repository</a>. This means that <script type="math/tex">H_0</script> was the true hypothesis, there is no possible difference in the true means of the two algorithms. Our first conclusion was wrong, we committed a type-I error, rejecting <script type="math/tex">H_0</script> when it was true. In our case, we selected the two tests so as to set the type-I error probability <script type="math/tex">\alpha</script> to <script type="math/tex">5\%</script>. However, statistical tests often make assumptions, which results in wrong estimations of the probability of the type-I error. We will see in the last section that the false positive rate was strongly under-evaluated.</p>
 
@@ -456,7 +478,7 @@ To illustrate, we compare two DDPG variants: one with action perturbations (<scr
 Here we run both algorithms with <script type="math/tex">n=5</script>. We find empirical means <script type="math/tex">(\overline{x}_1, \overline{x}_2) = (3523, 4905)</script> and empirical standard deviations <script type="math/tex">(s_1, s_2) = (1341, 990)</script> for <script type="math/tex">Algo1</script> (blue) and <script type="math/tex">Algo2</script> (red) respectively. From Figure 4, it seems there is a slight difference in the mean performances  <script type="math/tex">\overline{x}_{\text{diff}} =\overline{x}_2-\overline{x}_1 >0</script>. 
 Running preliminary statistical tests at level <script type="math/tex">\alpha=0.05</script> lead to a <script type="math/tex">p</script>-value of <script type="math/tex">0.1</script> for the Welch’s <script type="math/tex">t</script>-test, and a bootstrapped confidence interval of <script type="math/tex">CI_1=[795, 2692]</script> for the  value of <script type="math/tex">\overline{x}_{\text{diff}} = 1382</script>. The Welch’s <script type="math/tex">t</script>-test does not reject <script type="math/tex">H_0</script> (<script type="math/tex">p</script>-value <script type="math/tex">>\alpha</script>) but the bootstrap test does (<script type="math/tex">0\not\in CI_1</script>). One should compute <script type="math/tex">\beta</script> to estimate the chance that the Welch’s <script type="math/tex">t</script>-test missed an underlying performance difference (type-II error).</p>
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/2/27f05ba5144eb210118dce202db75232d546f628.png" height="300" />
 <div>
 <sub>
@@ -470,7 +492,7 @@ Running preliminary statistical tests at level <script type="math/tex">\alpha=0.
 <p><strong><em>Example 2 (continued)</em></strong>
 For <script type="math/tex">N</script> in <script type="math/tex">[2,50]</script> and <script type="math/tex">\epsilon</script> in <script type="math/tex">[0.1,..,1]\times\overline{x}_1</script>, we compute <script type="math/tex">t_\alpha</script> and <script type="math/tex">\nu</script> using the formulas given in Section \ref{sec:ttest}, as well as <script type="math/tex">t_{\epsilon}</script> for each <script type="math/tex">\epsilon</script>. Finally, we compute the corresponding probability of type-II error <script type="math/tex">\beta</script> using Equation~\ref{eq:beta}. Figure 5 shows the evolution of <script type="math/tex">\beta</script> as a function of <script type="math/tex">N</script> for the different <script type="math/tex">\epsilon</script>. Considering the semi-dashed black line for <script type="math/tex">\epsilon=\overline{x}_{\text{diff}}=1382</script>, we find <script type="math/tex">\beta=0.51</script> for <script type="math/tex">N=5</script>: there is <script type="math/tex">51\%</script> chance of making a type-II error when trying to detect an effect <script type="math/tex">\epsilon=1382</script>. To meet the requirement <script type="math/tex">\beta=0.2</script>, <script type="math/tex">N</script> should be increased to <script type="math/tex">N=10</script> (<script type="math/tex">\beta=0.19</script>).</p>
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/3/3a3d72a9dbef925bdfa272530e9cf45fc4239c8f.png" height="300" />
 <div>
 <sub>
@@ -487,7 +509,7 @@ For <script type="math/tex">N</script> in <script type="math/tex">[2,50]</script
 Here, we take <script type="math/tex">N=10</script> and run both the Welch’s <script type="math/tex">t</script>-test and the bootstrap test. We now find empirical means <script type="math/tex">(\overline{x}_1, \overline{x}_2) = (3690, 5323)</script> and empirical standard deviations <script type="math/tex">(s_1, s_2) = (1086, 1454)</script> for <script type="math/tex">Algo1</script> and <script type="math/tex">Algo2</script> respectively. Both tests rejected <script type="math/tex">H_0</script>, with a <script type="math/tex">p</script>-value of <script type="math/tex">0.0037</script> for the Welch’s <script type="math/tex">t</script>-test and a confidence interval for the difference <script type="math/tex">\mu_{\text{diff}} \in [732,2612]</script> for the bootstrap test. Both tests passed. In Figure 7, plots for <script type="math/tex">N=5</script> and <script type="math/tex">N=10</script> can be compared. With a larger number of seeds, the difference that was not found significant with <script type="math/tex">N=5</script> is now more clearly visible. With a larger number of seeds, the estimate <script type="math/tex">\overline{x}_{\text{diff}}</script> is more robust, more evidence is available to support the claim that <script type="math/tex">Algo2</script> outperforms <script type="math/tex">Algo1</script>, which translates to tighter confidence intervals represented in the figures.
 \end{myex}</p>
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/a/a763133041a1aa96d8a3ed6b9fabb4724d522ae5.png" height="300" />
 <div>
 <sub>
@@ -517,7 +539,7 @@ The sample size <script type="math/tex">N</script> should be chosen so as to mee
 <p><strong><em>Example 3</em></strong>
 We use <script type="math/tex">Algo1</script> from Example 2. From <script type="math/tex">42</script> available measures of performance, the above procedure is run for <script type="math/tex">N</script> in <script type="math/tex">[2,21]</script>. Figure 8 presents the results. For small values of <script type="math/tex">N</script>, empirical estimations of the false positive rate are much larger than the supposedly enforced value <script type="math/tex">\alpha=0.05</script>.</p>
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/d/de434feebaf9e814b05bdeadc97d593ec4cf3285.png" height="300" />
 <div>
 <sub>
@@ -532,7 +554,7 @@ We use <script type="math/tex">Algo1</script> from Example 2. From <script type=
 <h3 id="influence-of-the-empirical-standard-deviations">Influence of the empirical standard deviations</h3>
 <p>The Welch’s <script type="math/tex">t</script>-test computes <script type="math/tex">t</script>-statistics and the degree of freedom <script type="math/tex">\nu</script> based on the sample size <script type="math/tex">N</script> and the empirical estimations of standard deviations <script type="math/tex">s_1</script> and <script type="math/tex">s_2</script>. When <script type="math/tex">N</script> is low, estimations <script type="math/tex">s_1</script> and <script type="math/tex">s_2</script> under-estimate the true standard deviation in average. Under-estimating <script type="math/tex">(s_1,s_2)</script> leads to smaller <script type="math/tex">\nu</script> and lower <script type="math/tex">t_\alpha</script>, which in turn leads to lower estimations of <script type="math/tex">\beta</script>. Finally, finding lower <script type="math/tex">\beta</script> leads to the selection of smaller sample size <script type="math/tex">N</script> to meet <script type="math/tex">\beta</script> requirements. We found this had a significant effect on the computation of <script type="math/tex">N</script>. Figure 9 shows <script type="math/tex">\beta</script> the false negative rate when trying to detect effects of size <script type="math/tex">\epsilon</script> between two normal distributions <script type="math/tex">\mathcal{N}(3,1)</script> and <script type="math/tex">\mathcal{N}(3+\epsilon,1)</script>. The only difference between both figures is that the left one uses the true values of <script type="math/tex">\sigma_1, \sigma_2</script> to compute <script type="math/tex">\beta</script>, whereas the right figure uses (inaccurate) empirical evaluations <script type="math/tex">s_1,s_2</script> to compute <script type="math/tex">\beta</script>. We can see that the estimation of standard deviations influences the computation of <script type="math/tex">\beta</script>, and the subsequent choice of an appropriate sample size <script type="math/tex">N</script> to meet requirements on <script type="math/tex">\beta</script>. See our <a href="">paper</a> for further details.</p>
 
-<div align="center">
+<div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/b/bc0a4ca746dbe03c78182969c67ca2bd8a015e80.png" height="300" />
 <div>
 <sub>
@@ -611,10 +633,44 @@ and Levine, S. 2017. Interpolated policy gradient: Merging on-policy and off-pol
 
 <hr />
 
-<h6 id="subscribe-to-our-rss-feed">Subscribe to our <a href="https://openlab-flowers.inria.fr/c/blog.rss">RSS Feed</a>.</h6>
-<h6 id="subscribe-to-our-mailing-list">Subscribe to our <a href="https://sympa.inria.fr/sympa/subscribe/flowers-blog">mailing list</a>.</h6>
+<h6 id="subscribe-to-our-twitter">Subscribe to our <a href="https://twitter.com/@flowersINRIA">Twitter</a>.</h6>
+
+<hr />
 
 </article>
+
+
+  <div class="share-page">
+  Share this post!
+
+  <div class="share-links">
+    
+      <a class="fa fa-facebook" href="https://facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fhow_many_random_seeds" rel="nofollow" target="_blank" title="Share on Facebook"></a>
+    
+
+    
+      <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text=How+Many+Random+Seeds+%3F&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fhow_many_random_seeds" rel="nofollow" target="_blank" title="Share on Twitter"></a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <a class="fa fa-reddit" href="http://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2Fhow_many_random_seeds&amp;title=How+Many+Random+Seeds+%3F" rel="nofollow" target="_blank" title="Share on Reddit"></a>
+    
+
+    
+
+    
+      <a class="fa fa-hacker-news" onclick="parent.postMessage('submit','*')" href="https://news.ycombinator.com/submitlink?u=http%3A%2F%2Flocalhost%3A4000%2Fhow_many_random_seeds&amp;t=How+Many+Random+Seeds+%3F" rel="nofollow" target="_blank" title="Share on Hacker News"></a>
+    
+  </div>
+</div>
 
 
 
