@@ -230,7 +230,7 @@ We plan, in future work, to apply our novel algorithmic contributions (automatic
 
 ### *In silico*, *in vitro*, soon *in vivo*?
 Finally, near future research will probably happen at the frontier of simulated machine environments ("in silico"), controlled experimental conditions ("in vitro") and potentially directly in living organisms ("in vivo").
-With the advances in synthetic biology and powerful novel technologies such as [bio-printing](https://en.wikipedia.org/wiki/3D_bioprinting), we can hope to create functional tissues or organs for in vivo applications such as regenerative medicine and drug discovery.
+With the advances in synthetic biology and powerful novel technologies such as [bio-printing](https://polylactide.com/organ-bioprinting/), we can hope to create functional tissues or organs for in vivo applications such as regenerative medicine and drug discovery.
 The recent work of [Kriegman et al., 2020](https://www.pnas.org/content/117/4/1853), into which evolutionary algorithms at the computer level where directly transposed to "engineer" a new kind of living organism, the so-called [xenobots](https://en.wikipedia.org/wiki/Xenobot), is an exciting proof of concept in that direction.
 
 ## Conclusion
