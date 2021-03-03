@@ -1,8 +1,8 @@
 # Site settings
-title:       "Developmental Systems, a Blog of the Flowers Lab"
+title:       "Developmental Systems, a Blog of the Flowers Lab at Inria, Univ. Bordeaux and Ensta ParisTech (France)"
 email:       pierre-yves.oudeyer@inria.fr
-author:      INRIA Flowers Team
-description: "Developmental Systems, a Blog of the Flowers Lab"
+author:      Inria Flowers Team
+description: "Developmental Systems, a Blog of the Flowers Lab at Inria, Univ. Bordeaux and Ensta ParisTech (France)"
 baseurl:     ""
 url:         "http://flowersteam.github.io"
 date_format: "%b %-d, %Y"
@@ -21,7 +21,7 @@ bing_verification:
 
 # Optional features
 animated:             false
-show_related_posts:   false
+show_related_posts:   true
 show_post_footers:    false
 show_social_icons:    true
 ajaxify_contact_form: false
@@ -70,7 +70,7 @@ show_sharing_icons: true
 share_facebook: true
 share_twitter: true
 share_googleplus: false
-share_linkedin: false
+share_linkedin: true
 share_digg: false
 share_tumblr: false
 share_reddit: true
