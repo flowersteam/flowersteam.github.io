@@ -286,3 +286,15 @@ html[xmlns] .flexslider .slides {
     right: 10px;
   }
 }
+
+ .row {
+  display: flex;
+ }
+ .col-lg-8 {
+  flex: 0 0 525px;
+}
+ .col-sm-4 {
+  flex: 0 0 275px;
+  align-items: center;
+  justify-content: center;
+}
