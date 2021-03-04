@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      'Language as a Cognitive: Tool Dall-E, Humans and Vygotskian RL Agents Systems'
+title:      'Language as a Cognitive: Tool Dall-E, Humans and Vygotskian RL Agents'
 date:       2021-03-02
 summary: This blog post presents a supra-communicative view of language and advocates for the use of language as a cognitive tool to organize the cognitive development of intrinsically motivated artificial agents. We go over studies revealing the cognitive functions of language in humans, cover similar uses of language in the design of artificial agents and advocate for the pursuit of Vygotskian embodied agents - artificial agents that leverage language as a cognitive tool to structure their continuous experience, form abstract representations, reason, imagine creative goals, plan towards them and simulate future possibilities.
 
