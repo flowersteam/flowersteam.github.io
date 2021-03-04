@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Language as a Cognitive Tool Dall-E, Humans and Vygotskian RL Agents Systems
+title:      'Language as a Cognitive: Tool Dall-E, Humans and Vygotskian RL Agents Systems'
 date:       2021-03-02
 summary: This blog post presents a supra-communicative view of language and advocates for the use of language as a cognitive tool to organize the cognitive development of intrinsically motivated artificial agents. We go over studies revealing the cognitive functions of language in humans, cover similar uses of language in the design of artificial agents and advocate for the pursuit of Vygotskian embodied agents - artificial agents that leverage language as a cognitive tool to structure their continuous experience, form abstract representations, reason, imagine creative goals, plan towards them and simulate future possibilities.
 
@@ -16,6 +16,9 @@ authors:
   next: ' '
 - name: Pierre-Yves Oudeyer
   link: http://www.pyoudeyer.com/
+  next: ' '
+- name: Clément Moulin-Frier
+  link: http://clement-moulin-frier.github.io/
   next: ' '
 ---
 
@@ -39,7 +42,8 @@ In this blog post, we argue that aligning language and the physical world helps 
 ## Language as a Cognitive Tool in Humans
 
 
-Ask anyone what language is about. Chances are, they will answer something along these lines: “language is for people to communicate their thoughts to each other”. They’re right of course, but research in developmental psychology shows that language is a lot more. Vygotsky, a Soviet psychologist of the 1930s, pioneered the idea of the importance of language in the cognitive development of humans [[Vygotsky, 1934](https://mitpress.mit.edu/books/thought-and-language)]. This idea was then developed by a body of research ranging from developmental psychology, through linguistic to philosophy [[Whorf, 1956](https://mitpress.mit.edu/books/language-thought-and-reality); [Rumelhart et al., 1986](https://www.cs.toronto.edu/~fritz/absps/pdp14.pdf); [Dennett, 1991](https://en.wikipedia.org/wiki/Consciousness_Explained); [Berk, 1994](https://www.scientificamerican.com/article/why-children-talk-to-themselves/) and [Clark, 1998](https://era.ed.ac.uk/bitstream/handle/1842/1311/magic.pdf?sequence=1&isAllowed=y), [Carruthers, 2002](https://drum.lib.umd.edu/bitstream/handle/1903/4339/Cognitive.Functions.of.Language.pdf?sequence=3)].
+Ask anyone what language is about. Chances are, they will answer something along these lines: “language is for people to communicate their thoughts to each other”. They’re right of course, but research in developmental psychology shows that language is a lot more. Vygotsky, a Soviet psychologist of the 1930s, pioneered the idea of the importance of language in the cognitive development of humans [[Vygotsky, 1934](https://mitpress.mit.edu/books/thought-and-language)]. This idea was then developed by a body of research ranging from developmental psychology, through linguistic to philosophy [[Whorf, 1956](https://mitpress.mit.edu/books/language-thought-and-reality); [Rumelhart et al., 1986](https://www.cs.toronto.edu/~fritz/absps/pdp14.pdf); [Dennett, 1991](https://en.wikipedia.org/wiki/Consciousness_Explained); [Berk, 1994](https://www.scientificamerican.com/article/why-children-talk-to-themselves/)
+ and [Clark, 1998](https://era.ed.ac.uk/bitstream/handle/1842/1311/magic.pdf?sequence=1&isAllowed=y), [Carruthers, 2002](https://drum.lib.umd.edu/bitstream/handle/1903/4339/Cognitive.Functions.of.Language.pdf?sequence=3)].
 
 <div align="center" style="margin-bottom:40px">
 <img class="80" src="/images/posts/imagine/vygo.jpg" width="25%" alt="Vygotsky" />
@@ -78,7 +82,7 @@ Let us start with words. Words are invitations to form categories [[Waxman and M
 
 
 
-Language can also be used as a tool to solve problems. Piaget first described that two-to-seven-year old children often use private speech or self-talk to describe their on-going activities and organize themselves, but thought this was a sign of cognitive immaturity [[Piaget, 1923](https://newlearningonline.com/literacies/chapter-14/piaget-on-the-language-and-thought-of-the-child)]. Vygotsky, Berk and others showed that private speech was instrumental to the ability of children to reason and solve tasks: the harder the task, the more intensively children used it for planning [[Vygotsky, 1934](https://mitpress.mit.edu/books/thought-and-language), [Berk, 1994](https://www.scientificamerican.com/article/why-children-talk-to-themselves/)]. Far from being left behind as children grow up, Vygotsky showed that private speech is internalized to become inner speech, the little voice in your head [[Vygotsky, 1934](https://mitpress.mit.edu/books/thought-and-language) and [Kohlberg, 1968](https://www.jstor.org/stable/1126979?origin=crossref)].  Children that cannot formulate sentences like “at the left of the blue wall” show decreased spatial orientation capacities in such contexts compared to children who can. Interfering with adults' inner speech by asking them to repeat sentences also hinders their ability to orient spatially [[Hermer-Vazquez et al. 2001](https://www.researchgate.net/profile/Linda-Hermer-2/publication/12165254_Language_space_and_the_development_of_cognitive_flexibility_in_humans_The_case_of_two_spatial_memory_tasks/links/5c2e1ecba6fdccd6b58f7d23/Language-space-and-the-development-of-cognitive-flexibility-in-humans-The-case-of-two-spatial-memory-tasks.pdf)].
+Language can also be used as a tool to solve problems. Piaget first described that two-to-seven-year old children often use private speech or self-talk to describe their on-going activities and organize themselves, but thought this was a sign of cognitive immaturity [[Piaget, 1923](https://newlearningonline.com/literacies/chapter-14/piaget-on-the-language-and-thought-of-the-child)]. Vygotsky, Berk and others showed that private speech was instrumental to the ability of children to reason and solve tasks: the harder the task, the more intensively children used it for planning [[Vygotsky, 1934](https://mitpress.mit.edu/books/thought-and-language), [Berk, 1994](https://www.scientificamerican.com/article/why-children-talk-to-themselves/)]. Far from being left behind as children grow up, Vygotsky showed that private speech is internalized to become inner speech, the little voice in your head [[Vygotsky, 1934](https://mitpress.mit.edu/books/thought-and-language) and [Kohlberg et. al., 1968](https://www.jstor.org/stable/1126979?origin=crossref)].  Children that cannot formulate sentences like “at the left of the blue wall” show decreased spatial orientation capacities in such contexts compared to children who can. Interfering with adults' inner speech by asking them to repeat sentences also hinders their ability to orient spatially [[Hermer-Vazquez et al. 2001](https://www.researchgate.net/profile/Linda-Hermer-2/publication/12165254_Language_space_and_the_development_of_cognitive_flexibility_in_humans_The_case_of_two_spatial_memory_tasks/links/5c2e1ecba6fdccd6b58f7d23/Language-space-and-the-development-of-cognitive-flexibility-in-humans-The-case-of-two-spatial-memory-tasks.pdf)].
 
 
 Because language is---at least partially---compositional, we can immediately generalize and understand sentences that we never heard before. This is called *systematic generalization*: the ability to automatically transfer the meaning of a few thoughts into a myriad of other thoughts [[Fodor and Pylyshyn, 1988](https://uh.edu/~garson/F&P1.PDF)]. Compositionality also underlies the reverse process: *language productivity* [[Chomsky, 1957](http://217.64.17.124:8080/xmlui/bitstream/handle/123456789/557/syntactic_structures%20(1).pdf?sequence=1)]. If words and ideas are like lego blocks, we can combine them recursively in infinite ways to form an infinite space of sentences and thoughts. This mechanism powers the imagination of new ideas and concepts that underlies many of the high-level cognitive abilities of humans. While our language productivity helps us generate new concepts like *"an elephant skiing on a lava flow"*, systematic generalization lets us understand them. 
@@ -179,7 +183,7 @@ Creative exploration is about finding new ways to interact with the environment.
 <div>
 <sub style="display: block; line-height: 1.5em">
 <i><b> The Imagine architecture as a Vygostkian Deep RL system. </b>
-   Social interactions with a social peer enables the agent to learn to represent and understand language as a pre-existent social structure (left). Then, language is internalized and used as a cognitive tool to imagine novel goals by re-combining known sentences: the agent aims to achieve these goals autonomously, enabling creative free exploration (right). Another Vygostkian dimension of Imagine is that the social peer scaffolds the environment: when the agent imagines and formulates a goal through private speech, the social peer sets up the environment so that it's neither too hard (the right objects are present), nor too easy (procedurally-generated objects and additional distracting objects) <a href="https://arxiv.org/pdf/2002.09253.pdf"> [IMAGINE]</a></i></sub>
+   Social interactions with a social peer enables the agent to learn to represent and understand language as a pre-existent social structure (left). Then, language is internalized and used as a cognitive tool to imagine novel goals by re-combining known sentences: the agent aims to achieve these goals autonomously, enabling creative free exploration (right). Another Vygostkian dimension of Imagine is that the social peer scaffolds the environment: when the agent imagines and formulates a goal through private speech, the social peer sets up the environment so that it's neither too hard (the right objects are present), nor too easy (procedurally-generated objects and additional distracting objects) <a href="https://arxiv.org/pdf/2002.09253.pdf"> [IMAGINE]</a>. If you want to play with the code of IMAGINE, feel free to explore our <a href="https://colab.research.google.com/drive/1G9LmvhbvR40XJ-cysgP6zynBnq_fHY63#scrollTo=OPjdOPCNpvz-"> Colab Notebook</a>. The code base is also available in <a href="https://github.com/flowersteam/Imagine">this github repo</a> </i></sub>
 </div>
 </div>
 
@@ -206,7 +210,7 @@ It is now time to take a step back. In this post, we’ve seen that language, mo
 
 
 
-The embodied simulation hypothesis supports this idea. Humans seem to use language, to generate structured representations and simulations of what it refers to. This view is compatible with theories viewing humans as maintaining collections of world models [e.g. [Forrester, 1971](http://www.virtualadjacency.com/wp-content/uploads/2008/01/42c-MIT-Prof-Forrester-Counterintuitive-Behavior-of-Social-Systems-TechRvw-Jan-1971.pdf); [Schmidhuber, 2010](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.467.5494&rep=rep1&type=pdf); [Nortmann et al., 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4428292/pdf/bht318.pdf); [Mous, 2013](https://reader.elsevier.com/reader/sd/pii/S0896627313002572?token=4396251A8D1E11B05D6464A79137FF32FB5A5BE41D1860EA40FCE1F870AB1931059F900D2AEF309E276B5049841CD186) and [Clark, 2015](https://books.google.fr/books?hl=fr&lr=&id=TnqECgAAQBAJ&oi=fnd&pg=PP1&dq=clark+surfing+uncertainty&ots=ausj5hB5PR&sig=p8bKMxE4Mgi7QvkI8sd_r0BHx4A#v=onepage&q=clark%20surfing%20uncertainty&f=false)].
+The embodied simulation hypothesis supports this idea. Humans seem to use language, to generate structured representations and simulations of what it refers to. This view is compatible with theories viewing humans as maintaining collections of world models [e.g. [Forrester, 1971](http://www.virtualadjacency.com/wp-content/uploads/2008/01/42c-MIT-Prof-Forrester-Counterintuitive-Behavior-of-Social-Systems-TechRvw-Jan-1971.pdf); [Schmidhuber, 2010](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.467.5494&rep=rep1&type=pdf); [Nortmann et al., 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4428292/pdf/bht318.pdf); [Maus et. al., 2013](https://reader.elsevier.com/reader/sd/pii/S0896627313002572?token=4396251A8D1E11B05D6464A79137FF32FB5A5BE41D1860EA40FCE1F870AB1931059F900D2AEF309E276B5049841CD186) and [Clark, 2015](https://books.google.fr/books?hl=fr&lr=&id=TnqECgAAQBAJ&oi=fnd&pg=PP1&dq=clark+surfing+uncertainty&ots=ausj5hB5PR&sig=p8bKMxE4Mgi7QvkI8sd_r0BHx4A#v=onepage&q=clark%20surfing%20uncertainty&f=false)].
 
 Now if we look at the algorithms discussed above under that lens, we’ll find that many of them are conducting mental simulations triggered by language. Dall-E certainly does; it generates visual simulation (i.e. visualizes) language inputs. That’s also what LGB does, it visualizes specific semantic representation that might result from executing an instruction. In a weaker sense, all LC-RL algorithms also do that: given a language input, they generate what’s the next action to take to execute the instruction. Model-based versions of these algorithms would do so in a stronger sense---picturing whole trajectories matching language descriptions. Finally, learned reward functions offer verification systems for mental simulation: checking whether descriptions and state---imagined or real---match. 
 
@@ -227,3 +231,203 @@ Now if we look at the algorithms discussed above under that lens, we’ll find t
 Only agents that conduct such an intensive alignment between language and the physical world can project linguistic structures onto their sensorimotor experience and learn to recognize the building blocks that will help them plan, compose, generalize and create.
 
 This blog post covered works from developmental psychology and showed the importance of aligning language and physical experience in humans. Inspired by these studies, we argued for the importance of augmenting learning agents with language-based cognitive tools and reviewed first steps in that direction. Whereas standard language-conditioned RL approaches only use language to communicate instructions or state representations, language-augmented RL agents align language and sensorimotor interactions to build structured world models. Language-Augmented Reinforcement Learning (LARL) builds on the history of research in developmental psychology pioneered by the Russian school [[Vygotsky, 1934](https://mitpress.mit.edu/books/thought-and-language)] and the recent movement to transpose these ideas to cognitive robotics [[Mirolli et al., 2011](https://core.ac.uk/download/pdf/37835593.pdf)]. In LARL, language is used as the main cognitive tool to guide agents' development. Artificial agents, just like humans, build language-structured world models that underlie high-level cognitive abilities such as planning, representation abstractions, analogies and creativity.
+
+
+<hr>
+
+<sub style="display: block; line-height: 1.5em">
+<b>Acknowledgements</b>
+</sub>
+<sub style="display: block; line-height: 1.5em">
+We would like to give a special thanks to <a href="http://www.isir.upmc.fr/?op=view_profil&lang=fr&id=28">Olivier Sigaud</a> for his feedback and precious help on this blog.
+</sub>
+
+
+
+<hr>
+
+<div id="references" style="line-height: 1em">
+<sub>
+<b>References</b>
+</sub>
+  <ul>
+    <li style ="font-size: small">
+      L. S. Vygotsky - <a href="https://mitpress.mit.edu/books/thought-and-language"> Thought and Language</a> 1934
+    </li>
+    <li style="font-size: small">
+      B. Lee Whorf - <a href="https://mitpress.mit.edu/books/language-thought-and-reality"> 
+      Language, Thought, and Reality</a>, 1956
+    </li>
+    <li style="font-size: small">
+      D. E. Rumelhart, P. Smolensky, J.L McClelland and G. E. Hinton - <a href="https://www.cs.toronto.edu/~fritz/absps/pdp14.pdf"> 
+      Schemata and Sequential Thought Processes in PDP Models</a>, 1986
+    </li>
+    <li style="font-size: small">
+      D. C. Dennett - <a href="https://en.wikipedia.org/wiki/Consciousness_Explained"> 
+      Consciousness Explained</a>, 1991
+    </li>
+    <li style="font-size: small">
+      L. E. Berk - <a href="https://www.scientificamerican.com/article/why-children-talk-to-themselves/"> 
+      Why Children Talk to Themselves</a>, 1994
+    </li>
+    <li style="font-size: small">
+      A. Clark - <a href="https://era.ed.ac.uk/bitstream/handle/1842/1311/magic.pdf?sequence=1&isAllowed=y"> 
+      Magic Words How Language Augments Human Computation</a>, 1998
+    </li>
+    <li style="font-size: small">
+      P. Carruthers - <a href="https://drum.lib.umd.edu/bitstream/handle/1903/4339/Cognitive.Functions.of.Language.pdf?sequence=3"> 
+      The cognitive functions of language</a>, 2002
+    </li>
+    <li style="font-size: small">
+      S. R. Waxman and D. B. Markow - <a href="https://en.wikipedia.org/wiki/Consciousness_Explained"> 
+      Words as Invitations to Form Categories: Evidence from 12- to 13-Month-Old Infants</a>, 1995
+    </li>
+    <li style="font-size: small">
+      A. N. Whitehead - <a href="https://archive.org/details/in.ernet.dli.2015.166010"> 
+      Symbolism Its Meaning And Effect</a>, 1927
+    </li>
+    <li style="font-size: small">
+      D. Gentner and C. Hoyos - <a href="https://onlinelibrary.wiley.com/doi/10.1111/tops.12278"> 
+      Analogy and Abstraction</a>, 2017
+    </li>
+    <li style="font-size: small">
+      J. Winawer, N. Witthoft, M. C. Frank, L. Wu, A. R. Wade and L. Boroditsky - <a href="https://www.pnas.org/content/104/19/7780"> 
+      Russian blues reveal effects of language
+      on color discrimination</a>, 2007
+    </li>
+    <li style="font-size: small">
+      M. C. frank, D. L. Everett, E. Fedorenko and E. Gibson - <a href="https://www.sciencedirect.com/science/article/abs/pii/S0010027708001042?casa_token=SCkMeHibf_YAAAAA:BonfbLRNN9-eymEOohJK_ijP6MbOWawddS2uxsSDDsjXMidUN1OyfNuDAJIo1-qbTfj0pTEGVQ"> 
+      Number as a cognitive technology: Evidence from Pirahã language and cognition</a>, 2008
+    </li>
+    <li style="font-size: small">
+      J. Piaget - <a href="https://newlearningonline.com/literacies/chapter-14/piaget-on-the-language-and-thought-of-the-child"> 
+      Consciousness Explained</a>, 1923
+    </li>
+    <li style="font-size: small">
+      L. Kohlberg, J. Yaeger and E. Hjertholm - <a href="https://www.jstor.org/stable/1126979?origin=crossref"> 
+      Private Speech: Four Studies and a Review of Theories</a>, 1968
+    </li>
+    <li style="font-size: small">
+      L. Hermer - <a href="https://www.researchgate.net/publication/12165254_Language_space_and_the_development_of_cognitive_flexibility_in_humans_The_case_of_two_spatial_memory_tasks"> 
+      Language, space, and the development of cognitive flexibility in humans: The case of two spatial memory tasks</a>, 2001
+    </li>
+    <li style="font-size: small">
+      J. A. Fodor and Z. W. Pylyshyn - <a href="https://uh.edu/~garson/F&P1.PDF"> 
+      Connectionism and Cognitive Architecture: A Critical Analysis</a>, 1988
+    </li>
+    <li style="font-size: small">
+      N. Chomsky - <a href="http://217.64.17.124:8080/xmlui/bitstream/handle/123456789/557/syntactic_structures%20(1).pdf?sequence=1"> 
+      Synatctic Structure</a>, 1957
+    </li>
+    <li style="font-size: small">
+      A. Vysgedskiy - <a href="https://riojournal.com/article/38546/"> 
+      Language evolution to revolution: the leap from rich-vocabulary non-recursive communication system to recursive language 70,000 years ago was associated with acquisition of a novel component of imagination, called Prefrontal Synthesis, enabled by a mutation that slowed down the prefrontal cortex maturation simultaneously in two or more children – the Romulus and Remus hypothesis</a>, 2019
+    </li>
+    <li style="font-size: small">
+      B. K. Bergen - <a href="https://www.basicbooks.com/titles/benjamin-k-bergen/louder-than-words/9780465033331/"> 
+      Louder Than Words</a>, 2012
+    </li>
+    <li style="font-size: small">
+      M. Tomasello - <a href="https://www.hup.harvard.edu/catalog.php?isbn=9780674017641"> 
+     Constructing a Language</a>, 2005
+    </li>
+    <li style="font-size: small">
+      M. H. Bornstein, C. S. Tamis-LeMonda, J. Tal, P. Ludemann, S. Toda, C. W. Rahn, M-G. Pêcheux, H. Azuma and D. Vardi- <a href="https://www.jstor.org/stable/1131235?seq=1"> 
+      Maternal Responsiveness to Infants in Three Societies: The United States, France, and Japan</a>, 1992
+    </li>
+    <li style="font-size: small">
+      C. Colas, T. Karch, N. Lair, J-M. Dussoux, C. Moulin-Frier, P. F. Dominey and P-Y. Oudeyer - <a href="https://arxiv.org/pdf/2002.09253.pdf"> 
+      Language as a Cognitive Tool to
+      Imagine Goals in Curiosity-Driven Exploration</a>, NeurIPS 2020
+    </li>
+    <li style="font-size: small">
+      M. Andrychowicz, F.Wolski, A. Ray, J. Schneider, R. Fong, P. Welinder, B. McGrew, J. Tobin, P. Abbeel, W. Zaremba - <a href="https://arxiv.org/pdf/1707.01495.pdf?source=post_page---------------------------"> 
+      Hindsight Experience Replay</a>, NeurIPS 2017
+    </li>
+    <li style="font-size: small">
+      H. Chan, Y. Wu, J. Kiros, S. Fidler, J. Ba - <a href="https://arxiv.org/abs/1902.04546"> 
+      ACTRCE: Augmenting Experience via Teacher's Advice For Multi-Goal Reinforcement Learning</a>, 2019
+    </li>
+    <li style="font-size: small">
+      Y. Jiang, S. Gu, K. Murphy, C. Finn - <a href="https://arxiv.org/abs/1906.07343"> 
+      Language as an Abstraction for Hierarchical Deep Reinforcement Learning</a>, NeurIPS 2019
+    </li>
+    <li style="font-size: small">
+      G. Cideron, M. Seurin, F. Strub and O. Pietquin - <a href="https://arxiv.org/pdf/1910.09451.pdf"> 
+      HIGhER : Improving instruction following with Hindsight Generation for Experience Replay</a>, 2020
+    </li>
+    <li style="font-size: small">
+      L. Zhou and K. Small- <a href="https://arxiv.org/pdf/2008.06924.pdf"> 
+      Inverse Reinforcement Learning with Natural Language Goals</a>, 2020
+    </li>
+    <li style="font-size: small">
+      K. Nguyen, D. Misr, R. Schapire, M. Dudík, and P. Shafto - <a href="https://arxiv.org/pdf/2102.07024.pdf"> 
+      Interactive Learning from Activity Description</a>, 2021
+    </li>
+    <li style="font-size: small">
+      F. Hill, A. K. Lampinen, R. Schneider, S. Clark, M. Botvinick, J.L. McClelland and A. Santoro - <a href="https://deepmind.com/research/publications/Emergent-Systematic-Generalization-in-a-Situated-Agent"> 
+      Emergent Systematic Generalization in a Situated Agent</a>, ICLR 2020
+    </li>
+    <li style="font-size: small">
+      J. Andreas, D. Klein and S. Levine - <a href="https://arxiv.org/pdf/1611.01796.pdf"> 
+      Modular Multitask Reinforcement Learning with Policy Sketches</a>, ICML 2017
+    </li>
+    <li style="font-size: small">
+      M-A. Côté, A. Kádár, X. Yan, B. Kybartas, T. Barnes, E. Fines, J. Moor, M. Hausknecht, R. Yu Tao, L. El Asri, M. Adada, W. Tay and A. Trischler - <a href="https://arxiv.org/pdf/1806.11532.pdf"> 
+      TextWorld: A Learning Environment for Text-based Games</a>, 2019
+    </li>
+    <li style="font-size: small">
+      M. Shridhar, X. Yuan, M-A. Côté, Y. Bisk, A. Trischler and M. Hausknecht- <a href="https://arxiv.org/pdf/2010.03768.pdf"> 
+      ALFWorld: Aligning Text and Embodied Environments for Interactive Learning</a>, 2020
+    </li>
+    <li style="font-size: small">
+      S. Forestier, R. Portelas, Y. Mollard, P-Y. Oudeyer - <a href="https://arxiv.org/abs/1708.02190"> 
+      Intrinsically Motivated Goal Exploration Processes with Automatic Curriculum Learning</a>, 2020
+    </li>
+    <li style="font-size: small">
+      L. S. Vygotsky - <a href="http://yuoiea.com/uoiea/assets/files/pdfs/vygotsky-play.pdf"> 
+      Play and its role in the mental development of the child</a>, 1933
+    </li>
+    <li style="font-size: small">
+      J. Chu and L. E. Schulz- <a href="https://www.annualreviews.org/doi/pdf/10.1146/annurev-devpsych-070120-014806"> 
+      Play, Curiosity, and Cognition</a>, 2020
+    </li>
+    <li style="font-size: small">
+      J. M. Mandler - <a href="https://cogsci.ucsd.edu/~jean/abstract/SpatialEnrichment.pdf"> 
+      On the Spatial Foundations of the Conceptual System and
+Its Enrichment</a>, 2012
+    </li>
+    <li style="font-size: small">
+      M. Akakzia, C. Colas, P-Y. Oudeyer, M. Chetouani, O. Sigaud- <a href="https://arxiv.org/pdf/2006.07185.pdf"> 
+      Grounding Language to Autonomously Acquired Skills via Goal Generation</a>, ICLR 2021
+    </li>
+    <li style="font-size: small">
+      D. Wood, J. S. Bruner and G. Ross - <a href="https://acamh.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1469-7610.1976.tb00381.x"> 
+      The Role of Tutoring in Problem Solving</a>, 1976
+    </li>
+    <li style="font-size: small">
+      J. W. Forrester - <a href="http://www.virtualadjacency.com/wp-content/uploads/2008/01/42c-MIT-Prof-Forrester-Counterintuitive-Behavior-of-Social-Systems-TechRvw-Jan-1971.pdf"> 
+      Counterintuitive Behavior of Social Systems</a>, 1971
+    </li>
+    <li style="font-size: small">
+      J. Schmidhuber - <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.467.5494&rep=rep1&type=pdf"> 
+      Formal Theory of Creativity, Fun, and Intrinsic Motivation (1990–2010)</a>, 2010
+    </li>
+    <li style="font-size: small">
+      N. Nortmann, S. Rekauzke, S. Onat, P. Königand D. Jancke - <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4428292/pdf/bht318.pdf"> 
+      Primary Visual Cortex Represents the Difference Between Past and Present</a>, 2013
+    </li>
+    <li style="font-size: small">
+      G. W. Maus, J. Fischer, D. Whitney - <a href="https://www.sciencedirect.com/science/article/pii/S0896627313002572"> 
+      Motion-Dependent Representation of Space in Area MT+</a>, 2013
+    </li>
+    <li style="font-size: small">
+      Clark - <a href="https://books.google.fr/books?hl=fr&lr=&id=TnqECgAAQBAJ&oi=fnd&pg=PP1&dq=clark+surfing+uncertainty&ots=ausj5hB5PR&sig=p8bKMxE4Mgi7QvkI8sd_r0BHx4A#v=onepage&q=clark%20surfing%20uncertainty&f=false"> 
+      Surfing Uncertainty</a>, 2015
+    </li>
+    <li style="font-size: small">
+      M. Mirolli and D. Parisi - <a href="https://core.ac.uk/download/pdf/37835593.pdf"> 
+      Towards a Vygotskyan Cognitive Robotics: The Role of Language as a Cognitive Tool</a>, 2011
+    </li>
+  </ul>
+</div>
