@@ -240,7 +240,7 @@ Now if we look at the algorithms discussed above under that lens, we’ll find t
 <div class="row">
     <div class="col-lg-8">
           <p>
-           These approaches are only the first steps towards a more ambitious goal---*artificial agents that demonstrate a rich linguistic mental life*. Just like humans, autonomous agents should be able to describe what’s going on in the world with a form of inner speech. The other way around, these agents should be able to leverage the productivity of language, generate new sentences and ideas from known ones and project these linguistic representations into visual, auditive and behavioral simulations. Linguistic productivity can also drive pretend play, the imagination of creative made-up goals for the agent to practice its problem resolution skills. 
+           These approaches are only the first steps towards a more ambitious goal---<b>artificial agents that demonstrate a rich linguistic mental life</b>. Just like humans, autonomous agents should be able to describe what’s going on in the world with a form of inner speech. The other way around, these agents should be able to leverage the productivity of language, generate new sentences and ideas from known ones and project these linguistic representations into visual, auditive and behavioral simulations. Linguistic productivity can also drive pretend play, the imagination of creative made-up goals for the agent to practice its problem resolution skills. 
           </p>
     </div>
     <div class="col-sm-4" style="border-left: 4px solid #13428f; margin-left: 20px; align-self: center;">
