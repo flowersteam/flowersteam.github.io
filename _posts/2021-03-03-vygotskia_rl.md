@@ -23,6 +23,27 @@ authors:
 ---
 
 
+
+<button class="btn" type="button" onclick="copyToClipboard()">Cite this blog post !</button>
+
+<script>
+
+function copyToClipboard() {
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    var text = "@misc{colas:hal-03159786,  TITLE = {{Language as a Cognitive Tool: Dall-E, Humans and Vygotskian RL Agents}},  AUTHOR = {Colas, C{\'e}dric and Karch, Tristan and Moulin-Frier, Cl{\'e}ment and Oudeyer, Pierre-Yves}, URL = {https://hal.archives-ouvertes.fr/hal-03159786}, NOTE = {This blog post presents a supra-communicative view of language and advocates for the use of language as a cognitive tool to organize the cognitive development of intrinsically motivated artificial agents. We go over studies revealing the cognitive functions of language in humans, cover similar uses of language in the design of artificial agents and advocate for the pursuit of Vygotskian embodied agents - artificial agents that leverage language as a cognitive tool to structure their continuous experience, form abstract representations, reason, imagine creative goals, plan towards them and simulate future possibilities.}, YEAR = {2021}, MONTH = Mar, HAL_ID = {hal-03159786}, HAL_VERSION = {v1},}"
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    alert("Copied to clipboard: " + text);
+}
+
+
+</script>
+
+<hr>
+
 Have you heard about DALL-E? Beyond the funny mashup between Pixar’s robot and the surrealist painter, Dall-E is OpenAI’s new transformer trained to compose images from text descriptions [[DALL-E](https://openai.com/blog/dall-e/)]. Most people agree, DALL-E’s ability to blend concepts into natural images is remarkable; it often composes just like you would. Look at these avocado-chairs:
 
 
