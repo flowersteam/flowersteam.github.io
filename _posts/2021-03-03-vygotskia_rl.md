@@ -14,11 +14,11 @@ authors:
 - name: Tristan Karch
   link: http://tristankarch.com
   next: ' '
-- name: Pierre-Yves Oudeyer
-  link: http://www.pyoudeyer.com/
-  next: ' '
 - name: Clément Moulin-Frier
   link: http://clement-moulin-frier.github.io/
+  next: ' '
+- name: Pierre-Yves Oudeyer
+  link: http://www.pyoudeyer.com/
   next: ' '
 ---
 
@@ -301,7 +301,7 @@ We would like to give a special thanks to <a href="http://www.isir.upmc.fr/?op=v
     </li>
     <li style="font-size: small">
       J. Piaget - <a href="https://newlearningonline.com/literacies/chapter-14/piaget-on-the-language-and-thought-of-the-child"> 
-      Consciousness Explained</a>, 1923
+      The Language and Thought of the Child</a>, 1923
     </li>
     <li style="font-size: small">
       L. Kohlberg, J. Yaeger and E. Hjertholm - <a href="https://www.jstor.org/stable/1126979?origin=crossref"> 
