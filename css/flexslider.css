@@ -310,3 +310,21 @@ html[xmlns] .flexslider .slides {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+a, a:link, a:active, a:visited {
+   text-decoration: underline; !important;
+   text-decoration-color: white;
+   text-decoration-style: ;
+}
+
+a:hover{
+	color:#13428f;
+}
+
+code{
+	font-size: 10pt
+}
+
+
+
+
