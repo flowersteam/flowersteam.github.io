@@ -23,25 +23,6 @@ authors:
 ---
 
 
-
-<button class="btn" type="button" onclick="copyToClipboard()">Cite this blog post !</button>
-
-<script>
-
-function copyToClipboard() {
-    var dummy = document.createElement("textarea");
-    document.body.appendChild(dummy);
-    var text = "@misc{colas:hal-03159786,  TITLE = {{Language as a Cognitive Tool: Dall-E, Humans and Vygotskian RL Agents}},  AUTHOR = {Colas, C{\'e}dric and Karch, Tristan and Moulin-Frier, Cl{\'e}ment and Oudeyer, Pierre-Yves}, URL = {https://hal.archives-ouvertes.fr/hal-03159786}, NOTE = {This blog post presents a supra-communicative view of language and advocates for the use of language as a cognitive tool to organize the cognitive development of intrinsically motivated artificial agents. We go over studies revealing the cognitive functions of language in humans, cover similar uses of language in the design of artificial agents and advocate for the pursuit of Vygotskian embodied agents - artificial agents that leverage language as a cognitive tool to structure their continuous experience, form abstract representations, reason, imagine creative goals, plan towards them and simulate future possibilities.}, YEAR = {2021}, MONTH = Mar, HAL_ID = {hal-03159786}, HAL_VERSION = {v1},}"
-    dummy.value = text;
-    dummy.select();
-    document.execCommand("copy");
-    document.body.removeChild(dummy);
-    alert("Copied to clipboard: " + text);
-}
-
-
-</script>
-
 <hr>
 
 Have you heard about DALL-E? Beyond the funny mashup between Pixar’s robot and the surrealist painter, Dall-E is OpenAI’s new transformer trained to compose images from text descriptions [[DALL-E](https://openai.com/blog/dall-e/)]. Most people agree, DALL-E’s ability to blend concepts into natural images is remarkable; it often composes just like you would. Look at these avocado-chairs:
@@ -96,7 +77,7 @@ Let us start with words. Words are invitations to form categories [[Waxman and M
            <p>More generally, the language we speak seems to strongly shape the way we think. <a href="https://www.youtube.com/watch?v=RKK7wGAYP6k"> [Lera Boroditsky’s Ted Talk]</a>  presents some examples of these effects. The perception of colors, for instance, is directly affected by the color-related words our language contains <a href="https://www.pnas.org/content/pnas/104/19/7780.full.pdf"> [Winawer et al., 2007] </a>. Whether your language uses one word for each number or simply categorizes one, two and many will impact your ability to reason with numbers abstractly and thus to develop abilities for math and science <a href="https://www.sciencedirect.com/science/article/pii/S0010027708001042?casa_token=SCkMeHibf_YAAAAA:BonfbLRNN9-eymEOohJK_ijP6MbOWawddS2uxsSDDsjXMidUN1OyfNuDAJIo1-qbTfj0pTEGVQ"> [Frank et al., 2008] </a>. </p>
     </div>
     <div class="col-sm-4" style="border-left: 4px solid #13428f; margin-left: 20px; align-self: center;">
-           <p style="margin-left:20px;color:#5899f6"><big><i>Vygotsky, Berk and others showed that private speech was instrumental to the ability of children to reason and solve tasks</i></big></p>
+           <p style="margin-left:20px;color:#13428f"><big><i>Vygotsky, Berk and others showed that private speech was instrumental to the ability of children to reason and solve tasks</i></big></p>
     </div>
 </div>
 </div>
@@ -125,7 +106,7 @@ In a nutshell, humans use language as a tool for many of their high-level cognit
            <p>Language can only help if it is grounded in the physical world. Before drawing an avocado-chair, you need to know what avocados and chairs are; you need to know what drawing means. Our source of information comes from <b>aligned data</b>: as children, we observe and experience the physical world and hear corresponding linguistic descriptions. The mother could say: “This is a chair” when the infant is looking at it. The father could say: “Let’s put you on the chair” while the infant experiences being transported and sat on a chair. </p>
     </div>
     <div class="col-sm-4" style="border-left: 4px solid #13428f; margin-left: 20px; align-self: center;">
-           <p style="margin-left:20px;color:#5899f6"><big><i>Aligning language and physical data might just be about transferring the discrete structure of language onto the continuous, messy real world.</i></big></p>
+           <p style="margin-left:20px;color:#13428f"><big><i>Aligning language and physical data might just be about transferring the discrete structure of language onto the continuous, messy real world.</i></big></p>
     </div>
 </div>
 </div>
@@ -193,7 +174,7 @@ Creative exploration is about finding new ways to interact with the environment.
           </p>
     </div>
     <div class="col-sm-4" style="border-left: 4px solid #13428f; margin-left: 20px; align-self: center;">
-           <p style="margin-left:20px;color:#5899f6"><big><i>If we want to achieve <i>creative exploration</i>, we need agents to generate <i>out-of-distribution</i> goals, to imagine new possible interactions with their world.</i></big></p>
+           <p style="margin-left:20px;color:#13428f"><big><i>If we want to achieve <i>creative exploration</i>, we need agents to generate <i>out-of-distribution</i> goals, to imagine new possible interactions with their world.</i></big></p>
     </div>
 </div>
 </div>
@@ -244,7 +225,7 @@ Now if we look at the algorithms discussed above under that lens, we’ll find t
           </p>
     </div>
     <div class="col-sm-4" style="border-left: 4px solid #13428f; margin-left: 20px; align-self: center;">
-           <p style="margin-left:20px;color:#5899f6"><big><i>These approaches are only the first steps towards a more ambitious goal—artificial agents that demonstrate a rich linguistic mental life.</i></big></p>
+           <p style="margin-left:20px;color:#13428f"><big><i>These approaches are only the first steps towards a more ambitious goal—artificial agents that demonstrate a rich linguistic mental life.</i></big></p>
     </div>
 </div>
 </div>
@@ -263,6 +244,41 @@ This blog post covered works from developmental psychology and showed the import
 We would like to give a special thanks to <a href="http://www.isir.upmc.fr/?op=view_profil&lang=fr&id=28">Olivier Sigaud</a> for his feedback and precious help on this blog.
 </sub>
 
+<hr>
+<sub style="display: block; line-height: 1.5em">
+<b>Cite this blog post </b>
+</sub>
+
+```
+@misc{colas:hal-03159786,
+  TITLE = {{Language as a Cognitive Tool: Dall-E, Humans and Vygotskian RL Agents}},
+  AUTHOR = {Colas, C{\'e}dric and Karch, Tristan and Moulin-Frier, Cl{\'e}ment and Oudeyer, Pierre-Yves},
+  URL = {https://hal.archives-ouvertes.fr/hal-03159786},
+  NOTE = {This blog post presents a supra-communicative view of language and advocates for the use of language as a cognitive tool to organize the cognitive development of intrinsically motivated artificial agents. We go over studies revealing the cognitive functions of language in humans, cover similar uses of language in the design of artificial agents and advocate for the pursuit of Vygotskian embodied agents - artificial agents that leverage language as a cognitive tool to structure their continuous experience, form abstract representations, reason, imagine creative goals, plan towards them and simulate future possibilities.},
+  YEAR = {2021},
+  MONTH = Mar,
+  HAL_ID = {hal-03159786},
+  HAL_VERSION = {v1},
+}
+```
+
+<button class="btn" type="button" onclick="copyToClipboard()">Export Bibtex</button>
+
+<script>
+
+function copyToClipboard() {
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    var text = "@misc{colas:hal-03159786,  TITLE = {{Language as a Cognitive Tool: Dall-E, Humans and Vygotskian RL Agents}},  AUTHOR = {Colas, C{\'e}dric and Karch, Tristan and Moulin-Frier, Cl{\'e}ment and Oudeyer, Pierre-Yves}, URL = {https://hal.archives-ouvertes.fr/hal-03159786}, NOTE = {This blog post presents a supra-communicative view of language and advocates for the use of language as a cognitive tool to organize the cognitive development of intrinsically motivated artificial agents. We go over studies revealing the cognitive functions of language in humans, cover similar uses of language in the design of artificial agents and advocate for the pursuit of Vygotskian embodied agents - artificial agents that leverage language as a cognitive tool to structure their continuous experience, form abstract representations, reason, imagine creative goals, plan towards them and simulate future possibilities.}, YEAR = {2021}, MONTH = Mar, HAL_ID = {hal-03159786}, HAL_VERSION = {v1},}"
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    alert("Copied to clipboard: " + text);
+}
+
+
+</script>
 
 
 <hr>
@@ -447,8 +463,12 @@ Its Enrichment</a>, 2012
       Surfing Uncertainty</a>, 2015
     </li>
     <li style="font-size: small">
-      M. Mirolli and D. Parisi - <a href="https://core.ac.uk/download/pdf/37835593.pdf"> 
+      M. Mirolli and D. Parisi - <a style="text-decoration:none" href="https://core.ac.uk/download/pdf/37835593.pdf"> 
       Towards a Vygotskyan Cognitive Robotics: The Role of Language as a Cognitive Tool</a>, 2011
     </li>
   </ul>
 </div>
+
+
+
+
