@@ -8,15 +8,15 @@ categories: jekyll
 permalink: language_as_cognitive_tool_vygotskian_rl
 use_math: true
 authors: 
-- name: Cédric Colas
+- name: 'Cédric Colas'
   link: https://ccolas.github.io/
-  next: ' '
-- name: Tristan Karch
+  next: ',  '
+- name: 'Tristan Karch'
   link: http://tristankarch.com
-  next: ' '
-- name: Clément Moulin-Frier
+  next: ',  '
+- name: 'Clément Moulin-Frier'
   link: http://clement-moulin-frier.github.io/
-  next: ' '
+  next: ' and  '
 - name: Pierre-Yves Oudeyer
   link: http://www.pyoudeyer.com/
   next: ' '
