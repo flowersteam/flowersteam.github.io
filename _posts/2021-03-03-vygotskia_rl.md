@@ -44,8 +44,9 @@ In this blog post, we argue that aligning language and the physical world helps 
 ## Language as a Cognitive Tool in Humans
 
 
-Ask anyone what language is about. Chances are, they will answer something along these lines: “language is for people to communicate their thoughts to each other”. They’re right of course, but research in developmental psychology shows that language is a lot more. Vygotsky, a Soviet psychologist of the 1930s, pioneered the idea of the importance of language in the cognitive development of humans [[Vygotsky, 1934](https://mitpress.mit.edu/books/thought-and-language)]. This idea was then developed by a body of research ranging from developmental psychology, through linguistic to philosophy [[Whorf, 1956](https://mitpress.mit.edu/books/language-thought-and-reality); [Rumelhart et al., 1986](https://www.cs.toronto.edu/~fritz/absps/pdp14.pdf); [Dennett, 1991](https://en.wikipedia.org/wiki/Consciousness_Explained); [Berk, 1994](https://www.scientificamerican.com/article/why-children-talk-to-themselves/)
- and [Clark, 1998](https://era.ed.ac.uk/bitstream/handle/1842/1311/magic.pdf?sequence=1&isAllowed=y), [Carruthers, 2002](https://drum.lib.umd.edu/bitstream/handle/1903/4339/Cognitive.Functions.of.Language.pdf?sequence=3)].
+Ask anyone what language is about. Chances are, they will answer something along these lines: “language is for people to communicate their thoughts to each other”. They’re right
+ of course, but research in developmental psychology shows that language is a lot more. Vygotsky, a Soviet psychologist of the 1930s, pioneered the idea of the importance of language in the cognitive development of humans [[Vygotsky, 1934](https://mitpress.mit.edu/books/thought-and-language)]. This idea was then developed by a body of research ranging from developmental psychology, through linguistic to philosophy [[Whorf, 1956](https://mitpress.mit.edu/books/language-thought-and-reality); [Rumelhart et al., 1986](https://www.cs.toronto.edu/~fritz/absps/pdp14.pdf); [Dennett, 1991](https://en.wikipedia.org/wiki/Consciousness_Explained); [Berk, 1994](https://www.scientificamerican.com/article/why-children-talk-to-themselves/),
+  [Clark, 1998](https://era.ed.ac.uk/bitstream/handle/1842/1311/magic.pdf?sequence=1&isAllowed=y), [Carruthers, 2002](https://drum.lib.umd.edu/bitstream/handle/1903/4339/Cognitive.Functions.of.Language.pdf?sequence=3) and [Lupyan, 2012](http://sapir.psych.wisc.edu/papers/lupyan_2012_languageAugmentedThought.pdf)].
 
 <div align="center" style="margin-bottom:40px">
 <img class="80" src="/images/posts/imagine/vygo.jpg" width="25%" alt="Vygotsky" />
@@ -316,6 +317,10 @@ function copyToClipboard() {
       The cognitive functions of language</a>, 2002
     </li>
     <li style="font-size: small">
+      G. Lupyan - <a href="http://sapir.psych.wisc.edu/papers/lupyan_2012_languageAugmentedThought.pdf"> 
+      What Do Words Do? Toward a Theory The cognitive functions of languageof Language-Augmented Thought</a>, 2012
+    </li>
+    <li style="font-size: small">
       S. R. Waxman and D. B. Markow - <a href="https://en.wikipedia.org/wiki/Consciousness_Explained"> 
       Words as Invitations to Form Categories: Evidence from 12- to 13-Month-Old Infants</a>, 1995
     </li>
@@ -333,7 +338,7 @@ function copyToClipboard() {
       on color discrimination</a>, 2007
     </li>
     <li style="font-size: small">
-      M. C. frank, D. L. Everett, E. Fedorenko and E. Gibson - <a href="https://www.sciencedirect.com/science/article/abs/pii/S0010027708001042?casa_token=SCkMeHibf_YAAAAA:BonfbLRNN9-eymEOohJK_ijP6MbOWawddS2uxsSDDsjXMidUN1OyfNuDAJIo1-qbTfj0pTEGVQ"> 
+      M. C. Frank, D. L. Everett, E. Fedorenko and E. Gibson - <a href="https://www.sciencedirect.com/science/article/abs/pii/S0010027708001042?casa_token=SCkMeHibf_YAAAAA:BonfbLRNN9-eymEOohJK_ijP6MbOWawddS2uxsSDDsjXMidUN1OyfNuDAJIo1-qbTfj0pTEGVQ"> 
       Number as a cognitive technology: Evidence from Pirahã language and cognition</a>, 2008
     </li>
     <li style="font-size: small">
