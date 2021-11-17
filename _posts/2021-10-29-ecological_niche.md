@@ -27,7 +27,7 @@ authors:
 
 <hr>
 
-TL;DR: In this blog post, Pierre-Yves Oudeyer discusses with Manfred Eppe to present his perspective on the future of AI and machines models of human-like intelligence. The discussion explains how developmental and evolutionary theories of human cognition
+***TL;DR***: In this blog post, Pierre-Yves Oudeyer discusses with Manfred Eppe to present his perspective on the future of AI and machines models of human-like intelligence. The discussion explains how developmental and evolutionary theories of human cognition
 should further inform artificial intelligence. This emphasizes the
 role of ecological niches in sculpting intelligent behavior, and in particular that
 human intelligence was fundamentally shaped to adapt to a constantly changing
@@ -37,12 +37,12 @@ One promising approach to address these limits is developmental artificial intel
 modeling infant development through multi-scale interaction between intrinsically
 motivated learning, embodiment and a fastly changing socio-cultural environment.
 
-This interview was initially published as: *Eppe, M., & Oudeyer, P. Y. (2021). Intelligent behavior depends on the ecological niche. KI-Künstliche Intelligenz, 35(1), 103-108.*
+This interview was initially published as: *Eppe, M., & Oudeyer, P. Y. (2021). Intelligent behavior depends on the ecological niche. KI-Künstliche Intelligenz, 35(1), 103-108.* [Bibtex](https://scholar.googleusercontent.com/scholar.bib?q=info:MtRhtx8UuAsJ:scholar.google.com/&output=citation&scisdr=CgWn8-r1EP2J2Bw_AHo:AAGBfm0AAAAAYZU5GHr4YOUkoUCx2f7gFv9vcYJ1VgXN&scisig=AAGBfm0AAAAAYZU5GLB9I2cNhSBY8d0wLGWKqcgtm5vF&scisf=4&ct=citation&cd=-1&hl=en)
 
 
-## Is it useful to talk about strong and weak AI?
+## Is it useful to talk about strong and weak AI? What about AGI?
 
-*ME: So what's the difference between strong and weak AI? What the broader public understands by AI is more the weak AI. So what is it that makes AI strong, and how is that related to your research?*
+***ME: So what's the difference between strong and weak AI? What the broader public understands by AI is more the weak AI. So what is it that makes AI strong, and how is that related to your research?***
 
 *PYO*: That's an interesting question. First of all, I would like to say that I am not a big fan of the strong versus weak AI concept. 
 I would say that for many people, when they speak about 'weak AI', they refer to techniques allowing to detect shallow relations between a number of quantities, and used to predict what will happen in the future without really understanding what's happening.
@@ -76,9 +76,9 @@ So what counts is actually not so much to classify the intelligences on a single
 One key question behind this is: what is special about human intelligence? Rather than AGI, I prefer the concept of human-like intelligence (HLI), which is actually what some people understand intuitively when speaking about AGI. But human intelligence is not general at all.
 There are many, many problems at which we are very bad.
 
-## Human-like intelligence
+## Human-like intelligence is shaped by its socio-cultural environment
 
-Basically, to understand what is special about human intelligence, I think one needs to look at what is special about the ecological niche of the environment in which we are living. 
+*PYO*: Basically, to understand what is special about human intelligence, I think one needs to look at what is special about the ecological niche of the environment in which we are living. 
 I think there are a few properties which are pretty important to understand the intelligence of humans. 
 It's that their environment is characterized by others, by the social interactions with others, and that these social interactions continuously change through cultural evolution. 
 Cultural evolution is basically the capability of human societies to not only learn novel concepts, novel ideas, invent new tools, but also  to share these inventions and transmit them to future generations. 
@@ -118,9 +118,9 @@ As a cognitive tool enabling me to understand something about our human environm
 
 ## The role of embodiment
 
-*ME: Does this imply that an intelligent agent actually requires a body? For example, can there be intelligence in a chatbot? A chatbot doesn't really have a body, it has actions and perception and so on. But where are the limits and what kind of properties must an agent have to develop intelligent behavior? What's the minimum?*
+***ME: Does this imply that an intelligent agent actually requires a body? For example, can there be intelligence in a chatbot? A chatbot doesn't really have a body, it has actions and perception and so on. But where are the limits and what kind of properties must an agent have to develop intelligent behavior? What's the minimum?***
 
-Again, I think we need to put in perspective the question of whether something is needed for intelligence.
+*PYO*: Again, I think we need to put in perspective the question of whether something is needed for intelligence.
 I think it needs to be reframed in the context of the families of problems that a particular intelligence is supposed to solve in a particular family of environments.
 For example, human-like intelligence happens in the physical world and it's about controlling physical bodies in a physical environment with social beings in addition to physical objects.
 
@@ -133,13 +133,13 @@ Obviously, a system which has not a body with the fundamental properties of the 
 Maybe in some other environments, there are entities which have to solve different families of problems in which embodiment is less essential. In that case, maybe embodiment is going to be less a problem and also less a solution because the world in which those entities are living is less relevant to physics. 
 I don't think we can say very general statements about whether embodiment is needed for intelligence. I think it's rather that for some particular organisms in certain environments embodiment is absolutely central, and for other kinds of organism, in some other kinds of environments, maybe it is less central.
 
-*ME: You say that social interaction like language and speech is, at least for human-level intelligence [...], a necessary property. Would you say that some artificial agent could be intelligent without any social interaction?*
+***ME: You say that social interaction like language and speech is, at least for human-level intelligence [...], a necessary property. Would you say that some artificial agent could be intelligent without any social interaction?***
 
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
           <p style="margin-bottom: 0">
-          Again, I would reformulate the other way around. I think that one of the key problems that human intelligence is solving is dealing with social interaction. 
+          PYO: I would reformulate the other way around. I think that one of the key problems that human intelligence is solving is dealing with social interaction. 
           Of course, you can imagine some other worlds. Actually, there are animals on this planet that have a rather poor social life and still they are able to do amazing things. It doesn't mean that they are not intelligent.
           From the point of view of their environment, they are extremely intelligent, they are extremely adaptive, it's just that they don't need to solve this problem of social interaction.
           As I was saying initially, one of the specific problems that is implied by being able to live in a culturally evolving system is the ability to adapt continuously to changes in the environment and to invent new things. 
@@ -179,9 +179,9 @@ solve problems:
 How many of them involve solving complex behavioral problems related to *social interaction*? Very little! 
 It's only very recently that people have began to become interested in language grounding in this community of machine learning. Things are developing, but it is still very primitive as compared to the real social problems that are solved by humans.
 
-*ME: It would be a very valuable contribution, for instance, for the development of robotics, to develop new benchmark environments which feature this open-ended learning, right?*
+***ME: It would be a very valuable contribution, for instance, for the development of robotics, to develop new benchmark environments which feature this open-ended learning, right?***
 
-Yes. Developmental robotics, long before machine learning, has for more than two decades being focusing on those problems of how machines can adapt and learn interaction with social peers [4,16,30].
+*PYO*: Yes. Developmental robotics, long before machine learning, has for more than two decades being focusing on those problems of how machines can adapt and learn interaction with social peers [4,16,30].
 People have studied for those two decades, for example, how children can learn basic social interaction skills such as joint attention [3,14,21]. 
 Also, the problem of language grounding has been studied already 20 or 30 years ago, even before developmental robotics started as a field [28,29,27].
 
@@ -191,13 +191,13 @@ Hopefully now, by leveraging and rediscovering these concepts, there is a great 
 
 ## Interdisciplinary synergies between AI and cognitive sciences
 
-*ME: Obviously, neuroscience, psychology, and cognitive science has learned a lot from AI and vice versa. What do you think are the biggest chances here? What does AI have that neurosciences, psychology, and cognitive sciences can learn most from. Or the other way around. Can you give an example?*
+***ME: Obviously, neuroscience, psychology, and cognitive science has learned a lot from AI and vice versa. What do you think are the biggest chances here? What does AI have that neurosciences, psychology, and cognitive sciences can learn most from. Or the other way around. Can you give an example?***
 
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
           <p style="margin-bottom: 0" markdown="1">
-          There are many things [^4]. I will use my own work as an example. Psychologists have been discussing the idea that the brain might be motivated to explore novel situations or changing situations for many, many decades. Already in the '40s and the '50s, there were psychologists like Daniel Berlyne who proposed to conceptualize curiosity [2]. They proposed that it might be a very fundamental mechanism to understand how children grow up and develop intelligence.
+          *PYO*: There are many things [^4]. I will use my own work as an example. Psychologists have been discussing the idea that the brain might be motivated to explore novel situations or changing situations for many, many decades. Already in the '40s and the '50s, there were psychologists like Daniel Berlyne who proposed to conceptualize curiosity [2]. They proposed that it might be a very fundamental mechanism to understand how children grow up and develop intelligence.
           For many decades, this concept remained expressed in a verbal manner, without being very well formalized. 
           </p>
     </div>
@@ -208,6 +208,7 @@ Hopefully now, by leveraging and rediscovering these concepts, there is a great 
     </div>
 </div>
 </div>
+
 As a consequence, it was little considered in psychology, neuroscience and AI, even though Berlyne, Piaget and others said that it is probably very important for the long-term cognitive development of children. 
 Also, it had not clearly been identified what could be its potential role in learning and development. 
 
@@ -280,13 +281,13 @@ To understand language and its use, it seems it's quite important that agents un
 
 ## Future directions and conclusion
 
-*ME: Thanks a lot, and I have one concluding question. If you were a young person just starting to study, having some knowledge about computer science and maybe psychology, what would you start right now? If you knew nothing of what you know now, or maybe only a little bit, what would be the topic that you would tackle?*
+***ME: Thanks a lot, and I have one concluding question. If you were a young person just starting to study, having some knowledge about computer science and maybe psychology, what would you start right now? If you knew nothing of what you know now, or maybe only a little bit, what would be the topic that you would tackle?***
 
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
           <p style="margin-bottom: 0">
-          That's a tough question because there are so many interesting things. There are dozens of PhD topics I would like to do. The difficult thing would be to choose one. Rather than giving you the one I think is best, maybe I give you an example of what I have been thinking about with my team, and which I think is very interesting research.
+          *PYO*: That's a tough question because there are so many interesting things. There are dozens of PhD topics I would like to do. The difficult thing would be to choose one. Rather than giving you the one I think is best, maybe I give you an example of what I have been thinking about with my team, and which I think is very interesting research.
           </p>
     </div>
     <div class="col-sm-4" style="border-left: 4px solid #13428f; margin-left: 20px; align-self: center;">
@@ -309,7 +310,7 @@ I have the feeling that there is something to discover about the importance of c
 What I'm saying here is still not very precise, but I feel there is something very interesting to study here. 
 That would be an example of a direction that could be very fruitful to study further.
 
-*ME: OK, I conclude then that more PhD students should start working in this field and maybe be not so overwhelmed by AI and machine learning hype, but also look more into the deeper cognitive mechanisms that make humans intelligent.*
+***ME: OK, I conclude then that more PhD students should start working in this field and maybe be not so overwhelmed by AI and machine learning hype, but also look more into the deeper cognitive mechanisms that make humans intelligent.***
 
 Yes, exactly.
 
