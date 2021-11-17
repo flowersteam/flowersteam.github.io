@@ -112,9 +112,9 @@ I view AI as a tool that can enable us to understand the human species better.
 As a cognitive tool enabling me to understand something about our human environment, and enabling me to grasp some of the special properties of humans: their capability to invent and use cognitive tools to understand better their (social) environment, and transmit them to others.
 
 
-[^1]: For discussions about the co-evolution of human cognition and socio-cultural structures, see [31, 8, 13, 33].
+[^1]: For discussions about the co-evolution of human cognition and socio-cultural structures, see [[31](https://www.hup.harvard.edu/catalog.php?isbn=9780674005822), [8](https://psycnet.apa.org/record/1991-98287-000), [13](https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/precis-of-cognitive-gadgets-the-cultural-evolution-of-thinking/9FC52FEE5D3E838A28DB2627833B2D84), [33](https://royalsocietypublishing.org/doi/10.1098/rstb.2012.0114)].
 
-[^2]: For discussions on various ways in which language is used as a cognitive tool, see [32, 6, 10]; For an artificial intelligence architecture modeling the use of language as a cognitive tool for driving creative discoveries in curiosity-driven exploration, see [7].
+[^2]: For discussions on various ways in which language is used as a cognitive tool, see [[32](https://www.hup.harvard.edu/catalog.php?isbn=9780674576292), [6](https://www.semanticscholar.org/paper/Magic-Words%3A-How-Language-Augments-Human-Clark/50ce2dceb962be52ce781bbef0ae89e40cabc8b5), [10](https://content.apa.org/record/2016-59374-003)]; For an artificial intelligence architecture modeling the use of language as a cognitive tool for driving creative discoveries in curiosity-driven exploration, see [[7](https://arxiv.org/abs/2002.09253)].
 
 ## Embodiment: a universal requirement for intelligence?
 
@@ -124,7 +124,7 @@ As a cognitive tool enabling me to understand something about our human environm
 I think it needs to be reframed in the context of the families of problems that a particular intelligence is supposed to solve in a particular family of environments.
 For example, human-like intelligence happens in the physical world and it's about controlling physical bodies in a physical environment with social beings in addition to physical objects.
 
-This embodiment is a fundamental part of the problem solved by the intelligence. But it also is a fundamental part of the solution because the body itself has evolved through phylogenetic evolution in order to facilitate the capacity of the organism to adapt to the problems of its environment [26]. 
+This embodiment is a fundamental part of the problem solved by the intelligence. But it also is a fundamental part of the solution because the body itself has evolved through phylogenetic evolution in order to facilitate the capacity of the organism to adapt to the problems of its environment [[26](https://mitpress.mit.edu/books/how-body-shapes-way-we-think)]. 
 For example, if we look at language and we want to understand how humans understand language, we really quickly see that the properties of embodiment and how it is structurally aligned with the environment has a fundamental importance in the way to conceptualize meanings[^3]
 Many of the meanings that are expressed by language are defined in terms of the relationships between the body's repertoire of actions and the effects they can produce in the environment.
 Meanings of sentences and meanings of words are relational entities that relate properties of the body and action repertoire with properties of the environment.
@@ -181,9 +181,9 @@ It's only very recently that people have began to become interested in language 
 
 ***ME: It would be a very valuable contribution, for instance, for the development of robotics, to develop new benchmark environments which feature this open-ended learning, right?***
 
-*PYO*: Yes. Developmental robotics, long before machine learning, has for more than two decades being focusing on those problems of how machines can adapt and learn interaction with social peers [4,16,30].
-People have studied for those two decades, for example, how children can learn basic social interaction skills such as joint attention [3,14,21]. 
-Also, the problem of language grounding has been studied already 20 or 30 years ago, even before developmental robotics started as a field [28,29,27].
+*PYO*: Yes. Developmental robotics, long before machine learning, has for more than two decades being focusing on those problems of how machines can adapt and learn interaction with social peers [[4](https://direct.mit.edu/books/book/3435/Developmental-RoboticsFrom-Babies-to-Robots),[16](https://hal.inria.fr/inria-00348493/document),[30](https://oxford.universitypressscholarship.com/view/10.1093/acprof:oso/9780190281069.001.0001/acprof-9780190281069)].
+People have studied for those two decades, for example, how children can learn basic social interaction skills such as joint attention [[3](https://www.researchgate.net/publication/11012151_Robots_that_imitate_humans),[14](https://boccignone.di.unimi.it/IUM2_2013_files/Kaplan_The%20challenges%20of%20joint%20attention.pdf),[21](https://link.springer.com/book/10.1007/978-4-431-54595-8)]. 
+Also, the problem of language grounding has been studied already 20 or 30 years ago, even before developmental robotics started as a field [[28](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.461.6526&rep=rep1&type=pdf),[29](https://www.researchgate.net/publication/3453881_Language_games_for_autonomous_robots),[27](https://www.researchgate.net/publication/222661681_Learning_Words_from_Sights_and_Sounds_A_Computational_Model)].
 
 What's interesting to see is that, initially, those concepts were rather studied from the point of view of really modeling directly human intelligence. 
 I think this was really the right way to go. Generally, machine learning has ignored all these conceptual thinking, which is mixing computational modeling, developmental psychology, developmental cognitive neuroscience. They have ignored this for a very long time and they are slowly rediscovering many of those old concepts, which are very, very fundamental.
@@ -197,7 +197,7 @@ Hopefully now, by leveraging and rediscovering these concepts, there is a great 
 <div class="row">
     <div class="col-lg-8">
           <p style="margin-bottom: 0" markdown="1">
-          PYO: There are many things [^4]. I will use my own work as an example. Psychologists have been discussing the idea that the brain might be motivated to explore novel situations or changing situations for many, many decades. Already in the '40s and the '50s, there were psychologists like Daniel Berlyne who proposed to conceptualize curiosity [2]. They proposed that it might be a very fundamental mechanism to understand how children grow up and develop intelligence.
+          PYO: There are many things [^4]. I will use my own work as an example. Psychologists have been discussing the idea that the brain might be motivated to explore novel situations or changing situations for many, many decades. Already in the '40s and the '50s, there were psychologists like Daniel Berlyne who proposed to conceptualize curiosity [[2](https://psycnet.apa.org/record/2006-09643-000?doi=1)]. They proposed that it might be a very fundamental mechanism to understand how children grow up and develop intelligence.
           For many decades, this concept remained expressed in a verbal manner, without being very well formalized. 
           </p>
     </div>
@@ -213,19 +213,19 @@ As a consequence, it was little considered in psychology, neuroscience and AI, e
 Also, it had not clearly been identified what could be its potential role in learning and development. 
 
 With a few labs in the world, when we began at the beginning of the 21st century to study and to model the concept of curiosity, what we were really interested in was to understand the underlying mechanisms and how they could drive aspects of the development of cognition and sensorimotor skills [^5]
-The first thing we did was to formalize the space of potential mechanisms [23] and then to develop a series of experiments to try to understand the consequences of using these kinds of mechanisms.
-We discovered that one form of curiosity mechanisms, which we named the 'learning progress hypothesis' had very interesting properties [15]: these mechanisms basically lead the brain to explore learning situations (e.g. actions, goals or people) which enable to improve predictions or control about the world.
+The first thing we did was to formalize the space of potential mechanisms [[23](https://www.frontiersin.org/articles/10.3389/neuro.12.006.2007/full)] and then to develop a series of experiments to try to understand the consequences of using these kinds of mechanisms.
+We discovered that one form of curiosity mechanisms, which we named the 'learning progress hypothesis' had very interesting properties [[15](https://www.frontiersin.org/articles/10.3389/neuro.01.1.1.017.2007/full)]: these mechanisms basically lead the brain to explore learning situations (e.g. actions, goals or people) which enable to improve predictions or control about the world.
 What we actually discovered is that these curiosity mechanisms, when you use them in an embodied system and you let this system run for a long period of time, it self-organizes developmental trajectories with phases of increasing complexity that have special properties not preprogrammed in the system.
 At the beginning, there was no blueprint of these schedules. 
 These schedules are really something emergent and we were able to discover that they share many structural properties with infant development of sensorimotor and cognitive skills. 
-For example, for the case of vocal development, we were able to show that if you put this system into an artificial vocal tract, it will automatically generate a curriculum of learning [20]. 
-The phases are very, very similar to the phases of vocal development we observed in infants. We later conducted other experiments showing how such curiosity could lead to the discovery of complex forms of tool use, also with similarities with human developmental trajectories [9].
+For example, for the case of vocal development, we were able to show that if you put this system into an artificial vocal tract, it will automatically generate a curriculum of learning [[20](https://www.frontiersin.org/articles/10.3389/fpsyg.2013.01006/full)]. 
+The phases are very, very similar to the phases of vocal development we observed in infants. We later conducted other experiments showing how such curiosity could lead to the discovery of complex forms of tool use, also with similarities with human developmental trajectories [[9](https://hal.archives-ouvertes.fr/hal-01583301)].
 
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
           <p style="margin-bottom: 0" markdown="1">
-          Basically, this kind of work enabled not only to generate precise hypotheses about the mechanisms of curiosity. It also enabled to show, to propose the hypothesis that the moment-to-moment mechanism of curiosity, when unrolled on the long-term in an organism, enables self-organization of developmental structure, with the emergence of major behavioral and cognitive transitions [24]. 
+          Basically, this kind of work enabled not only to generate precise hypotheses about the mechanisms of curiosity. It also enabled to show, to propose the hypothesis that the moment-to-moment mechanism of curiosity, when unrolled on the long-term in an organism, enables self-organization of developmental structure, with the emergence of major behavioral and cognitive transitions [[24](https://pubmed.ncbi.nlm.nih.gov/26969919/)]. 
           This could actually explain some of the developmental structures that we know are existing in humans. Before, there was no theory that could explain how they arise.
           Now, after we've done this computational modeling work, we have those hypotheses. We are not sure it's actually working like this in humans, but now, we have those hypothesis and we can design new experiments to test those predictions. 
           And this is exactly what us and other labs in the world are currently doing [^6] This is an example of how AI can be used as a tool to understand better how humans are working.
@@ -253,7 +253,7 @@ For example, when we look right now at deep reinforcement learning systems[^7], 
           There are other things which cognitive sciences, and psychology, and neuroscience have known for a long time and which are still very little exploited in AI and machine learning.
           For example, if we go back to the question of cultural evolution and social interaction, we know that there are important complex skills that are developed by very young children. 
           For example, the ability to build mental models of others, to have a motivation to help others, and to be altruistic in social interaction. 
-          Michael Tomasello [31], among others, has shown that very, very early on, infants who have very limited understanding of language, they can already understand in a very advanced manner social situations in which they guess the goals of others. They can anticipate what others are going to do next, and they can spontaneously propose to help them. These are incredible feats of the human mind.
+          Michael Tomasello [[31](https://www.hup.harvard.edu/catalog.php?isbn=9780674005822)], among others, has shown that very, very early on, infants who have very limited understanding of language, they can already understand in a very advanced manner social situations in which they guess the goals of others. They can anticipate what others are going to do next, and they can spontaneously propose to help them. These are incredible feats of the human mind.
           It is amazing that humans are doing this even before they master advanced language. 
           </p>
     </div>
@@ -271,13 +271,13 @@ You have many people right now who are focusing on enabling an AI system to mast
 By the way, maybe very important for language grounding, it is not only key to understand how meanings are grounded in relations between the body and physical objects, but also in relations between oneself and others in a social context with joint goals. Language is a tool that enables humans to achieve joint goals. 
 To understand language and its use, it seems it's quite important that agents understand the concept of joint goals and coordination with others
 
-[^4]: For a review, see [22]
+[^4]: For a review, see [[22](https://ieeexplore.ieee.org/document/5373852)]
 
-[^5]: See [1,25] for early modeling works on this topic.
+[^5]: See [[1](https://link.springer.com/book/10.1007/978-3-642-32375-1),[25](https://hal.archives-ouvertes.fr/hal-00793610)] for early modeling works on this topic.
 
-[^6]: See [11,17] for reviews of recent developments in psychology and neuroscience.
+[^6]: See [[11](https://www.nature.com/articles/s41583-018-0078-0?WT.feed_name=subjects_reward),[17](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4635443/)] for reviews of recent developments in psychology and neuroscience.
 
-[^7]: See [12] for a review on how recent work in deep learning takes inspiration from neuroscience.
+[^7]: See [[12}(https://www.researchgate.net/publication/318551830_Neuroscience-Inspired_Artificial_Intelligence)] for a review on how recent work in deep learning takes inspiration from neuroscience.
 
 ## Future directions and conclusion
 
@@ -304,7 +304,7 @@ This is very strange because our brain is so powerful. We have long-term memory 
 Why is this so? Especially, if you look at animals, for example, if you look at certain non-human primates. 
 Many of them have a much better working memory than we have. Maybe you know this experiment with monkeys, where you put them in front of a screen and you show numbers at different scrambled places of the screen from 1 to 10. You show this image for a few seconds and then it's blank. Then you only show the empty squares on the screen and you need to type in the numbers they contained initially. This is completely impossible to do for humans, but that's very easy for many monkeys. They can remember, for a short amount of time, a larger number of entities than what we can. Yet humans have language, humans have cultural evolution, humans have invented mathematics, humans have literature, and poetry.
 I have an intuition about this, and I'm not the only one. There is a number of people who have also outlined this intuition, for example, the famous primatologist Tetsuro Matsuzawa. 
-He has proposed the cognitive tradeoff hypothesis [19], which states that this bottleneck in the working memory of humans might be some kind of constraint that has pushed or caused in some way the emergence of a number of cognitive tools like language, compositionality, and all the tools in our cognitive toolkit that enabled the combinatorial discoveries that we make. 
+He has proposed the cognitive tradeoff hypothesis [[19](http://langint.pri.kyoto-u.ac.jp/ai/intra_data/TetsuroMatsuzawa/Symbolic_representation_of_number_in_chimpanzees.pdf)], which states that this bottleneck in the working memory of humans might be some kind of constraint that has pushed or caused in some way the emergence of a number of cognitive tools like language, compositionality, and all the tools in our cognitive toolkit that enabled the combinatorial discoveries that we make. 
 
 I have the feeling that there is something to discover about the importance of cognitive bottlenecks. We have huge computational resources, and many people in AI focus on trying to exploit it. But on the contrary, if we have some constraints on the computational resources, then maybe it can have some advantage in terms of developing an architecture which is going to be very powerful in the environment of humans. 
 What I'm saying here is still not very precise, but I feel there is something very interesting to study here. 
