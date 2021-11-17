@@ -116,7 +116,7 @@ As a cognitive tool enabling me to understand something about our human environm
 
 [^2]: For discussions on various ways in which language is used as a cognitive tool, see [32, 6, 10]; For an artificial intelligence architecture modeling the use of language as a cognitive tool for driving creative discoveries in curiosity-driven exploration, see [7].
 
-## The role of embodiment
+## Embodiment: a universal requirement for intelligence?
 
 ***ME: Does this imply that an intelligent agent actually requires a body? For example, can there be intelligence in a chatbot? A chatbot doesn't really have a body, it has actions and perception and so on. But where are the limits and what kind of properties must an agent have to develop intelligent behavior? What's the minimum?***
 
@@ -156,7 +156,7 @@ I don't think we can say very general statements about whether embodiment is nee
 
 [^3]: See [18], as well as [5] for a research roadmap in developmental robotics studying the embodied language learning perspective. 
 
-## Towards artificial learning systems with human-like intelligence
+## Towards AI systems with human-like intelligence: the need for *social* environments
 
 <div class="content">
 <div class="row">
@@ -189,7 +189,7 @@ What's interesting to see is that, initially, those concepts were rather studied
 I think this was really the right way to go. Generally, machine learning has ignored all these conceptual thinking, which is mixing computational modeling, developmental psychology, developmental cognitive neuroscience. They have ignored this for a very long time and they are slowly rediscovering many of those old concepts, which are very, very fundamental.
 Hopefully now, by leveraging and rediscovering these concepts, there is a great opportunity for AI: very modern and efficient machine learning techniques that exist, but which so far have not been developed and assessed in the right environmental context, could now be adapted and used in the right ecosystem of problems that are relevant for humans. This emerging convergence between developmental robotics and machine learning, which I like to call "developmental machine learning", or "developmental AI", is really exciting!
 
-## Interdisciplinary synergies between AI and cognitive sciences
+## Interdisciplinary synergies between developmental AI and cognitive sciences
 
 ***ME: Obviously, neuroscience, psychology, and cognitive science has learned a lot from AI and vice versa. What do you think are the biggest chances here? What does AI have that neurosciences, psychology, and cognitive sciences can learn most from. Or the other way around. Can you give an example?***
 
@@ -197,7 +197,7 @@ Hopefully now, by leveraging and rediscovering these concepts, there is a great 
 <div class="row">
     <div class="col-lg-8">
           <p style="margin-bottom: 0" markdown="1">
-          *PYO*: There are many things [^4]. I will use my own work as an example. Psychologists have been discussing the idea that the brain might be motivated to explore novel situations or changing situations for many, many decades. Already in the '40s and the '50s, there were psychologists like Daniel Berlyne who proposed to conceptualize curiosity [2]. They proposed that it might be a very fundamental mechanism to understand how children grow up and develop intelligence.
+          PYO: There are many things [^4]. I will use my own work as an example. Psychologists have been discussing the idea that the brain might be motivated to explore novel situations or changing situations for many, many decades. Already in the '40s and the '50s, there were psychologists like Daniel Berlyne who proposed to conceptualize curiosity [2]. They proposed that it might be a very fundamental mechanism to understand how children grow up and develop intelligence.
           For many decades, this concept remained expressed in a verbal manner, without being very well formalized. 
           </p>
     </div>
