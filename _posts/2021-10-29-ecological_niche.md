@@ -316,6 +316,8 @@ Yes, exactly.
 
 *ME: Great! Thank you very much for the interview!*
 
+Acknowledgements: We would like to thank [Grgur Kovac](https://scholar.google.com/citations?user=ZLA7iioAAAAJ&hl=en) for help in preparing this blog post. 
+
 <hr>
 
 ```
