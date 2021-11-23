@@ -2,15 +2,7 @@
 layout:     post
 title:      'Intelligent behavior depends on the ecological niche: Scaling up AI to human-like intelligence in socio-cultural environments'
 date:       2021-10-29
-summary: In this blog post, Pierre-Yves Oudeyer discusses with Manfred Eppe to present his perspective on the future of AI and machines models of human-like intelligence. The discussion explains how developmental and evolutionary theories of human cognition
-should further inform artificial intelligence. This emphasizes the
-role of ecological niches in sculpting intelligent behavior, and in particular that
-human intelligence was fundamentally shaped to adapt to a constantly changing
-socio-cultural environment. A major limit of current work in AI is
-that it is missing this perspective, both theoretically and experimentally.
-One promising approach to address these limits is developmental artificial intelligence,
-modeling infant development through multi-scale interaction between intrinsically
-motivated learning, embodiment and a fastly changing socio-cultural environment.
+summary: In this blog post, Pierre-Yves Oudeyer discusses with Manfred Eppe to present his perspective on the future of AI and machines models of human-like intelligence. The discussion explains how developmental and evolutionary theories of human cognition should further inform artificial intelligence. This emphasizes the  role of ecological niches in sculpting intelligent behavior, and in particular that human intelligence was fundamentally shaped to adapt to a constantly changing socio-cultural environment. A major limit of current work in AI is that it is missing this perspective, both theoretically and experimentally. One promising approach to address these limits is developmental artificial intelligence, modeling infant development through multi-scale interaction between intrinsically motivated learning, embodiment and a fastly changing socio-cultural environment.
 
 categories: jekyllhttps://developmentalsystems.org/
 permalink: ecological_niche
@@ -37,7 +29,7 @@ One promising approach to address these limits is developmental artificial intel
 modeling infant development through multi-scale interaction between intrinsically
 motivated learning, embodiment and a fastly changing socio-cultural environment.
 
-This interview was initially published as: *Eppe, M., & Oudeyer, P. Y. (2021). Intelligent behavior depends on the ecological niche. KI-Künstliche Intelligenz, 35(1), 103-108.* [Bibtex](https://scholar.googleusercontent.com/scholar.bib?q=info:MtRhtx8UuAsJ:scholar.google.com/&output=citation&scisdr=CgWn8-r1EP2J2Bw_AHo:AAGBfm0AAAAAYZU5GHr4YOUkoUCx2f7gFv9vcYJ1VgXN&scisig=AAGBfm0AAAAAYZU5GLB9I2cNhSBY8d0wLGWKqcgtm5vF&scisf=4&ct=citation&cd=-1&hl=en)
+This interview was initially published as: *Eppe, M., & Oudeyer, P. Y. (2021). Intelligent behavior depends on the ecological niche. KI-Künstliche Intelligenz, 35(1), 103-108.* [Bibtex](https://hal.archives-ouvertes.fr/hal-03120583v1/bibtex)
 
 
 ## Is it useful to talk about strong and weak AI? What about AGI?
@@ -51,7 +43,7 @@ Whereas maybe some other people call 'strong AI' some kind of imaginary AI that 
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
-          <p style="margin-bottom: 0">
+          <p style="margin-bottom: 0" markdown="1">
           I don't like this distinction because, first of all, I don't think there is some kind of natural ordering of intelligences as is suggested by the 'strong versus weak' idea, which is some kind of linear scale in which some AI would be on top of another. It has the same problems as trying to order the intelligences of animals.
           </p>
     </div>
@@ -96,7 +88,7 @@ I think the combination of cultural evolution and the ability to continuously in
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
-          <p style="margin-bottom: 0">
+          <p style="margin-bottom: 0" markdown="1">
           Human intelligence is basically optimized to be able to continuously adapt to its evolving cultural environment. And this cultural adaptation in turn leads to further change of the environment, forming a loop that is at the core of an open-ended growth of complexity. This probably leads to the need to be able to invent cognitive tools, to learn and negotiate new rules of social interaction. 
           Understanding the mechanisms in this self-organizing complex system is one of the objectives of my approach to AI. 
           </p>
@@ -138,8 +130,8 @@ I don't think we can say very general statements about whether embodiment is nee
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
-          <p style="margin-bottom: 0">
-          PYO: I would reformulate the other way around. I think that one of the key problems that human intelligence is solving is dealing with social interaction. 
+          <p style="margin-bottom: 0" markdown="1">
+          *PYO*: I would reformulate the other way around. I think that one of the key problems that human intelligence is solving is dealing with social interaction. 
           Of course, you can imagine some other worlds. Actually, there are animals on this planet that have a rather poor social life and still they are able to do amazing things. It doesn't mean that they are not intelligent.
           From the point of view of their environment, they are extremely intelligent, they are extremely adaptive, it's just that they don't need to solve this problem of social interaction.
           As I was saying initially, one of the specific problems that is implied by being able to live in a culturally evolving system is the ability to adapt continuously to changes in the environment and to invent new things. 
@@ -154,14 +146,14 @@ I don't think we can say very general statements about whether embodiment is nee
 </div>
 
 
-[^3]: See [18], as well as [5] for a research roadmap in developmental robotics studying the embodied language learning perspective. 
+[^3]: See [[18](https://www.semanticscholar.org/paper/Philosophy-in-the-flesh-%3A-the-embodied-mind-and-its-Lakoff-Johnson/1745ec3f918cd551a8579261d3cfb0403de6a7be)], as well as [[5](https://www.researchgate.net/publication/224145520_Integration_of_Action_and_Language_Knowledge_A_Roadmap_for_Developmental_Robotics)] for a research roadmap in developmental robotics studying the embodied language learning perspective. 
 
 ## Towards AI systems with human-like intelligence: the need for *social* environments
 
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
-          <p style="margin-bottom: 0">
+          <p style="margin-bottom: 0" markdown="1">
           It's interesting that right now a big focus of the AI community is on machine learning, studying how artificial agents might be able to learn novel things. 
           The frontier of this field is, in a way, life-long learning, to continuously learn new things in an extended period of time.
           I think what is missing in the current picture is an ecosystem that is relevant for training and then evaluating those machine learning systems and assessing their relevance, for example, with respect to targeting human-like intelligence. 
@@ -197,7 +189,7 @@ Hopefully now, by leveraging and rediscovering these concepts, there is a great 
 <div class="row">
     <div class="col-lg-8">
           <p style="margin-bottom: 0" markdown="1">
-          PYO: There are many things [^4]. I will use my own work as an example. Psychologists have been discussing the idea that the brain might be motivated to explore novel situations or changing situations for many, many decades. Already in the '40s and the '50s, there were psychologists like Daniel Berlyne who proposed to conceptualize curiosity [[2](https://psycnet.apa.org/record/2006-09643-000?doi=1)]. They proposed that it might be a very fundamental mechanism to understand how children grow up and develop intelligence.
+          *PYO*: There are many things [^4]. I will use my own work as an example. Psychologists have been discussing the idea that the brain might be motivated to explore novel situations or changing situations for many, many decades. Already in the '40s and the '50s, there were psychologists like Daniel Berlyne who proposed to conceptualize curiosity [[2](https://psycnet.apa.org/record/2006-09643-000?doi=1)]. They proposed that it might be a very fundamental mechanism to understand how children grow up and develop intelligence.
           For many decades, this concept remained expressed in a verbal manner, without being very well formalized. 
           </p>
     </div>
@@ -248,7 +240,7 @@ For example, when we look right now at deep reinforcement learning systems[^7], 
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
-          <p style="margin-bottom: 0">
+          <p style="margin-bottom: 0" markdown="1">
           I think that this is something that was initially inspired a lot from cognitive sciences. 
           There are other things which cognitive sciences, and psychology, and neuroscience have known for a long time and which are still very little exploited in AI and machine learning.
           For example, if we go back to the question of cultural evolution and social interaction, we know that there are important complex skills that are developed by very young children. 
@@ -277,7 +269,7 @@ To understand language and its use, it seems it's quite important that agents un
 
 [^6]: See [[11](https://www.nature.com/articles/s41583-018-0078-0?WT.feed_name=subjects_reward),[17](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4635443/)] for reviews of recent developments in psychology and neuroscience.
 
-[^7]: See [[12}(https://www.researchgate.net/publication/318551830_Neuroscience-Inspired_Artificial_Intelligence)] for a review on how recent work in deep learning takes inspiration from neuroscience.
+[^7]: See [[12](https://www.researchgate.net/publication/318551830_Neuroscience-Inspired_Artificial_Intelligence)] for a review on how recent work in deep learning takes inspiration from neuroscience.
 
 ## Future directions and conclusion
 
@@ -286,7 +278,7 @@ To understand language and its use, it seems it's quite important that agents un
 <div class="content">
 <div class="row">
     <div class="col-lg-8">
-          <p style="margin-bottom: 0">
+          <p style="margin-bottom: 0" markdown="1">
           *PYO*: That's a tough question because there are so many interesting things. There are dozens of PhD topics I would like to do. The difficult thing would be to choose one. Rather than giving you the one I think is best, maybe I give you an example of what I have been thinking about with my team, and which I think is very interesting research.
           </p>
     </div>
@@ -321,31 +313,34 @@ Acknowledgements: We would like to thank [Grgur Kovac](https://scholar.google.co
 <hr>
 
 ```
-@misc{oudeyer_2020_interview,
-  TITLE = {{Intelligent behavior depends on the ecological niche}},
+@article{eppe:hal-03120583,
+  TITLE = {Intelligent Behavior Depends on the Ecological Niche},
   AUTHOR = {Eppe, Manfred and Oudeyer, Pierre-Yves},
-  URL = {https://hal.archives-ouvertes.fr/hal-03159786},
-  NOTE = {},
+  URL = {https://hal.inria.fr/hal-03120583},
+  JOURNAL = {KI - K{\"u}nstliche Intelligenz},
+  PUBLISHER = {{Springer Nature}},
   YEAR = {2021},
-  MONTH = Nov,
-  HAL_ID = {},
+  MONTH = Jan,
+  DOI = {10.1007/s13218-020-00696-1},
+  KEYWORDS = {Developmental machine learning ; Human-like AI ; Language ; Evolution ; Machine learning ; Artificial intelligence ; Developmental robotics ; Social skills ; Socio-cognitive development},
+  PDF = {https://hal.inria.fr/hal-03120583/file/2020_Interview_OudeyerV2.pdf},
+  HAL_ID = {hal-03120583},
   HAL_VERSION = {v1},
 }
 ```
 
-<button class="btn" type="button" onclick="copyToClipboard()">Export Bibtex</button>
+<button class="btn" type="button" onclick="copyToClipboard()">Copy to clipboard</button>
 
 <script>
 
 function copyToClipboard() {
     var dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
-    var text = "@misc{colas:hal-03159786,  TITLE = {{Language as a Cognitive Tool: Dall-E, Humans and Vygotskian RL Agents}},  AUTHOR = {Colas, C{\'e}dric and Karch, Tristan and Moulin-Frier, Cl{\'e}ment and Oudeyer, Pierre-Yves}, URL = {https://hal.archives-ouvertes.fr/hal-03159786}, NOTE = {This blog post presents a supra-communicative view of language and advocates for the use of language as a cognitive tool to organize the cognitive development of intrinsically motivated artificial agents. We go over studies revealing the cognitive functions of language in humans, cover similar uses of language in the design of artificial agents and advocate for the pursuit of Vygotskian embodied agents - artificial agents that leverage language as a cognitive tool to structure their continuous experience, form abstract representations, reason, imagine creative goals, plan towards them and simulate future possibilities.}, YEAR = {2021}, MONTH = Mar, HAL_ID = {hal-03159786}, HAL_VERSION = {v1},}"
+    var text = "@article{eppe:hal-03120583, TITLE = {Intelligent Behavior Depends on the Ecological Niche}, AUTHOR = {Eppe, Manfred and Oudeyer, Pierre-Yves}, URL = {https://hal.inria.fr/hal-03120583}, JOURNAL = {KI - K{\"u}nstliche Intelligenz}, PUBLISHER = {{Springer Nature}}, YEAR = {2021}, MONTH = Jan, DOI = {10.1007/s13218-020-00696-1}, KEYWORDS = {Developmental machine learning ; Human-like AI ; Language ; Evolution ; Machine learning ; Artificial intelligence ; Developmental robotics ; Social skills ; Socio-cognitive development}, PDF = {https://hal.inria.fr/hal-03120583/file/2020_Interview_OudeyerV2.pdf}, HAL_ID = {hal-03120583}, HAL_VERSION = {v1}, }";
     dummy.value = text;
     dummy.select();
     document.execCommand("copy");
     document.body.removeChild(dummy);
-    alert("Copied to clipboard: " + text);
 }
 
 
@@ -429,7 +424,7 @@ function copyToClipboard() {
     </li>
     <li style ="font-size: small">
       George Lakoff, Mark Johnson, et al. Philosophy in the flesh: The embodied mind and its challenge to western thought, volume 640. Basic books New York, 1999.
-      <a href="https://www.semanticscholar.org/paper/Philosophy-in-the-flesh-%3A-the-embodied-mind-and-its-Lakoff-Johnson/1745ec3f918cd551a8579261d3cfb0403de6a7be"> link </a> link
+      <a href="https://www.semanticscholar.org/paper/Philosophy-in-the-flesh-%3A-the-embodied-mind-and-its-Lakoff-Johnson/1745ec3f918cd551a8579261d3cfb0403de6a7be"> link </a>
     </li>
     <li style ="font-size: small">
       Tetsuro Matsuzawa. Symbolic representation of number in chimpanzees. Current opinion in neurobiology, 19(1):92–98, 2009.
