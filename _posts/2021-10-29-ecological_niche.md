@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Intelligent behavior depends on the ecological niche: Scaling up AI to human-like intelligence in socio-cultural environments
+title:      'Intelligent behavior depends on the ecological niche: Scaling up AI to human-like intelligence in socio-cultural environments'
 date:       2021-10-29
 summary: In this blog post, Pierre-Yves Oudeyer discusses with Manfred Eppe to present his perspective on the future of AI and machines models of human-like intelligence. The discussion explains how developmental and evolutionary theories of human cognition should further inform artificial intelligence. This emphasizes the  role of ecological niches in sculpting intelligent behavior, and in particular that human intelligence was fundamentally shaped to adapt to a constantly changing socio-cultural environment. A major limit of current work in AI is that it is missing this perspective, both theoretically and experimentally. One promising approach to address these limits is developmental artificial intelligence, modeling infant development through multi-scale interaction between intrinsically motivated learning, embodiment and a fastly changing socio-cultural environment.
 categories: jekyll
