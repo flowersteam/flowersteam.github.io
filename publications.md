@@ -9,6 +9,8 @@ This page links to scientific articles of the Flowers Lab discussed in the blog,
 
 **Target articles discussed in this blog**
 
+* Barde, P., Karch, T., Nowrouzezahrai, D., Moulin-Frier, C., Pal, C., & Oudeyer, P. Y. (2022) [Learning to Guide and to Be Guided in the Architect-Builder Problem](https://arxiv.org/abs/2112.07342#:~:text=We%20present%20the%20Architect%2DBuilder,arbitrary%20messages%20to%20the%20builder.). In ICLR 2022. [Blog post](https://developmentalsystems.org/architect_builder_problem)
+
 * Colas, C., Karch, T., Lair, N., Dussoux, J. M., Moulin-Frier, C., Dominey, P. F., & Oudeyer, P. Y. (2020). [Language as a Cognitive Tool to Imagine Goals in Curiosity-Driven 
 Exploration](https://arxiv.org/abs/2002.09253). In NeurIPS 2020. [Blog post](https://developmentalsystems.org/language_as_cognitive_tool_vygotskian_rl).
 
