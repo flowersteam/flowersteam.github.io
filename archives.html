@@ -1,0 +1,19 @@
+---
+layout: page
+title: Archives
+permalink: /archives
+tags: archives
+---
+
+
+<div class='post-index'>
+  <nav>
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <span style="font-size:14pt">{{ post.date | date: site.date_format }}: <a class='post-index-entry' href="{{ post.url }}">{{ post.title }}</a> </span>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

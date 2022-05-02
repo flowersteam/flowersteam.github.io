@@ -302,13 +302,14 @@ html[xmlns] .flexslider .slides {
 .btn {
   background-color: #5899f6 !important;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 12px;
 }
 
 a, a:link, a:active, a:visited {
@@ -320,6 +321,76 @@ a, a:link, a:active, a:visited {
 a:hover{
 	color:#13428f;
 }
+
+.hovertext {
+  position: relative;
+  border-bottom: 1px;
+}
+
+.hovertext:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 20;
+  background-color: ghostwhite;
+  color: #5899f6;
+  width:  max-content;
+  max-width:  300px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 15px;
+  transition: opacity 1s ease-in-out;
+  font-size: 10pt;
+  position: absolute;
+  z-index: 1;
+  left: -80px;
+  top: 20px;
+
+}
+
+.hovertext:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ref-number {
+  color: #5899f6;
+  vertical-align: super;
+  font-size: 10pt;
+}
+
+ol.ref-list {
+    counter-reset: list;
+    list-style-position: outside;
+}
+ol.ref-list > li {
+    list-style: none;
+    display: table-row;
+}
+ol.ref-list > li:before {
+    counter-increment: list;
+    content: " [" counter(list) "] ";
+    display:  table-cell;
+    text-align: center;
+    color: #5899f6 ;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    height:400px;
+    width:100%;
+    background-color: whitesmoke;
+    border-radius: 12pt;
+}
+nav ul{overflow:hidden; overflow-y:scroll;}
+
+a.post-index-entry{
+  text-decoration: none;
+}
+
 
 code{
 	font-size: 10pt

@@ -8,7 +8,9 @@ url:         "http://flowersteam.github.io"
 date_format: "%b %-d, %Y"
 header_pages:
  - publications.md
+ - archives.html
  - about.md
+
     
 # Google services
 google_verification:
@@ -119,7 +121,7 @@ kramdown:
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     4
+paginate:     6
 sass:
   style: compressed
 plugins:
