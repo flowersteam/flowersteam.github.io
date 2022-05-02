@@ -11,15 +11,9 @@ authors:
 
 - name: 'Tristan Karch'
   link: http://tristankarch.com
-  next: ',  '
+  next: ' and '
 - name: 'Paul Barde'
   link: https://scholar.google.com/citations?user=FoxktlkAAAAJ&hl=en
-  next: ', '
-- name: 'Clément Moulin-Frier'
-  link: http://clement-moulin-frier.github.io/
-  next: ' and  '
-- name: Pierre-Yves Oudeyer
-  link: http://www.pyoudeyer.com/
   next: ' '
 ---
 
