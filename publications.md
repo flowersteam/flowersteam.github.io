@@ -9,6 +9,8 @@ This page links to scientific articles of the Flowers Lab discussed in the blog,
 
 **Target articles discussed in this blog**
 
+* Lemesle, Y., Sawayama, M., Valle-Perez, G., Adolphe, M., Sauzéon, H., & Oudeyer, P. Y. (2022) [Language-biased image classification: evaluation based on semantic representations](https://arxiv.org/abs/2201.11014). In ICLR 2022. [Blog post](https://developmentalsystems.org/watch_ai_through_cogsci)
+
 * Barde, P., Karch, T., Nowrouzezahrai, D., Moulin-Frier, C., Pal, C., & Oudeyer, P. Y. (2022) [Learning to Guide and to Be Guided in the Architect-Builder Problem](https://arxiv.org/abs/2112.07342#:~:text=We%20present%20the%20Architect%2DBuilder,arbitrary%20messages%20to%20the%20builder.). In ICLR 2022. [Blog post](https://developmentalsystems.org/architect_builder_problem)
 
 * Colas, C., Karch, T., Lair, N., Dussoux, J. M., Moulin-Frier, C., Dominey, P. F., & Oudeyer, P. Y. (2020). [Language as a Cognitive Tool to Imagine Goals in Curiosity-Driven 
