@@ -93,7 +93,7 @@ Joint multimodal representations are bound to be very useful in many contexts. E
 Both humans and the CLIP model show picture-word interference. Observing a few similar biases in a picture-word interference task may lead to believing the mechanisms are the same. But, the surface performance similarity by partial observations may be due to largely different underlying mechanisms. The lens of cognitive science methodologies tells us that we should conduct a systematic, structured examination of the biases. Our study investigates this and shows that different functional mechanisms mediate picture-word interference in humans and the CLIP model (Figure 3).
 
 <div align="center" style="margin-bottom:40px">
-	<img class="80" src="/images/posts/watchai/figure_blog1.png" width="60%" alt="Figure 4" />
+	<img class="80" src="/images/posts/watchai/figure_1.png" width="60%" alt="Figure 4" />
 
 <sub style="display: block; line-height: 1.5em">
 	<i> Overview of our benchmark test.</i></sub>
@@ -123,13 +123,13 @@ In the future, people will expect more from artificial intelligence capabilities
 </sub>
 
 ```
-@misc{sawayama:hal-,
+@misc{sawayama:hal-03729242,
   TITLE = {{Watching artificial intelligence through the lens of cognitive science methodologies}},
   AUTHOR = {Sawayama, Masataka and Lemesle, Yoann and Oudeyer, Pierre-Yves},
-  URL = {https://},
+  URL = {https://developmentalsystems.org/watch_ai_through_cogsci},
   YEAR = {2022},
   MONTH = July,
-  HAL_ID = {hal-},
+  HAL_ID = {hal-03729242},
   HAL_VERSION = {v1},
 }
 ```
