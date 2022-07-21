@@ -270,5 +270,3 @@ infants investigated by near-infrared spectroscopy. Proceedings of the National 
 </li>
 
 </div>
-
-Inri@_Fl0wers_2022
