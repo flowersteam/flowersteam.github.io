@@ -21,7 +21,7 @@ authors:
 ---
 
 <div align=center>
-<a href="https://arxiv.org/pdf/2112.07342.pdf" target="_blank">[Blog PDF]</a> <span style="color: lightgray;"> &#9679;</span> <a href="https://arxiv.org/pdf/2201.11014.pdf" target="_blank">[ICLR 2022 paper]</a> <span style="color: lightgray;"> &#9679;</span> <a href="https://github.com/flowersteam/picture-word-interference" target="_blank">[Code]</a>   
+<a href="https://hal.archives-ouvertes.fr/hal-03729242/document" target="_blank">[Blog PDF]</a> <span style="color: lightgray;"> &#9679;</span> <a href="https://arxiv.org/pdf/2201.11014.pdf" target="_blank">[ICLR 2022 paper]</a> <span style="color: lightgray;"> &#9679;</span> <a href="https://github.com/flowersteam/picture-word-interference" target="_blank">[Code]</a>   
 </div>
 <hr> 
 
@@ -38,7 +38,7 @@ Recent machine learning models are trained using big data with massive parameter
 	<img class="80" src="/images/posts/watchai/figure_blog1.png" width="100%" alt="Figure 1" />
 
 <sub style="display: block; line-height: 1.5em">
-	<i>(A) "Summer" by Giuseppe Arcimboldo (B) Saliency maps by trained and untrained networks (figure credit:
+	<i>Figure 1. (A) "Summer" by Giuseppe Arcimboldo (B) Saliency maps by trained and untrained networks (figure credit:
 Been Kim, 2022, Beyond interpretability: developing a language to shape our relationships with AI(Kim, 2022),
 <a href="https://medium.com/@beenkim/beyond-interpretability-4bf03bbd9394" target="_blank">link to blog</a>)</i></sub>
 </div>
@@ -61,7 +61,7 @@ In addition, many joint learning models of language and vision have been reporte
 	<img class="80" src="/images/posts/watchai/figure_blog_clip.png" width="100%" alt="Figure 2" />
 
 <sub style="display: block; line-height: 1.5em">
-	<i> Overview of the CLIP model. (figure credit: Alec Radford, et al., 2021, Learning Transferable Visual Models
+	<i>Figure 2.  Overview of the CLIP model. (figure credit: Alec Radford, et al., 2021, Learning Transferable Visual Models
 From Natural Language Supervision (Radford et al., 2021),
 <a href="https://openai.com/blog/clip/" target="_blank">link</a>)</i></sub>
 </div>
@@ -77,7 +77,7 @@ While language contributes to acquiring general visual abilities, its abstractio
 	<img class="80" src="/images/posts/watchai/figure_blog2.png" width="100%" alt="Figure 3" />
 
 <sub style="display: block; line-height: 1.5em">
-	<i> Picture-word interference in humans and machines. Summary of Yoann Lemesle, et al., (2022); Languagebiased image classification: evaluation based on semantic representations (
+	<i> Figure 3. Picture-word interference in humans and machines. Summary of Yoann Lemesle, et al., (2022); Languagebiased image classification: evaluation based on semantic representations (
 <a href="https://arxiv.org/pdf/2201.11014.pdf" target="_blank">Lemesle et al., 2022</a>)</i></sub>
 </div>
 
@@ -95,7 +95,7 @@ Both humans and the CLIP model show picture-word interference. Observing a few s
 	<img class="80" src="/images/posts/watchai/figure_1.png" width="100%" alt="Figure 4" />
 
 <sub style="display: block; line-height: 1.5em">
-	<i> Overview of our benchmark test.</i></sub>
+	<i> Figure 4. Overview of our benchmark test.</i></sub>
 </div>
 
 We first focused on the fact that human picture-word interference depends on the semantic relationship between images and written words. Cognitive science works show that the interference effect of written words on the image classification is larger when the image category is semantically similar to the word one (e.g., a written word "cat" for a "dog" image) (Rosinski, 1977). We imported this experimental paradigm for machine learning models and created the picture-word image dataset, in which we controlled the semantic categories between images and written words (Figure 4). Our dataset consists of a combination of natural image datasets and hierarchical superordinate/basic word labels. Our benchmark test is a 2 x 2 block design. One condition is the classification task type, indicating what is the image category level to be answered. The category level is superordinate (e.g., "animal," "furniture") or basic ("dog," "cat"). The other condition is the superimposed word category level, superordinate or basic. In total, there are four conditions as follows.
