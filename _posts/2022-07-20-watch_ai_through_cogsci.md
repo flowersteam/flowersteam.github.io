@@ -11,10 +11,10 @@ authors:
 
 - name: 'Masataka Sawayama'
   link: https://www.mswym.com/
-  next: ' and '
+  next: ', '
 - name: 'Yoann Lemesle'
   link: https://scholar.google.com/citations?user=0HUr1q4AAAAJ&hl=ja&oi=ao
-  next: ' and'
+  next: ', and'
 - name: 'Pierre-Yves Oudeyer'
   link: http://www.pyoudeyer.com/
   next: ' '
