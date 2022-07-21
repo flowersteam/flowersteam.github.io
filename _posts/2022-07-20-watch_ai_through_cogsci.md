@@ -2,8 +2,7 @@
 layout:	post
 title: 'Watching artificial intelligence through the lens of cognitive science methodologies'
 date: 2022-07-19
-summary: Utilizing a large size of language models contributes to recent advances in machine learning literature. However, interpreting what representations these models acquire is challenging due to their computational
-complexity. How can we understand the models functionally? This blog post suggests importing cognitive science methodologies to interpret their functional mechanisms. We introduce a way to conduct cognitive science experiments for machine learning models and analyze the models’ internal representation using cognitive neuroscience methodologies.
+summary: Utilizing a large size of language models contributes to recent advances in machine learning literature. However, interpreting what representations these models acquire is challenging due to their computational complexity. How can we understand the models functionally? This blog post suggests importing cognitive science methodologies to interpret their functional mechanisms. We introduce a way to conduct cognitive science experiments for machine learning models and analyze the models’ internal representation using cognitive neuroscience methodologies.
 
 categories:	jekyll
 permalink: watch_ai_through_cogsci
