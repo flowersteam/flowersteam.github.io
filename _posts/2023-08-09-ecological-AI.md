@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      'An ecological approach to  Artificial Intelligence'
-date:       2022-01-10
+date:       2023-08-09
 summary: In this blogpost we discuss how the field of Human Behavioral Ecology can guide our pursuit of Artificial Intelligence agents with human-like abilities. We first propose a conceptual framework aiming at facilitating inter-disciplinary discussions between research of natural and artificial intelligence and then delve into some of our computational studies.  
 categories: jekyll
 permalink: ecological-AI
