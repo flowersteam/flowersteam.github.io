@@ -1,16 +1,29 @@
 ---
 layout:     post
-title:      The Phylogenetics of Artifacts - A deep dive into the evolution of cultural objects, artificial life forms and language models
+title:      'The Phylogenetics of Artifacts - A deep dive into the evolution of cultural objects, artificial life forms and language models'
 date:       2026-02-27 14:49:29
 summary:    The blog shows that phylogenetic methods — originally designed to reconstruct evolutionary trees of biological species from DNA — can be extended to any system that replicates and varies. It demonstrates this progression across three domains - cat breeds as a concrete biological example, myths as a cultural one, and finally language models, where next-token probability distributions serve as artificial DNA to reconstruct the family trees of LLMs in a black-box setting.
 categories: jekyll
 permalink: phylolm
 use_math: true
+
+authors: 
+- name: 'Nicolas Yax'
+  link: https://scholar.google.com/citations?user=FQHbrA4AAAAJ&hl=en
+  next: ', '
+- name: 'Pierre-Yves Oudeyer'
+  link: http://www.pyoudeyer.com/
+  next: ', '
+- name: Palminteri Stefano
+  link: https://sites.google.com/site/stefanopalminteri/home
+  next: ''
 ---
+
+<hr>
 
 # The Phylogenetics of Artifacts: A deep dive into the evolution of cultural objects, artificial life forms and language models
 
-The aim of this blog is to show that phylogenetic methods — traditionally used to reconstruct the evolutionary history of biological species — can be applied far beyond their original scope. This idea was first theorised by Dawkins in 1976 [1] and has since been demonstrated on cultural artifacts by researchers such as Julien d'Huy [2]. Here, we take it a step further and apply it to the intelligence of Large Language Models (LLMs).
+The aim of this blog is to show that phylogenetic methods — traditionally used to reconstruct the evolutionary history of biological species — can be applied far beyond their original scope. This idea was first theorised by Dawkins in 1976 [[1]](#references) and has since been demonstrated on cultural artifacts by researchers such as Julien d'Huy [[2]](#references). Here, we take it a step further and apply it to the intelligence of Large Language Models (LLMs).
 
 This is a particularly timely question in a world where the number of LLMs is growing at an extraordinary pace — around 300 new models are published every day on the HuggingFace hub — and where transparency about training details is increasingly limited. Reconstructing the phylogenetic history of models in a black-box setting, without any prior information beyond interacting with them, would provide a powerful tool to map the landscape of modern AI, shed light on lineages that are not always made explicit, and inform the evaluation of AI capabilities — with potential applications to AI safety and the monitoring of emerging risks.
 
@@ -57,7 +70,7 @@ Continuing with our example, here is what the population functions might look li
 A population function is estimated for each breed, and these distributions are then compared to measure how similar or distant the breeds are from one another.
 
 #### Population comparison
-Once a population function is estimated for each population studied, they are compared using a mathematical formula, which can vary between studies. For this blog we are going to use one of the most classic: Nei's genetic distance [3], defining a similarity matrix S and a distance matrix D:
+Once a population function is estimated for each population studied, they are compared using a mathematical formula, which can vary between studies. For this blog we are going to use one of the most classic: Nei's genetic distance [[3]](#references), defining a similarity matrix S and a distance matrix D:
 
 $$
 S(P_1, P_2) = \frac{\sum_{g \in G} \sum_{a \in A_g} P_1(a|g) \cdot P_2(a|g)}{\sqrt{\left(\sum_{g \in G} \sum_{a \in A_g} P_1(a|g)^2\right) \left(\sum_{g \in G} \sum_{a \in A_g} P_2(a|g)^2\right)}}
@@ -88,7 +101,7 @@ Let's see what this similarity matrix looks like between our cat breeds:
 This matrix represents the similarity between cat breeds as seen through the lens of the selected genes. Persians and Siamese, for instance, are the most genetically distant pair in our study (0.10 similarity), while British Shorthairs and Persians appear considerably closer (0.69 similarity).
 
 #### Phylogenetic tree
-The concept behind plotting a phylogenetic tree is that populations which speciated recently will remain fairly similar, while populations that speciated long ago will have diverged significantly as mutations accumulate over time. This is why gene selection matters so much: genes that mutate too fast or too slowly will not efficiently capture the evolutionary history of the species studied. Several algorithms have been proposed to compute a tree from a distance matrix; the one discussed here is one of the most classic: the Neighbour-Joining technique (NJ tree) [4]. The goal is not to give a full tutorial on the NJ algorithm but to provide an overview of the approach.
+The concept behind plotting a phylogenetic tree is that populations which speciated recently will remain fairly similar, while populations that speciated long ago will have diverged significantly as mutations accumulate over time. This is why gene selection matters so much: genes that mutate too fast or too slowly will not efficiently capture the evolutionary history of the species studied. Several algorithms have been proposed to compute a tree from a distance matrix; the one discussed here is one of the most classic: the Neighbour-Joining technique (NJ tree) [[4]](#references). The goal is not to give a full tutorial on the NJ algorithm but to provide an overview of the approach.
 
 The core idea is that populations which diverged most recently should be the most genetically similar. The algorithm identifies the two populations that are closest to each other *relative to their distance to all other populations* — not simply the two with the smallest absolute distance. These two populations are then grouped into a clade, representing their hypothetical common ancestor. Once this clade is formed, the two original populations are removed from the distance matrix and replaced by their common ancestor, whose distance to every remaining population is estimated as a weighted average of the distances from the two child populations. The matrix now has one fewer entry (n−1 instead of n). This process repeats — finding the next closest pair, grouping them, and reducing the matrix — until only two populations remain, joined at the root of the tree: the ancestor of all.
 
@@ -153,10 +166,10 @@ What makes cultural evolution particularly fascinating — and particularly amen
 Following subsections will demonstrate the criteria established in Part 2 are applicable to the reconstruction of cultural evolution. The thread connecting all the examples is: *does this object have a compressed, universal representation that evolves in a traceable way?*
 
 ### Cultural artifacts and the extended phenotype (Dawkins)
-Dawkins was a famous evolutionary biologist and his vision of evolution was never exclusive to biology. In *The Selfish Gene* (1976) [1], he introduced the concept of the **meme** — a unit of cultural transmission, analogous to the gene, that spreads from mind to mind through imitation and repetition. Ideas, melodies, fashions, and practices all evolve under selection pressure (what resonates gets copied and transmitted) and drift (stylistic variations that don't affect cultural fitness accumulate over time). While this was a groundbreaking conceptual leap, Dawkins did not propose precise methods for inferring the phylogenetic history of memes — he did not address how to define the three properties we identified in Part 2: compression and universality, functional grounding, and a moderate evolutionary rate. That challenge was left for others to take up.
+Dawkins was a famous evolutionary biologist and his vision of evolution was never exclusive to biology. In *The Selfish Gene* (1976) [[1]](#references), he introduced the concept of the **meme** — a unit of cultural transmission, analogous to the gene, that spreads from mind to mind through imitation and repetition. Ideas, melodies, fashions, and practices all evolve under selection pressure (what resonates gets copied and transmitted) and drift (stylistic variations that don't affect cultural fitness accumulate over time). While this was a groundbreaking conceptual leap, Dawkins did not propose precise methods for inferring the phylogenetic history of memes — he did not address how to define the three properties we identified in Part 2: compression and universality, functional grounding, and a moderate evolutionary rate. That challenge was left for others to take up.
 
 ### Myths and oral traditions 
-Julien d'Huy offers a concrete and compelling example of cultural phylogenetics in practice [2]. Myths — stories tied to religion, cosmology, and other foundational cultural concepts — evolve slowly enough to preserve historical signal across generations, satisfying the moderate evolutionary rate we identified as a key property in Part 2. D'Huy defines a "gene" as a high-level semantic feature of a myth: character names, key events, moral structure, and so on. He then measures the distribution of these features across cultures and uses them to build a phylogenetic tree. This approach produces a compressed and functional representation of each myth — capturing what the story *does* culturally rather than its surface details — with enough variance between cultures to be informative without being noisy. In other words, it satisfies all three properties we outlined in Part 2.
+Julien d'Huy offers a concrete and compelling example of cultural phylogenetics in practice [[2]](#references). Myths — stories tied to religion, cosmology, and other foundational cultural concepts — evolve slowly enough to preserve historical signal across generations, satisfying the moderate evolutionary rate we identified as a key property in Part 2. D'Huy defines a "gene" as a high-level semantic feature of a myth: character names, key events, moral structure, and so on. He then measures the distribution of these features across cultures and uses them to build a phylogenetic tree. This approach produces a compressed and functional representation of each myth — capturing what the story *does* culturally rather than its surface details — with enough variance between cultures to be informative without being noisy. In other words, it satisfies all three properties we outlined in Part 2.
 
 Let's take a small example from *A Cosmic Hunt in the Berber sky: a phylogenetic reconstruction of a Palaeolithic mythology*, D'Huy 2013 [2]. Let's consider 3 versions of a myth: Evenki 2, Basque 2 and Pausanias and "genes" (called mythems in D'Huy's work):
 
@@ -185,8 +198,8 @@ Evenki 2 and Basque 2 differ on only one mythem — whether the pursuers are dog
 ```
 
 This toy example extracted from the paper illustrates how mythems (akin to genes) can be used to reconstruct the evolutionary history of myths. The full figure from the paper is the following (which includes more mythem and myths):
-![figure from D'Huy Julien, (2013) *A Cosmic Hunt in the Berber sky: a phylogenetic reconstruction of a Palaeolithic mythology*  [2]](/images/posts/phylolm/dhuy_dendrogram.png)
-*figure from D'Huy Julien, (2013) *A Cosmic Hunt in the Berber sky: a phylogenetic reconstruction of a Palaeolithic mythology*  [2]*
+![figure from D'Huy Julien, (2013) *A Cosmic Hunt in the Berber sky: a phylogenetic reconstruction of a Palaeolithic mythology*  [[2]](#references)](/images/posts/phylolm/dhuy_dendrogram.png)
+*figure from D'Huy Julien, (2013) *A Cosmic Hunt in the Berber sky: a phylogenetic reconstruction of a Palaeolithic mythology*  [[2]](#references)*
 *The color of branches indicate geographic region of the myth - branches are consistent with what we know of first human migration patterns*
 
 The results are striking: the phylogenetic trees reconstructed from myth features seems to be consistent with known human migration patterns, reinforcing the idea that these semantic features can serve as an artificial DNA of cultural evolution. It is a beautiful case study in how phylogenetic thinking can travel far beyond biology.
@@ -207,12 +220,12 @@ In short, d'Huy's method satisfies all three properties identified in Part 2: it
 This framework highlights the relevance of using phylogenetic tools to study the evolution of cultural artefacts and it is interesting to think about the fact that it could go even beyond myths and be applied to other fields of cultural artefacts such as advanced technologies like generative AI. Indeed, these new generative models are created by humans and carry a lot of information about our culture. Additionally, modern models have a rich evolutionary history: they  trained using training techniques, datasets and previous model checkpoints that could be particularly relevant to infer due to the extremely fast evolution of the field.
 
 ### Part 4: LLM Phylogenetics
-Having seen how biologists reconstruct the evolutionary history of living species, and how the same framework can be extended to cultural artifacts, let's now ask how we might apply it to language models [6]. This work has been published at ICLR conference in 2025 and is accessible [here](https://iclr.cc/virtual/2025/poster/28195).
+Having seen how biologists reconstruct the evolutionary history of living species, and how the same framework can be extended to cultural artifacts, let's now ask how we might apply it to language models [[6]](#references). This work has been published at ICLR conference in 2025 and is accessible [here](https://iclr.cc/virtual/2025/poster/28195).
 
 #### What is a LLM?
 A language model is a large neural network trained to predict the next token given a context. This means that a language model is, mathematically speaking, a probability distribution P(token | context): for any sequence of tokens, it assigns a probability to every possible next token. This is not just a convenient description — it is the complete definition of a language model's behavior. Two models that agree on P(token | context) for every possible input are, functionally, identical.
 
-This gives us a natural and universal framework for comparing language models, since every LLM can be expressed in this form. However, compressing this identity into something tractable is a significant challenge: the space of all possible contexts is effectively infinite, making it impossible to evaluate P(token | context) exhaustively. A solution could potentially be to exploit their weights or activations but this makes their identity either non universal as the architecture of LLMs may change between families or non functional as permutations of a same weight set can lead to the same functionality. We encourage reader to check this work that attempted to use weights to build evolutionary history of LLMs but only within the same family successfully using weights as LLM identity [5]. Rather than trying to compress it further, we decided to work directly with this form — sampling a representative set of contexts and using the resulting distributions as our artificial DNA.
+This gives us a natural and universal framework for comparing language models, since every LLM can be expressed in this form. However, compressing this identity into something tractable is a significant challenge: the space of all possible contexts is effectively infinite, making it impossible to evaluate P(token | context) exhaustively. A solution could potentially be to exploit their weights or activations but this makes their identity either non universal as the architecture of LLMs may change between families or non functional as permutations of a same weight set can lead to the same functionality. We encourage reader to check this work that attempted to use weights to build evolutionary history of LLMs but only within the same family successfully using weights as LLM identity [[5]](#references). Rather than trying to compress it further, we decided to work directly with this form — sampling a representative set of contexts and using the resulting distributions as our artificial DNA.
 
 Then, LLMs are either trained from scratch (pretraining) using a large neural network that is randomly initialised and then trained to predict the next token on a large text corpus — this teaches the model language and a broad range of skills. However, pretraining alone is often not sufficient for casual conversation, like what we experience with ChatGPT. Models are therefore frequently finetuned: trained further from a pretrained checkpoint to acquire more specific capabilities. These further training stages can involve supervised learning (trained to predict the next token in a specialised dataset of human-AI interactions), Reinforcement Learning from Human Feedback (RLHF — where the model is trained to produce responses consistent with human expectations), or Reinforcement Learning from Verifiable Rewards (RLVR — where the model is trained to produce accurate, verifiable answers). The landscape of modern LLMs typically involves a pretrained model — often already finetuned several times by a large tech company — which is then finetuned by many others, hundreds of times per day, forming extremely large family trees. Beyond this vertical inheritance through finetuning, other mechanisms also shape model lineages: shared neural architectures, common training algorithms, and overlapping datasets all constitute forms of inheritance worth studying in their own right. This makes the landscape of modern LLMs a particularly rich and timely subject for tools borrowed from genetics.
 
@@ -249,9 +262,9 @@ Comparing P(token | context) directly across LLMs is extremely challenging in pr
 
 One option, inspired by d'Huy's work, would be to identify high-level semantic features of generated text: defining genes as meaningful structural elements of a response and alleles as the specific values they take. This would produce a functional and interpretable comparison between models. However, d'Huy's approach requires significant manual effort and was feasible precisely because the number of myths he studied remained small. In the current landscape of LLMs — where more than 300 new text-generation models are published every day on the HuggingFace hub — this kind of hand-crafted analysis is simply not scalable.
 
-A more explicit automatic approach would be to let each model generate full continuations from a set of contexts, and then compare those continuations using an embedding model. Here, the continuation plays the role of the allele and the context plays the role of the gene. This method has been explored with promising results [8], but generating long texts iteratively is costly in both time and compute. Another proposed idea was to estimate a KL divergence between models about the probability they associate to different texts going back to this idea of LLMs seen as populations of texts [7] also with great results but still requiring long texts.
+A more explicit automatic approach would be to let each model generate full continuations from a set of contexts, and then compare those continuations using an embedding model. Here, the continuation plays the role of the allele and the context plays the role of the gene. This method has been explored recently with very promising results using long text generations [[8]](#references). Another proposed approach estimates a KL divergence between models based on the probability they each assign to a set of texts — going back to the idea of LLMs as populations of texts — also with strong results on long texts [[7]](#references).
 
-We opted for a different, more lightweight approach: treating the next token (4 characters in practice) generated by the model as the allele for a given context gene. This is directly grounded in the definition of a LLM — P(token | context) — and is cheap to evaluate. It captures the evolutionary trace we are looking for: as a model is finetuned, the probability it assigns to each token given a context shifts, reflecting the selective pressure applied to its population of texts. In the next section we will see how this quantity is used in practice to compare models and build a phylogenetic tree of LLMs.
+PhyloLM was designed with a different, more lightweight approach: treating the next token (4 characters in practice) generated by the model as the allele for a given context gene. This is directly grounded in the definition of a LLM — P(token | context) — and is cheap to evaluate. It captures the evolutionary trace we are looking for: as a model is finetuned, the probability it assigns to each token given a context shifts, reflecting the selective pressure applied to its population of texts. In the next section we will see how this quantity is used in practice to compare models and build a phylogenetic tree of LLMs.
 
 #### Selective pressure and drift in LLMs
 We have discussed several times how finetuning corresponds to selective pressure in the biological framework — let's now develop this further. As introduced in section about what is a LLM, once pretrained, a model represents a population that will be shaped and refined by each successive finetuning stage, each one applying a selective pressure on the population of texts the model represents.
@@ -310,12 +323,54 @@ These observations point to important directions for future work. Current phylog
 
 Ultimately, these limitations are not just obstacles but should be seen as invitations to rethink the field of genetics. They pave the way for a larger sense of genetics, not anchored to biological DNA sequences, but built around general atoms of evolution shared across biological and artificial life forms.
 
-**Bibliography**
-[1] Richard Dawkins, R. (2006). *The Selfish Gene* . Oxford University Press.
-[2] Julien d’Huy. (2013). *A Cosmic Hunt in the Berber sky: a phylogenetic reconstruction of a Palaeolithic mythology* . Les Cahiers de l’AARS, 2013, 15, pp.93-106. halshs-00932197
-[3] Naoko Takezaki and Masatoshi Nei. (1996). *Genetic Distances and Reconstruction of Phylogenetic Trees From Microsatellite DNA*. Genetics, 144(1):389–399, 09. ISSN 1943-2631. doi: 10.1093/genetics/144.1.389.
-[4] N Saitou and M Nei. (1987). *The neighbor-joining method: a new method for reconstructing phylogenetic trees*. Molecular Biology and Evolution, 4(4):406–425, 07. ISSN 0737-4038. doi: 10.1093/oxfordjournals.molbev.a040454.
-[5] Eliahu Howitz et al. (2025), *We Should Chart an Atlas of All the World's Models* ICLR 2025
-[6] Nicolas Yax et al. (2025), *PhyloLM : Inferring the Phylogeny of Large Language Models and Predicting their Performances in Benchmarks*. ICLR 2025
-[7] Oyama Momose et al. (2025), *Mapping 1,000+ Language Models via the Log-Likelihood Vector*, ACL 2025
-[8] Zhaomin Wu et al. (2026), *LLM DNA: Tracing Model Evolution via Functional Representations*, ICLR 2026
+<hr>
+
+<sub style="display: block; line-height: 1.5em">
+<b>Cite PhyloLM</b>
+</sub>
+
+```
+@inproceedings{ICLR2025_a2e28663,
+ author = {Yax, Nicolas and Oudeyer, Pierre-Yves and Palminteri, Stefano},
+ booktitle = {International Conference on Learning Representations},
+ editor = {Y. Yue and A. Garg and N. Peng and F. Sha and R. Yu},
+ pages = {64792--64844},
+ title = {PhyloLM: Inferring the Phylogeny of Large Language Models and Predicting their Performances in Benchmarks},
+ url = {https://proceedings.iclr.cc/paper_files/paper/2025/file/a2e28663712d5a3429a98918c3058f7b-Paper-Conference.pdf},
+ volume = {2025},
+ year = {2025}
+}
+```
+<hr>
+
+<div id="references" style="line-height: 1em">
+<sub>
+<b>References</b>
+</sub>
+  <ul>
+    <li style="font-size: small">
+      [1] Dawkins, R. (2006). <em>The Selfish Gene</em>. Oxford University Press.
+    </li>
+    <li style="font-size: small">
+      [2] d'Huy, J. (2013). <a href="https://shs.hal.science/halshs-00932197/file/A_2013.10._A_Cosmic_Hunt_in_the_Berber_sky_-_Les_Cahiers_de_l_AARS_16_93-106.pdf" target="_blank">A Cosmic Hunt in the Berber sky: a phylogenetic reconstruction of a Palaeolithic mythology</a>. <em>Les Cahiers de l'AARS</em>, 15, pp.93–106.
+    </li>
+    <li style="font-size: small">
+      [3] Takezaki, N. & Nei, M. (1996). Genetic Distances and Reconstruction of Phylogenetic Trees From Microsatellite DNA</a>. <em>Genetics</em>, 144(1):389–399.
+    </li>
+    <li style="font-size: small">
+      [4] Saitou, N. & Nei, M. (1987). The neighbor-joining method: a new method for reconstructing phylogenetic trees</a>. <em>Molecular Biology and Evolution</em>, 4(4):406–425.
+    </li>
+    <li style="font-size: small">
+      [5] Howitz, E. et al. (2025). <a href="https://horwitz.ai/model-atlas" target="_blank">We Should Chart an Atlas of All the World's Models</a>. ICLR 2025.
+    </li>
+    <li style="font-size: small">
+      [6] Yax, N. et al. (2025). <a href="https://iclr.cc/virtual/2025/poster/28195" target="_blank">PhyloLM: Inferring the Phylogeny of Large Language Models and Predicting their Performances in Benchmarks</a>. ICLR 2025.
+    </li>
+    <li style="font-size: small">
+      [7] Momose, O. et al. (2025). <a href="https://arxiv.org/abs/2502.16173" target="_blank">Mapping 1,000+ Language Models via the Log-Likelihood Vector</a>. ACL 2025.
+    </li>
+    <li style="font-size: small">
+      [8] Wu, Z. et al. (2026). <a href="https://arxiv.org/abs/2509.24496" target="_blank">LLM DNA: Tracing Model Evolution via Functional Representations</a>. ICLR 2026.
+    </li>
+  </ul>
+</div>
