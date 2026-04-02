@@ -70,10 +70,7 @@
 <loc>http://localhost:4000/blogs</loc>
 </url>
 <url>
-<loc>http://localhost:4000/contact/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/discover</loc>
+<loc>http://localhost:4000/contact</loc>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>

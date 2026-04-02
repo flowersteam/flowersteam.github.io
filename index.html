@@ -21,6 +21,13 @@ permalink: /
   <button id="btn-theme" class="post-tag" onclick="showView('theme')">Sort by key theme</button>
 </div>
 
+<div id="theme-nav" style="display: none; margin-bottom: 1.5rem;">
+  <span class="post-meta">Fast link to key theme:</span>
+  <a href="#human-autotelic-learning" class="post-tag">Human autotelic learning</a>
+  <a href="#machine-autotelic-learning" class="post-tag">Machine autotelic learning</a>
+  <a href="#educational-technologies" class="post-tag">Educational technologies and assisted scientific discovery</a>
+</div>
+
 <div id="view-default">
   {% for post in site.posts %}
     <div class="post py2">
@@ -55,7 +62,7 @@ permalink: /
 
 <div id="view-theme" style="display: none;">
 
-  <h2>Human autotelic learning</h2>
+  <h2 id="human-autotelic-learning">Human autotelic learning</h2>
   {% for post in site.posts %}{% if post.tags contains 'human-autotelic-learning' %}
     <div class="post py2">
       <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
@@ -86,7 +93,7 @@ permalink: /
     </div>
   {% endif %}{% endfor %}
 
-  <h2>Machine autotelic learning</h2>
+  <h2 id="machine-autotelic-learning">Machine autotelic learning</h2>
   {% for post in site.posts %}{% if post.tags contains 'machine-autotelic-learning' %}
     <div class="post py2">
       <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
@@ -117,7 +124,7 @@ permalink: /
     </div>
   {% endif %}{% endfor %}
 
-  <h2>Educational technologies and assisted scientific discovery</h2>
+  <h2 id="educational-technologies">Educational technologies and assisted scientific discovery</h2>
   {% for post in site.posts %}{% if post.tags contains 'educational-technologies' or post.tags contains 'assisted-scientific-discovery' %}
     <div class="post py2">
       <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
@@ -154,6 +161,7 @@ permalink: /
 function showView(view) {
   document.getElementById('view-default').style.display = view === 'default' ? '' : 'none';
   document.getElementById('view-theme').style.display = view === 'theme' ? '' : 'none';
+  document.getElementById('theme-nav').style.display = view === 'theme' ? '' : 'none';
   document.getElementById('btn-default').classList.toggle('active', view === 'default');
   document.getElementById('btn-theme').classList.toggle('active', view === 'theme');
 }
