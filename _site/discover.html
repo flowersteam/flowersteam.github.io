@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Discover &#8211; Developmental Systems, a Blog of the Flowers Lab</title>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta name="robots" content="all">
+    <meta name="author" content="INRIA Flowers Team">
+    
+    
+    <link rel="canonical" href="http://localhost:4000/discover">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?202604021143" type="text/css">
+
+    <!-- Fonts -->
+    
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- MathJax -->
+    
+    <script type="text/javascript" async
+        src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <!-- Verifications -->
+    
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Discover">
+    <meta property="og:description" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta property="og:url" content="http://localhost:4000/discover">
+    <meta property="og:site_name" content="Developmental Systems, a Blog of the Flowers Lab">
+    
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
+    
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@FlowersINRIA" />
+        <meta name="twitter:creator" content="@FlowersINRIA" />
+    
+    <meta name="twitter:title" content="Discover" />
+    <meta name="twitter:description" content="Developmental Systems, a Blog of the Flowers Lab" />
+    <meta name="twitter:url" content="http://localhost:4000/discover" />
+    
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
+    
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-44726622-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+
+     <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_HTML"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700&display=swap" rel="stylesheet">
+    <!--&lt;!&ndash; Load jQuery &ndash;&gt;-->
+    <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+    <!--&lt;!&ndash; Load KaTeX &ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>&ndash;&gt;-->
+
+    <!--<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+    
+
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+    <script src="/css/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
+</head>
+
+
+<body class="site">
+  
+	
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: 'none',
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [['$$','$$']],
+      processEnvironments: false
+    },
+    // show equation numbers
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    'HTML-CSS': {
+      imageFont: null
+    }
+  });
+</script>
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+      <div class="measure">
+          <a href="/" class="site-title">
+              <img src="/flowers-logo.png">
+          </a>
+      <nav class="site-nav">
+        
+
+
+        <a class="nav-link"  href="https://flowers.inria.fr/"  target="_blank">Flowers Lab</a>
+
+
+    
+    
+
+    
+        <a class="nav-active" href="/discover">Discover</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/blogs">Blogs</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/publications/">Publications</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/about">About</a>
+    
+
+    
+
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+      <a class="fa fa-github" href="https://github.com/flowersteam"></a>
+    
+    
+    
+    
+    <a class="fa fa-rss" href="/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/FlowersINRIA"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:pierre-yves.oudeyer@inria.fr"></a>
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        <div class="post">
+  <header class="post-header">
+    <h1 class="h1">Discover</h1>
+  </header>
+  <article class="post-content">
+  <h2 id="what-is-developmental-ai">What is developmental AI?</h2>
+<p>The Developmental Systems blog presents and discusses work from the <a href="https://flowers.inria.fr">Flowers Lab</a> (Inria, Univ. Bordeaux and Ensta ParisTech) and collaborators, and targets a wide and interdisciplinary audience.</p>
+
+<p>The works we present here are part of a long-term research program to understand autonomous developmental learning, at the frontiers of AI and cognitive sciences. This research program in <a href="https://www.youtube.com/watch?v=7bJ0fnvPLaA&amp;feature=emb_logo">developmental machine learning</a> studies how machines could learn like children, i.e. how one could build machines that are able to develop open-ended repertoires of sensorimotor and social skills in the real world, with limited resources of time, energy and compute. In return, we also study how computational models of developmental learning can be used as <a href="http://www.pyoudeyer.com/oudeyerWiley16.pdf">tools to understand better human learning</a>, as well as in <a href="http://www.pyoudeyer.com/oudeyerGottliebLopesPBR16.pdf">educational technologies</a> to foster efficient and intrinsically motivated learning.</p>
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>New to the lab’s research? Here are some good entry points:</p>
+
+<ul>
+  <li><strong><a href="https://flowers.inria.fr">About the lab</a></strong> — our mission and long-term research programme</li>
+  <li><strong><a href="/blogs">Blog posts</a></strong> — accessible write-ups of our latest work</li>
+  <li><strong><a href="/publications">Publications</a></strong> — selected list of academic papers</li>
+</ul>
+
+<h2 id="key-themes">Key themes</h2>
+
+<p><strong>Human autotelic learning</strong></p>
+
+<p><strong>Machine autotelic learning</strong></p>
+
+<p><strong>Applications: Educational technologies and Assisted scientific discovery</strong></p>
+
+<h2 id="latest-talks--videos">Latest talks &amp; videos</h2>
+
+<p>A good way to get a feel for the research:</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=7bJ0fnvPLaA">Developmental machine learning (Pierre-Yves Oudeyer)</a></li>
+</ul>
+
+<h2 id="latest-blogs">Latest blogs</h2>
+
+<div class="post py1">
+  <div style="display: flex; gap: 1rem; align-items: flex-start;">
+    <div style="flex-shrink: 0; width: 90px; text-align: right;">
+      <p class="post-meta" style="margin: 0;">Mar 9, 2026</p>
+    </div>
+    <div style="flex: 1; min-width: 0;">
+      
+      <a href="https://koalastothemax.com/" class="post-link" target="_blank" rel="noopener">
+        <h3 class="h3 post-title">Some External Resource <span class="external-link-icon">↗</span></h3>
+      </a>
+      
+      <div class="post-meta post-authors">
+        <a href="https://scholar.google.com/citations?user=isuFqLIAAAAJ&amp;hl=fr">JP</a> 
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+<div class="post py1">
+  <div style="display: flex; gap: 1rem; align-items: flex-start;">
+    <div style="flex-shrink: 0; width: 90px; text-align: right;">
+      <p class="post-meta" style="margin: 0;">Feb 6, 2025</p>
+    </div>
+    <div style="flex: 1; min-width: 0;">
+      
+      <a href="/glam" class="post-link">
+        <h3 class="h3 post-title">Can AIs understand our world? Functionally grounding LLMs in interactive environments.</h3>
+      </a>
+      
+      <div class="post-meta post-authors">
+        <a href="https://clement-romac.github.io/">Clément Romac</a>, <a href="">Thomas Carta</a>, <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a>
+      </div>
+      <p class="post-summary">LLMs struggle to connect words to real-world concepts. We propose functional grounding via reinforcement learning in interactive environments, and demonstrate it with GLAM on BabyAI-Text.</p>
+    </div>
+    
+    <a href="/glam" style="flex-shrink: 0;">
+      <img src="/images/posts/2025-02-06-glam/robot.png" alt="Can AIs understand our world? Functionally grounding LLMs in interactive environments." style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;" />
+    </a>
+    
+  </div>
+</div>
+
+<div class="post py1">
+  <div style="display: flex; gap: 1rem; align-items: flex-start;">
+    <div style="flex-shrink: 0; width: 90px; text-align: right;">
+      <p class="post-meta" style="margin: 0;">Aug 9, 2023</p>
+    </div>
+    <div style="flex: 1; min-width: 0;">
+      
+      <a href="/ecological-AI" class="post-link">
+        <h3 class="h3 post-title">An ecological approach to  Artificial Intelligence</h3>
+      </a>
+      
+      <div class="post-meta post-authors">
+        <a href="https://eleninisioti.github.io/#/">Eleni Nisioti</a>, <a href="http://clement-moulin-frier.github.io/">Clément Moulin-Frier</a>, <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a> 
+      </div>
+      <p class="post-summary">We explore how Human Behavioral Ecology can guide the pursuit of human-like AI, proposing a conceptual framework to bridge natural and artificial intelligence research.</p>
+    </div>
+    
+  </div>
+</div>
+
+<div class="post py1">
+  <div style="display: flex; gap: 1rem; align-items: flex-start;">
+    <div style="flex-shrink: 0; width: 90px; text-align: right;">
+      <p class="post-meta" style="margin: 0;">Oct 11, 2022</p>
+    </div>
+    <div style="flex: 1; min-width: 0;">
+      
+      <a href="/kids_ask" class="post-link">
+        <h3 class="h3 post-title">Designing artificial conversational agents to train children's curiosity during learning, a proof of concept through the Kids Ask project</h3>
+      </a>
+      
+      <div class="post-meta post-authors">
+        <a href="https://scholar.google.com/citations?user=L5WCl5MAAAAJ&amp;hl=fr">Rania Abdelghani</a>, <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a>, <a href="">Edith Law</a>, and<a href="">Hélène Sauzéon</a> 
+      </div>
+      <p class="post-summary">Kids Ask designs educational technologies that stimulate epistemic curiosity in young learners, leveraging artificial conversational agents to support question-asking and self-directed learning.</p>
+    </div>
+    
+    <a href="/kids_ask" style="flex-shrink: 0;">
+      <img src="/images/posts/2022-10-11-kids_ask/Illustration.png" alt="Designing artificial conversational agents to train children&apos;s curiosity during learning, a proof of concept through the Kids Ask project" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;" />
+    </a>
+    
+  </div>
+</div>
+
+<div class="post py1">
+  <div style="display: flex; gap: 1rem; align-items: flex-start;">
+    <div style="flex-shrink: 0; width: 90px; text-align: right;">
+      <p class="post-meta" style="margin: 0;">Jul 19, 2022</p>
+    </div>
+    <div style="flex: 1; min-width: 0;">
+      
+      <a href="/watch_ai_through_cogsci" class="post-link">
+        <h3 class="h3 post-title">Watching artificial intelligence through the lens of cognitive science methodologies</h3>
+      </a>
+      
+      <div class="post-meta post-authors">
+        <a href="https://www.mswym.com/">Masataka Sawayama</a>, <a href="https://scholar.google.com/citations?user=0HUr1q4AAAAJ&amp;hl=ja&amp;oi=ao">Yoann Lemesle</a>, and<a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a> 
+      </div>
+      <p class="post-summary">Large language models are hard to interpret. We propose importing cognitive science methodologies to understand their functional representations, running controlled experiments inspired by cognitive neuroscience.</p>
+    </div>
+    
+    <a href="/watch_ai_through_cogsci" style="flex-shrink: 0;">
+      <img src="/images/posts/2022-07-20-watch_ai_through_cogsci/figure_blog1.png" alt="Watching artificial intelligence through the lens of cognitive science methodologies" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;" />
+    </a>
+    
+  </div>
+</div>
+
+<h2 id="contact">Contact</h2>
+
+<p>Interested in collaborating or joining the lab? Reach out via the <a href="/about">About</a> page.</p>
+
+  </article>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--<footer class="center">
+  <div class="measure">
+    <small>
+      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+      &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">GitHub</a>.
+    </small>
+  </div>
+
+
+
+</footer>
+
+<script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+    }
+</script>
+
+
+    <script type="text/javascript">
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" +
+           katex.renderToString(tex) +
+           "</span>";
+});
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" +
+           katex.renderToString("\\displaystyle "+tex) +
+           "</div>";
+});
+
+
+
+</script>
+
+
+
+<!--<script>-->
+      <!--renderMathInElement(-->
+          <!--document.body,-->
+          <!--{-->
+              <!--delimiters: [-->
+                  <!--{left: "$$", right: "$$", display: true},-->
+                  <!--{left: "\\[", right: "\\]", display: true},-->
+                  <!--{left: "$", right: "$", display: false},-->
+                  <!--{left: "\\(", right: "\\)", display: false}-->
+              <!--]-->
+          <!--}-->
+      <!--);-->
+    <!--</script>-->-->
+</body>
+</html>

@@ -7,8 +7,9 @@ baseurl:     ""
 url:         "http://flowersteam.github.io"
 date_format: "%b %-d, %Y"
 header_pages:
+ - discover.md
+ - blogs.html
  - publications.md
- - archives.html
  - about.md
 
     

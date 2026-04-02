@@ -7,8 +7,14 @@
     margin-bottom: 0;
 }
 
+.external-link-icon {
+    font-size: 0.65em;
+    vertical-align: super;
+    opacity: 0.6;
+}
+
 .post-authors{
-    margin-bottom: 10px;
+    margin-bottom: 3px;
 }
 
 .post-header h1{
@@ -50,10 +56,117 @@
   width: auto;
   font-weight: 300;
   padding: .25em 0;
+  margin-bottom: 0.1rem;
   color: #7a7a7a;
   font-style: italic;
 }
 
 .related-post-title {
   border-bottom: thin solid #f3f3f3;
+}
+
+.post-tag {
+  display: inline-block;
+  background: rgba(85, 151, 246, 0.12);
+  color: $flowers-blue;
+  border: none;
+  border-radius: 999px;
+  padding: 2px 12px;
+  margin: 2px 3px;
+  font-size: 0.8rem;
+  font-style: normal;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(85, 151, 246, 0.3);
+    color: $flowers-blue;
+    text-decoration: none;
+  }
+
+  &.active {
+    background: #6495ED;
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.post-tags {
+  margin-top: 0.4em;
+}
+
+.tag-logic-btn {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 2px 10px;
+  border: 2px solid $flowers-blue;
+  border-radius: 999px;
+  background: #fff;
+  color: $flowers-blue;
+  font-size: 0.8rem;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 2px;
+
+  &:hover {
+    background: rgba(85, 151, 246, 0.15);
+  }
+}
+
+.tag-buttons {
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  button.post-tag {
+    background: rgba(85, 151, 246, 0.12);
+    font-family: inherit;
+    font-size: 0.8rem;
+  }
+}
+
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5em;
+  font-size: 0.9rem;
+
+  input[type="text"] {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: $flowers-blue;
+    }
+  }
+}
+
+.search-filter {
+  margin-bottom: 1.5em;
+
+  input[type="text"] {
+    width: 100%;
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: $flowers-blue;
+    }
+  }
 }

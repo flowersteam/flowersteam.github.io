@@ -2,11 +2,13 @@
 layout:	post
 title: 'Guiding and Learning Without Common Ground: a New Interactive Learning Paradigm'
 date: 2022-04-27
-summary: Humans have an outstanding ability to teach and learn form each other without relying on pre-established communication protocol (not even expressing rewards). Could machine do the same? In this blog post we propose a new interactive learning paradigm to investigate this question. 
+summary: Can machines teach and learn from each other without a shared protocol? We introduce the Architect-Builder Problem, a new interactive learning paradigm to investigate this question.
 
 categories:	jekyll
 permalink: architect_builder_problem
+thumbnail: /images/posts/2022-04-27-architect_builder_problem/baby-stacking-cubes.jpg
 use_math: true
+tags: [machine-autotelic-learning, interactive-learning, communication, multi-agent, social-learning]
 authors: 
 
 - name: 'Tristan Karch'
@@ -28,7 +30,7 @@ authors:
 Humans are incredibly good at teaching and learning from each other. And impressively, they are able to do so in contexts where they share little to no common ground -- such as a shared language or a known collective objective. In early stages of their development, children can interpret social cues from their parents to detect their intention and interact with them. In the following picture for instance, a preverbal infant that did not yet learn to produce words can learn to stack objects by reacting to guidance provided by a caregiver. In these types of interactions, not only does the child discover a new task, she also learns to interact and communicate with others. 
 
 <div align="center" style="margin-bottom:40px">
-	<img class="80" src="/images/posts/abp/baby-stacking-cubes.jpg" width="60%" alt="Baby Stacking Cubes" />
+	<img class="80" src="/images/posts/2022-04-27-architect_builder_problem/baby-stacking-cubes.jpg" width="60%" alt="Baby Stacking Cubes" />
 
 <sub style="display: block; line-height: 1.5em">
 	<i>A picture of a child learning to stack cubes from interactions with a caregiver (image taken from  <a href="https://quotes.pinnedby.me/View/view.php?id=519321400792688147" target="_blank">here</a>)</i></sub>
@@ -49,7 +51,7 @@ The Co-Construction game is an experiment proposed by Vollmer et al. <span class
 
 
 <div align="center" style="margin-bottom:40px">
-	<img class="80" src="/images/posts/abp/co-construction-game.png" width="80%" alt="coco-game" />
+	<img class="80" src="/images/posts/2022-04-27-architect_builder_problem/co-construction-game.png" width="80%" alt="coco-game" />
 
 <sub style="display: block; line-height: 1.5em">
 	<i>The Co-Construction game specifications: link to <a href="https://jgrizou.com/projects/coco_game/" target="_blank">website</a> and link to <a href="https://www.youtube.com/watch?v=TAeURLIpiEo&feature=emb_logo" target="_blank">video</a>.</i></sub>
@@ -76,7 +78,7 @@ In a recent ICLR paper <span class="hovertext" data-hover="Barde et al. Learning
 To stick with the spirit of the Co-Construction game, we designed a simple construction environment called BuildWorld. BuildWorld is a 2D grid world in which the builder can navigate and manipulate blocks to construct various shapes. In the ABP, the two agents have asymmetrical roles. Only the architect knows about the target construction (the goal). In a Markov Decision Process, this means that only the architect perceives the rewards given by the environment. However, the architect cannot make any actions in the environment. It can only observe the states ($s$) of the environment.  The interactions unfold in the following sequence. First, the architect produces a message ($m$) given a certain state and a goal. The builder then receives the message and takes an action ($a$) that makes the environment transition to a new state ($s’$).
 
 <div align="center" style="margin-bottom:40px">
-  <img class="80" src="/images/posts/abp/abp-sketches.png" width="80%" alt="abp-sketches" />
+  <img class="80" src="/images/posts/2022-04-27-architect_builder_problem/abp-sketches.png" width="80%" alt="abp-sketches" />
 
 <sub style="display: block; line-height: 1.5em">
   <i>Sketch of the Architect-Builder Problem and sequential diagram of interactions.</i></sub>
@@ -93,19 +95,19 @@ First it is interesting because it is a new way to approach multi-agent learning
   <div class="container">
     <div class="row">
       <div class="col-sm">
-        <img class="80" src="/images/posts/abp/marl.png" width="90%" alt="marl-vs-abp" />
+        <img class="80" src="/images/posts/2022-04-27-architect_builder_problem/marl.png" width="90%" alt="marl-vs-abp" />
       </div>
       <div class="col-sm" style='padding-top:13%;'>
         <span>&#8594;</span>
       </div>
       <div class="col-sm">
-        <img class="80" src="/images/posts/abp/marl-vs-abp.gif" width="90%" alt="marl-vs-abp" />
+        <img class="80" src="/images/posts/2022-04-27-architect_builder_problem/marl-vs-abp.gif" width="90%" alt="marl-vs-abp" />
       </div>
       <div class="col-sm" style='padding-top:13%;'> 
         <span>&#8594;</span>
       </div>
       <div class="col-sm">
-        <img class="80" src="/images/posts/abp/abp.png" width="90%" alt="marl-vs-abp" />
+        <img class="80" src="/images/posts/2022-04-27-architect_builder_problem/abp.png" width="90%" alt="marl-vs-abp" />
       </div>
     </div>
   </div>
@@ -127,7 +129,7 @@ We like to think that the ABP is not only designed to study the emergence of com
 ABP is interesting because it has the potential to model real world applications. Indeed, it shares similar assumptions with Brain Computer Interfaces (BCI). A typical example of a BCI is a robotic arm controlled by brain signals. 
 
 <div align="center" style="margin-bottom:40px">
-  <img class="80" src="/images/posts/abp/brain-computer.jpg" width="60%" alt="bci" />
+  <img class="80" src="/images/posts/2022-04-27-architect_builder_problem/brain-computer.jpg" width="60%" alt="bci" />
 
 <sub style="display: block; line-height: 1.5em">
   <i>An example of a BCI (image taken from <a href="https://factuel.univ-lorraine.fr/node/220" target="_blank">here</a>).</i></sub>
@@ -157,7 +159,7 @@ To address these two challenges we rely on two priors:
 Using these two priors we introduce the Architect-Builder Iterated Guiding algorithm. ABIG is an iterative method that alternates between a *Modeling* and a *Guiding* frame.
 
 <div align="center" style="margin-bottom:40px">
-  <img class="80" src="/images/posts/abp/abig.png" width="90%" alt="abig" />
+  <img class="80" src="/images/posts/2022-04-27-architect_builder_problem/abig.png" width="90%" alt="abig" />
 
 <sub style="display: block; line-height: 1.5em">
   <i>Diagram of the ABIG algorithm.</i></sub>
@@ -172,8 +174,8 @@ By iterating between these two frames, we show in our paper that Architect-Build
 
 
 <div align="center" style="margin-bottom:40px">
-  <img class="80" src="/images/posts/abp/y-shape-crop.gif" width="46%" alt="ygif" />
-  <img class="80" src="/images/posts/abp/o-shape-crop.gif" width="46%" alt="ogif" />
+  <img class="80" src="/images/posts/2022-04-27-architect_builder_problem/y-shape-crop.gif" width="46%" alt="ygif" />
+  <img class="80" src="/images/posts/2022-04-27-architect_builder_problem/o-shape-crop.gif" width="46%" alt="ogif" />
 <sub style="display: block; line-height: 1.5em">
   <i>Example of interactions using successful protocols learned with ABIG.</i></sub>
 </div>

@@ -10,7 +10,7 @@
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Standard deep RL algorithms using continuous actions suffer from inefficient exploration when facing sparse or deceptive reward problems. Here we propose to decouple exploration and exploitation. An exploration algorithm first optimizes for diversity in the space of behaviors. Then, a state-of-the art deep RL algorithm uses the collected trajectories for bootstrapping.">
+    <meta name="description" content="Deep RL suffers from inefficient exploration in sparse-reward settings. We decouple exploration and exploitation: diversity search collects varied trajectories, then deep RL bootstraps from them.">
     <meta name="robots" content="all">
     <meta name="author" content="INRIA Flowers Team">
     
@@ -19,7 +19,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?202004291649" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202604021143" type="text/css">
 
     <!-- Fonts -->
     
@@ -60,7 +60,7 @@
         <meta name="twitter:creator" content="@FlowersINRIA" />
     
     <meta name="twitter:title" content="Bootstrapping Deep RL with Population-Based Diversity Search" />
-    <meta name="twitter:description" content="Standard deep RL algorithms using continuous actions suffer from inefficient exploration when facing sparse or deceptive reward problems. Here we propose to decouple exploration and exploitation. An exploration algorithm first optimizes for diversity in the space of behaviors. Then, a state-of-the art deep RL algorithm uses the collected trajectories for bootstrapping." />
+    <meta name="twitter:description" content="Deep RL suffers from inefficient exploration in sparse-reward settings. We decouple exploration and exploitation: diversity search collects varied trajectories, then deep RL bootstraps from them." />
     <meta name="twitter:url" content="http://localhost:4000/bootstraping_rl_with_diversity" />
     
     <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
@@ -169,6 +169,24 @@
     
 
     
+        <a class="nav-link" href="/discover">Discover</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/blogs">Blogs</a>
+    
+
+    
+
+    
+    
+
+    
         <a class="nav-link" href="/publications/">Publications</a>
     
 
@@ -242,6 +260,21 @@
     16 minute read
   
   </span>
+  
+  <div class="post-tags">
+    
+      <a href="/tags#machine-autotelic-learning" class="post-tag">machine-autotelic-learning</a>
+    
+      <a href="/tags#deep-rl" class="post-tag">deep-RL</a>
+    
+      <a href="/tags#exploration" class="post-tag">exploration</a>
+    
+      <a href="/tags#diversity-search" class="post-tag">diversity-search</a>
+    
+      <a href="/tags#reinforcement-learning" class="post-tag">reinforcement-learning</a>
+    
+  </div>
+  
 </div>
 
 <article class="post-content">
@@ -297,7 +330,7 @@
 
 <h2 id="the-environments">The environments</h2>
 <p>Continuous Mountain Car (CMC) is a simple 2D problem available in the OpenAI Gym environments. In this problem, an underpowered car must learn to swing in a valley in order to 
-reach the top of a hill. Success yields a large positive reward (+100) while there is a small penalty for the car energy expenses <script type="math/tex">(-0.1 \times \mid a\mid^2)</script>.</p>
+reach the top of a hill. Success yields a large positive reward (+100) while there is a small penalty for the car energy expenses \((-0.1 \times \mid a\mid^2)\).</p>
 
 <p>In Half-Cheetah (HC), a 2D biped must learn how to run as fast as possible. It receives observations about its absolute and joints positions and velocities (17D) and can control the torques of all joints (6D).</p>
 
@@ -466,25 +499,18 @@ positions along the x-axis as behavioral features.</i></sub>
 <p>A question that remains unresolved is: what makes a good replay buffer? To answer it, we looked for potential correlations between the final performance of GEP-PG on Half-Cheetah and a list of other factors. We ran GEP-PG with various replay buffer sizes (100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000 episodes) and a fixed budget for the DDPG part (1500 episodes). We found out that GEP-PG’s performance is not a function of the replay buffer size. Filling the replay buffer with 100 GEP episodes is enough to bootstrap DDPG. However, the quality and diversity of the replay buffer are important factors. We found that the performance of GEP-PG correlates significantly to the buffer’s quality:</p>
 
 <ul>
-  <li>the final performance of GEP <script type="math/tex">% <![CDATA[
-(p<2\times10^{-6}) %]]></script></li>
-  <li>the average performance of GEP during training <script type="math/tex">% <![CDATA[
-(p<4\times10^{-8}) %]]></script></li>
+  <li>the final performance of GEP \((p&lt;2\times10^{-6})\)</li>
+  <li>the average performance of GEP during training \((p&lt;4\times10^{-8})\)</li>
 </ul>
 
 <p>but also to the buffer’s diversity, as quantified by various measures:</p>
 
 <ul>
-  <li>the standard deviation of the performances obtained by GEP during training. This measure quantifies the diversity of performances reached during training.  <script type="math/tex">% <![CDATA[
-(p<3\times10^{-10}) %]]></script></li>
-  <li>the standard deviation of the observation vectors averaged across dimensions. This quantifies the diversity of sensory inputs. <script type="math/tex">% <![CDATA[
-(p<3\times10^{-8}) %]]></script></li>
-  <li>outcome diversity measured by the average distance to the k-nearest neighbors in outcome space (for various k). This measure is normalized by the average distance to the 1-nearest neighbor in the case of a uniform distribution, which makes it insensitive to the sample size. This is a measure of outcomes diversity. <script type="math/tex">% <![CDATA[
-(p<4\times10^{-10}) %]]></script></li>
-  <li>the percentage of cells filled when the outcome space is discretized (with various number of cells). We also use a number of cells equal to the number of points, which make the measure insensitive to this number. This is a measure of outcomes diversity. <script type="math/tex">% <![CDATA[
-(p<4\times10^{-5}) %]]></script></li>
-  <li>the discretized entropy with various number of cells. <script type="math/tex">% <![CDATA[
-(p<6\times10^{-7}) %]]></script></li>
+  <li>the standard deviation of the performances obtained by GEP during training. This measure quantifies the diversity of performances reached during training.  \((p&lt;3\times10^{-10})\)</li>
+  <li>the standard deviation of the observation vectors averaged across dimensions. This quantifies the diversity of sensory inputs. \((p&lt;3\times10^{-8})\)</li>
+  <li>outcome diversity measured by the average distance to the k-nearest neighbors in outcome space (for various k). This measure is normalized by the average distance to the 1-nearest neighbor in the case of a uniform distribution, which makes it insensitive to the sample size. This is a measure of outcomes diversity. \((p&lt;4\times10^{-10})\)</li>
+  <li>the percentage of cells filled when the outcome space is discretized (with various number of cells). We also use a number of cells equal to the number of points, which make the measure insensitive to this number. This is a measure of outcomes diversity. \((p&lt;4\times10^{-5})\)</li>
+  <li>the discretized entropy with various number of cells. \((p&lt;6\times10^{-7})\)</li>
 </ul>
 
 <p> </p>

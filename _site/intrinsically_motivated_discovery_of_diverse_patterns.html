@@ -10,7 +10,7 @@
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Self-organisation occurs in many physical, chemical and biological systems, as well as in artificial systems like the Game of Life. Yet, these systems are still full of mysteries and we are far from fully grasping what structures can self-organize, how to represent and classify them, and how to predict their evolution. In this blog post, we present our recent paper which formulates the problem of automated discovery of diverse self-organized patterns in such systems. Using a continuous Game of Life as a testbed, we show how intrinsically-motivated goal exploration processes, initially developed for learning of inverse models in robotics, can efficiently be transposed to this novel application area.">
+    <meta name="description" content="We automate discovery of diverse self-organized patterns in complex systems. Intrinsically-motivated goal exploration on a continuous Game of Life reveals a rich variety of emergent structures.">
     <meta name="robots" content="all">
     <meta name="author" content="INRIA Flowers Team">
     
@@ -19,7 +19,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?202004291649" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202604021143" type="text/css">
 
     <!-- Fonts -->
     
@@ -60,7 +60,7 @@
         <meta name="twitter:creator" content="@FlowersINRIA" />
     
     <meta name="twitter:title" content="Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems" />
-    <meta name="twitter:description" content="Self-organisation occurs in many physical, chemical and biological systems, as well as in artificial systems like the Game of Life. Yet, these systems are still full of mysteries and we are far from fully grasping what structures can self-organize, how to represent and classify them, and how to predict their evolution. In this blog post, we present our recent paper which formulates the problem of automated discovery of diverse self-organized patterns in such systems. Using a continuous Game of Life as a testbed, we show how intrinsically-motivated goal exploration processes, initially developed for learning of inverse models in robotics, can efficiently be transposed to this novel application area." />
+    <meta name="twitter:description" content="We automate discovery of diverse self-organized patterns in complex systems. Intrinsically-motivated goal exploration on a continuous Game of Life reveals a rich variety of emergent structures." />
     <meta name="twitter:url" content="http://localhost:4000/intrinsically_motivated_discovery_of_diverse_patterns" />
     
     <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
@@ -169,6 +169,24 @@
     
 
     
+        <a class="nav-link" href="/discover">Discover</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/blogs">Blogs</a>
+    
+
+    
+
+    
+    
+
+    
         <a class="nav-link" href="/publications/">Publications</a>
     
 
@@ -242,6 +260,21 @@
     26 minute read
   
   </span>
+  
+  <div class="post-tags">
+    
+      <a href="/tags#assisted-scientific-discovery" class="post-tag">assisted-scientific-discovery</a>
+    
+      <a href="/tags#self-organization" class="post-tag">self-organization</a>
+    
+      <a href="/tags#intrinsic-motivation" class="post-tag">intrinsic-motivation</a>
+    
+      <a href="/tags#discovery" class="post-tag">discovery</a>
+    
+      <a href="/tags#cellular-automata" class="post-tag">cellular-automata</a>
+    
+  </div>
+  
 </div>
 
 <article class="post-content">
@@ -572,7 +605,7 @@ These findings strongly suggest that the ability of a representation R to better
 To evaluate if our approach discovers a higher diversity than other approaches we propose to measure the diversity of a discovered set of patterns by the area it covers when projected in an <em>analytic behavior space</em>.
 This space is externally defined by the experimenter and the covered area is measured by binning the space and counting the number of explored bins. <br />
 Because we do not have access to an easily interpretable low-dimensional <em>behavior space</em>, we constructed it by concatenating (i) features learned by a VAE trained on a very large dataset of Lenia patterns (allowing to cover order of magnitude more patterns that what could be found in any single algorithm experiment); and (ii) 5 hand-defined features from the original Lenia’s paper.<br />
-We also measured the diversity in the space of parameters <script type="math/tex">\Theta</script> by concatenating Lenia’s parameters $(R, T, \mu, \sigma, \beta_1, \beta_2, \beta_3)$ and the latent representation of a VAE trained on a large dataset of initial Lenia states ($A^{t=1}$).<br />
+We also measured the diversity in the space of parameters \(\Theta\) by concatenating Lenia’s parameters $(R, T, \mu, \sigma, \beta_1, \beta_2, \beta_3)$ and the latent representation of a VAE trained on a large dataset of initial Lenia states ($A^{t=1}$).<br />
 Additionally, we categorized the patterns into 3 families: <em>dead</em> (the activity of all grid cells being either 0 or 1), <em>animal</em> (finite and connected pattern of activity) and <em>non-animal</em> (remaining - usually spread over the whole state space). This categorization follows the identification of <em>spatially localized patterns</em> (SLPs)  or <em>solitons</em> in Conway’s Game of Life, equivalent to what we call “animals” in Lenia, versus other global patterns. These categories allow us to analyze the exploration behaviors of the different IMGEP variants in identifying a certain <em>type</em> of pattern (as we could qualitatively observe by visually browsing the results).<br />
 Using this procedure, the exploration behaviors of different IMGEP variants were evaluated and compared to a naive random exploration.</p>
 <div style="border-style: solid; border-radius: 25px; border-width: 2px; padding: 10px;">
@@ -635,7 +668,7 @@ These automated experimental platforms offer novel levels of precision and contr
 
 <h3 id="in-silico-in-vitro-soon-in-vivo"><em>In silico</em>, <em>in vitro</em>, soon <em>in vivo</em>?</h3>
 <p>Finally, near future research will probably happen at the frontier of simulated machine environments (“in silico”), controlled experimental conditions (“in vitro”) and potentially directly in living organisms (“in vivo”).
-With the advances in synthetic biology and powerful novel technologies such as <a href="https://en.wikipedia.org/wiki/3D_bioprinting">bio-printing</a>, we can hope to create functional tissues or organs for in vivo applications such as regenerative medicine and drug discovery.
+With the advances in synthetic biology and powerful novel technologies such as <a href="https://polylactide.com/organ-bioprinting/">bio-printing</a>, we can hope to create functional tissues or organs for in vivo applications such as regenerative medicine and drug discovery.
 The recent work of <a href="https://www.pnas.org/content/117/4/1853">Kriegman et al., 2020</a>, into which evolutionary algorithms at the computer level where directly transposed to “engineer” a new kind of living organism, the so-called <a href="https://en.wikipedia.org/wiki/Xenobot">xenobots</a>, is an exciting proof of concept in that direction.</p>
 
 <h2 id="conclusion">Conclusion</h2>

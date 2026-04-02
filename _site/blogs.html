@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blogs &#8211; Developmental Systems, a Blog of the Flowers Lab</title>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta name="robots" content="all">
+    <meta name="author" content="INRIA Flowers Team">
+    
+    
+    <link rel="canonical" href="http://localhost:4000/blogs">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?202604021143" type="text/css">
+
+    <!-- Fonts -->
+    
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- MathJax -->
+    
+    <script type="text/javascript" async
+        src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <!-- Verifications -->
+    
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Blogs">
+    <meta property="og:description" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta property="og:url" content="http://localhost:4000/blogs">
+    <meta property="og:site_name" content="Developmental Systems, a Blog of the Flowers Lab">
+    
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
+    
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@FlowersINRIA" />
+        <meta name="twitter:creator" content="@FlowersINRIA" />
+    
+    <meta name="twitter:title" content="Blogs" />
+    <meta name="twitter:description" content="Developmental Systems, a Blog of the Flowers Lab" />
+    <meta name="twitter:url" content="http://localhost:4000/blogs" />
+    
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
+    
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-44726622-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+
+     <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_HTML"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700&display=swap" rel="stylesheet">
+    <!--&lt;!&ndash; Load jQuery &ndash;&gt;-->
+    <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+    <!--&lt;!&ndash; Load KaTeX &ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>&ndash;&gt;-->
+
+    <!--<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+    
+
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+    <script src="/css/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
+</head>
+
+
+<body class="site">
+  
+	
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: 'none',
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [['$$','$$']],
+      processEnvironments: false
+    },
+    // show equation numbers
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    'HTML-CSS': {
+      imageFont: null
+    }
+  });
+</script>
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+      <div class="measure">
+          <a href="/" class="site-title">
+              <img src="/flowers-logo.png">
+          </a>
+      <nav class="site-nav">
+        
+
+
+        <a class="nav-link"  href="https://flowers.inria.fr/"  target="_blank">Flowers Lab</a>
+
+
+    
+    
+
+    
+        <a class="nav-link" href="/discover">Discover</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-active" href="/blogs">Blogs</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/publications/">Publications</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/about">About</a>
+    
+
+    
+
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+      <a class="fa fa-github" href="https://github.com/flowersteam"></a>
+    
+    
+    
+    
+    <a class="fa fa-rss" href="/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/FlowersINRIA"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:pierre-yves.oudeyer@inria.fr"></a>
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        <div class="post">
+  <header class="post-header">
+    <h1 class="h1">Blogs</h1>
+  </header>
+  <article class="post-content">
+  <h1>Filters</h1>
+
+<div class="search-filter">
+  <input type="text" id="search-input" placeholder="Search by title…" oninput="applyFilters()" />
+</div>
+
+
+Tags rule: </br>
+<button id="tag-logic-toggle" class="tag-logic-btn" onclick="toggleLogic()">OR</button>
+</br>
+Selected tags:
+<div class="tag-buttons">
+
+  <button class="post-tag active" data-tag="all" onclick="toggleTag(null, this)">All</button>
+  
+  
+    
+      <button class="post-tag" id="btn-assisted-scientific-discovery" data-tag="assisted-scientific-discovery" onclick="toggleTag('assisted-scientific-discovery', this)">assisted-scientific-discovery</button>
+    
+  
+    
+      <button class="post-tag" id="btn-cellular-automata" data-tag="cellular-automata" onclick="toggleTag('cellular-automata', this)">cellular-automata</button>
+    
+  
+    
+      <button class="post-tag" id="btn-cognitive-development" data-tag="cognitive-development" onclick="toggleTag('cognitive-development', this)">cognitive-development</button>
+    
+  
+    
+      <button class="post-tag" id="btn-cognitive-science" data-tag="cognitive-science" onclick="toggleTag('cognitive-science', this)">cognitive-science</button>
+    
+  
+    
+      <button class="post-tag" id="btn-communication" data-tag="communication" onclick="toggleTag('communication', this)">communication</button>
+    
+  
+    
+      <button class="post-tag" id="btn-conversational-agents" data-tag="conversational-agents" onclick="toggleTag('conversational-agents', this)">conversational-agents</button>
+    
+  
+    
+      <button class="post-tag" id="btn-curiosity" data-tag="curiosity" onclick="toggleTag('curiosity', this)">curiosity</button>
+    
+  
+    
+      <button class="post-tag" id="btn-curriculum-learning" data-tag="curriculum-learning" onclick="toggleTag('curriculum-learning', this)">curriculum-learning</button>
+    
+  
+    
+      <button class="post-tag" id="btn-deep-rl" data-tag="deep-rl" onclick="toggleTag('deep-rl', this)">deep-RL</button>
+    
+  
+    
+      <button class="post-tag" id="btn-developmental-ai" data-tag="developmental-ai" onclick="toggleTag('developmental-ai', this)">developmental-AI</button>
+    
+  
+    
+      <button class="post-tag" id="btn-developmental-learning" data-tag="developmental-learning" onclick="toggleTag('developmental-learning', this)">developmental-learning</button>
+    
+  
+    
+      <button class="post-tag" id="btn-discovery" data-tag="discovery" onclick="toggleTag('discovery', this)">discovery</button>
+    
+  
+    
+      <button class="post-tag" id="btn-diversity-search" data-tag="diversity-search" onclick="toggleTag('diversity-search', this)">diversity-search</button>
+    
+  
+    
+      <button class="post-tag" id="btn-ecology" data-tag="ecology" onclick="toggleTag('ecology', this)">ecology</button>
+    
+  
+    
+      <button class="post-tag" id="btn-education" data-tag="education" onclick="toggleTag('education', this)">education</button>
+    
+  
+    
+      <button class="post-tag" id="btn-educational-technologies" data-tag="educational-technologies" onclick="toggleTag('educational-technologies', this)">educational-technologies</button>
+    
+  
+    
+      <button class="post-tag" id="btn-embodied-ai" data-tag="embodied-ai" onclick="toggleTag('embodied-ai', this)">embodied-AI</button>
+    
+  
+    
+      <button class="post-tag" id="btn-embodiment" data-tag="embodiment" onclick="toggleTag('embodiment', this)">embodiment</button>
+    
+  
+    
+      <button class="post-tag" id="btn-emergence" data-tag="emergence" onclick="toggleTag('emergence', this)">emergence</button>
+    
+  
+    
+      <button class="post-tag" id="btn-exploration" data-tag="exploration" onclick="toggleTag('exploration', this)">exploration</button>
+    
+  
+    
+      <button class="post-tag" id="btn-generalization" data-tag="generalization" onclick="toggleTag('generalization', this)">generalization</button>
+    
+  
+    
+      <button class="post-tag" id="btn-goal-learning" data-tag="goal-learning" onclick="toggleTag('goal-learning', this)">goal-learning</button>
+    
+  
+    
+      <button class="post-tag" id="btn-grounding" data-tag="grounding" onclick="toggleTag('grounding', this)">grounding</button>
+    
+  
+    
+      <button class="post-tag" id="btn-human-autotelic-learning" data-tag="human-autotelic-learning" onclick="toggleTag('human-autotelic-learning', this)">human-autotelic-learning</button>
+    
+  
+    
+      <button class="post-tag" id="btn-interactive-learning" data-tag="interactive-learning" onclick="toggleTag('interactive-learning', this)">interactive-learning</button>
+    
+  
+    
+      <button class="post-tag" id="btn-interpretability" data-tag="interpretability" onclick="toggleTag('interpretability', this)">interpretability</button>
+    
+  
+    
+      <button class="post-tag" id="btn-intrinsic-motivation" data-tag="intrinsic-motivation" onclick="toggleTag('intrinsic-motivation', this)">intrinsic-motivation</button>
+    
+  
+    
+      <button class="post-tag" id="btn-language" data-tag="language" onclick="toggleTag('language', this)">language</button>
+    
+  
+    
+      <button class="post-tag" id="btn-language-models" data-tag="language-models" onclick="toggleTag('language-models', this)">language-models</button>
+    
+  
+    
+      <button class="post-tag" id="btn-machine-autotelic-learning" data-tag="machine-autotelic-learning" onclick="toggleTag('machine-autotelic-learning', this)">machine-autotelic-learning</button>
+    
+  
+    
+      <button class="post-tag" id="btn-multi-agent" data-tag="multi-agent" onclick="toggleTag('multi-agent', this)">multi-agent</button>
+    
+  
+    
+      <button class="post-tag" id="btn-reinforcement-learning" data-tag="reinforcement-learning" onclick="toggleTag('reinforcement-learning', this)">reinforcement-learning</button>
+    
+  
+    
+      <button class="post-tag" id="btn-reproducibility" data-tag="reproducibility" onclick="toggleTag('reproducibility', this)">reproducibility</button>
+    
+  
+    
+      <button class="post-tag" id="btn-self-organization" data-tag="self-organization" onclick="toggleTag('self-organization', this)">self-organization</button>
+    
+  
+    
+      <button class="post-tag" id="btn-social-learning" data-tag="social-learning" onclick="toggleTag('social-learning', this)">social-learning</button>
+    
+  
+    
+      <button class="post-tag" id="btn-statistics" data-tag="statistics" onclick="toggleTag('statistics', this)">statistics</button>
+    
+  
+</div>
+
+
+
+<div class="date-filter">
+  <label for="date-start">From</label>
+  <input type="text" id="date-start" placeholder="DD/MM/YYYY" maxlength="10" oninput="applyFilters()" />
+  <label for="date-end">to</label>
+  <input type="text" id="date-end" placeholder="DD/MM/YYYY" maxlength="10" oninput="applyFilters()" />
+</div>
+
+<h1>Filtered blogs</h1>
+<div id="post-list">
+  
+    <div class="post py2 tag-post"
+         data-tags=""
+         data-date="2026-03-09"
+         data-title="Some External Resource"
+         data-summary=""
+         data-content="
+">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Mar 9, 2026</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="https://koalastothemax.com/" class="post-link" target="_blank" rel="noopener">
+            <h2 class="h2 post-title">Some External Resource <span class="external-link-icon">↗</span></h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="https://scholar.google.com/citations?user=isuFqLIAAAAJ&hl=fr">JP</a> 
+          </div>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="machine-autotelic-learning language-models grounding reinforcement-learning interactive-learning "
+         data-date="2025-02-06"
+         data-title="Can AIs understand our world? Functionally grounding LLMs in interactive environments."
+         data-summary="LLMs struggle to connect words to real-world concepts. We propose functional grounding via reinforcement learning in interactive environments, and demonstrate it with GLAM on BabyAI-Text."
+         data-content="
+
+ChatGPT, GPT-4, Mistral, Gemini… In recent months, a flurry of “language models,” mostly developed by major companies such as Google, Facebook, and OpenAI, have emerged. These intriguing tools, now widely used by the general public (who hasn’t heard of ChatGPT at a family gathering?), all operate on the same principle: software capable of responding to text-based messages from users.
+
+Whether it is answering questions about historical facts, telling jokes, or generating cover letters, these tools initially appear impressive in their capabilities. However, upon closer inspection, certain limitations become evident. Notably, these systems sometimes produce false or entirely fabricated information. This makes distinguishing truth from falsehood particularly challenging since the model itself cannot discern the difference and presents all outputs with equal confidence.
+
+Some inaccuracies, however, immediately raise suspicion, especially when they seem completely disconnected from the world as we know it. Consider, for instance, this absurd explanation from ChatGPT: an anaconda cannot “fit, size-wise, in a shopping mall” because its length would pose a problem given the building’s ceiling height.
+
+
+
+
+
+Despite their impressive capabilities, LLMs still fail at simple tasks by providing answers that appear disconnected from our world (such as the anaconda not fitting a shopping mall). Illustration generated with FLUX.1[dev]
+
+
+
+Why do models miss the obvious? How can something so apparent to us escape a language model entirely? To understand this, we must delve into the nature of these systems. Language models are based on a mathematical function with an enormous number of parameters—over 100 billion in today’s models. These parameters are adjusted to produce the desired output for a given input. Using mathematical methods known as Machine Learning, these parameters are automatically tuned to match inputs and outputs in a training dataset (a set of input-output pairs).
+In practical terms, each input word is assigned a representation vector (a point in a multidimensional real-number space), and the output is a probability distribution over possible next words (within a predefined vocabulary). Training a language model involves exposing it to vast amounts of text and tuning its parameters so that it assigns the highest probability to the correct next word in each context. To generate text, the model starts with an initial phrase, selects the most probable next word, and iterates this process, appending each newly chosen word to the input.
+
+This training principle predates the recent explosion of language models. Although employed for decades, earlier iterations produced encouraging but far less impressive results compared to today. What changed? First, the mathematical function that must be tuned evolved. Until 2017, language models primarily relied on recurrent neural networks (RNNs), which process one word at a time and use a memory matrix to retain ...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Feb 6, 2025</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/glam" class="post-link">
+            <h2 class="h2 post-title">Can AIs understand our world? Functionally grounding LLMs in interactive environments.</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="https://clement-romac.github.io/">Clément Romac</a>, <a href="">Thomas Carta</a>, <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a>
+          </div>
+          <p class="post-summary">LLMs struggle to connect words to real-world concepts. We propose functional grounding via reinforcement learning in interactive environments, and demonstrate it with GLAM on BabyAI-Text.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-language-models" class="post-tag" onclick="event.preventDefault(); toggleTag('language-models', document.getElementById('btn-language-models'))">language-models</a>
+            
+              <a href="#btn-grounding" class="post-tag" onclick="event.preventDefault(); toggleTag('grounding', document.getElementById('btn-grounding'))">grounding</a>
+            
+              <a href="#btn-reinforcement-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('reinforcement-learning', document.getElementById('btn-reinforcement-learning'))">reinforcement-learning</a>
+            
+              <a href="#btn-interactive-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('interactive-learning', document.getElementById('btn-interactive-learning'))">interactive-learning</a>
+            
+          </div>
+          
+        </div>
+        
+        <a href="/glam"  style="flex-shrink: 0;">
+          <img src="/images/posts/2025-02-06-glam/robot.png" alt="Can AIs understand our world? Functionally grounding LLMs in interactive environments." style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="human-autotelic-learning ecology developmental-ai cognitive-science "
+         data-date="2023-08-09"
+         data-title="An ecological approach to  Artificial Intelligence"
+         data-summary="We explore how Human Behavioral Ecology can guide the pursuit of human-like AI, proposing a conceptual framework to bridge natural and artificial intelligence research."
+         data-content="
+
+
+Subscribe to our Twitter.
+
+
+">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Aug 9, 2023</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/ecological-AI" class="post-link">
+            <h2 class="h2 post-title">An ecological approach to  Artificial Intelligence</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="https://eleninisioti.github.io/#/">Eleni Nisioti</a>, <a href="http://clement-moulin-frier.github.io/">Clément Moulin-Frier</a>, <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a> 
+          </div>
+          <p class="post-summary">We explore how Human Behavioral Ecology can guide the pursuit of human-like AI, proposing a conceptual framework to bridge natural and artificial intelligence research.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-human-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('human-autotelic-learning', document.getElementById('btn-human-autotelic-learning'))">human-autotelic-learning</a>
+            
+              <a href="#btn-ecology" class="post-tag" onclick="event.preventDefault(); toggleTag('ecology', document.getElementById('btn-ecology'))">ecology</a>
+            
+              <a href="#btn-developmental-ai" class="post-tag" onclick="event.preventDefault(); toggleTag('developmental-ai', document.getElementById('btn-developmental-ai'))">developmental-AI</a>
+            
+              <a href="#btn-cognitive-science" class="post-tag" onclick="event.preventDefault(); toggleTag('cognitive-science', document.getElementById('btn-cognitive-science'))">cognitive-science</a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="educational-technologies curiosity education conversational-agents developmental-learning "
+         data-date="2022-10-11"
+         data-title="Designing artificial conversational agents to train children&apos;s curiosity during learning, a proof of concept through the Kids Ask project"
+         data-summary="Kids Ask designs educational technologies that stimulate epistemic curiosity in young learners, leveraging artificial conversational agents to support question-asking and self-directed learning."
+         data-content="
+[EAET 2022 Conference talk]  &amp;#9679; [IJHCS 2022 paper]  &amp;#9679; [Blog article PDF]
+
+
+
+This blog post presents our recent IJHCS paper Conversational agents for fostering curiosity-driven learning in children. 
+
+
+Curiosity : a key factor for enhancing learning experiences and outcomes
+
+Curiosity is defined as “a desire to know, see or experience that motivates exploratory behavior oriented towards the acquisition of new information” [2]. It is an important factor that can improve children’s ability to take charge of complex activities [3], to engage in learning [4], or to memorize new information better [5]. Indeed, our brain learns and memorizes the information better when we seek it and find it on our own, by asking questions or exploring the environment for example, and not by passively receiving it [6]. 
+Given its importance for learning, several recent studies have focused on the study of curiosity in the classrooms, with the goal of designing pedagogical interventions that can foster this ability in young children. Their obseravtions showed that it is, indeed, a malleable skill [7] that can be elicited by verbal and nonverbal cues [8,9,10], by promoting comfort with uncertainty and encouraging questioning and exploration to resolve it.
+However, and despite different efforts, recent reports show that today’s educational content does very little to encourage children to be curious, generally reducing them to one correct answer and not allowing them enough space to ask questions and explore, the main expressions of epistemic curiosity.
+
+Curiosity during learning : the major brakes
+
+Questioning behaviors, which are the primary expressions of epistemic curiosity in children, are almost absent in today’s classrooms. Several factors may be responsible for this; in particular, the so-called “knowledge illusion”: children’s tendency to overestimate their knowledge levels and not be aware of the information they might be missing - this is the notion of “knowledge gaps” [16]. This problem stems mainly from their lack of reflection on their own learning and their inability to assess their own knowledge levels.
+
+This capacity of self-assessment and the awareness of knowledge gaps are very important factors to stimulate the curiosity of the individual. Indeed, when we realize that we do not have a piece of information or that our knowledge does not correspond to the one necessary to understand the environment, a knowledge objective to acquire will appear. This objective is usually a motivator for a curiosity-driven behavior -such as generating a question-, which is initiated in order to compensate for the identified “knowledge gap” and acquire the missing knowledge [17]. 
+Other factors that may prevent children from asking questions in class are their inability to formulate syntactically correct questions [11], or their fear of judgments from peers or their teachers [12].
+
+To remedy these problems, several research studies encourage teachers to set up...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Oct 11, 2022</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/kids_ask" class="post-link">
+            <h2 class="h2 post-title">Designing artificial conversational agents to train children's curiosity during learning, a proof of concept through the Kids Ask project</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="https://scholar.google.com/citations?user=L5WCl5MAAAAJ&hl=fr">Rania Abdelghani</a>, <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a>, <a href="">Edith Law</a>, and<a href="">Hélène Sauzéon</a> 
+          </div>
+          <p class="post-summary">Kids Ask designs educational technologies that stimulate epistemic curiosity in young learners, leveraging artificial conversational agents to support question-asking and self-directed learning.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-educational-technologies" class="post-tag" onclick="event.preventDefault(); toggleTag('educational-technologies', document.getElementById('btn-educational-technologies'))">educational-technologies</a>
+            
+              <a href="#btn-curiosity" class="post-tag" onclick="event.preventDefault(); toggleTag('curiosity', document.getElementById('btn-curiosity'))">curiosity</a>
+            
+              <a href="#btn-education" class="post-tag" onclick="event.preventDefault(); toggleTag('education', document.getElementById('btn-education'))">education</a>
+            
+              <a href="#btn-conversational-agents" class="post-tag" onclick="event.preventDefault(); toggleTag('conversational-agents', document.getElementById('btn-conversational-agents'))">conversational-agents</a>
+            
+              <a href="#btn-developmental-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('developmental-learning', document.getElementById('btn-developmental-learning'))">developmental-learning</a>
+            
+          </div>
+          
+        </div>
+        
+        <a href="/kids_ask"  style="flex-shrink: 0;">
+          <img src="/images/posts/2022-10-11-kids_ask/Illustration.png" alt="Designing artificial conversational agents to train children&apos;s curiosity during learning, a proof of concept through the Kids Ask project" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="human-autotelic-learning cognitive-science interpretability language-models "
+         data-date="2022-07-19"
+         data-title="Watching artificial intelligence through the lens of cognitive science methodologies"
+         data-summary="Large language models are hard to interpret. We propose importing cognitive science methodologies to understand their functional representations, running controlled experiments inspired by cognitive neuroscience."
+         data-content="
+[Blog PDF]  &amp;#9679; [ICLR 2022 paper]  &amp;#9679; [Code]   
+
+
+
+This blog post presents our recent ICLR paper Language-biased image classification: evaluation based on semantic representations. The codebase accompanying this paper is available in the following repo. 
+
+
+Difficulty in interpreting functional mechanisms of a system
+
+Humans tend to find human-like features in our daily life events. When winds blow a plastic bag on the street, children may feel like it is alive, known as animacy perception (Heider &amp;amp; Simmel, 1944; Scholl &amp;amp; Tremoulet, 2000; Tremoulet &amp;amp; Feldman, 2000). Artworks by Giuseppe Arcimboldo tell us that humans automatically detect human faces even if local components consist of objects unrelated to humans, like fruits or plants (Figure1A). Humans can also understand that other people have mental states like themselves, known as theory-of-mind (Baron-Cohen et al., 1985). These remarkable abilities enable us to read out someone’s subtle feelings and facilitate social communications in our daily life. However, they can get in the way when you interpret the behavior of an unknown system, e.g., when you are an AI researcher and would like to understand what representations are acquired in a machine learning model. You may unconsciously interpret a machine’s behavior as human-like from the similarity to daily human behaviors. But, it may be an overestimation due to our automatic prediction. We have to keep in mind that human interpretations tend to include a lot of expectations.
+
+Recent machine learning models are trained using big data with massive parameters and achieve incredible performances for diverse tasks. Interpreting what representations are learned in these models is challenging due to their computational complexity. Even when you have a metric to evaluate system performance, quite different systems might output similar results for the metric. For example, in her ICLR 2022 keynote, Dr. Been Kim explained a clear example of the difficulty in interpreting machine learning models (the talk is available from this link) (Adebayo et al., 2018; Kim, 2022). The middle and right panels of Figure1B show saliency maps, which are metrics to explain which pixels machine learning models focus on when achieving an image classification task. Both saliency maps look similar and detect the main object of the photo, i.e., the bird. However, the right panel is actually the saliency map from an untrained network, while the middle one is from a trained network. This observation suggests that even when you see a visually meaningful output from a metric, you have to be cautious about interpreting the system.
+
+
+	
+
+
+	Figure 1. (A) &quot;Summer&quot; by Giuseppe Arcimboldo (B) Saliency maps by trained and untrained networks (figure credit:
+Been Kim, 2022, Beyond interpretability: developing a language to shape our relationships with AI(Kim, 2022),
+link to blog)
+
+
+Considering the difficulty in interpreting systems, how can we understand the learned...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Jul 19, 2022</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/watch_ai_through_cogsci" class="post-link">
+            <h2 class="h2 post-title">Watching artificial intelligence through the lens of cognitive science methodologies</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="https://www.mswym.com/">Masataka Sawayama</a>, <a href="https://scholar.google.com/citations?user=0HUr1q4AAAAJ&hl=ja&oi=ao">Yoann Lemesle</a>, and<a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a> 
+          </div>
+          <p class="post-summary">Large language models are hard to interpret. We propose importing cognitive science methodologies to understand their functional representations, running controlled experiments inspired by cognitive neuroscience.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-human-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('human-autotelic-learning', document.getElementById('btn-human-autotelic-learning'))">human-autotelic-learning</a>
+            
+              <a href="#btn-cognitive-science" class="post-tag" onclick="event.preventDefault(); toggleTag('cognitive-science', document.getElementById('btn-cognitive-science'))">cognitive-science</a>
+            
+              <a href="#btn-interpretability" class="post-tag" onclick="event.preventDefault(); toggleTag('interpretability', document.getElementById('btn-interpretability'))">interpretability</a>
+            
+              <a href="#btn-language-models" class="post-tag" onclick="event.preventDefault(); toggleTag('language-models', document.getElementById('btn-language-models'))">language-models</a>
+            
+          </div>
+          
+        </div>
+        
+        <a href="/watch_ai_through_cogsci"  style="flex-shrink: 0;">
+          <img src="/images/posts/2022-07-20-watch_ai_through_cogsci/figure_blog1.png" alt="Watching artificial intelligence through the lens of cognitive science methodologies" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="machine-autotelic-learning interactive-learning communication multi-agent social-learning "
+         data-date="2022-04-27"
+         data-title="Guiding and Learning Without Common Ground: a New Interactive Learning Paradigm"
+         data-summary="Can machines teach and learn from each other without a shared protocol? We introduce the Architect-Builder Problem, a new interactive learning paradigm to investigate this question."
+         data-content="
+[Paper]  &amp;#9679; [Code]  &amp;#9679; [Video]   &amp;#9679;  [Website] 
+
+
+
+This blog post presents our recent ICLR paper Learning to Guide and to Be Guided in the Architect-Builder problem. The codebase accompanying this paper is available in the following repo. A recording of the paper presentation is also available on YouTube.
+
+
+Humans are incredibly good at teaching and learning from each other. And impressively, they are able to do so in contexts where they share little to no common ground – such as a shared language or a known collective objective. In early stages of their development, children can interpret social cues from their parents to detect their intention and interact with them. In the following picture for instance, a preverbal infant that did not yet learn to produce words can learn to stack objects by reacting to guidance provided by a caregiver. In these types of interactions, not only does the child discover a new task, she also learns to interact and communicate with others.
+
+
+	
+
+
+	A picture of a child learning to stack cubes from interactions with a caregiver (image taken from  here)
+
+
+It turns out that social interactions are central to child development [1]. Long before they learn about language, children constantly adapt to the social context in which they evolve. For instance, they demonstrate ‘social sensitivity’ adapting their behavior to emotions [2] (see this video). They also detect pedagogical signals and are able to infer the communicative intention of a caregiver [3] (see this recent paper [4]  section I.A for a thorough list of children learning properties)
+
+Therefore it seems that pre-verbal communication enables children to acquire new skills in absence of direct reinforcement signals, demonstrations or even a shared communication protocol. In the quest to design interactive artificial agents, such flexible learning skills look like a desirable feature. But how do we make progress in this direction? How can artificial agents figure out what to do and learn relevant behaviors without any common ground? On the one hand, HRI focuses on human teaching robots and investigates how a robot-learner can figure out what a human-teacher wants it to do [5] [6]. On the other hand, Multi-Agent Reinforcement Learning (MARL) [7]
+ can model robot-robot interactions by placing multiple agents in an environment and training them to solve collaborative tasks. Yet, in MARL, all agents have access to a reward signal defined by the collaborative task they need to achieve. This assumption is not really representative of a child interacting with a caregiver since the reward is an external signal shared between agents. The question is then how can we come up with a realistic setting where two agents that share no common ground can learn a communication protocol to solve a task?
+
+We propose to answer this question by drawing inspiration from Experimental Semiotics [8]. Experimental Semiotics is a discipline that aims at investigating, in the ...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Apr 27, 2022</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/architect_builder_problem" class="post-link">
+            <h2 class="h2 post-title">Guiding and Learning Without Common Ground: a New Interactive Learning Paradigm</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="http://tristankarch.com">Tristan Karch</a> and <a href="https://scholar.google.com/citations?user=FoxktlkAAAAJ&hl=en">Paul Barde</a> 
+          </div>
+          <p class="post-summary">Can machines teach and learn from each other without a shared protocol? We introduce the Architect-Builder Problem, a new interactive learning paradigm to investigate this question.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-interactive-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('interactive-learning', document.getElementById('btn-interactive-learning'))">interactive-learning</a>
+            
+              <a href="#btn-communication" class="post-tag" onclick="event.preventDefault(); toggleTag('communication', document.getElementById('btn-communication'))">communication</a>
+            
+              <a href="#btn-multi-agent" class="post-tag" onclick="event.preventDefault(); toggleTag('multi-agent', document.getElementById('btn-multi-agent'))">multi-agent</a>
+            
+              <a href="#btn-social-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('social-learning', document.getElementById('btn-social-learning'))">social-learning</a>
+            
+          </div>
+          
+        </div>
+        
+        <a href="/architect_builder_problem"  style="flex-shrink: 0;">
+          <img src="/images/posts/2022-04-27-architect_builder_problem/baby-stacking-cubes.jpg" alt="Guiding and Learning Without Common Ground: a New Interactive Learning Paradigm" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="machine-autotelic-learning embodiment cellular-automata self-organization emergence "
+         data-date="2022-01-10"
+         data-title="Learning Sensorimotor Agency in Cellular Automata"
+         data-summary="We learn cellular automaton rules that produce self-organizing agents with embodiment, individuality, and sensorimotor agency, using curriculum learning and diversity search on a differentiable CA."
+         data-content="
+
+
+Subscribe to our Twitter.
+
+
+">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Jan 10, 2022</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/sensorimotor-lenia" class="post-link">
+            <h2 class="h2 post-title">Learning Sensorimotor Agency in Cellular Automata</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="">Gautier Hamon</a>, <a href="https://mayalenetcheverry.com/">Mayalen Etcheverry</a>, <a href="https://chakazul.github.io/">Bert Chan</a>, <a href="http://clement-moulin-frier.github.io/">Clément Moulin-Frier</a>, <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a> 
+          </div>
+          <p class="post-summary">We learn cellular automaton rules that produce self-organizing agents with embodiment, individuality, and sensorimotor agency, using curriculum learning and diversity search on a differentiable CA.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-embodiment" class="post-tag" onclick="event.preventDefault(); toggleTag('embodiment', document.getElementById('btn-embodiment'))">embodiment</a>
+            
+              <a href="#btn-cellular-automata" class="post-tag" onclick="event.preventDefault(); toggleTag('cellular-automata', document.getElementById('btn-cellular-automata'))">cellular-automata</a>
+            
+              <a href="#btn-self-organization" class="post-tag" onclick="event.preventDefault(); toggleTag('self-organization', document.getElementById('btn-self-organization'))">self-organization</a>
+            
+              <a href="#btn-emergence" class="post-tag" onclick="event.preventDefault(); toggleTag('emergence', document.getElementById('btn-emergence'))">emergence</a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="human-autotelic-learning developmental-ai embodiment intrinsic-motivation ecology "
+         data-date="2021-10-29"
+         data-title="Intelligent behavior depends on the ecological niche: Scaling up AI to human-like intelligence in socio-cultural environments"
+         data-summary="Human intelligence was shaped by socio-cultural ecological niches. Developmental AI — modeling infant learning through embodiment and intrinsic motivation — is a promising path toward human-like intelligence."
+         data-content="
+
+TL;DR: In this blog post, Pierre-Yves Oudeyer discusses with Manfred Eppe to present his perspective on the future of AI and machines models of human-like intelligence. The discussion explains how developmental and evolutionary theories of human cognition
+should further inform artificial intelligence. This emphasizes the
+role of ecological niches in sculpting intelligent behavior, and in particular that
+human intelligence was fundamentally shaped to adapt to a constantly changing
+socio-cultural environment. A major limit of current work in AI is
+that it is missing this perspective, both theoretically and experimentally.
+One promising approach to address these limits is developmental artificial intelligence,
+modeling infant development through multi-scale interaction between intrinsically
+motivated learning, embodiment and a fastly changing socio-cultural environment.
+
+This interview was initially published as: Eppe, M., &amp;amp; Oudeyer, P. Y. (2021). Intelligent behavior depends on the ecological niche. KI-Künstliche Intelligenz, 35(1), 103-108. Bibtex
+
+Is it useful to talk about strong and weak AI? What about AGI?
+
+ME: So what’s the difference between strong and weak AI? What the broader public understands by AI is more the weak AI. So what is it that makes AI strong, and how is that related to your research?
+
+PYO: That’s an interesting question. First of all, I would like to say that I am not a big fan of the strong versus weak AI concept. 
+I would say that for many people, when they speak about ‘weak AI’, they refer to techniques allowing to detect shallow relations between a number of quantities, and used to predict what will happen in the future without really understanding what’s happening.
+Whereas maybe some other people call ‘strong AI’ some kind of imaginary AI that is a bit like the concept of AGI – Artificial General Intelligence. They intuitively define it as an intelligence that is going to be good at everything and be able to solve problems of unbounded complexity.
+
+
+
+    
+          
+          I don’t like this distinction because, first of all, I don’t think there is some kind of natural ordering of intelligences as is suggested by the ‘strong versus weak’ idea, which is some kind of linear scale in which some AI would be on top of another. It has the same problems as trying to order the intelligences of animals.
+          
+    
+    
+          
+            [W]hat counts is [...] to realize that each kind of intelligence is suited to its environment.
+          
+    
+
+
+And second, I don’t like it because I think that the AGI concept, behind the strong AI concept, is something that does not exist. Why so?
+
+I do believe, if you look at the world of living organisms in nature, that there is not one scale of intelligence: rather there is a diversity of intelligences. And each form of intelligence is adapted to the ecological niche in which it is living.
+It has been evolving over quite long time to solve a particular family of problems...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Oct 29, 2021</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/ecological_niche" class="post-link">
+            <h2 class="h2 post-title">Intelligent behavior depends on the ecological niche: Scaling up AI to human-like intelligence in socio-cultural environments</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a>, <a href="http://www.manfred.eppe.eu/">Manfred Eppe</a> 
+          </div>
+          <p class="post-summary">Human intelligence was shaped by socio-cultural ecological niches. Developmental AI — modeling infant learning through embodiment and intrinsic motivation — is a promising path toward human-like intelligence.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-human-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('human-autotelic-learning', document.getElementById('btn-human-autotelic-learning'))">human-autotelic-learning</a>
+            
+              <a href="#btn-developmental-ai" class="post-tag" onclick="event.preventDefault(); toggleTag('developmental-ai', document.getElementById('btn-developmental-ai'))">developmental-AI</a>
+            
+              <a href="#btn-embodiment" class="post-tag" onclick="event.preventDefault(); toggleTag('embodiment', document.getElementById('btn-embodiment'))">embodiment</a>
+            
+              <a href="#btn-intrinsic-motivation" class="post-tag" onclick="event.preventDefault(); toggleTag('intrinsic-motivation', document.getElementById('btn-intrinsic-motivation'))">intrinsic-motivation</a>
+            
+              <a href="#btn-ecology" class="post-tag" onclick="event.preventDefault(); toggleTag('ecology', document.getElementById('btn-ecology'))">ecology</a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="machine-autotelic-learning curriculum-learning deep-rl generalization reinforcement-learning "
+         data-date="2021-06-02"
+         data-title="Teacher Algorithms for Deep RL Agents that Generalize in Procedurally Generated Environments"
+         data-summary="In this blog post we explore how one can leverage Automatic Curriculum Learning procedures to scaffold Deep Reinforcement Learning agents within complex continuous (procedurally generated) task spaces."
+         data-content="TL;DR
+Teaching algorithms are becoming a key ingredient to scaffold Deep RL agents into their learning odyssey, leading to policies that can generalize to multiple environments.
+This blog presents this emerging Deep RL sub-field and showcases recent work done in the Flowers Lab on designing a Learning Progress based teacher algorithm.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Building Deep RL agents that generalize. Leveraging advances in both training procedures and scalability, the Deep Reinforcement Learning community is now able to tackle ever more challenging control problems. This dynamic is shifting the sets of environments that are considered by researchers for benchmarking, leading to a drift from simple deterministic environments towards complex, more stochastic alternatives. This shift is key if we want to bring Deep RL outside of the lab, where robustness and generalization to previously unseen changes of the environment is essential for successful operation.
+
+Training in procedurally generated environment. One emerging method as a step towards this objective is to train Deep RL agents on proceduraly generated environments and assess whether the considered approach is able to generalize to the space of possible environments. In Open AI’s paper  Quantifying Generalization in Reinforcement Learning, authors present CoinRun, a mario-like platform game whose levels are proceduraly generated. They show that increasing the training set of proceduraly generated levels directly correlates with an increase in test-time performances on previously unseen levels, showing that training diversity is key for generalization.
+
+Links with domain randomization. Similar procedures (termed Domain Randomization) have also been used as a way to enable Sim2Real transfer, which recently led to the training of a Deep RL agent able to robustly solve a Rubik’s cube with a real-world robotic hand, leveraging intensive training in simulation. To facilitate the development and comparative analysis of Deep RL algorithms that generalize, propositions of benchmark environments emerges from the community, such as Open AI’s ProcGen, a suite of 16 procedural 2D games, or Unity’s Obstacle Tower Challenge, a complex 3D procedural escape game. However, a limitation of these benchmarks is that they do not allow to study whether the ability to control the procedural generation can be beneficial for training Deep RL agents.
+
+Teacher algorithms that dynamically adapt the distribution of procedurally generated environments. Given such a possibility, how can a teacher algorithm control the sequence of training environments enabling a Deep RL agent to acquire fastly skills that generalize to many environments? A simple approach is to propose randomly generated environments. If the amount of unfeasible environments from the set is not too high for the given learner, this might work reasonably well (as in CoinRun). But for more challenging scenarios, one would need smarter training strategies that avoid ...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Jun 2, 2021</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/teacher_algorithms_for_drl_learners" class="post-link">
+            <h2 class="h2 post-title">Teacher Algorithms for Deep RL Agents that Generalize in Procedurally Generated Environments</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="mailto:remy.portelas@gmail.com">Rémy Portelas</a>
+          </div>
+          <p class="post-summary">In this blog post we explore how one can leverage Automatic Curriculum Learning procedures to scaffold Deep Reinforcement Learning agents within complex continuous (procedurally generated) task spaces.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-curriculum-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('curriculum-learning', document.getElementById('btn-curriculum-learning'))">curriculum-learning</a>
+            
+              <a href="#btn-deep-rl" class="post-tag" onclick="event.preventDefault(); toggleTag('deep-rl', document.getElementById('btn-deep-rl'))">deep-RL</a>
+            
+              <a href="#btn-generalization" class="post-tag" onclick="event.preventDefault(); toggleTag('generalization', document.getElementById('btn-generalization'))">generalization</a>
+            
+              <a href="#btn-reinforcement-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('reinforcement-learning', document.getElementById('btn-reinforcement-learning'))">reinforcement-learning</a>
+            
+          </div>
+          
+        </div>
+        
+        <a href="/teacher_algorithms_for_drl_learners"  style="flex-shrink: 0;">
+          <img src="/images/posts/2021-06-02-teachDRL/walker_presentation.jpg" alt="Teacher Algorithms for Deep RL Agents that Generalize in Procedurally Generated Environments" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="machine-autotelic-learning language cognitive-development embodied-ai intrinsic-motivation "
+         data-date="2021-03-02"
+         data-title="Language as a Cognitive Tool: Dall-E, Humans and Vygotskian RL Agents"
+         data-summary="Language structures cognition beyond communication. We advocate for Vygotskian embodied agents that use language as a cognitive tool to form abstract representations, reason, imagine goals, and plan."
+         data-content="
+
+Have you heard about DALL-E? Beyond the funny mashup between Pixar’s robot and the surrealist painter, Dall-E is OpenAI’s new transformer trained to compose images from text descriptions [DALL-E]. Most people agree, DALL-E’s ability to blend concepts into natural images is remarkable; it often composes just like you would. Look at these avocado-chairs:
+
+
+
+
+
+Output from OpenAI’s Dall-E model when prompted by: &quot;an armchair in the shape of an avocado”  [Dall-E]
+
+
+
+If it’s so impressive, it’s because this type of composition feels like a very special human ability. How would it know? The ability to compose ideas is indeed at the source of a whole bunch of uniquely-human capacities: it is key for abstract planning, efficient generalization, few-shot learning, imagination and creativity. If we ever were to design truly autonomous learning agents, they would certainly need to demonstrate such compositional imagination skills.
+
+In this blog post, we argue that aligning language and the physical world helps transfer the structure of our compositional language to the messy, continuous physical world. As we will see, language is much more than a communication tool. Humans extensively use it as a cognitive tool, a cornerstone of their development. We’ll go over developmental psychology studies supporting this idea and will draw parallels with recent advances in machine learning. This will lead us to introduce language-augmented learning agents: a family of embodied learning agents that leverage language as a cognitive tool.
+
+Language as a Cognitive Tool in Humans
+
+Ask anyone what language is about. Chances are, they will answer something along these lines: “language is for people to communicate their thoughts to each other”. They’re right
+ of course, but research in developmental psychology shows that language is a lot more. Vygotsky, a Soviet psychologist of the 1930s, pioneered the idea of the importance of language in the cognitive development of humans [Vygotsky, 1934]. This idea was then developed by a body of research ranging from developmental psychology, through linguistic to philosophy [Whorf, 1956; Rumelhart et al., 1986; Dennett, 1991; Berk, 1994,
+  Clark, 1998, Carruthers, 2002 and Lupyan, 2012].
+
+
+
+
+
+Lev Vygostky and his socio-cultural theory of cognitive development. 
+Vygotsky is mainly known for two ideas. First, although language is initially learned through and for communication with others, it is later internalized and used as a cognitive tool to organize thoughts. As a consequence, important aspects of high-level cognitive functions have social origins. Second, caretakers often setup a Zone of Proximal Development to facilitate children learning. This can take the form of a scaffolding of the environment, demonstrations or linguistic aids adapted to the current level of the child---as the child progresses, caretakers propose new challenges just beyond their current capabilities.
+
+
+
+Let us start with words. Words are invitations to for...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Mar 2, 2021</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/language_as_cognitive_tool_vygotskian_rl" class="post-link">
+            <h2 class="h2 post-title">Language as a Cognitive Tool: Dall-E, Humans and Vygotskian RL Agents</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="https://ccolas.github.io/">Cédric Colas</a>,  <a href="http://tristankarch.com">Tristan Karch</a>,  <a href="http://clement-moulin-frier.github.io/">Clément Moulin-Frier</a> and  <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a> 
+          </div>
+          <p class="post-summary">Language structures cognition beyond communication. We advocate for Vygotskian embodied agents that use language as a cognitive tool to form abstract representations, reason, imagine goals, and plan.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-language" class="post-tag" onclick="event.preventDefault(); toggleTag('language', document.getElementById('btn-language'))">language</a>
+            
+              <a href="#btn-cognitive-development" class="post-tag" onclick="event.preventDefault(); toggleTag('cognitive-development', document.getElementById('btn-cognitive-development'))">cognitive-development</a>
+            
+              <a href="#btn-embodied-ai" class="post-tag" onclick="event.preventDefault(); toggleTag('embodied-ai', document.getElementById('btn-embodied-ai'))">embodied-AI</a>
+            
+              <a href="#btn-intrinsic-motivation" class="post-tag" onclick="event.preventDefault(); toggleTag('intrinsic-motivation', document.getElementById('btn-intrinsic-motivation'))">intrinsic-motivation</a>
+            
+          </div>
+          
+        </div>
+        
+        <a href="/language_as_cognitive_tool_vygotskian_rl"  style="flex-shrink: 0;">
+          <img src="/images/posts/2021-03-03-vygotskia_rl/thumbnail_v6.png" alt="Language as a Cognitive Tool: Dall-E, Humans and Vygotskian RL Agents" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="assisted-scientific-discovery self-organization intrinsic-motivation discovery cellular-automata "
+         data-date="2020-03-26"
+         data-title="Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems"
+         data-summary="We automate discovery of diverse self-organized patterns in complex systems. Intrinsically-motivated goal exploration on a continuous Game of Life reveals a rich variety of emergent structures."
+         data-content="Motivation: Exploration of self-organizing systems
+
+
+  
+  
+     
+      About a third of known galaxies are flat spirals with bulging centers.   In a galaxy far, far away...  / Mark Freeth / CC BY 2.0 
+    
+
+    
+     
+        The Tatra Mountains were shaped by past glaciations forming peaks, cirques and lakes.    moutain  / CC BY-NC-ND 2.0 
+    
+
+    
+     
+        Sand dune tend to self-organize in long parallel ripples.    Sand Dune Patterns and Shapes  / Jeff Sullivan / CC BY 2.0 
+    
+
+     
+      
+       The linear flight formations of a migratory flock of Sandhill Cranes.    In Flight  / CC BY 2.0 
+    
+
+     
+      
+       Honeybee colonies naturally swarm around tree limbs and shrubs.    Beekeeping Bees  / Rob Bertholf/ CC BY 2.0 
+    
+
+  
+      
+       The natural, hexagon geometry of a snowflake.  Flakes In Situ / Pascal Gaudette/ CC BY-NC-SA 2.0 
+    
+
+    
+      
+       Spiral stair-stepped structure of bismuth crystal.    Bismuth  / CC BY-NC-SA 2.0 
+    
+    
+    
+      
+       Every zebra has a unique pattern of black and white stripes.   zebras  / Kathleen Steeden / CC BY 2.0 
+    
+
+      
+      
+       Peacock  feathers are decorated with eyelike patterns in bright blue and brown.   Peacock  / Esin Üstün  / CC BY 2.0 
+    
+
+      
+      
+       Cells of bur-reed aquatic plants naturally thicken outer walls and arrange in V shape.   Tannin Cells in Sparganium  
+    
+
+  
+
+
+Nature, from its spiral galaxies, shaped landscapes, organized populations, fine inorganic compounds and geometric animal skin patterns to its living cells, is made out of fascinating complex forms and patterns. These natural wonders are the results of a phenomenon called self-organisation, that characterizes the spontaneous emergence of some form of global order out of local interactions.
+
+Self-organisation occurs in many physical, chemical and biological systems, as well as in artificial systems like the Game of Life, and understanding its processes remains an active area of research. While certain self-organizing systems are now well understood with advanced analytical models (Ball, 1999, Camazine et al., 2003), many others are still full of mysteries. Sometimes scientists do not even know yet a good mathematical expression of the basic physico-chemical properties at play, like in oil droplet systems used in studying the origins of life. For some other systems, like the Game of Life, one fully knows the simple basic rules at the local level, and yet we are still far from fully grasping what structures can self-organize, how to represent and classify them, and how to predict their evolution. In many cases, the discoveries of scientists about these systems are still relying on ad hoc trial-and-error experimentations.
+
+
+  “Becoming sufficiently familiar with something is a substitute for understanding it”
+
+  – John Conway, inventor of the Game of Life.
+
+
+This blogpost presents our recent paper (ICLR 2020), where we formulate the problem of automated discovery o...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Mar 26, 2020</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/intrinsically_motivated_discovery_of_diverse_patterns" class="post-link">
+            <h2 class="h2 post-title">Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="http://mayalenetcheverry.com">Mayalen Etcheverry</a> 
+          </div>
+          <p class="post-summary">We automate discovery of diverse self-organized patterns in complex systems. Intrinsically-motivated goal exploration on a continuous Game of Life reveals a rich variety of emergent structures.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-assisted-scientific-discovery" class="post-tag" onclick="event.preventDefault(); toggleTag('assisted-scientific-discovery', document.getElementById('btn-assisted-scientific-discovery'))">assisted-scientific-discovery</a>
+            
+              <a href="#btn-self-organization" class="post-tag" onclick="event.preventDefault(); toggleTag('self-organization', document.getElementById('btn-self-organization'))">self-organization</a>
+            
+              <a href="#btn-intrinsic-motivation" class="post-tag" onclick="event.preventDefault(); toggleTag('intrinsic-motivation', document.getElementById('btn-intrinsic-motivation'))">intrinsic-motivation</a>
+            
+              <a href="#btn-discovery" class="post-tag" onclick="event.preventDefault(); toggleTag('discovery', document.getElementById('btn-discovery'))">discovery</a>
+            
+              <a href="#btn-cellular-automata" class="post-tag" onclick="event.preventDefault(); toggleTag('cellular-automata', document.getElementById('btn-cellular-automata'))">cellular-automata</a>
+            
+          </div>
+          
+        </div>
+        
+        <a href="/intrinsically_motivated_discovery_of_diverse_patterns"  style="flex-shrink: 0;">
+          <img src="/media/gif/lenia.gif" alt="Intrinsically Motivated Discovery of Diverse Patterns in Self-Organizing Systems" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="machine-autotelic-learning intrinsic-motivation curriculum-learning reinforcement-learning "
+         data-date="2020-03-09"
+         data-title="Intrinsically Motivated Modular Multi-Goal RL"
+         data-summary="CURIOUS extends multi-goal RL to multiple task types in a single controller. Learning-progress-based intrinsic motivation builds an automatic curriculum, skipping impossible or already-mastered tasks."
+         data-content="
+
+
+
+Introduction
+
+In Reinforcement Learning (RL), agents are usually provided a unique goal, well-defined by an associated reward function that provides positive feedbacks when the goal is fullfilled, negative feedbacks otherwise. If a domestic robot sets the table, it is rewarded, if the plates are on the floor, it is not. The objective of that agent is to maximize the sum of collected rewards.
+
+In the more realistic open-ended and changing environments, agents face a wide range of potential goals that might not come with associated reward functions. Such autonomous learning agents must set their own goals and build their own curriculum through an intrinsically motivated exploration. They must decide for themselves what to practice and what to  learn. Because some goals might prove easy and some impossible, agents must actively select which goal to practice at any given moment, to maximize their overall mastery on the set of learnable goals.
+
+This blog post presents CURIOUS, an algorithm rooted in developmental robotics that builds on two main fields:
+
+
+  Multi-goal RL. Agents traditionally learn to perform one well-defined goal. On the contrary, Multi-Goal RL trains agents on a goal-parameterized setup. Instead of training a robot to bring the TV remote at this special spot on the table, we can now train it to bring it at any given location (goal), in the living room, on the sofa etc. Learning  about a precise goal benefits learning about others as well, which speeds up learning.
+  Curriculum Learning. When facing different possible goals (e.g. going to the kitchen, fetching the remote, cleaning the floor), the agent needs to prioritize and decide which goal to practice at any given moment. Developmental Robotics presents mechanisms to help this goal arbitration. Optimizing for learning progress for example, enables an automatic curriculum to emerge. First, train on simple goals. When they are mastered, move on to others where progress is made.
+
+
+All details can be found in the paper. The algorithm and the environment can be found on Github.
+
+The Problem of Intrinsically Motivated Modular Multi-Goal Reinforcement Learning
+
+
+
+
+
+Modular Multi-Goal Fetch Arm: an environment with multiple modular goals with various levels of difficulty, from simple to impossible. One module correspond to a type of goals (Reach, Push, Pick and Place, Stack, Push out-of-reach cube). For each module there is an infinity of potential goals (targets).
+
+
+
+Agents in the real world might face a large number of potential goals that might be of different types. A domestic robot might want to clean up a table, to prepare the meal, to set the table etc. Some of these goals might be regrouped into modules where particular goals are seen as targets of a same general behavior: e.g. “move the plates” can be seen as a module where particular goals would be “move the plates on the table”, or “move the plates in the cupboard”. The modules here can be more generally defined as cons...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Mar 9, 2020</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/curious_intrinsically_motivated_multi_modular_goal_rl" class="post-link">
+            <h2 class="h2 post-title">Intrinsically Motivated Modular Multi-Goal RL</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="mailto:cedric.colas@inria.fr">Cédric Colas</a>
+          </div>
+          <p class="post-summary">CURIOUS extends multi-goal RL to multiple task types in a single controller. Learning-progress-based intrinsic motivation builds an automatic curriculum, skipping impossible or already-mastered tasks.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-intrinsic-motivation" class="post-tag" onclick="event.preventDefault(); toggleTag('intrinsic-motivation', document.getElementById('btn-intrinsic-motivation'))">intrinsic-motivation</a>
+            
+              <a href="#btn-curriculum-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('curriculum-learning', document.getElementById('btn-curriculum-learning'))">curriculum-learning</a>
+            
+              <a href="#btn-reinforcement-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('reinforcement-learning', document.getElementById('btn-reinforcement-learning'))">reinforcement-learning</a>
+            
+          </div>
+          
+        </div>
+        
+        <a href="/curious_intrinsically_motivated_multi_modular_goal_rl"  style="flex-shrink: 0;">
+          <img src="/images/posts/2019-04-09-curious/archi.png" alt="Intrinsically Motivated Modular Multi-Goal RL" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="machine-autotelic-learning intrinsic-motivation goal-learning developmental-learning reinforcement-learning "
+         data-date="2020-02-20"
+         data-title="Discovery of independently controllable features through autonomous goal setting"
+         data-summary="How can an agent autonomously discover and learn to represent its own goals? We explore developmental learning for open-ended multi-task acquisition without human-defined objectives."
+         data-content="
+
+
+
+
+
+ An intrinsically motivated agent
+
+
+
+
+
+How is it possible to discover what can be controlled from images ?
+
+
+
+
+
+
+  This blog post is accompanied with a colab notebook
+
+
+Despite recent breakthroughs in artificial intelligence, machine learning agents remain limited to tasks predefined by human engineers. The autonomous and simultaneous discovery and learning of many-tasks in an open world remains very challenging for reinforcement learning algorithms. In this blog post we explore recent advances in developmental learning to tackle the problems of autonomous exploration and learning.
+
+Consider a robot like the one depicted on the first picture. In this environment it can do many things: it can move its arms around, use its arms to play with the joysticks, move the ball in the arena using the joysticks. Imagine that we want to teach this robot how to move the ball to various locations. We could craft a reward function that rewards the agent for putting the ball at a given location, and launch our favorite deep RL algorithm. Without going into details, this popular approach has several drawbacks:
+
+  the algorithm would require a lot of trials before sampling an action which might move the ball
+  the robot would only learn how to move the ball but not how to move its arms to many locations, and even less how to move other objects that are unrelated to the ball
+  we would need to specifically craft a reward for this task (this may be hard in itself (Christiano et al.))
+
+
+Now imagine that we want the agent to learn all these tasks, i.e. learn to control various objects,  without any supervision or reward. One strategy inspired by infants’ development that was shown to be efficient in this case consists in modeling the robot as a curiosity driven agent that wants to explore the world, by autonomously generating and selecting goals that provide maximal learning progress (Forestier et al.). Concretely, the robot sets for itself goals that it then tries to achieve, in an episodic fashion. For example one goal could be to put its arm at a specific place, or achieve a specific trajectory, or to try and move the ball to a certain location. Using this strategy the robot will soon realize that some goals are easier to reach than others, focusing on them and progressively shifting to learn more and more complex goals and associated policies. At the same time, it will also avoid spending too much time exploring goals that are either trivial or impossible to learn (e.g. distractor objects that move independently of the actions of the robot).
+
+This idealized situation is fine, but what if we want our robot to learn all these skills using only raw pixels from a camera? What would a goal look like in this case? The robot could sample goals uniformly in the pixel space. This is clearly a poor strategy, as it amounts to sample noise which is by definition not reproducible. The robot could also sample images from a database of observed situations, and try to rep...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Feb 20, 2020</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/autonomous_learning_of_disentangled_goal_representations" class="post-link">
+            <h2 class="h2 post-title">Discovery of independently controllable features through autonomous goal setting</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="mailto:l.neirda@gmail.com">Adrien Laversanne-Finot</a>
+          </div>
+          <p class="post-summary">How can an agent autonomously discover and learn to represent its own goals? We explore developmental learning for open-ended multi-task acquisition without human-defined objectives.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-intrinsic-motivation" class="post-tag" onclick="event.preventDefault(); toggleTag('intrinsic-motivation', document.getElementById('btn-intrinsic-motivation'))">intrinsic-motivation</a>
+            
+              <a href="#btn-goal-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('goal-learning', document.getElementById('btn-goal-learning'))">goal-learning</a>
+            
+              <a href="#btn-developmental-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('developmental-learning', document.getElementById('btn-developmental-learning'))">developmental-learning</a>
+            
+              <a href="#btn-reinforcement-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('reinforcement-learning', document.getElementById('btn-reinforcement-learning'))">reinforcement-learning</a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="machine-autotelic-learning reproducibility statistics deep-rl "
+         data-date="2020-02-17"
+         data-title="How Many Random Seeds ?"
+         data-summary="A statistical guide for rigorous comparison of deep RL algorithms, addressing the reproducibility crisis through principled random seed usage and statistical testing."
+         data-content="Reproducibility in Machine Learning and Deep Reinforcement Learning in particular has become a serious issue in the recent years. Reproducing an RL paper can turn out to be much more complicated than you thought, see this blog post about lessons learned from reproducing a deep RL paper. Indeed, codebases are not always released and scientific papers often omit parts of the implementation tricks. Recently, Henderson et al. conducted a thorough investigation of various parameters causing this reproducibility crisis [Henderson et al., 2017]. They used trendy deep RL algorithms such as DDPG, ACKTR, TRPO and PPO with OpenAI Gym popular benchmarks such as Half-Cheetah, Hopper and Swimmer to study the effects of the codebase, the size of the networks, the activation function, the reward scaling or the random seeds. Among other results, they showed that different implementations of the same algorithm with the same set of hyperparameters led to drastically different results.
+
+Perhaps the most surprising thing is this: running the same algorithm 10 times with the same hyper-parameters using 10 different random seeds and averaging performance over two splits of 5 seeds can lead to learning curves seemingly coming from different statistical distributions. Then, they present this table:
+
+
+
+
+
+Figure 1: Number of trials reported during evaluation in various works, from [Henderson et al., 2017].
+
+
+
+This table shows that all the deep RL papers reviewed by Henderson et al. use less than 5 seeds. Even worse, some papers actually report the average of the best performing runs! As demonstrated in Henderson et al., these methodologies can lead to claim that two algorithms performances are different when they are not. A solution to this problem is to use more random seeds, to average more different trials to obtain a more robust measure of your algorithm performance. OK, but how many more? Should I use 10, should I use 100 as in [Mania et al, 2018]? The answer is, of course, it depends.
+
+If you read this blog, you must be in the following situation: you want to compare the performance of two algorithms to determine which one performs best in a given environment. Unfortunately, two runs of the same algorithm often yield different measures of performance. This might be due to various factors such as the seed of the random generators (called random seed or seed thereafter), the initial conditions of the agent, the stochasticity of the environment, etc.
+
+Part of the statistical procedures described in this article are available on Github here. The article is available on ArXiv here.
+
+Definition of the statistical problem
+
+The performance of an algorithm can be modeled as a random variable \(X\) and running this algorithm in an environment results in a realization \(x\). Repeating the procedure \(N\) times, you obtain a statistical sample \(x=(x^1, .., x^N)\). A random variable is usually characterized by its mean \(\mu\) and its standard deviation, noted \(\sigma\). Of ...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Feb 17, 2020</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/how_many_random_seeds" class="post-link">
+            <h2 class="h2 post-title">How Many Random Seeds ?</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="mailto:cedric.colas@inria.fr">Cédric Colas</a>
+          </div>
+          <p class="post-summary">A statistical guide for rigorous comparison of deep RL algorithms, addressing the reproducibility crisis through principled random seed usage and statistical testing.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-reproducibility" class="post-tag" onclick="event.preventDefault(); toggleTag('reproducibility', document.getElementById('btn-reproducibility'))">reproducibility</a>
+            
+              <a href="#btn-statistics" class="post-tag" onclick="event.preventDefault(); toggleTag('statistics', document.getElementById('btn-statistics'))">statistics</a>
+            
+              <a href="#btn-deep-rl" class="post-tag" onclick="event.preventDefault(); toggleTag('deep-rl', document.getElementById('btn-deep-rl'))">deep-RL</a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags="machine-autotelic-learning deep-rl exploration diversity-search reinforcement-learning "
+         data-date="2020-02-15"
+         data-title="Bootstrapping Deep RL with Population-Based Diversity Search"
+         data-summary="Deep RL suffers from inefficient exploration in sparse-reward settings. We decouple exploration and exploitation: diversity search collects varied trajectories, then deep RL bootstraps from them."
+         data-content="
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deep Reinforcement Learning algorithms have attracted unprecedented attention due to remarkable successes in games like ATARI and Go, and have been extended to control domains involving  continuous actions. However, standard deep reinforcement learning algorithms using continuous actions like DDPG suffer from inefficient exploration when facing sparse or deceptive reward problems.
+
+One natural approach is to rely on imitation learning, i.e. leveraging observations of a human solving the problem. However, humans cannot always help. They can be unavailable, or simply unable to demonstrate a good behavior (e.g. how to demonstrate locomotion to a 6-leg robot).
+
+Another approach relies on the use of various forms of curiosity-driven Deep RL. This generally consists in adding an exploration bonus term to the reward function, measuring quantities such as information gain, entropy, uncertainty or prediction errors (e.g. [Bellemare et al.]) . Sometimes the reward function is even ignored and replaced by such an intrinsic reward [Pathak et al., 2017]). However, it is challenging to leverage them in environments with complex continuous action spaces, especially on real world robots.
+
+In our recent ICML 2018 paper, we propose to leverage evolutionary and developmental curiosity-driven exploration methods that were initially designed from a very different perspective. These are population-based approaches like Novelty Search, Quality-Diversity or Intrinsically Motivated Goal Exploration Processes. The primary purpose of these methods has been to enable autonomous machines to discover diverse repertoire of skills, i.e. to learn a population of policies that produce maximally diverse behavioral outcomes. Such discoveries have often been used to build good internal world models in a sample efficient manner, e.g. through curiosity-driven goal exploration [Baranes and Oudeyer, 2013]. This led to a variety of applications where real world robots where capable to learn very fast complex skills [Forestier et al.,2017] or to adapt to damages [Cully et al., 2015].
+
+Our new paper shows that the strengths of monolithic Deep RL methods and population-based diversity search methods can be combined for solving RL problems with rare or deceptive rewards. The general idea is as follows. In the exploration phase, we use a population-based diversity search approach (in the experiments below, a simple form of Goal Exploration Process [Forestier et al, 2017]). During this phase, diverse goals are sampled, leading to sampling corresponding small-size neural network policies, which behavioral trajectories are recorded in an archive. While the sampling process is not influenced at all by the extrinsic reward of the RL problem, these rewards are nevertheless observed and memorized. Then, in a second phase, all trajectories (and associated rewards) discovered during the first phase are used to initialize the replay buffer of a Deep RL algorithm.
+
+The general intu...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Feb 15, 2020</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/bootstraping_rl_with_diversity" class="post-link">
+            <h2 class="h2 post-title">Bootstrapping Deep RL with Population-Based Diversity Search</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="mailto:cedric.colas@inria.fr">Cédric Colas</a>
+          </div>
+          <p class="post-summary">Deep RL suffers from inefficient exploration in sparse-reward settings. We decouple exploration and exploitation: diversity search collects varied trajectories, then deep RL bootstraps from them.</p>
+          
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-deep-rl" class="post-tag" onclick="event.preventDefault(); toggleTag('deep-rl', document.getElementById('btn-deep-rl'))">deep-RL</a>
+            
+              <a href="#btn-exploration" class="post-tag" onclick="event.preventDefault(); toggleTag('exploration', document.getElementById('btn-exploration'))">exploration</a>
+            
+              <a href="#btn-diversity-search" class="post-tag" onclick="event.preventDefault(); toggleTag('diversity-search', document.getElementById('btn-diversity-search'))">diversity-search</a>
+            
+              <a href="#btn-reinforcement-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('reinforcement-learning', document.getElementById('btn-reinforcement-learning'))">reinforcement-learning</a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+</div>
+
+<script>
+var activeTags = new Set();
+var tagLogic = 'OR'; // 'OR' or 'AND'
+
+function toggleLogic() {
+  tagLogic = tagLogic === 'OR' ? 'AND' : 'OR';
+  document.getElementById('tag-logic-toggle').textContent = tagLogic;
+  applyFilters();
+}
+
+function toggleTag(tag, btn) {
+  var allBtn = document.querySelector('.tag-buttons .post-tag[data-tag="all"]');
+  if (tag === null) {
+    activeTags.clear();
+    document.querySelectorAll('.tag-buttons .post-tag').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    allBtn.classList.add('active');
+  } else {
+    allBtn.classList.remove('active');
+    if (activeTags.has(tag)) {
+      activeTags.delete(tag);
+      btn.classList.remove('active');
+    } else {
+      activeTags.add(tag);
+      btn.classList.add('active');
+    }
+    if (activeTags.size === 0) {
+      allBtn.classList.add('active');
+    }
+  }
+  applyFilters();
+}
+
+function parseDMY(str) {
+  var parts = str.trim().split('/');
+  if (parts.length !== 3 || parts[2].length !== 4) return '';
+  var dd = parts[0].padStart(2, '0');
+  var mm = parts[1].padStart(2, '0');
+  var yyyy = parts[2];
+  return yyyy + '-' + mm + '-' + dd;
+}
+
+function applyFilters() {
+  var keyword = document.getElementById('search-input').value.toLowerCase().trim();
+  var dateStart = parseDMY(document.getElementById('date-start').value);
+  var dateEnd = parseDMY(document.getElementById('date-end').value);
+  document.querySelectorAll('.tag-post').forEach(function(post) {
+    var tagMatch = activeTags.size === 0;
+    if (!tagMatch) {
+      var postTags = post.dataset.tags.trim().split(/\s+/).filter(function(t) { return t; });
+      if (tagLogic === 'OR') {
+        activeTags.forEach(function(tag) {
+          if (postTags.indexOf(tag) !== -1) tagMatch = true;
+        });
+      } else {
+        tagMatch = true;
+        activeTags.forEach(function(tag) {
+          if (postTags.indexOf(tag) === -1) tagMatch = false;
+        });
+      }
+    }
+    var keywordMatch = true;
+    if (keyword) {
+      var title = (post.dataset.title || '').toLowerCase();
+      keywordMatch = title.indexOf(keyword) !== -1;
+    }
+    var postDate = post.dataset.date || '';
+    var dateMatch = (!dateStart || postDate >= dateStart) && (!dateEnd || postDate <= dateEnd);
+    post.style.display = (tagMatch && keywordMatch && dateMatch) ? '' : 'none';
+  });
+}
+
+// Activate tag from URL hash on page load
+window.addEventListener('DOMContentLoaded', function() {
+  var hash = window.location.hash.replace('#', '');
+  if (hash) {
+    var btn = document.getElementById(hash);
+    if (btn) toggleTag(hash.replace('btn-', ''), btn);
+  }
+});
+</script>
+
+  </article>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--<footer class="center">
+  <div class="measure">
+    <small>
+      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+      &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">GitHub</a>.
+    </small>
+  </div>
+
+
+
+</footer>
+
+<script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+    }
+</script>
+
+
+    <script type="text/javascript">
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" +
+           katex.renderToString(tex) +
+           "</span>";
+});
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" +
+           katex.renderToString("\\displaystyle "+tex) +
+           "</div>";
+});
+
+
+
+</script>
+
+
+
+<!--<script>-->
+      <!--renderMathInElement(-->
+          <!--document.body,-->
+          <!--{-->
+              <!--delimiters: [-->
+                  <!--{left: "$$", right: "$$", display: true},-->
+                  <!--{left: "\\[", right: "\\]", display: true},-->
+                  <!--{left: "$", right: "$", display: false},-->
+                  <!--{left: "\\(", right: "\\)", display: false}-->
+              <!--]-->
+          <!--}-->
+      <!--);-->
+    <!--</script>-->-->
+</body>
+</html>

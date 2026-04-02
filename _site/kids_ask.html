@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Designing artificial conversational agents to train children's curiosity during learning, a proof of concept through the Kids Ask project &#8211; Developmental Systems, a Blog of the Flowers Lab</title>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kids Ask designs educational technologies that stimulate epistemic curiosity in young learners, leveraging artificial conversational agents to support question-asking and self-directed learning.">
+    <meta name="robots" content="all">
+    <meta name="author" content="INRIA Flowers Team">
+    
+    <meta name="keywords" content="jekyll">
+    <link rel="canonical" href="http://localhost:4000/kids_ask">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?202604021143" type="text/css">
+
+    <!-- Fonts -->
+    
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- MathJax -->
+    
+    <script type="text/javascript" async
+        src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <!-- Verifications -->
+    
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Designing artificial conversational agents to train children&apos;s curiosity during learning, a proof of concept through the Kids Ask project">
+    <meta property="og:description" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta property="og:url" content="http://localhost:4000/kids_ask">
+    <meta property="og:site_name" content="Developmental Systems, a Blog of the Flowers Lab">
+    
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
+    
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@FlowersINRIA" />
+        <meta name="twitter:creator" content="@FlowersINRIA" />
+    
+    <meta name="twitter:title" content="Designing artificial conversational agents to train children's curiosity during learning, a proof of concept through the Kids Ask project" />
+    <meta name="twitter:description" content="Kids Ask designs educational technologies that stimulate epistemic curiosity in young learners, leveraging artificial conversational agents to support question-asking and self-directed learning." />
+    <meta name="twitter:url" content="http://localhost:4000/kids_ask" />
+    
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
+    
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-44726622-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+
+     <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_HTML"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700&display=swap" rel="stylesheet">
+    <!--&lt;!&ndash; Load jQuery &ndash;&gt;-->
+    <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+    <!--&lt;!&ndash; Load KaTeX &ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>&ndash;&gt;-->
+
+    <!--<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+    
+
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+    <script src="/css/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
+</head>
+
+
+<body class="site">
+  
+	
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: 'none',
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [['$$','$$']],
+      processEnvironments: false
+    },
+    // show equation numbers
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    'HTML-CSS': {
+      imageFont: null
+    }
+  });
+</script>
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+      <div class="measure">
+          <a href="/" class="site-title">
+              <img src="/flowers-logo.png">
+          </a>
+      <nav class="site-nav">
+        
+
+
+        <a class="nav-link"  href="https://flowers.inria.fr/"  target="_blank">Flowers Lab</a>
+
+
+    
+    
+
+    
+        <a class="nav-link" href="/discover">Discover</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/blogs">Blogs</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/publications/">Publications</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/about">About</a>
+    
+
+    
+
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+      <a class="fa fa-github" href="https://github.com/flowersteam"></a>
+    
+    
+    
+    
+    <a class="fa fa-rss" href="/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/FlowersINRIA"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:pierre-yves.oudeyer@inria.fr"></a>
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>Designing artificial conversational agents to train children's curiosity during learning, a proof of concept through the Kids Ask project</h1>
+  <span class="post-meta">
+       <a href="https://scholar.google.com/citations?user=L5WCl5MAAAAJ&hl=fr">Rania Abdelghani</a>,  <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a>,  <a href="">Edith Law</a>, and <a href="">Hélène Sauzéon</a> 
+  </span><br>
+  <span class="post-meta">Oct 11, 2022</span><br>
+  
+  <span class="post-meta small">
+  
+    12 minute read
+  
+  </span>
+  
+  <div class="post-tags">
+    
+      <a href="/tags#educational-technologies" class="post-tag">educational-technologies</a>
+    
+      <a href="/tags#curiosity" class="post-tag">curiosity</a>
+    
+      <a href="/tags#education" class="post-tag">education</a>
+    
+      <a href="/tags#conversational-agents" class="post-tag">conversational-agents</a>
+    
+      <a href="/tags#developmental-learning" class="post-tag">developmental-learning</a>
+    
+  </div>
+  
+</div>
+
+<article class="post-content">
+  <div align="center">
+<a href="https://youtu.be/f2X6eEWi1Do" target="_blank">[EAET 2022 Conference talk]</a> <span style="color: lightgray;"> &#9679;</span> <a href="https://www.sciencedirect.com/science/article/abs/pii/S1071581922001112" target="_blank">[IJHCS 2022 paper]</a> <span style="color: lightgray;"> &#9679;</span> <a href="https://hal.archives-ouvertes.fr/hal-03810322" target="_blank">[Blog article PDF]</a>
+</div>
+<hr />
+
+<p><i style="font-size: smaller;">This blog post presents our recent IJHCS paper <a href="https://www.sciencedirect.com/science/article/pii/S1071581922001112" target="_blank">Conversational agents for fostering curiosity-driven learning in children</a>. </i></p>
+<hr />
+
+<h2 id="curiosity--a-key-factor-for-enhancing-learning-experiences-and-outcomes">Curiosity : a key factor for enhancing learning experiences and outcomes</h2>
+
+<p>Curiosity is defined as “a desire to know, see or experience that motivates exploratory behavior oriented towards the acquisition of new information” [2]. It is an important factor that can improve children’s ability to take charge of complex activities [3], to engage in learning [4], or to memorize new information better [5]. Indeed, our brain learns and memorizes the information better when we seek it and find it on our own, by asking questions or exploring the environment for example, and not by passively receiving it [6]. 
+Given its importance for learning, several recent studies have focused on the study of curiosity in the classrooms, with the goal of designing pedagogical interventions that can foster this ability in young children. Their obseravtions showed that it is, indeed, a malleable skill [7] that can be elicited by verbal and nonverbal cues [8,9,10], by promoting comfort with uncertainty and encouraging questioning and exploration to resolve it.
+However, and despite different efforts, recent reports show that today’s educational content does very little to encourage children to be curious, generally reducing them to one correct answer and not allowing them enough space to ask questions and explore, the main expressions of epistemic curiosity.</p>
+
+<h2 id="curiosity-during-learning--the-major-brakes">Curiosity during learning : the major brakes</h2>
+
+<p>Questioning behaviors, which are the primary expressions of epistemic curiosity in children, are almost absent in today’s classrooms. Several factors may be responsible for this; in particular, the so-called “knowledge illusion”: children’s tendency to overestimate their knowledge levels and not be aware of the information they might be missing - this is the notion of “knowledge gaps” [16]. This problem stems mainly from their lack of reflection on their own learning and their inability to assess their own knowledge levels.</p>
+
+<p>This capacity of self-assessment and the awareness of knowledge gaps are very important factors to stimulate the curiosity of the individual. Indeed, when we realize that we do not have a piece of information or that our knowledge does not correspond to the one necessary to understand the environment, a knowledge objective to acquire will appear. This objective is usually a motivator for a curiosity-driven behavior -such as generating a question-, which is initiated in order to compensate for the identified “knowledge gap” and acquire the missing knowledge [17]. 
+Other factors that may prevent children from asking questions in class are their inability to formulate syntactically correct questions [11], or their fear of judgments from peers or their teachers [12].</p>
+
+<p>To remedy these problems, several research studies encourage teachers to set up specific training sessions to familiarize children with the notions of self-evaluation and questioning and to help them feel more comfortable with their uncertainties. However, such workshops can be difficult to create as they require teachers to find specific teaching materials for each knowledge component and activity, which can be a particularly time-consuming task [1,10].</p>
+
+<h2 id="the-kids-ask-project">The “Kids Ask” project</h2>
+
+<p>In this context, and in order to support teachers in this task, our “Kids Ask” project leverages new technologies and proposes a curiosity training based on the awareness of “knowledge gaps”; paying particular attention to self-assessment and how to avoid the “knowledge illusion” trap.
+In particular, we implement conversational agents capable of stimulating questioning and exploration motivated by the desire to compensate for specific missing information. Our work is notably motivated by the positive effects that this type of technologies has shown on children’s learning strategies, their divergent thinking, as well as for the construction of good social relationships with them [13].</p>
+
+<h3 id="design">Design</h3>
+<p>“Kids Ask is an web-based educational platform prototype, that involves interaction with a conversational agent. The platform is designed to help children identify their uncertainties, or “knowledge gaps”, generate questions to compensate for these gaps and, finally, use their questioning skills to explore and acquire new knowledge autonomously by following their curiosity.</p>
+
+<p>To meet this objective, “kids Ask” offers three work spaces:</p>
+<ol>
+  <li><strong>Curiosity stimulation Space:</strong> The agents in this space offer quizzes on different topics and try to make students aware of gaps in their knowledge by encouraging them to report confidence levels in the answers they give. We use this strategy to probe students’ meta-cognition and attempt to arouse their curiosity by making them aware of gaps in their knowledge. Indeed, these strategies allow children to think more deeply about what they know and do not know and thus be able to defer more uncertainties [14]-the first step to adopting curious behaviors.</li>
+  <li><strong>Curiosity elaboration space:</strong> In a second step, our agents aim to help children go one step further than the identification of uncertainty: we want to train them to know how to express these uncertainties and to be able to pursue them by asking the appropriate questions.<br />
+To do this, the agents propose reading-comprehension tasks and specific cues for formulating questions that are said to be “divergent” from the texts. These are questions that bring up new information about the text and ask students to make hypotheses, connections between different ideas, etc. The agents help the students in this exercise by proposing precise linguistic and semantic clues that lead to this divergent thinking. The idea here is to propose “knowledge gaps” to the students and to encourage them to pursue them by formulating high-level questions. By doing this exercise, children could thus acquire new information that they would have looked for on their own, and which is important for a better understanding of the text.
+We choose to focus on training divergent questioning because it is an ability that induces more curious thinking and involves the use of more cognitive processes [15].</li>
+  <li><strong>Curiosity maintenance space:</strong> In order to help children stay in curious states, our agents encourage them to mobilize their questioning abilities to explore educational resources available in the platform and perform autonomous, organized, and personalized investigations. The purpose of this space is to train children to take time to evaluate the new information they acquire and ask themselves if they are satisfied with it or if it raises new questions in them. Such exercises help avoid the trap of the “illusion of knowledge” and the “premature” interruption of learning cycles.</li>
+</ol>
+
+<div align="center" style="margin-bottom:40px">
+	<img class="80" src="/images/posts/2022-10-11-kids_ask/Illustration.png" width="80%" alt="Figure 1" />
+    
+
+<sub style="display: block; line-height: 1.5em">
+	<i>Figure 1. Illustration of the 'Kids Ask' platform features, with relation to our curiosity model
+</i></sub>
+</div>
+
+<h3 id="technical-implementation">Technical implementation</h3>
+
+<p>The interface was programmed in JavaScript using the REACT library and was connected to a RESTful API to publish and retrieve the interaction data. The behavior of the agent in terms of selection of the adequate cue(s) to offer was predefined and hand-scripted: it was connected to a database containing the different text resources and every text had a sequence of linguistic and semantic cues linked to it. Depending on the child’s condition, the agent’s automaton composes the dialogue utterances in order to include the appropriate support. We changed the utterances between the questions to avoid repetition in the agent’s dialogue: a replica is not executed if it has been delivered during the previous question.</p>
+
+<p>Our current implementation had no natural language processing methods to condition the agent’s behavior: the recommendation system in the exploration space was only based on an automaton that shows the resources related to the topic of choice of the child. Also, the type of question entered by the child was only assessed later on during the data analysis phase.</p>
+
+<div align="center" style="margin-bottom:40px">
+	<img class="80" src="/images/posts/2022-10-11-kids_ask/system_design.png" width="70%" alt="Figure 2" />
+    
+<sub style="display: block; line-height: 1.5em">
+	<i>Figure 2. System design
+</i></sub>
+</div>
+
+<h2 id="testing-with-children">Testing with children</h2>
+<p>The “Kids Ask” platform was tested with four classes from two different French elementry schools; participants were aged between 9 and 10. In order to investigate the efficiency of our approach (described above), we implemented two different versions of “Kids Ask” :</p>
+<ul>
+  <li>An experimental version : where participants interacted with “incentive” agents, i.e., agents that propose “knowledge gaps”</li>
+  <li>A control version : where participants interacted with “neutral” agents, i.e., agents that only ask if the child has a question about the text without giving any hints or cues.</li>
+</ul>
+
+<ol>
+  <li><strong>Children’s ability to ask correct curiosity-based questions during the training:</strong> The results of the interaction showed that children that had the experimental version of “Kids Ask” (i.e., the incentive agents) asked significantly more divergent questions during their training than those who had the “neutral” agents. Questions were also of higher syntactic quality for participants who had the help of the incentive agents.</li>
+</ol>
+
+<div align="center" style="margin-bottom:40px">
+	<img class="80" src="/images/posts/2022-10-11-kids_ask/qa-perf.png" width="100%" alt="Figure 3" />
+    
+<sub style="display: block; line-height: 1.5em">
+	<i>Figure 3. (A) Children's ability to ask curiosity-driven questions (i.e., higher-level divergent questions) is significantly better when having the support of the incentive agents (B) Children's ability to ask correct questions syntax-wise is significantly better when having the support of the incentive agents.
+</i></sub>
+</div>
+
+<ol>
+  <li>
+    <p><strong>Children’s ability to use curious question-asking to lead autonomous explorations of the pedagogical resources available:</strong> Our results showed that the incentive agents were more effective in helping children maintain autonomous explorations of the educational resources. We also showed that the exploration length was in line with children’s ability to generate the relevant curious questions. However, our results were not conclusive as to the <strong>patterns</strong> of explorations of these resources. Indeed, we saw similar entropies in the transitions between the resources that children from the two groups adopted during their information-searching cycles.</p>
+  </li>
+  <li>
+    <p><strong>Children’s acheived domain-knwoledge learning progress:</strong> Finally, our results also showed a strong and positive relationship between the intensity of children’s curiosity-driven behaviors and their ability to acheive domain-knowledge learning progress.</p>
+  </li>
+</ol>
+
+<p>Together, our results suggest that the more our agents are able to help children become aware of their knowledge gaps, the better they can maintain their curiosity-driven information-seeking behaviors and the more likely they are to acquire new knowledge independently.</p>
+
+<h2 id="conclusion-and-future-directions">Conclusion and future directions</h2>
+<p>With this project, we show that curiosity-driven behaviors such as curiosity-driven questioning and independent explorations can be trained on and enhanced with the help of educational technologies in general and conversational agents more particularily. We also show that these behaviors have a direct positive impact on the learning progress children can make. 
+For future directions, we aim to work on the automation of our agents’ curiosity-prompting behaviors in order to facilitate their implementaion on larger scale and in different school activities. For this, we are studying the possibility to leverage the advances in the natural language processing field in order .
+Our work and results motivate the implementation of such approaches in both classrooms and online learning environments.</p>
+
+<hr />
+
+<p><sub style="display: block; line-height: 1.5em">
+<b>Cite this blog post </b>
+</sub></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@misc{,
+  TITLE = ,
+  AUTHOR = {Abdelghani, Rania and Oudeyer, Pierre-Yves and Law, Edith and de Vulipillieres, Catherine and Sauzeon, Helene},
+  YEAR = {2022},
+  HAL_ID = {hal-03810322},
+  HAL_VERSION = {1},
+}
+</code></pre></div></div>
+
+<hr />
+
+<p><sub style="display: block; line-height: 1.5em">
+<b>Cite our IJCHS 2022 paper </b>
+</sub></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{ABDELGHANI2022102887,
+title = {Conversational agents for fostering curiosity-driven learning in children},
+journal = {International Journal of Human-Computer Studies},
+volume = {167},
+pages = {102887},
+year = {2022},
+issn = {1071-5819},
+doi = {https://doi.org/10.1016/j.ijhcs.2022.102887},
+url = {https://www.sciencedirect.com/science/article/pii/S1071581922001112},
+author = {Rania Abdelghani and Pierre-Yves Oudeyer and Edith Law and Catherine {de Vulpillières} and Hélène Sauzéon},
+keywords = {Human–computer interface, Cooperative/collaborative learning, Teaching/learning strategies, Improving classroom teaching}
+}
+</code></pre></div></div>
+
+<hr />
+
+<div id="references" style="line-height: 1em">
+<sub>
+<b>References</b>
+</sub>
+
+<li id="ref1" style="font-size: small">
+      Abdelghani, R., Oudeyer, PY., Law, E., de Vulpillières, C., &amp; Sauzéon, H. (2022). Conversational agents for fostering curiosity-driven learning in children.
+International Journal of Human-Computer Studies,Volume 167. [https://doi.org/10.1016/j.ijhcs.2022.102887]
+</li>
+    
+<li id="ref2" style="font-size: small">
+      Litman, J. (2005). Curiosity and the pleasures of learning: Wanting and liking new information.
+Cognition &amp; Emotion, 19(6):793–814.
+</li>
+    
+<li id="ref3" style="font-size: small">
+      Von Stumm, HS., Chamorro-Premuzic., t. (2011). The hungry mind : Intellectual curiosity is the third pillar of academic performance.
+Perspectives on psychological science.
+</li>
+    
+<li id="ref4" style="font-size: small">
+      Metz, ke. (2008). Narrowing the gulf between the practices of science and the elementary school science classroom.
+The elementary school journal.
+</li>
+    
+<li id="ref5" style="font-size: small">
+      Jepma, M., Verdonschot, R., van Steenbergen, H., Rombouts, S., &amp; Nieuwenhuis, S.  (2012). Neural mechanisms underlying the induction and relief of perceptual curiosity.
+Frontiers in behavioral neuroscience.
+</li>
+    
+<li id="ref6" style="font-size: small">
+      Bulgren, JA., Marquis, JG., Lenz, BK., Deshler, DD., &amp; Schumaker, JB.  (2011). The effectiveness of a question-exploration routine for enhancing the content learning of secondary students.
+Journal of Educational Psychology, 103(3), 578–593. [https://doi.org/10.1037/a0023930]
+</li>
+    
+<li id="ref7" style="font-size: small">
+      Jirout, JJ., Vitiello, VE., &amp; Zumbrunn, SK.  (2018). Curiosity in schools.
+G. Gordon (Ed.), The new science of curiosity (pp. 243–265). Nova Science Publishers.
+</li>
+    
+<li id="ref8" style="font-size: small">
+      Ceha, J., Chhibber, N., Goh, J., McDonald, C., Oudeyer, PY., Kulic, D., &amp; Law, E., (2019). Expression of Curiosity in Social Robots: Design, Perception, and Effects on Behaviour.
+CHI Conference on Human Factors in Computing Systems (CHI '19). Association for Computing Machinery, New York, NY, USA, Paper 406, 1–12. [https://doi.org/10.1145/3290605.3300636]
+</li>
+    
+<li id="ref9" style="font-size: small">
+      Gordon, G., Breazeal, C., &amp; Engel, C. (2015). Can Children Catch Curiosity from a Social Robot?
+Tenth Annual ACM/IEEE International Conference on Human-Robot Interaction (HRI '15). Association for Computing Machinery, New York, NY, USA, 91–98. [https://doi.org/10.1145/2696454.2696469].
+</li>
+    
+<li id="ref10" style="font-size: small">
+   Alaim, M., Law, E., Pantsado, KD., Oudeyer, PY., &amp; Sauzéon, H (2020). Pedagogical Agents for Fostering Question-Asking Skills in Children. 
+The 2020 CHI Conference on Human Factors in Computing Systems.
+
+</li>
+    
+<li id="ref11" style="font-size: small">
+   Humphries, J., &amp; Ness, M. (2015). Beyond who, what, where, when, why, and how: Preparing students to generate questions in the age of common core standards.
+Journal of Research in Childhood Education 29, 551–561.[http://dx.doi.org/10.1080/02568543.2015.1073199]
+</li>
+    
+<li id="ref12" style="font-size: small">
+   Post, T. &amp; Walma van der Molen, JH.,(2015). Development and validation of a questionnaire to measure primary school children’s images of and attitudes towards curiosity (the ciac questionnaire).
+Motivation and Emotion 42,1:159-178.[http://dx.doi.org/10.1007/s11031-018-9728-9]
+</li>
+    
+<li id="ref13" style="font-size: small">
+   Alven, V., Koedinger, KR., &amp; Cross, K.,(1999). Tutoring answer explanation fosters learning with understanding.
+Artificial Intelligence in Education, IOS Press, 1999, pp. 199–206.
+</li>
+    
+<li id="ref14" style="font-size: small">
+   Roebers, C., von der Linden, N., &amp; Howie, P.,(2007).Favorable and unfavorable conditions for children’s confidence judgments.
+British Journal of Developmental Psychology 25, 109–134. [https://doi.org/10.1348/980026151006X104392]
+</li>
+    
+<li id="ref15" style="font-size: small">
+  Gallagher, J. J., &amp; Aschner, MJ.(1963). A preliminary report on analysis of classroom interaction.
+Merrill-Palmer Quarterly of Behavior and Development, 9(3), 183–194. [http://www.jstor.org/stable/23082786].
+</li>
+    
+<li id="ref16" style="font-size: small">
+  Loewenstein, G. (1994). The psychology of curiosity: A review and reinterpretation.
+Psychological Bulletin 116 75–98. [doi:10.1037/0033-2909.116.1.75].
+</li>
+    
+<li id="ref17" style="font-size: small">
+  Berlyne, DE. (1978). Curiosity and learning.
+Motivation and Emotion 2 91-175. [https://doi.org/10.1007/BF00993037].
+</li>
+    
+</div>
+
+</article>
+
+
+  <div class="share-page">
+  Share this post!
+
+  <div class="share-links">
+    
+      <a class="fa fa-facebook" href="https://facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fkids_ask" rel="nofollow" target="_blank" title="Share on Facebook"></a>
+    
+
+    
+      <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text=Designing+artificial+conversational+agents+to+train+children%27s+curiosity+during+learning%2C+a+proof+of+concept+through+the+Kids+Ask+project&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fkids_ask" rel="nofollow" target="_blank" title="Share on Twitter"></a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <a class="fa fa-reddit" href="http://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2Fkids_ask&amp;title=Designing+artificial+conversational+agents+to+train+children%27s+curiosity+during+learning%2C+a+proof+of+concept+through+the+Kids+Ask+project" rel="nofollow" target="_blank" title="Share on Reddit"></a>
+    
+
+    
+
+    
+      <a class="fa fa-hacker-news" onclick="parent.postMessage('submit','*')" href="https://news.ycombinator.com/submitlink?u=http%3A%2F%2Flocalhost%3A4000%2Fkids_ask&amp;t=Designing+artificial+conversational+agents+to+train+children%27s+curiosity+during+learning%2C+a+proof+of+concept+through+the+Kids+Ask+project" rel="nofollow" target="_blank" title="Share on Hacker News"></a>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--<footer class="center">
+  <div class="measure">
+    <small>
+      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+      &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">GitHub</a>.
+    </small>
+  </div>
+
+
+
+</footer>
+
+<script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+    }
+</script>
+
+
+    <script type="text/javascript">
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" +
+           katex.renderToString(tex) +
+           "</span>";
+});
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" +
+           katex.renderToString("\\displaystyle "+tex) +
+           "</div>";
+});
+
+
+
+</script>
+
+
+
+<!--<script>-->
+      <!--renderMathInElement(-->
+          <!--document.body,-->
+          <!--{-->
+              <!--delimiters: [-->
+                  <!--{left: "$$", right: "$$", display: true},-->
+                  <!--{left: "\\[", right: "\\]", display: true},-->
+                  <!--{left: "$", right: "$", display: false},-->
+                  <!--{left: "\\(", right: "\\)", display: false}-->
+              <!--]-->
+          <!--}-->
+      <!--);-->
+    <!--</script>-->-->
+</body>
+</html>

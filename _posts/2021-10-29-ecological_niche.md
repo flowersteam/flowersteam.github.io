@@ -2,10 +2,11 @@
 layout:     post
 title:      'Intelligent behavior depends on the ecological niche: Scaling up AI to human-like intelligence in socio-cultural environments'
 date:       2021-10-29
-summary: In this blog post, Pierre-Yves Oudeyer discusses with Manfred Eppe to present his perspective on the future of AI and machines models of human-like intelligence. The discussion explains how developmental and evolutionary theories of human cognition should further inform artificial intelligence. This emphasizes the  role of ecological niches in sculpting intelligent behavior, and in particular that human intelligence was fundamentally shaped to adapt to a constantly changing socio-cultural environment. A major limit of current work in AI is that it is missing this perspective, both theoretically and experimentally. One promising approach to address these limits is developmental artificial intelligence, modeling infant development through multi-scale interaction between intrinsically motivated learning, embodiment and a fastly changing socio-cultural environment.
+summary: Human intelligence was shaped by socio-cultural ecological niches. Developmental AI — modeling infant learning through embodiment and intrinsic motivation — is a promising path toward human-like intelligence.
 categories: jekyll
 permalink: ecological_niche
 use_math: true
+tags: [human-autotelic-learning, developmental-AI, embodiment, intrinsic-motivation, ecology]
 authors:
 - name: Pierre-Yves Oudeyer
   link: http://www.pyoudeyer.com/
@@ -311,6 +312,7 @@ Acknowledgements: We would like to thank [Grgur Kovac](https://scholar.google.co
 
 <hr>
 
+{% raw %}
 ```
 @article{eppe:hal-03120583,
   TITLE = {Intelligent Behavior Depends on the Ecological Niche},
@@ -327,6 +329,7 @@ Acknowledgements: We would like to thank [Grgur Kovac](https://scholar.google.co
   HAL_VERSION = {v1},
 }
 ```
+{% endraw %}
 
 <button class="btn" type="button" onclick="copyToClipboard()">Copy to clipboard</button>
 
@@ -335,7 +338,7 @@ Acknowledgements: We would like to thank [Grgur Kovac](https://scholar.google.co
 function copyToClipboard() {
     var dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
-    var text = "@article{eppe:hal-03120583, TITLE = {Intelligent Behavior Depends on the Ecological Niche}, AUTHOR = {Eppe, Manfred and Oudeyer, Pierre-Yves}, URL = {https://hal.inria.fr/hal-03120583}, JOURNAL = {KI - K{\"u}nstliche Intelligenz}, PUBLISHER = {{Springer Nature}}, YEAR = {2021}, MONTH = Jan, DOI = {10.1007/s13218-020-00696-1}, KEYWORDS = {Developmental machine learning ; Human-like AI ; Language ; Evolution ; Machine learning ; Artificial intelligence ; Developmental robotics ; Social skills ; Socio-cognitive development}, PDF = {https://hal.inria.fr/hal-03120583/file/2020_Interview_OudeyerV2.pdf}, HAL_ID = {hal-03120583}, HAL_VERSION = {v1}, }";
+    var text = "@article{eppe:hal-03120583, TITLE = {Intelligent Behavior Depends on the Ecological Niche}, AUTHOR = {Eppe, Manfred and Oudeyer, Pierre-Yves}, URL = {https://hal.inria.fr/hal-03120583}, JOURNAL = {KI - K{\\\"u}nstliche Intelligenz}, PUBLISHER = {{Springer Nature}}, YEAR = {2021}, MONTH = Jan, DOI = {10.1007/s13218-020-00696-1}, KEYWORDS = {Developmental machine learning ; Human-like AI ; Language ; Evolution ; Machine learning ; Artificial intelligence ; Developmental robotics ; Social skills ; Socio-cognitive development}, PDF = {https://hal.inria.fr/hal-03120583/file/2020_Interview_OudeyerV2.pdf}, HAL_ID = {hal-03120583}, HAL_VERSION = {v1}, }";
     dummy.value = text;
     dummy.select();
     document.execCommand("copy");

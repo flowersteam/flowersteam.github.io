@@ -10,7 +10,7 @@
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Reproducibility in Machine Learning and Deep Reinforcement Learning in particular has become a serious issue in the recent years. In this blog post, we present a statistical guide to perform rigorous comparison of RL algorithms.">
+    <meta name="description" content="A statistical guide for rigorous comparison of deep RL algorithms, addressing the reproducibility crisis through principled random seed usage and statistical testing.">
     <meta name="robots" content="all">
     <meta name="author" content="INRIA Flowers Team">
     
@@ -19,7 +19,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?202004291649" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202604021143" type="text/css">
 
     <!-- Fonts -->
     
@@ -60,7 +60,7 @@
         <meta name="twitter:creator" content="@FlowersINRIA" />
     
     <meta name="twitter:title" content="How Many Random Seeds ?" />
-    <meta name="twitter:description" content="Reproducibility in Machine Learning and Deep Reinforcement Learning in particular has become a serious issue in the recent years. In this blog post, we present a statistical guide to perform rigorous comparison of RL algorithms." />
+    <meta name="twitter:description" content="A statistical guide for rigorous comparison of deep RL algorithms, addressing the reproducibility crisis through principled random seed usage and statistical testing." />
     <meta name="twitter:url" content="http://localhost:4000/how_many_random_seeds" />
     
     <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
@@ -169,6 +169,24 @@
     
 
     
+        <a class="nav-link" href="/discover">Discover</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/blogs">Blogs</a>
+    
+
+    
+
+    
+    
+
+    
         <a class="nav-link" href="/publications/">Publications</a>
     
 
@@ -239,9 +257,22 @@
   
   <span class="post-meta small">
   
-    28 minute read
+    30 minute read
   
   </span>
+  
+  <div class="post-tags">
+    
+      <a href="/tags#machine-autotelic-learning" class="post-tag">machine-autotelic-learning</a>
+    
+      <a href="/tags#reproducibility" class="post-tag">reproducibility</a>
+    
+      <a href="/tags#statistics" class="post-tag">statistics</a>
+    
+      <a href="/tags#deep-rl" class="post-tag">deep-RL</a>
+    
+  </div>
+  
 </div>
 
 <article class="post-content">
@@ -265,27 +296,27 @@
 
 <h3 id="definition-of-the-statistical-problem">Definition of the statistical problem</h3>
 
-<p>The performance of an algorithm can be modeled as a <em>random variable</em> <script type="math/tex">X</script> and running this algorithm in an environment results in a <em>realization</em> <script type="math/tex">x</script>. Repeating the procedure <script type="math/tex">N</script> times, you obtain a statistical <em>sample</em> <script type="math/tex">x=(x^1, .., x^N)</script>. A random variable is usually characterized by its <em>mean</em> <script type="math/tex">\mu</script> and its <em>standard deviation</em>, noted <script type="math/tex">\sigma</script>. Of course, you do not know what are the values of <script type="math/tex">\mu</script> and <script type="math/tex">\sigma</script>. The only thing you can do is to compute their estimations <script type="math/tex">\overline{x}</script> and <script type="math/tex">s</script>:</p>
+<p>The performance of an algorithm can be modeled as a <em>random variable</em> \(X\) and running this algorithm in an environment results in a <em>realization</em> \(x\). Repeating the procedure \(N\) times, you obtain a statistical <em>sample</em> \(x=(x^1, .., x^N)\). A random variable is usually characterized by its <em>mean</em> \(\mu\) and its <em>standard deviation</em>, noted \(\sigma\). Of course, you do not know what are the values of \(\mu\) and \(\sigma\). The only thing you can do is to compute their estimations \(\overline{x}\) and \(s\):</p>
 
-<script type="math/tex; mode=display">\large
-\overline{x} \mathrel{\hat=} \sum\limits_{i=1}^n{x^i},  s \mathrel{\hat=}\sqrt{\frac{\sum_{i+1}^{N}(x^i-\overline{x})^2}{N-1}},</script>
+\[\large
+\overline{x} \mathrel{\hat=} \sum\limits_{i=1}^n{x^i},  s \mathrel{\hat=}\sqrt{\frac{\sum_{i+1}^{N}(x^i-\overline{x})^2}{N-1}},\]
 
-<p>where <script type="math/tex">\overline{x}</script> is called the empirical mean, and <script type="math/tex">s</script> is called the empirical standard deviation. The larger the sample size <script type="math/tex">N</script>, the more confidence you can be 
+<p>where \(\overline{x}\) is called the empirical mean, and \(s\) is called the empirical standard deviation. The larger the sample size \(N\), the more confidence you can be 
 in the 
 estimations.</p>
 
-<p>Here, two algorithms with respective performances <script type="math/tex">X_1</script> and <script type="math/tex">X_2</script> are compared. If <script type="math/tex">X_1</script> and <script type="math/tex">X_2</script> follow normal distributions, the random variable describing their difference <script type="math/tex">(X_{\text{diff}} = X_1-X_2)</script> also follows a normal distribution with parameters <script type="math/tex">{\sigma_{diff}=(\sigma_1^2+\sigma_2^2)^{1/2}}</script> and <script type="math/tex">\mu_{\text{diff}}=\mu_1-\mu_2</script>. In this 
-case, the estimator of the mean of <script type="math/tex">X_{\text{diff}}</script> is <script type="math/tex">\overline{x}_{\text{diff}} = \overline{x}_1-\overline{x}_2</script> and the estimator of <script type="math/tex">{\sigma_{\text{diff}}}</script> is <script type="math/tex">{s_{\text{diff}}=\sqrt{s_1^2+s_2^2}}</script>. The <em>effect size</em> <script type="math/tex">\epsilon</script> can be defined as the difference between the mean performances of both algorithms: <script type="math/tex">{\epsilon = \mu_1-\mu_2}</script>.</p>
+<p>Here, two algorithms with respective performances \(X_1\) and \(X_2\) are compared. If \(X_1\) and \(X_2\) follow normal distributions, the random variable describing their difference \((X_{\text{diff}} = X_1-X_2)\) also follows a normal distribution with parameters \({\sigma_{diff}=(\sigma_1^2+\sigma_2^2)^{1/2}}\) and \(\mu_{\text{diff}}=\mu_1-\mu_2\). In this 
+case, the estimator of the mean of \(X_{\text{diff}}\) is \(\overline{x}_{\text{diff}} = \overline{x}_1-\overline{x}_2\) and the estimator of \({\sigma_{\text{diff}}}\) is \({s_{\text{diff}}=\sqrt{s_1^2+s_2^2}}\). The <em>effect size</em> \(\epsilon\) can be defined as the difference between the mean performances of both algorithms: \({\epsilon = \mu_1-\mu_2}\).</p>
 
-<p>Testing for a difference between the performances of two algorithms ( <script type="math/tex">\mu_1</script> and <script type="math/tex">\mu_2</script>) is mathematically equivalent to testing a difference between their difference 
-<script type="math/tex">\mu_{\text{diff}}</script> and 0. The second point of view is considered from now on. We draw a sample <script type="math/tex">x_{\text{diff}}</script> from <script type="math/tex">X_{\text{diff}}</script> by subtracting two samples <script type="math/tex">x_1</script> and <script type="math/tex">x_2</script> obtained from <script type="math/tex">X_1</script> and <script type="math/tex">X_2</script>.</p>
+<p>Testing for a difference between the performances of two algorithms ( \(\mu_1\) and \(\mu_2\)) is mathematically equivalent to testing a difference between their difference 
+\(\mu_{\text{diff}}\) and 0. The second point of view is considered from now on. We draw a sample \(x_{\text{diff}}\) from \(X_{\text{diff}}\) by subtracting two samples \(x_1\) and \(x_2\) obtained from \(X_1\) and \(X_2\).</p>
 
 <p><strong><em>Example 1</em></strong></p>
 
-<p>To illustrate the concepts developed in this article, let us take two algorithms (<script type="math/tex">Algo 1</script> and <script type="math/tex">Algo 2</script>) and compare them on the Half-Cheetah environment from the <a href="https://gym.openai.com/">OpenAI Gym 
-framework</a>. The actual algorithms used are not so important here, and will be revealed later. First, we run a preliminary study with <script type="math/tex">N=5</script> random seeds 
-for each and plot the results in Figure 2. This figure shows the average learning curves, with the <script type="math/tex">95\%</script> confidence interval. Each point of a learning curve is the average 
-cumulated reward over <script type="math/tex">10</script> evaluation episodes. The <em>measure of performance</em> of an algorithm is the average performance over the last <script type="math/tex">10</script> points (i.e. last <script type="math/tex">100</script> evaluation episodes). From the figure, it seems that <script type="math/tex">Algo1</script> performs better than <script type="math/tex">Algo2</script>. Moreover, the confidence intervals do not overlap much at the end. Of course, we need to run statistical tests before drawing any conclusion.</p>
+<p>To illustrate the concepts developed in this article, let us take two algorithms (\(Algo 1\) and \(Algo 2\)) and compare them on the Half-Cheetah environment from the <a href="https://gym.openai.com/">OpenAI Gym 
+framework</a>. The actual algorithms used are not so important here, and will be revealed later. First, we run a preliminary study with \(N=5\) random seeds 
+for each and plot the results in Figure 2. This figure shows the average learning curves, with the \(95\%\) confidence interval. Each point of a learning curve is the average 
+cumulated reward over \(10\) evaluation episodes. The <em>measure of performance</em> of an algorithm is the average performance over the last \(10\) points (i.e. last \(100\) evaluation episodes). From the figure, it seems that \(Algo1\) performs better than \(Algo2\). Moreover, the confidence intervals do not overlap much at the end. Of course, we need to run statistical tests before drawing any conclusion.</p>
 
 <div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/e/e5e46b3919dba623d48357cf0abb05c2d14d2fd3.jpg" height="300" />
@@ -298,68 +329,67 @@ cumulated reward over <script type="math/tex">10</script> evaluation episodes. T
 
 <h3 id="comparing-performances-with-a-difference-test">Comparing performances with a difference test</h3>
 
-<p>In a <em>difference test</em>, statisticians define the <em>null hypothesis</em> <script type="math/tex">H_0</script> and the <em>alternate hypothesis</em> <script type="math/tex">H_a</script>. <script type="math/tex">H_0</script> assumes no difference whereas <script type="math/tex">H_a</script> assumes one:</p>
+<p>In a <em>difference test</em>, statisticians define the <em>null hypothesis</em> \(H_0\) and the <em>alternate hypothesis</em> \(H_a\). \(H_0\) assumes no difference whereas \(H_a\) assumes one:</p>
 
 <ul>
-  <li><script type="math/tex">H_0</script>: <script type="math/tex">\mu_{\text{diff}} = 0</script></li>
-  <li><script type="math/tex">H_a</script>: <script type="math/tex">\mu_{\text{diff}} \neq 0</script></li>
+  <li>\(H_0\): \(\mu_{\text{diff}} = 0\)</li>
+  <li>\(H_a\): \(\mu_{\text{diff}} \neq 0\)</li>
 </ul>
 
-<p>These hypothesis refers to the two-tail case. When you have an a-priori on which algorithm performs best, (let us say <script type="math/tex">Algo1</script>), you can use the one-tail version:</p>
+<p>These hypothesis refers to the two-tail case. When you have an a-priori on which algorithm performs best, (let us say \(Algo1\)), you can use the one-tail version:</p>
 
 <ul>
-  <li><script type="math/tex">H_0</script>: <script type="math/tex">\mu_{\text{diff}} \leq 0</script></li>
-  <li><script type="math/tex">H_a</script>: <script type="math/tex">\mu_{\text{diff}}  > 0</script></li>
+  <li>\(H_0\): \(\mu_{\text{diff}} \leq 0\)</li>
+  <li>\(H_a\): \(\mu_{\text{diff}}  &gt; 0\)</li>
 </ul>
 
-<p>At first, a statistical test always assumes the null hypothesis. Once a sample <script type="math/tex">x_{\text{diff}}</script> is collected from <script type="math/tex">X_{\text{diff}}</script>, you can estimate the probability <script type="math/tex">p</script> 
-(called <script type="math/tex">p</script>-value) of observing data as extreme, under the null hypothesis assumption. By <em>extreme</em>, one means far from the null hypothesis (<script type="math/tex">\overline{x}_{\text{diff}}</script> far 
-from <script type="math/tex">0</script>). The <script type="math/tex">p</script>-value answers the following question: <em>how probable is it to observe this sample or a more extreme one, given that there is no true difference in the 
+<p>At first, a statistical test always assumes the null hypothesis. Once a sample \(x_{\text{diff}}\) is collected from \(X_{\text{diff}}\), you can estimate the probability \(p\) 
+(called \(p\)-value) of observing data as extreme, under the null hypothesis assumption. By <em>extreme</em>, one means far from the null hypothesis (\(\overline{x}_{\text{diff}}\) far 
+from \(0\)). The \(p\)-value answers the following question: <em>how probable is it to observe this sample or a more extreme one, given that there is no true difference in the 
 performances of both algorithms?</em> Mathematically, we can write it this way for the one-tail case:</p>
 
-<script type="math/tex; mode=display">p\text{-value} = P(X_{\text{diff}}\geq \overline{x}_{\text{diff}} \mid H_0),</script>
+\[p\text{-value} = P(X_{\text{diff}}\geq \overline{x}_{\text{diff}} \mid H_0),\]
 
 <p>and this way for the two-tail case:</p>
 
-<script type="math/tex; mode=display">p{\normalsize \text{-value}}=\left\{
+\[p{\normalsize \text{-value}}=\left\{
     \begin{array}{ll}
-    P(X_{\text{diff}}\geq \overline{x}_{\text{diff}} \hspace{2pt} |\hspace{2pt} H_0)\hspace{0.5cm} \text{if} \hspace{5pt} \overline{x}_{\text{diff}}>0\\
+    P(X_{\text{diff}}\geq \overline{x}_{\text{diff}} \hspace{2pt} |\hspace{2pt} H_0)\hspace{0.5cm} \text{if} \hspace{5pt} \overline{x}_{\text{diff}}&gt;0\\
     P(X_{\text{diff}}\leq \overline{x}_{\text{diff}} \hspace{2pt} |\hspace{2pt} H_0) \hspace{0.5cm} \text{if} \hspace{5pt} \overline{x}_{\text{diff}}\leq0.
     \end{array}
-    \right.</script>
+    \right.\]
 
 <p>When this probability becomes really low, it means that it is highly improbable that two algorithms with no performance difference produced the collected sample 
-<script type="math/tex">x_{\text{diff}}</script>. A difference is called <em>significant at significance level <script type="math/tex">\alpha</script></em> when the <script type="math/tex">p</script>-value is lower than <script type="math/tex">\alpha</script> in the one-tail case, and lower than 
-<script type="math/tex">\alpha/2</script> in the two tail case to account for the two sided test. Usually <script type="math/tex">\alpha</script> is set to <script type="math/tex">0.05</script> or lower. In this case, the low probability to observe the collected 
-sample under hypothesis <script type="math/tex">H_0</script> results in its rejection. Note that a significance level <script type="math/tex">\alpha=0.05</script> still results in <script type="math/tex">1</script> chance out of <script type="math/tex">20</script> to claim a false positive, to claim that there is a true difference when there is not.</p>
+\(x_{\text{diff}}\). A difference is called <em>significant at significance level \(\alpha\)</em> when the \(p\)-value is lower than \(\alpha\) in the one-tail case, and lower than 
+\(\alpha/2\) in the two tail case to account for the two sided test. Usually \(\alpha\) is set to \(0.05\) or lower. In this case, the low probability to observe the collected 
+sample under hypothesis \(H_0\) results in its rejection. Note that a significance level \(\alpha=0.05\) still results in \(1\) chance out of \(20\) to claim a false positive, to claim that there is a true difference when there is not.</p>
 
 <p>Another way to see this, is to consider confidence intervals. Two kinds of confidence intervals can be computed:</p>
 
 <ul>
-  <li><script type="math/tex">CI_1</script>: The <script type="math/tex">100\cdot(1-\alpha)\%</script> confidence interval for the mean of the difference <script type="math/tex">\mu_{\text{diff}}</script> given a sample <script type="math/tex">x_{\text{diff}}</script> characterized by 
-<script type="math/tex">\overline{x}_{\text{diff}}</script> and <script type="math/tex">s_{\text{diff}}</script>.</li>
-  <li><script type="math/tex">CI_2</script>: The <script type="math/tex">100\cdot(1-\alpha)\%</script> confidence interval for any realization of <script type="math/tex">X_{\text{diff}}</script> under <script type="math/tex">H_0</script> (assuming <script type="math/tex">\mu_{\text{diff}}=0</script>).</li>
+  <li>\(CI_1\): The \(100\cdot(1-\alpha)\%\) confidence interval for the mean of the difference \(\mu_{\text{diff}}\) given a sample \(x_{\text{diff}}\) characterized by 
+\(\overline{x}_{\text{diff}}\) and \(s_{\text{diff}}\).</li>
+  <li>\(CI_2\): The \(100\cdot(1-\alpha)\%\) confidence interval for any realization of \(X_{\text{diff}}\) under \(H_0\) (assuming \(\mu_{\text{diff}}=0\)).</li>
 </ul>
 
-<p>Having <script type="math/tex">CI_2</script> that does not include <script type="math/tex">\overline{x}_{\text{diff}}</script> is mathematically equivalent to a <script type="math/tex">p</script>-value below <script type="math/tex">\alpha</script>. In both cases, it means there is less than <script type="math/tex">100\cdot\alpha\%</script> chance that <script type="math/tex">\mu_{\text{diff}}=0</script> under <script type="math/tex">H_0</script>. When <script type="math/tex">CI_1</script> does not include <script type="math/tex">0</script>, we are also <script type="math/tex">100\cdot(1-\alpha)\%</script> confident that <script type="math/tex">\mu\neq0</script>, without assuming <script type="math/tex">H_0</script>. Proving one of these things leads to conclude that the difference is <em>significant at level <script type="math/tex">\alpha</script></em>.</p>
+<p>Having \(CI_2\) that does not include \(\overline{x}_{\text{diff}}\) is mathematically equivalent to a \(p\)-value below \(\alpha\). In both cases, it means there is less than \(100\cdot\alpha\%\) chance that \(\mu_{\text{diff}}=0\) under \(H_0\). When \(CI_1\) does not include \(0\), we are also \(100\cdot(1-\alpha)\%\) confident that \(\mu\neq0\), without assuming \(H_0\). Proving one of these things leads to conclude that the difference is <em>significant at level \(\alpha\)</em>.</p>
 
 <p>Two types of errors can be made in statistics:</p>
 <ul>
-  <li>The <strong>type-I error</strong> <em>rejects <script type="math/tex">H_0</script> when it is true</em>, also called <em>false positive</em>. This corresponds to claiming the superiority of an algorithm over another when there is no true difference. Note that we call both the significance level and the probability of type-I error <script type="math/tex">\alpha</script> because they both refer to the same concept. Choosing a significance level of <script type="math/tex">\alpha</script> enforces a probability of type-I error <script type="math/tex">\alpha</script>, under the assumptions of the statistical test.</li>
-  <li>The <strong>type-II error</strong> <em>fails to reject <script type="math/tex">H_0</script> when it is false</em>, also called <em>false negative</em>. This corresponds to missing the opportunity to publish an article when there was actually something to be found.</li>
+  <li>The <strong>type-I error</strong> <em>rejects \(H_0\) when it is true</em>, also called <em>false positive</em>. This corresponds to claiming the superiority of an algorithm over another when there is no true difference. Note that we call both the significance level and the probability of type-I error \(\alpha\) because they both refer to the same concept. Choosing a significance level of \(\alpha\) enforces a probability of type-I error \(\alpha\), under the assumptions of the statistical test.</li>
+  <li>The <strong>type-II error</strong> <em>fails to reject \(H_0\) when it is false</em>, also called <em>false negative</em>. This corresponds to missing the opportunity to publish an article when there was actually something to be found.</li>
 </ul>
 
 <p><strong>Important:</strong></p>
 
 <ul>
-  <li><script type="math/tex">H_0</script>: <script type="math/tex">\mu_{\text{diff}} \leq 0</script></li>
-  <li><script type="math/tex">H_a</script>: <script type="math/tex">\mu_{\text{diff}}  > 0</script></li>
-  <li>In the two-tail case, the null hypothesis <script type="math/tex">H_0</script> is <script type="math/tex">\mu_{\text{diff}}=0</script>. The alternative hypothesis <script type="math/tex">H_a</script> is <script type="math/tex">\mu_{\text{diff}}\neq0</script></li>
-  <li><script type="math/tex">p</script>-value <script type="math/tex">=P(X_{\text{diff}}\geq \overline{x}_{\text{diff}}  \mid H_0)</script>.</li>
-  <li>A difference is said <em>statistically significant</em> when a statistical test passed. One can reject the null hypothesis when 1) <script type="math/tex">p</script>-value <script type="math/tex">% <![CDATA[
-<\alpha %]]></script>; 2) <script type="math/tex">CI_1</script> does not contain <script type="math/tex">0</script>; 3) <script type="math/tex">CI_2</script> does not contain <script type="math/tex">\overline{x}_{\text{diff}}</script>.</li>
-  <li><em>statistically significant</em> does not refer to the absolute truth. Two types of error can occur. Type-I error rejects <script type="math/tex">H_0</script> when it is true. Type-II error fails to reject 
- <script type="math/tex">H_0</script> when it is false. <script type="math/tex">x</script></li>
+  <li>\(H_0\): \(\mu_{\text{diff}} \leq 0\)</li>
+  <li>\(H_a\): \(\mu_{\text{diff}}  &gt; 0\)</li>
+  <li>In the two-tail case, the null hypothesis \(H_0\) is \(\mu_{\text{diff}}=0\). The alternative hypothesis \(H_a\) is \(\mu_{\text{diff}}\neq0\)</li>
+  <li>\(p\)-value \(=P(X_{\text{diff}}\geq \overline{x}_{\text{diff}}  \mid H_0)\).</li>
+  <li>A difference is said <em>statistically significant</em> when a statistical test passed. One can reject the null hypothesis when 1) \(p\)-value \(&lt;\alpha\); 2) \(CI_1\) does not contain \(0\); 3) \(CI_2\) does not contain \(\overline{x}_{\text{diff}}\).</li>
+  <li><em>statistically significant</em> does not refer to the absolute truth. Two types of error can occur. Type-I error rejects \(H_0\) when it is true. Type-II error fails to reject 
+ \(H_0\) when it is false. \(x\)</li>
 </ul>
 
 <h2 id="select-the-appropriate-statistical-test">Select the appropriate statistical test</h2>
@@ -368,7 +398,7 @@ sample under hypothesis <script type="math/tex">H_0</script> results in its reje
 
 <h3 id="t-test-and-welchs-t-test">T-test and Welch’s t-test</h3>
 
-<p>We want to test the hypothesis that two populations have equal means (null hypothesis <script type="math/tex">H_0</script>). A 2-sample t-test can be used when the variances of both populations (both algorithms) are assumed equal. However, this assumption rarely holds when comparing two different algorithms (e.g. DDPG vs TRPO). In this case, an adaptation of the 2-sample t-test for unequal variances called Welch’s <script type="math/tex">t</script>-test should be used. <script type="math/tex">T</script>-tests make a few assumptions:</p>
+<p>We want to test the hypothesis that two populations have equal means (null hypothesis \(H_0\)). A 2-sample t-test can be used when the variances of both populations (both algorithms) are assumed equal. However, this assumption rarely holds when comparing two different algorithms (e.g. DDPG vs TRPO). In this case, an adaptation of the 2-sample t-test for unequal variances called Welch’s \(t\)-test should be used. \(T\)-tests make a few assumptions:</p>
 
 <ul>
   <li>The scale of data measurements must be continuous and ordinal (can be ranked). This is the case in RL.</li>
@@ -377,17 +407,17 @@ sample under hypothesis <script type="math/tex">H_0</script> results in its reje
   <li>Data is normally-distributed, or at least bell-shaped. The normal law being a mathematical concept involving infinity, nothing is ever perfectly normally distributed. Moreover, measurements of algorithm performances might follow multi-modal distributions.</li>
 </ul>
 
-<p>Under these assumptions, one can compute the <script type="math/tex">t</script>-statistic <script type="math/tex">t</script> and the degree of freedom <script type="math/tex">\nu</script> for the Welch’s <script type="math/tex">t</script>-test as estimated by the Welch–Satterthwaite equation, such as:</p>
+<p>Under these assumptions, one can compute the \(t\)-statistic \(t\) and the degree of freedom \(\nu\) for the Welch’s \(t\)-test as estimated by the Welch–Satterthwaite equation, such as:</p>
 
-<script type="math/tex; mode=display">t = \frac{x_{\text{diff}}}{\sqrt{\frac{s^2_1+s^2_2}{N}}},  \nu \approx \frac{(N-1)\cdot \Big(s^2_1+s^2_2\Big)^2}{s^4_1+s^4_2},</script>
+\[t = \frac{x_{\text{diff}}}{\sqrt{\frac{s^2_1+s^2_2}{N}}},  \nu \approx \frac{(N-1)\cdot \Big(s^2_1+s^2_2\Big)^2}{s^4_1+s^4_2},\]
 
-<p>with <script type="math/tex">x_{\text{diff}} = x_1-x_2</script>; <script type="math/tex">s_1, s_2</script> the empirical standard deviations of the two samples, and <script type="math/tex">N</script> the sample size (same for both algorithms). The <script type="math/tex">t</script>-statistics are assumed to follow a <script type="math/tex">t</script>-distribution, which is bell-shaped and whose width depends on the degree of freedom. The higher this degree, the thinner the distribution.</p>
+<p>with \(x_{\text{diff}} = x_1-x_2\); \(s_1, s_2\) the empirical standard deviations of the two samples, and \(N\) the sample size (same for both algorithms). The \(t\)-statistics are assumed to follow a \(t\)-distribution, which is bell-shaped and whose width depends on the degree of freedom. The higher this degree, the thinner the distribution.</p>
 
-<p>Figure 3 helps making sense of these concepts. It represents the distribution of the <script type="math/tex">t</script>-statistics corresponding to <script type="math/tex">X_{\text{diff}}</script>, under <script type="math/tex">H_0</script> (left distribution) and under <script type="math/tex">H_a</script> (right distribution). <script type="math/tex">H_0</script> assumes <script type="math/tex">\mu_{\text{diff}}=0</script>, the distribution is therefore centered on 0. <script type="math/tex">H_a</script> assumes a (positive) difference <script type="math/tex">\mu_{\text{diff}}=\epsilon</script>, the distribution is therefore shifted by the <script type="math/tex">t</script>-value corresponding to <script type="math/tex">\epsilon</script>, <script type="math/tex">t_\epsilon</script>. Note that we consider the one-tail case here, and test for a positive difference.</p>
+<p>Figure 3 helps making sense of these concepts. It represents the distribution of the \(t\)-statistics corresponding to \(X_{\text{diff}}\), under \(H_0\) (left distribution) and under \(H_a\) (right distribution). \(H_0\) assumes \(\mu_{\text{diff}}=0\), the distribution is therefore centered on 0. \(H_a\) assumes a (positive) difference \(\mu_{\text{diff}}=\epsilon\), the distribution is therefore shifted by the \(t\)-value corresponding to \(\epsilon\), \(t_\epsilon\). Note that we consider the one-tail case here, and test for a positive difference.</p>
 
-<p>A <script type="math/tex">t</script>-distribution is defined by its <em>probability density function</em><script type="math/tex">T_{distrib}^{\nu}(\tau)</script> (left curve in Figure 3, which is parameterized by <script type="math/tex">\nu</script>. The <em>cumulative distribution function</em> <script type="math/tex">CDF_{H_0}(t)</script> is the function evaluating the area under <script type="math/tex">T_{distrib}^{\nu}(t)</script> from <script type="math/tex">\tau=-\infty</script> to <script type="math/tex">\tau=t</script>. This allows to write:</p>
+<p>A \(t\)-distribution is defined by its <em>probability density function</em>\(T_{distrib}^{\nu}(\tau)\) (left curve in Figure 3, which is parameterized by \(\nu\). The <em>cumulative distribution function</em> \(CDF_{H_0}(t)\) is the function evaluating the area under \(T_{distrib}^{\nu}(t)\) from \(\tau=-\infty\) to \(\tau=t\). This allows to write:</p>
 
-<script type="math/tex; mode=display">p\text{-value} = 1-CDF_{H_0}(t) = 1-\int_{-\infty}^{t} T_{distrib}^{\nu}(\tau) \cdot d\tau.</script>
+\[p\text{-value} = 1-CDF_{H_0}(t) = 1-\int_{-\infty}^{t} T_{distrib}^{\nu}(\tau) \cdot d\tau.\]
 
 <div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/7/703b9d4e3037b266e8fc6b20e020eb84d4405a80.png" height="220" />
@@ -397,46 +427,45 @@ sample under hypothesis <script type="math/tex">H_0</script> results in its reje
 </div>
 </div>
 
-<p>In Figure 3, <script type="math/tex">t_\alpha</script> represents the critical <script type="math/tex">t</script>-value to satisfy the significance level <script type="math/tex">\alpha</script> in the one-tail case. When <script type="math/tex">t=t_\alpha</script>, <script type="math/tex">p</script>-value <script type="math/tex">=\alpha</script>. When <script type="math/tex">t>t_\alpha</script>, the <script type="math/tex">p</script>-value is lower than <script type="math/tex">\alpha</script> and the test rejects <script type="math/tex">H_0</script>. On the other hand, when <script type="math/tex">t</script> is lower than <script type="math/tex">t_\alpha</script>, the <script type="math/tex">p</script>-value is superior to <script type="math/tex">\alpha</script> and the test fails to reject <script type="math/tex">H_0</script>. As can be seen in the figure, setting the threshold at <script type="math/tex">t_\alpha</script> might also cause an error of type-II. The rate of this error (<script type="math/tex">\beta</script>) is represented by the dark blue area: under the hypothesis of a true difference <script type="math/tex">\epsilon</script> (under <script type="math/tex">H_a</script>, right distribution), we fail to reject <script type="math/tex">H_0</script> when <script type="math/tex">t</script> is inferior to <script type="math/tex">t_\alpha</script>. <script type="math/tex">\beta</script> can therefore be computed mathematically using the <script type="math/tex">CDF</script>:</p>
+<p>In Figure 3, \(t_\alpha\) represents the critical \(t\)-value to satisfy the significance level \(\alpha\) in the one-tail case. When \(t=t_\alpha\), \(p\)-value \(=\alpha\). When \(t&gt;t_\alpha\), the \(p\)-value is lower than \(\alpha\) and the test rejects \(H_0\). On the other hand, when \(t\) is lower than \(t_\alpha\), the \(p\)-value is superior to \(\alpha\) and the test fails to reject \(H_0\). As can be seen in the figure, setting the threshold at \(t_\alpha\) might also cause an error of type-II. The rate of this error (\(\beta\)) is represented by the dark blue area: under the hypothesis of a true difference \(\epsilon\) (under \(H_a\), right distribution), we fail to reject \(H_0\) when \(t\) is inferior to \(t_\alpha\). \(\beta\) can therefore be computed mathematically using the \(CDF\):</p>
 
-<p><script type="math/tex">\beta = CDF_{H_a}(t_\alpha) = \int_{-\infty}^{t_\alpha} T_{distrib}^{\nu}(\tau-t_{\epsilon}) \cdot d\tau.</script>
-Using the translation properties of integrals, we can rewrite <script type="math/tex">\beta</script> as:</p>
+<p>\(\beta = CDF_{H_a}(t_\alpha) = \int_{-\infty}^{t_\alpha} T_{distrib}^{\nu}(\tau-t_{\epsilon}) \cdot d\tau.\)
+Using the translation properties of integrals, we can rewrite \(\beta\) as:</p>
 
-<script type="math/tex; mode=display">\beta = CDF_{H_0}(t_\alpha-t_{\epsilon}) = \int_{-\infty-t_{\epsilon}=-\infty}^{t_\alpha-t_{\epsilon}} T_{distrib}^{\nu}(\tau) \cdot d\tau.</script>
+\[\beta = CDF_{H_0}(t_\alpha-t_{\epsilon}) = \int_{-\infty-t_{\epsilon}=-\infty}^{t_\alpha-t_{\epsilon}} T_{distrib}^{\nu}(\tau) \cdot d\tau.\]
 
-<p>The procedure to run a Welch’s <script type="math/tex">t</script>-test given two samples <script type="math/tex">(x_1, x_2)</script> is:</p>
+<p>The procedure to run a Welch’s \(t\)-test given two samples \((x_1, x_2)\) is:</p>
 
 <ul>
-  <li>Computing the degree of freedom <script type="math/tex">\nu</script> and the <script type="math/tex">t</script>-statistic <script type="math/tex">t</script> based on <script type="math/tex">s_1</script>, <script type="math/tex">s_2</script>, <script type="math/tex">N</script> and <script type="math/tex">\overline{x}_{\text{diff}}</script>.</li>
-  <li>Looking up the <script type="math/tex">t_\alpha</script> value for the degree of freedom <script type="math/tex">\nu</script> in a <a href="http://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf">t-table</a> or by evaluating the inverse of the <script type="math/tex">CDF</script> function in <script type="math/tex">\alpha</script>.</li>
-  <li>Compare the <script type="math/tex">t</script>-statistic to <script type="math/tex">t_\alpha</script>. The difference is said statistically significant (<script type="math/tex">H_0</script> rejected) at level <script type="math/tex">\alpha</script> when <script type="math/tex">t\geq t_\alpha</script>.</li>
+  <li>Computing the degree of freedom \(\nu\) and the \(t\)-statistic \(t\) based on \(s_1\), \(s_2\), \(N\) and \(\overline{x}_{\text{diff}}\).</li>
+  <li>Looking up the \(t_\alpha\) value for the degree of freedom \(\nu\) in a <a href="http://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf">t-table</a> or by evaluating the inverse of the \(CDF\) function in \(\alpha\).</li>
+  <li>Compare the \(t\)-statistic to \(t_\alpha\). The difference is said statistically significant (\(H_0\) rejected) at level \(\alpha\) when \(t\geq t_\alpha\).</li>
 </ul>
 
-<p>Note that <script type="math/tex">% <![CDATA[
-t<t_\alpha %]]></script> does not mean there is no difference between the performances of both algorithms. It only means there is not enough evidence to prove its existence with <script type="math/tex">100 \cdot (1-\alpha)\%</script> confidence (it might be a type-II error). Noise might hinder the ability of the test to detect the difference. In this case, increasing the sample size <script type="math/tex">N</script> could help uncover the difference.</p>
+<p>Note that \(t&lt;t_\alpha\) does not mean there is no difference between the performances of both algorithms. It only means there is not enough evidence to prove its existence with \(100 \cdot (1-\alpha)\%\) confidence (it might be a type-II error). Noise might hinder the ability of the test to detect the difference. In this case, increasing the sample size \(N\) could help uncover the difference.</p>
 
-<p>Selecting the significance level <script type="math/tex">\alpha</script> of the <script type="math/tex">t</script>-test enforces the probability of type-I error to <script type="math/tex">\alpha</script>. However, Figure 3 shows that decreasing this probability boils down to increasing <script type="math/tex">t_\alpha</script>, which in turn increases the probability of type-II error <script type="math/tex">\beta</script>. One can decrease <script type="math/tex">\beta</script> while keeping <script type="math/tex">\alpha</script> constant by increasing the sample size <script type="math/tex">N</script>. This way, the estimation <script type="math/tex">\overline{x}_{\text{diff}}</script> of <script type="math/tex">\overline{\mu}_{\text{diff}}</script> gets more accurate, which translates in thinner distributions in the figure, resulting in a smaller <script type="math/tex">\beta</script>. The next section gives standard guidelines to select <script type="math/tex">N</script> so as to meet requirements for both <script type="math/tex">\alpha</script> and <script type="math/tex">\beta</script>.</p>
+<p>Selecting the significance level \(\alpha\) of the \(t\)-test enforces the probability of type-I error to \(\alpha\). However, Figure 3 shows that decreasing this probability boils down to increasing \(t_\alpha\), which in turn increases the probability of type-II error \(\beta\). One can decrease \(\beta\) while keeping \(\alpha\) constant by increasing the sample size \(N\). This way, the estimation \(\overline{x}_{\text{diff}}\) of \(\overline{\mu}_{\text{diff}}\) gets more accurate, which translates in thinner distributions in the figure, resulting in a smaller \(\beta\). The next section gives standard guidelines to select \(N\) so as to meet requirements for both \(\alpha\) and \(\beta\).</p>
 
 <h3 id="bootstrapped-confidence-intervals">Bootstrapped confidence intervals</h3>
 <p>Bootstrapped confidence interval is a method that does not make any assumption on the distributions of performance differences. It estimates the confidence intervals by re-sampling among the samples actually collected and by computing the mean of each generated sample.</p>
 
-<p>Given the true mean <script type="math/tex">\mu</script> and standard deviation <script type="math/tex">\sigma</script> of a normal distribution, a simple formula gives the <script type="math/tex">95\%</script> confidence interval. But here, we consider an unknown distribution <script type="math/tex">F</script> (the distribution of performances for a given algorithm). As we saw above, the empirical mean <script type="math/tex">\overline{x}</script> is an unbiased estimate of its true mean, but how do we compute a confidence interval? One solution is to use the <i>bootstrap principle</i>.</p>
+<p>Given the true mean \(\mu\) and standard deviation \(\sigma\) of a normal distribution, a simple formula gives the \(95\%\) confidence interval. But here, we consider an unknown distribution \(F\) (the distribution of performances for a given algorithm). As we saw above, the empirical mean \(\overline{x}\) is an unbiased estimate of its true mean, but how do we compute a confidence interval? One solution is to use the <i>bootstrap principle</i>.</p>
 
-<p>Let us say we have a sample <script type="math/tex">x_1, x_2, .., x_N</script> of measures (performance measures in our case), where <script type="math/tex">N</script> is the sample size. The empirical bootstrap sample is obtained by sampling with replacement inside the original sample. This bootstrap sample is noted <script type="math/tex">x^*_1, x^*_2, …, x^*_N</script> and has the same number of measurements <script type="math/tex">N</script>. The bootstrap principle then says that, for any statistics <script type="math/tex">u</script> computed on the original sample and <script type="math/tex">u^*</script> computed on the bootstrap sample, variations in <script type="math/tex">u</script> are well approximated by variations in <script type="math/tex">u^*</script>. More explanations and justifications can be found in <a href="https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf">this document</a> from MIT. You can therefore approximate variations of the empirical mean (let’s say its range), by variations of the bootstrapped samples.</p>
+<p>Let us say we have a sample \(x_1, x_2, .., x_N\) of measures (performance measures in our case), where \(N\) is the sample size. The empirical bootstrap sample is obtained by sampling with replacement inside the original sample. This bootstrap sample is noted \(x^*_1, x^*_2, …, x^*_N\) and has the same number of measurements \(N\). The bootstrap principle then says that, for any statistics \(u\) computed on the original sample and \(u^*\) computed on the bootstrap sample, variations in \(u\) are well approximated by variations in \(u^*\). More explanations and justifications can be found in <a href="https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf">this document</a> from MIT. You can therefore approximate variations of the empirical mean (let’s say its range), by variations of the bootstrapped samples.</p>
 
 <p>The computation would look like this:</p>
 <ul>
-  <li>Generate <script type="math/tex">B</script> bootstrap samples of size <script type="math/tex">N</script> from the original sample <script type="math/tex">x_1</script> of <script type="math/tex">Algo1</script> and <script type="math/tex">B</script> samples from from the original sample <script type="math/tex">x_2</script> of <script type="math/tex">Algo2</script>.</li>
-  <li>Compute the empirical mean for each sample: <script type="math/tex">\mu^1_1, \mu^2_1, ..., \mu^B_1</script> and <script type="math/tex">\mu^1_2, \mu^2_2, ..., \mu^B_2</script></li>
-  <li>Compute the differences <script type="math/tex">\mu_{\text{diff}}^{1:B} = \mu_1^{1:B}-\mu_2^{1:B}</script></li>
-  <li>Compute the bootstrapped confidence interval at <script type="math/tex">100\cdot(1-\alpha)\%</script>. This is basically the range between the   <script type="math/tex">100 \cdot\alpha/2</script> and <script type="math/tex">100\cdot(1-\alpha)/2</script> percentiles of the vector  <script type="math/tex">\mu_{\text{diff}}^{1:B}</script> (e.g. for <script type="math/tex">\alpha=0.05</script>, the range between the <script type="math/tex">2.5^{th}</script> and the <script type="math/tex">97.5^{th}</script> percentiles).</li>
+  <li>Generate \(B\) bootstrap samples of size \(N\) from the original sample \(x_1\) of \(Algo1\) and \(B\) samples from from the original sample \(x_2\) of \(Algo2\).</li>
+  <li>Compute the empirical mean for each sample: \(\mu^1_1, \mu^2_1, ..., \mu^B_1\) and \(\mu^1_2, \mu^2_2, ..., \mu^B_2\)</li>
+  <li>Compute the differences \(\mu_{\text{diff}}^{1:B} = \mu_1^{1:B}-\mu_2^{1:B}\)</li>
+  <li>Compute the bootstrapped confidence interval at \(100\cdot(1-\alpha)\%\). This is basically the range between the   \(100 \cdot\alpha/2\) and \(100\cdot(1-\alpha)/2\) percentiles of the vector  \(\mu_{\text{diff}}^{1:B}\) (e.g. for \(\alpha=0.05\), the range between the \(2.5^{th}\) and the \(97.5^{th}\) percentiles).</li>
 </ul>
 
-<p>The number of bootstrap samples <script type="math/tex">B</script> should be chosen large (e.g. <script type="math/tex">>1000</script>). If the confidence interval bounds does not contain <script type="math/tex">0</script>, it means that you are confident at <script type="math/tex">100 \cdot (1-\alpha)</script>% that the difference is either positive (both bounds positive) or negative (both bounds negative). You just found a statistically significant difference between the performances of your two algorithms. You can find a nice implementation of this <a href="https://github.com/facebookincubator/bootstrapped">here</a>.</p>
+<p>The number of bootstrap samples \(B\) should be chosen large (e.g. \(&gt;1000\)). If the confidence interval bounds does not contain \(0\), it means that you are confident at \(100 \cdot (1-\alpha)\)% that the difference is either positive (both bounds positive) or negative (both bounds negative). You just found a statistically significant difference between the performances of your two algorithms. You can find a nice implementation of this <a href="https://github.com/facebookincubator/bootstrapped">here</a>.</p>
 
 <p><strong><em>Example 1 (continued)</em></strong>
-Here, the type-I error requirement is set to <script type="math/tex">\alpha=0.05</script>. Running the Welch’s <script type="math/tex">t</script>-test and the bootstrap confidence interval test with two samples <script type="math/tex">(x_1,x_2)</script> of <script type="math/tex">5</script> seeds 
-each leads to a <script type="math/tex">p</script>-value of <script type="math/tex">0.031</script> and a bootstrap confidence interval such that <script type="math/tex">P\big(\mu_{\text{diff}} \in [259, 1564]\big) = 0.05</script>. Since the <script type="math/tex">p</script>-value is below the significance level <script type="math/tex">\alpha</script> and the <script type="math/tex">CI_1</script> confidence interval does not include <script type="math/tex">0</script>, both test passed. This means both tests found a significant difference between the performances of <script type="math/tex">Algo1</script> and <script type="math/tex">Algo2</script> with a <script type="math/tex">95\%</script> confidence. There should have been only <script type="math/tex">5\%</script> chance to conclude a significant difference if it did not exist. 
+Here, the type-I error requirement is set to \(\alpha=0.05\). Running the Welch’s \(t\)-test and the bootstrap confidence interval test with two samples \((x_1,x_2)\) of \(5\) seeds 
+each leads to a \(p\)-value of \(0.031\) and a bootstrap confidence interval such that \(P\big(\mu_{\text{diff}} \in [259, 1564]\big) = 0.05\). Since the \(p\)-value is below the significance level \(\alpha\) and the \(CI_1\) confidence interval does not include \(0\), both test passed. This means both tests found a significant difference between the performances of \(Algo1\) and \(Algo2\) with a \(95\%\) confidence. There should have been only \(5\%\) chance to conclude a significant difference if it did not exist. 
 In fact, we did encounter a type-I error. I know that for sure because:</p>
 
 <div align="center" style="margin-bottom:20px">
@@ -445,38 +474,38 @@ Algo 1 and Algo 2 are the exact same algorithm
 </b>
 </div>
 
-<p>They are both the canonical implementation of DDPG <a href="https://arxiv.org/pdf/1509.02971.pdf">[Lillicrap et al., 2015]</a>. The codebase can be found on this <a href="https://github.com/openai/baselines">repository</a>. This means that <script type="math/tex">H_0</script> was the true hypothesis, there is no possible difference in the true means of the two algorithms. Our first conclusion was wrong, we committed a type-I error, rejecting <script type="math/tex">H_0</script> when it was true. In our case, we selected the two tests so as to set the type-I error probability <script type="math/tex">\alpha</script> to <script type="math/tex">5\%</script>. However, statistical tests often make assumptions, which results in wrong estimations of the probability of the type-I error. We will see in the last section that the false positive rate was strongly under-evaluated.</p>
+<p>They are both the canonical implementation of DDPG <a href="https://arxiv.org/pdf/1509.02971.pdf">[Lillicrap et al., 2015]</a>. The codebase can be found on this <a href="https://github.com/openai/baselines">repository</a>. This means that \(H_0\) was the true hypothesis, there is no possible difference in the true means of the two algorithms. Our first conclusion was wrong, we committed a type-I error, rejecting \(H_0\) when it was true. In our case, we selected the two tests so as to set the type-I error probability \(\alpha\) to \(5\%\). However, statistical tests often make assumptions, which results in wrong estimations of the probability of the type-I error. We will see in the last section that the false positive rate was strongly under-evaluated.</p>
 
 <p><strong>Important:</strong></p>
 <ul>
-  <li><script type="math/tex">T</script>-tests assume <script type="math/tex">t</script>-distributions of the <script type="math/tex">t</script>-values. Under some assumptions, they can compute analytically the <script type="math/tex">p</script>-value and the confidence interval <script type="math/tex">CI_2</script> at level <script type="math/tex">\alpha</script>.</li>
-  <li>The Welch’s <script type="math/tex">t</script>-test does not assume both algorithms have equal variances but the <script type="math/tex">t</script>-test does.</li>
-  <li>The bootstrapped confidence interval test does not make assumptions on the performance distribution and estimates empirically the confidence interval <script type="math/tex">CI_1</script> at level <script type="math/tex">\alpha</script>.</li>
-  <li>Selecting a test with a significance level <script type="math/tex">\alpha</script> enforces a type-I error <script type="math/tex">\alpha</script> when the assumptions of the test are verified.</li>
+  <li>\(T\)-tests assume \(t\)-distributions of the \(t\)-values. Under some assumptions, they can compute analytically the \(p\)-value and the confidence interval \(CI_2\) at level \(\alpha\).</li>
+  <li>The Welch’s \(t\)-test does not assume both algorithms have equal variances but the \(t\)-test does.</li>
+  <li>The bootstrapped confidence interval test does not make assumptions on the performance distribution and estimates empirically the confidence interval \(CI_1\) at level \(\alpha\).</li>
+  <li>Selecting a test with a significance level \(\alpha\) enforces a type-I error \(\alpha\) when the assumptions of the test are verified.</li>
 </ul>
 
 <h2 id="the-theory-power-analysis-for-the-choice-of-the-sample-size">The theory: power analysis for the choice of the sample size</h2>
 
-<p>We saw that <script type="math/tex">\alpha</script> was enforced by the choice of the significance level in the test implementation. The second type of error <script type="math/tex">\beta</script> must now be estimated. <script type="math/tex">\beta</script> is the probability to fail to reject <script type="math/tex">H_0</script> when <script type="math/tex">H_a</script> is true. When the effect size <script type="math/tex">\epsilon</script> and the probability of type-I error <script type="math/tex">\alpha</script> are kept constant, <script type="math/tex">\beta</script> is a function of the sample size <script type="math/tex">N</script>. Choosing <script type="math/tex">N</script> so as to meet requirements on <script type="math/tex">\beta</script> is called <em>statistical power analysis</em>. It answers the question: <em>what sample size do I need to have <script type="math/tex">1-\beta</script> chance to detect an effect size <script type="math/tex">\epsilon</script>, using a test with significance level <script type="math/tex">\alpha</script>?</em> The next paragraphs present guidelines to choose <script type="math/tex">N</script> in the context of a Welch’s <script type="math/tex">t</script>-test.</p>
+<p>We saw that \(\alpha\) was enforced by the choice of the significance level in the test implementation. The second type of error \(\beta\) must now be estimated. \(\beta\) is the probability to fail to reject \(H_0\) when \(H_a\) is true. When the effect size \(\epsilon\) and the probability of type-I error \(\alpha\) are kept constant, \(\beta\) is a function of the sample size \(N\). Choosing \(N\) so as to meet requirements on \(\beta\) is called <em>statistical power analysis</em>. It answers the question: <em>what sample size do I need to have \(1-\beta\) chance to detect an effect size \(\epsilon\), using a test with significance level \(\alpha\)?</em> The next paragraphs present guidelines to choose \(N\) in the context of a Welch’s \(t\)-test.</p>
 
-<p>As we saw above, <script type="math/tex">\beta</script> can be analytically computed as:</p>
+<p>As we saw above, \(\beta\) can be analytically computed as:</p>
 
-<script type="math/tex; mode=display">\beta = CDF_{H_0}(t_\alpha-t_{\epsilon}) = \int_{-\infty-t_{\epsilon}=-\infty}^{t_\alpha-t_{\epsilon}} T_{distrib}^{\nu}(\tau) \cdot d\tau,</script>
+\[\beta = CDF_{H_0}(t_\alpha-t_{\epsilon}) = \int_{-\infty-t_{\epsilon}=-\infty}^{t_\alpha-t_{\epsilon}} T_{distrib}^{\nu}(\tau) \cdot d\tau,\]
 
-<p>where <script type="math/tex">CDF_{H_0}</script> is the cumulative distribution function of a <script type="math/tex">t</script>-distribution centered on <script type="math/tex">0</script>, <script type="math/tex">t_\alpha</script> is the critical value for significance level <script type="math/tex">\alpha</script> and 
-<script type="math/tex">t_\epsilon</script> is the <script type="math/tex">t</script>-value corresponding to an effect size <script type="math/tex">\epsilon</script>. In the end, <script type="math/tex">\beta</script> depends on <script type="math/tex">\alpha</script>, <script type="math/tex">\epsilon</script>, (<script type="math/tex">s_1</script>, <script type="math/tex">s_2</script>) the empirical standard deviations 
-computed on two samples <script type="math/tex">(x_1,x_2)</script> and the sample size <script type="math/tex">N</script>.</p>
+<p>where \(CDF_{H_0}\) is the cumulative distribution function of a \(t\)-distribution centered on \(0\), \(t_\alpha\) is the critical value for significance level \(\alpha\) and 
+\(t_\epsilon\) is the \(t\)-value corresponding to an effect size \(\epsilon\). In the end, \(\beta\) depends on \(\alpha\), \(\epsilon\), (\(s_1\), \(s_2\)) the empirical standard deviations 
+computed on two samples \((x_1,x_2)\) and the sample size \(N\).</p>
 
 <p><strong><em>Example 2</em></strong>
-To illustrate, we compare two DDPG variants: one with action perturbations (<script type="math/tex">Algo 1</script>) <a href="https://arxiv.org/pdf/1509.02971.pdf">[Lillicrap et al., 2015]</a>, the other with parameter perturbations (<script type="math/tex">Algo 2</script>) <a href="https://arxiv.org/pdf/1706.01905.pdf">[Plappert et al., 2017]</a>. Both algorithms are evaluated in the Half-Cheetah environment from the OpenAI Gym framework.</p>
+To illustrate, we compare two DDPG variants: one with action perturbations (\(Algo 1\)) <a href="https://arxiv.org/pdf/1509.02971.pdf">[Lillicrap et al., 2015]</a>, the other with parameter perturbations (\(Algo 2\)) <a href="https://arxiv.org/pdf/1706.01905.pdf">[Plappert et al., 2017]</a>. Both algorithms are evaluated in the Half-Cheetah environment from the OpenAI Gym framework.</p>
 
 <h3 id="step-1---running-a-pilot-study">Step 1 - Running a pilot study</h3>
 
-<p>To compute <script type="math/tex">\beta</script>, we need estimates of the standard deviations of the two algorithms (<script type="math/tex">s_1, s_2</script>). In this step, the algorithms are run in the environment to gather two samples <script type="math/tex">x_1</script> and <script type="math/tex">x_2</script> of size <script type="math/tex">n</script>. From there, we can compute the empirical means <script type="math/tex">(\overline{x}_1, \overline{x}_2)</script> and standard deviations <script type="math/tex">(s_1, s_2)</script>.</p>
+<p>To compute \(\beta\), we need estimates of the standard deviations of the two algorithms (\(s_1, s_2\)). In this step, the algorithms are run in the environment to gather two samples \(x_1\) and \(x_2\) of size \(n\). From there, we can compute the empirical means \((\overline{x}_1, \overline{x}_2)\) and standard deviations \((s_1, s_2)\).</p>
 
 <p><strong><em>Example 2 (continued)</em></strong>
-Here we run both algorithms with <script type="math/tex">n=5</script>. We find empirical means <script type="math/tex">(\overline{x}_1, \overline{x}_2) = (3523, 4905)</script> and empirical standard deviations <script type="math/tex">(s_1, s_2) = (1341, 990)</script> for <script type="math/tex">Algo1</script> (blue) and <script type="math/tex">Algo2</script> (red) respectively. From Figure 4, it seems there is a slight difference in the mean performances  <script type="math/tex">\overline{x}_{\text{diff}} =\overline{x}_2-\overline{x}_1 >0</script>. 
-Running preliminary statistical tests at level <script type="math/tex">\alpha=0.05</script> lead to a <script type="math/tex">p</script>-value of <script type="math/tex">0.1</script> for the Welch’s <script type="math/tex">t</script>-test, and a bootstrapped confidence interval of <script type="math/tex">CI_1=[795, 2692]</script> for the  value of <script type="math/tex">\overline{x}_{\text{diff}} = 1382</script>. The Welch’s <script type="math/tex">t</script>-test does not reject <script type="math/tex">H_0</script> (<script type="math/tex">p</script>-value <script type="math/tex">>\alpha</script>) but the bootstrap test does (<script type="math/tex">0\not\in CI_1</script>). One should compute <script type="math/tex">\beta</script> to estimate the chance that the Welch’s <script type="math/tex">t</script>-test missed an underlying performance difference (type-II error).</p>
+Here we run both algorithms with \(n=5\). We find empirical means \((\overline{x}_1, \overline{x}_2) = (3523, 4905)\) and empirical standard deviations \((s_1, s_2) = (1341, 990)\) for \(Algo1\) (blue) and \(Algo2\) (red) respectively. From Figure 4, it seems there is a slight difference in the mean performances  \(\overline{x}_{\text{diff}} =\overline{x}_2-\overline{x}_1 &gt;0\). 
+Running preliminary statistical tests at level \(\alpha=0.05\) lead to a \(p\)-value of \(0.1\) for the Welch’s \(t\)-test, and a bootstrapped confidence interval of \(CI_1=[795, 2692]\) for the  value of \(\overline{x}_{\text{diff}} = 1382\). The Welch’s \(t\)-test does not reject \(H_0\) (\(p\)-value \(&gt;\alpha\)) but the bootstrap test does (\(0\not\in CI_1\)). One should compute \(\beta\) to estimate the chance that the Welch’s \(t\)-test missed an underlying performance difference (type-II error).</p>
 
 <div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/2/27f05ba5144eb210118dce202db75232d546f628.png" height="300" />
@@ -487,10 +516,10 @@ Running preliminary statistical tests at level <script type="math/tex">\alpha=0.
 </div>
 
 <h3 id="step-2---choosing-the-sample-size">Step 2 - Choosing the sample size</h3>
-<p>Given a statistical test (Welch’s <script type="math/tex">t</script>-test), a significance level <script type="math/tex">\alpha</script> (e.g. <script type="math/tex">\alpha=0.05</script>) and empirical estimations of the standard deviations of <script type="math/tex">Algo1</script> and <script type="math/tex">Algo2</script> (<script type="math/tex">s_1,s_2</script>), one can compute <script type="math/tex">\beta</script> as a function of the sample size <script type="math/tex">N</script> and the effect size <script type="math/tex">\epsilon</script> one wants to be able to detect.</p>
+<p>Given a statistical test (Welch’s \(t\)-test), a significance level \(\alpha\) (e.g. \(\alpha=0.05\)) and empirical estimations of the standard deviations of \(Algo1\) and \(Algo2\) (\(s_1,s_2\)), one can compute \(\beta\) as a function of the sample size \(N\) and the effect size \(\epsilon\) one wants to be able to detect.</p>
 
 <p><strong><em>Example 2 (continued)</em></strong>
-For <script type="math/tex">N</script> in <script type="math/tex">[2,50]</script> and <script type="math/tex">\epsilon</script> in <script type="math/tex">[0.1,..,1]\times\overline{x}_1</script>, we compute <script type="math/tex">t_\alpha</script> and <script type="math/tex">\nu</script> using the formulas given in Section \ref{sec:ttest}, as well as <script type="math/tex">t_{\epsilon}</script> for each <script type="math/tex">\epsilon</script>. Finally, we compute the corresponding probability of type-II error <script type="math/tex">\beta</script> using Equation~\ref{eq:beta}. Figure 5 shows the evolution of <script type="math/tex">\beta</script> as a function of <script type="math/tex">N</script> for the different <script type="math/tex">\epsilon</script>. Considering the semi-dashed black line for <script type="math/tex">\epsilon=\overline{x}_{\text{diff}}=1382</script>, we find <script type="math/tex">\beta=0.51</script> for <script type="math/tex">N=5</script>: there is <script type="math/tex">51\%</script> chance of making a type-II error when trying to detect an effect <script type="math/tex">\epsilon=1382</script>. To meet the requirement <script type="math/tex">\beta=0.2</script>, <script type="math/tex">N</script> should be increased to <script type="math/tex">N=10</script> (<script type="math/tex">\beta=0.19</script>).</p>
+For \(N\) in \([2,50]\) and \(\epsilon\) in \([0.1,..,1]\times\overline{x}_1\), we compute \(t_\alpha\) and \(\nu\) using the formulas given in Section \ref{sec:ttest}, as well as \(t_{\epsilon}\) for each \(\epsilon\). Finally, we compute the corresponding probability of type-II error \(\beta\) using Equation~\ref{eq:beta}. Figure 5 shows the evolution of \(\beta\) as a function of \(N\) for the different \(\epsilon\). Considering the semi-dashed black line for \(\epsilon=\overline{x}_{\text{diff}}=1382\), we find \(\beta=0.51\) for \(N=5\): there is \(51\%\) chance of making a type-II error when trying to detect an effect \(\epsilon=1382\). To meet the requirement \(\beta=0.2\), \(N\) should be increased to \(N=10\) (\(\beta=0.19\)).</p>
 
 <div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/3/3a3d72a9dbef925bdfa272530e9cf45fc4239c8f.png" height="300" />
@@ -500,13 +529,13 @@ For <script type="math/tex">N</script> in <script type="math/tex">[2,50]</script
 </div>
 </div>
 
-<p>In our example, we find that <script type="math/tex">N=10</script> was enough to be able to detect an effect size <script type="math/tex">\epsilon=1382</script> with a Welch’s <script type="math/tex">t</script>-test, using significance level <script type="math/tex">\alpha</script> and using empirical estimations <script type="math/tex">(s_1, s_2) = (1341, 990)</script>. However, let us keep in mind that these computations use various approximations (<script type="math/tex">\nu, s_1, s_2</script>) and make assumptions about the shape of the <script type="math/tex">t</script>-values distribution.</p>
+<p>In our example, we find that \(N=10\) was enough to be able to detect an effect size \(\epsilon=1382\) with a Welch’s \(t\)-test, using significance level \(\alpha\) and using empirical estimations \((s_1, s_2) = (1341, 990)\). However, let us keep in mind that these computations use various approximations (\(\nu, s_1, s_2\)) and make assumptions about the shape of the \(t\)-values distribution.</p>
 
 <h3 id="step-3---running-the-statistical-tests">Step 3 - Running the statistical tests</h3>
-<p>Both algorithms should be run so as to obtain a sample <script type="math/tex">x_{\text{diff}}</script> of size <script type="math/tex">N</script>. The statistical tests can be applied.</p>
+<p>Both algorithms should be run so as to obtain a sample \(x_{\text{diff}}\) of size \(N\). The statistical tests can be applied.</p>
 
 <p><strong><em>Example 2 (continued)</em></strong>
-Here, we take <script type="math/tex">N=10</script> and run both the Welch’s <script type="math/tex">t</script>-test and the bootstrap test. We now find empirical means <script type="math/tex">(\overline{x}_1, \overline{x}_2) = (3690, 5323)</script> and empirical standard deviations <script type="math/tex">(s_1, s_2) = (1086, 1454)</script> for <script type="math/tex">Algo1</script> and <script type="math/tex">Algo2</script> respectively. Both tests rejected <script type="math/tex">H_0</script>, with a <script type="math/tex">p</script>-value of <script type="math/tex">0.0037</script> for the Welch’s <script type="math/tex">t</script>-test and a confidence interval for the difference <script type="math/tex">\mu_{\text{diff}} \in [732,2612]</script> for the bootstrap test. Both tests passed. In Figure 7, plots for <script type="math/tex">N=5</script> and <script type="math/tex">N=10</script> can be compared. With a larger number of seeds, the difference that was not found significant with <script type="math/tex">N=5</script> is now more clearly visible. With a larger number of seeds, the estimate <script type="math/tex">\overline{x}_{\text{diff}}</script> is more robust, more evidence is available to support the claim that <script type="math/tex">Algo2</script> outperforms <script type="math/tex">Algo1</script>, which translates to tighter confidence intervals represented in the figures.
+Here, we take \(N=10\) and run both the Welch’s \(t\)-test and the bootstrap test. We now find empirical means \((\overline{x}_1, \overline{x}_2) = (3690, 5323)\) and empirical standard deviations \((s_1, s_2) = (1086, 1454)\) for \(Algo1\) and \(Algo2\) respectively. Both tests rejected \(H_0\), with a \(p\)-value of \(0.0037\) for the Welch’s \(t\)-test and a confidence interval for the difference \(\mu_{\text{diff}} \in [732,2612]\) for the bootstrap test. Both tests passed. In Figure 7, plots for \(N=5\) and \(N=10\) can be compared. With a larger number of seeds, the difference that was not found significant with \(N=5\) is now more clearly visible. With a larger number of seeds, the estimate \(\overline{x}_{\text{diff}}\) is more robust, more evidence is available to support the claim that \(Algo2\) outperforms \(Algo1\), which translates to tighter confidence intervals represented in the figures.
 \end{myex}</p>
 
 <div align="center" style="margin-bottom:20px">
@@ -518,26 +547,26 @@ Here, we take <script type="math/tex">N=10</script> and run both the Welch’s <
 </div>
 
 <p><strong>Important:</strong>
-Given a sample size <script type="math/tex">N</script>, a minimum effect size to detect <script type="math/tex">\epsilon</script> and a requirement on type-I error <script type="math/tex">\alpha</script> the probability of type-II error <script type="math/tex">\beta</script> can be computed. This computation relies on the assumptions of the <script type="math/tex">t</script>-test. 
-The sample size <script type="math/tex">N</script> should be chosen so as to meet the requirements on <script type="math/tex">\beta</script>.</p>
+Given a sample size \(N\), a minimum effect size to detect \(\epsilon\) and a requirement on type-I error \(\alpha\) the probability of type-II error \(\beta\) can be computed. This computation relies on the assumptions of the \(t\)-test. 
+The sample size \(N\) should be chosen so as to meet the requirements on \(\beta\).</p>
 
 <h2 id="in-practice-influence-of-deviations-from-assumptions">In practice: influence of deviations from assumptions</h2>
 
-<p>Under their respective assumptions, the <script type="math/tex">t</script>-test and bootstrap test enforce the probability of type-I error to the selected significance level <script type="math/tex">\alpha</script>. These assumptions should be carefully checked, if one wants to report the probability of errors accurately. First, we propose to compute an empirical evaluation of the type-I error based on experimental data, and show that: 1) the bootstrap test is sensitive to small sample sizes; 2) the <script type="math/tex">t</script>-test might slightly under-evaluate the type-I error for non-normal data. Second, we show that inaccuracies in the estimation of the empirical standard deviations <script type="math/tex">s_1</script> and <script type="math/tex">s_2</script> due to low sample size might lead to large errors in the computation of <script type="math/tex">\beta</script>, which in turn leads to under-estimate the sample size required for the experiment.</p>
+<p>Under their respective assumptions, the \(t\)-test and bootstrap test enforce the probability of type-I error to the selected significance level \(\alpha\). These assumptions should be carefully checked, if one wants to report the probability of errors accurately. First, we propose to compute an empirical evaluation of the type-I error based on experimental data, and show that: 1) the bootstrap test is sensitive to small sample sizes; 2) the \(t\)-test might slightly under-evaluate the type-I error for non-normal data. Second, we show that inaccuracies in the estimation of the empirical standard deviations \(s_1\) and \(s_2\) due to low sample size might lead to large errors in the computation of \(\beta\), which in turn leads to under-estimate the sample size required for the experiment.</p>
 
 <h3 id="empirical-estimation-of-the-type-i-error">Empirical estimation of the type-I error</h3>
-<p>Remember, type-I errors occur when the null hypothesis (<script type="math/tex">H_0</script>) is rejected in favor of the alternative hypothesis <script type="math/tex">(H_a)</script>, <script type="math/tex">H_0</script> being correct. Given the sample size <script type="math/tex">N</script>, the probability of type-I error can be estimated as follows:</p>
+<p>Remember, type-I errors occur when the null hypothesis (\(H_0\)) is rejected in favor of the alternative hypothesis \((H_a)\), \(H_0\) being correct. Given the sample size \(N\), the probability of type-I error can be estimated as follows:</p>
 
 <ul>
-  <li>Run twice this number of trials (<script type="math/tex">2 \times N</script>) for a given algorithm. This ensures that <script type="math/tex">H_0</script> is true because all measurements come from the same distribution.</li>
-  <li>Get average performance over two randomly drawn splits of size <script type="math/tex">N</script>. Consider both splits as samples coming from two different algorithms.</li>
+  <li>Run twice this number of trials (\(2 \times N\)) for a given algorithm. This ensures that \(H_0\) is true because all measurements come from the same distribution.</li>
+  <li>Get average performance over two randomly drawn splits of size \(N\). Consider both splits as samples coming from two different algorithms.</li>
   <li>Test for the difference of both fictive algorithms and record the outcome.</li>
-  <li>Repeat this procedure <script type="math/tex">T</script> times (e.g. <script type="math/tex">T=1000</script>)</li>
-  <li>Compute the proportion of time <script type="math/tex">H_0</script> was rejected. This is the empirical evaluation of <script type="math/tex">\alpha</script>.</li>
+  <li>Repeat this procedure \(T\) times (e.g. \(T=1000\))</li>
+  <li>Compute the proportion of time \(H_0\) was rejected. This is the empirical evaluation of \(\alpha\).</li>
 </ul>
 
 <p><strong><em>Example 3</em></strong>
-We use <script type="math/tex">Algo1</script> from Example 2. From <script type="math/tex">42</script> available measures of performance, the above procedure is run for <script type="math/tex">N</script> in <script type="math/tex">[2,21]</script>. Figure 8 presents the results. For small values of <script type="math/tex">N</script>, empirical estimations of the false positive rate are much larger than the supposedly enforced value <script type="math/tex">\alpha=0.05</script>.</p>
+We use \(Algo1\) from Example 2. From \(42\) available measures of performance, the above procedure is run for \(N\) in \([2,21]\). Figure 8 presents the results. For small values of \(N\), empirical estimations of the false positive rate are much larger than the supposedly enforced value \(\alpha=0.05\).</p>
 
 <div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/d/de434feebaf9e814b05bdeadc97d593ec4cf3285.png" height="300" />
@@ -547,12 +576,10 @@ We use <script type="math/tex">Algo1</script> from Example 2. From <script type=
 </div>
 </div>
 
-<p>In our experiment, the bootstrap confidence interval test should not be used with small sample sizes (<script type="math/tex">% <![CDATA[
-<10 %]]></script>). Even in this case, the probability of type-I error (<script type="math/tex">\approx10\%</script>) is under-evaluated by the test (<script type="math/tex">5\%</script>). The Welch’s <script type="math/tex">t</script>-test controls for this effect, because the test is much harder to pass when <script type="math/tex">N</script> is small (due to the increase of <script type="math/tex">t_\alpha</script>). However, the true (empirical) false positive rate might still be slightly under-evaluated. In this case, we might want to set the significance level to <script type="math/tex">% <![CDATA[
-\alpha<0.05 %]]></script> to make sure the true positive rate stays below <script type="math/tex">0.05</script>. In the bootstrap test, the error is due to the inability of small samples to correctly represent the underlying distribution, which impairs the enforcement of the false positive rate to the significance level <script type="math/tex">\alpha</script>. Concerning the Welch’s <script type="math/tex">t</script>-test, this might be due to the non-normality of our data (whose histogram seems to reveal a bimodal distribution). In Example 1, we used <script type="math/tex">N=5</script> and encountered a type-I error. We can see on the Figure 8 that the probability of this to happen was around <script type="math/tex">10\%</script> for the bootstrap test and above <script type="math/tex">5\%</script> for the Welch’s <script type="math/tex">t</script>-test.</p>
+<p>In our experiment, the bootstrap confidence interval test should not be used with small sample sizes (\(&lt;10\)). Even in this case, the probability of type-I error (\(\approx10\%\)) is under-evaluated by the test (\(5\%\)). The Welch’s \(t\)-test controls for this effect, because the test is much harder to pass when \(N\) is small (due to the increase of \(t_\alpha\)). However, the true (empirical) false positive rate might still be slightly under-evaluated. In this case, we might want to set the significance level to \(\alpha&lt;0.05\) to make sure the true positive rate stays below \(0.05\). In the bootstrap test, the error is due to the inability of small samples to correctly represent the underlying distribution, which impairs the enforcement of the false positive rate to the significance level \(\alpha\). Concerning the Welch’s \(t\)-test, this might be due to the non-normality of our data (whose histogram seems to reveal a bimodal distribution). In Example 1, we used \(N=5\) and encountered a type-I error. We can see on the Figure 8 that the probability of this to happen was around \(10\%\) for the bootstrap test and above \(5\%\) for the Welch’s \(t\)-test.</p>
 
 <h3 id="influence-of-the-empirical-standard-deviations">Influence of the empirical standard deviations</h3>
-<p>The Welch’s <script type="math/tex">t</script>-test computes <script type="math/tex">t</script>-statistics and the degree of freedom <script type="math/tex">\nu</script> based on the sample size <script type="math/tex">N</script> and the empirical estimations of standard deviations <script type="math/tex">s_1</script> and <script type="math/tex">s_2</script>. When <script type="math/tex">N</script> is low, estimations <script type="math/tex">s_1</script> and <script type="math/tex">s_2</script> under-estimate the true standard deviation in average. Under-estimating <script type="math/tex">(s_1,s_2)</script> leads to smaller <script type="math/tex">\nu</script> and lower <script type="math/tex">t_\alpha</script>, which in turn leads to lower estimations of <script type="math/tex">\beta</script>. Finally, finding lower <script type="math/tex">\beta</script> leads to the selection of smaller sample size <script type="math/tex">N</script> to meet <script type="math/tex">\beta</script> requirements. We found this had a significant effect on the computation of <script type="math/tex">N</script>. Figure 9 shows <script type="math/tex">\beta</script> the false negative rate when trying to detect effects of size <script type="math/tex">\epsilon</script> between two normal distributions <script type="math/tex">\mathcal{N}(3,1)</script> and <script type="math/tex">\mathcal{N}(3+\epsilon,1)</script>. The only difference between both figures is that the left one uses the true values of <script type="math/tex">\sigma_1, \sigma_2</script> to compute <script type="math/tex">\beta</script>, whereas the right figure uses (inaccurate) empirical evaluations <script type="math/tex">s_1,s_2</script> to compute <script type="math/tex">\beta</script>. We can see that the estimation of standard deviations influences the computation of <script type="math/tex">\beta</script>, and the subsequent choice of an appropriate sample size <script type="math/tex">N</script> to meet requirements on <script type="math/tex">\beta</script>. See our <a href="">paper</a> for further details.</p>
+<p>The Welch’s \(t\)-test computes \(t\)-statistics and the degree of freedom \(\nu\) based on the sample size \(N\) and the empirical estimations of standard deviations \(s_1\) and \(s_2\). When \(N\) is low, estimations \(s_1\) and \(s_2\) under-estimate the true standard deviation in average. Under-estimating \((s_1,s_2)\) leads to smaller \(\nu\) and lower \(t_\alpha\), which in turn leads to lower estimations of \(\beta\). Finally, finding lower \(\beta\) leads to the selection of smaller sample size \(N\) to meet \(\beta\) requirements. We found this had a significant effect on the computation of \(N\). Figure 9 shows \(\beta\) the false negative rate when trying to detect effects of size \(\epsilon\) between two normal distributions \(\mathcal{N}(3,1)\) and \(\mathcal{N}(3+\epsilon,1)\). The only difference between both figures is that the left one uses the true values of \(\sigma_1, \sigma_2\) to compute \(\beta\), whereas the right figure uses (inaccurate) empirical evaluations \(s_1,s_2\) to compute \(\beta\). We can see that the estimation of standard deviations influences the computation of \(\beta\), and the subsequent choice of an appropriate sample size \(N\) to meet requirements on \(\beta\). See our <a href="">paper</a> for further details.</p>
 
 <div align="center" style="margin-bottom:20px">
 <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/b/bc0a4ca746dbe03c78182969c67ca2bd8a015e80.png" height="300" />
@@ -565,26 +592,24 @@ We use <script type="math/tex">Algo1</script> from Example 2. From <script type=
 <p><strong>Important:</strong></p>
 <ul>
   <li>One should not blindly believe in statistical tests results. These tests are based on assumptions that are not always reasonable.</li>
-  <li><script type="math/tex">\alpha</script> must be empirically estimated, as the statistical tests might underestimate it, because of wrong assumptions about the underlying distributions or because of the small sample size.</li>
-  <li>The bootstrap test evaluation of type-I error is strongly dependent on the sample size. A bootstrap test should not be used with less than <script type="math/tex">20</script> samples.</li>
-  <li>The inaccuracies in the estimation of the standard deviations of the algorithms (<script type="math/tex">s_1,s_2</script>), due to small sample sizes <script type="math/tex">n</script> in the preliminary study, lead to under-estimate the sample size <script type="math/tex">N</script> required to meet requirements in type-II errors.</li>
+  <li>\(\alpha\) must be empirically estimated, as the statistical tests might underestimate it, because of wrong assumptions about the underlying distributions or because of the small sample size.</li>
+  <li>The bootstrap test evaluation of type-I error is strongly dependent on the sample size. A bootstrap test should not be used with less than \(20\) samples.</li>
+  <li>The inaccuracies in the estimation of the standard deviations of the algorithms (\(s_1,s_2\)), due to small sample sizes \(n\) in the preliminary study, lead to under-estimate the sample size \(N\) required to meet requirements in type-II errors.</li>
 </ul>
 
 <h2 id="conclusion">Conclusion</h2>
 
 <p>In this post, I detailed the statistical problem of comparing the performance of two RL algorithms. I defined type-I and type-II errors and proposed ad-hoc statistical tests to test for performance difference. Finally, I detailed how to pick the right number of random seeds (your sample size) so as to reach the requirements in terms of type-I and II errors and illustrated the process with a practical example.</p>
 
-<p>The most important part is what came after. We challenged the hypotheses made by the Welch’s <script type="math/tex">t</script>-test and the bootstrap test and found several problems. First, we showed significant difference between empirical estimations of the false positive rate in our experiment and the theoretical values supposedly enforced by both tests. As a result, the bootstrap test should not be used with less than <script type="math/tex">N=20</script> samples and tighter significance level should be used to enforce a reasonable false positive rate (<script type="math/tex">% <![CDATA[
-<0.05 %]]></script>). Second, we show that the estimation of the sample size <script type="math/tex">N</script> required to meet requirements in type-II error were strongly dependent on the accuracy of (<script type="math/tex">s_1,s_2</script>). To compensate the under-estimation of <script type="math/tex">N</script>, <script type="math/tex">N</script> should be chosen systematically larger than what the power analysis prescribes.</p>
+<p>The most important part is what came after. We challenged the hypotheses made by the Welch’s \(t\)-test and the bootstrap test and found several problems. First, we showed significant difference between empirical estimations of the false positive rate in our experiment and the theoretical values supposedly enforced by both tests. As a result, the bootstrap test should not be used with less than \(N=20\) samples and tighter significance level should be used to enforce a reasonable false positive rate (\(&lt;0.05\)). Second, we show that the estimation of the sample size \(N\) required to meet requirements in type-II error were strongly dependent on the accuracy of (\(s_1,s_2\)). To compensate the under-estimation of \(N\), \(N\) should be chosen systematically larger than what the power analysis prescribes.</p>
 
 <h2 id="final-recommendations">Final recommendations</h2>
 <ul>
-  <li>Use the Welch’s <script type="math/tex">t</script>-test over the bootstrap confidence interval test.</li>
-  <li>Set the significance level of a test to lower values (<script type="math/tex">% <![CDATA[
-\alpha<0.05 %]]></script>) so as to make sure the probability of type-I error (empirical <script type="math/tex">\alpha</script>) keeps below <script type="math/tex">0.05</script>.</li>
+  <li>Use the Welch’s \(t\)-test over the bootstrap confidence interval test.</li>
+  <li>Set the significance level of a test to lower values (\(\alpha&lt;0.05\)) so as to make sure the probability of type-I error (empirical \(\alpha\)) keeps below \(0.05\).</li>
   <li>Correct for multiple comparisons in order to avoid the linear growth of false positive with the number of experiments.</li>
-  <li>Use at least <script type="math/tex">n=20</script> samples in the pilot study to compute robust estimates of the standard deviations of both algorithms.</li>
-  <li>Use larger sample size <script type="math/tex">N</script> than the one prescribed by the power analysis. This helps compensating for potential inaccuracies in the estimations of the standard deviations of the algorithms and reduces the probability of type-II errors.</li>
+  <li>Use at least \(n=20\) samples in the pilot study to compute robust estimates of the standard deviations of both algorithms.</li>
+  <li>Use larger sample size \(N\) than the one prescribed by the power analysis. This helps compensating for potential inaccuracies in the estimations of the standard deviations of the algorithms and reduces the probability of type-II errors.</li>
 </ul>
 
 <p>Note that I am not a statistician. If you spot any approximation or mistake in the text above, please feel free to report corrections or clarifications.</p>

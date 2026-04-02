@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Teacher Algorithms for Deep RL Agents that Generalize in Procedurally Generated Environments &#8211; Developmental Systems, a Blog of the Flowers Lab</title>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="In this blog post we explore how one can leverage Automatic Curriculum Learning procedures to scaffold Deep Reinforcement Learning agents within complex continuous (procedurally generated) task spaces.">
+    <meta name="robots" content="all">
+    <meta name="author" content="INRIA Flowers Team">
+    
+    <meta name="keywords" content="jekyll">
+    <link rel="canonical" href="http://localhost:4000/teacher_algorithms_for_drl_learners">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?202604021143" type="text/css">
+
+    <!-- Fonts -->
+    
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- MathJax -->
+    
+    <script type="text/javascript" async
+        src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <!-- Verifications -->
+    
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Teacher Algorithms for Deep RL Agents that Generalize in Procedurally Generated Environments">
+    <meta property="og:description" content="Developmental Systems, a Blog of the Flowers Lab">
+    <meta property="og:url" content="http://localhost:4000/teacher_algorithms_for_drl_learners">
+    <meta property="og:site_name" content="Developmental Systems, a Blog of the Flowers Lab">
+    
+    <meta property="og:image" content="http://localhost:4000/images/me.jpeg">
+    
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="@FlowersINRIA" />
+        <meta name="twitter:creator" content="@FlowersINRIA" />
+    
+    <meta name="twitter:title" content="Teacher Algorithms for Deep RL Agents that Generalize in Procedurally Generated Environments" />
+    <meta name="twitter:description" content="In this blog post we explore how one can leverage Automatic Curriculum Learning procedures to scaffold Deep Reinforcement Learning agents within complex continuous (procedurally generated) task spaces." />
+    <meta name="twitter:url" content="http://localhost:4000/teacher_algorithms_for_drl_learners" />
+    
+    <meta name="twitter:image" content="http://localhost:4000/images/me.jpeg" />
+    
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-44726622-2', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+
+     <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS_HTML"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700&display=swap" rel="stylesheet">
+    <!--&lt;!&ndash; Load jQuery &ndash;&gt;-->
+    <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+    <!--&lt;!&ndash; Load KaTeX &ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>&ndash;&gt;-->
+
+    <!--<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+    
+
+
+    <!-- Flexsider: https://woocommerce.com/flexslider/ -->
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+    <script src="/css/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+    $('.flexslider').flexslider();
+    });
+    </script>
+</head>
+
+
+<body class="site">
+  
+	
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: 'none',
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [['$$','$$']],
+      processEnvironments: false
+    },
+    // show equation numbers
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    'HTML-CSS': {
+      imageFont: null
+    }
+  });
+</script>
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+      <div class="measure">
+          <a href="/" class="site-title">
+              <img src="/flowers-logo.png">
+          </a>
+      <nav class="site-nav">
+        
+
+
+        <a class="nav-link"  href="https://flowers.inria.fr/"  target="_blank">Flowers Lab</a>
+
+
+    
+    
+
+    
+        <a class="nav-link" href="/discover">Discover</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/blogs">Blogs</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/publications/">Publications</a>
+    
+
+    
+
+    
+    
+
+    
+        <a class="nav-link" href="/about">About</a>
+    
+
+    
+
+
+      </nav>
+      <div class="clearfix"></div>
+      
+        <div class="social-icons">
+  <div class="social-icons-right">
+    
+      <a class="fa fa-github" href="https://github.com/flowersteam"></a>
+    
+    
+    
+    
+    <a class="fa fa-rss" href="/feed.xml"></a>
+    
+      <a class="fa fa-twitter" href="https://twitter.com/FlowersINRIA"></a>
+    
+    
+    
+    
+    
+      <a class="fa fa-envelope" href="mailto:pierre-yves.oudeyer@inria.fr"></a>
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="right">
+    
+    
+    
+  </div>
+</div>
+<div class="clearfix"></div>
+
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>Teacher Algorithms for Deep RL Agents that Generalize in Procedurally Generated Environments</h1>
+  <span class="post-meta">
+       <a href="mailto:remy.portelas@gmail.com">Rémy Portelas</a>
+  </span><br>
+  <span class="post-meta">Jun 2, 2021</span><br>
+  
+  <span class="post-meta small">
+  
+    19 minute read
+  
+  </span>
+  
+  <div class="post-tags">
+    
+      <a href="/tags#machine-autotelic-learning" class="post-tag">machine-autotelic-learning</a>
+    
+      <a href="/tags#curriculum-learning" class="post-tag">curriculum-learning</a>
+    
+      <a href="/tags#deep-rl" class="post-tag">deep-RL</a>
+    
+      <a href="/tags#generalization" class="post-tag">generalization</a>
+    
+      <a href="/tags#reinforcement-learning" class="post-tag">reinforcement-learning</a>
+    
+  </div>
+  
+</div>
+
+<article class="post-content">
+  <font size="+3"><b>TL;DR</b></font>
+<p>Teaching algorithms are becoming a key ingredient to scaffold Deep RL agents into their learning odyssey, leading to policies that can generalize to multiple environments.
+This blog presents this emerging Deep RL sub-field and showcases recent work done in the Flowers Lab on designing a Learning Progress based teacher algorithm.</p>
+
+<table>
+<tbody>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk1.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk2.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk3.gif" height="165" width="280" /></td>
+</tr>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk4.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk5.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk6.gif" height="165" width="280" /></td>
+</tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+
+<p><strong>Building Deep RL agents that generalize</strong>. Leveraging advances in both training procedures and scalability, the Deep Reinforcement Learning community is now able to tackle ever more challenging control problems. This dynamic is shifting the sets of environments that are considered by researchers for benchmarking, leading to a drift from simple deterministic environments towards complex, more stochastic alternatives. This shift is key if we want to bring Deep RL outside of the lab, where robustness and generalization to previously unseen changes of the environment is essential for successful operation.</p>
+
+<p><strong>Training in procedurally generated environment</strong>. One emerging method as a step towards this objective is to train Deep RL agents on <a href="https://www.researchgate.net/publication/285878527_Procedural_content_generation_goals_challenges_and_actionable_steps">proceduraly generated environments</a> and assess whether the considered approach is able to <em>generalize</em> to the space of possible environments. In Open AI’s paper <a href="https://openai.com/blog/quantifying-generalization-in-reinforcement-learning/"> Quantifying Generalization in Reinforcement Learning</a>, authors present CoinRun, a mario-like platform game whose levels are proceduraly generated. They show that increasing the training set of proceduraly generated levels directly correlates with an increase in test-time performances on previously unseen levels, showing that training diversity is key for generalization.</p>
+
+<p><strong>Links with domain randomization</strong>. Similar procedures (termed <em>Domain Randomization</em>) have also been used as a way to enable <a href="https://lilianweng.github.io/lil-log/2019/05/05/domain-randomization.html">Sim2Real transfer</a>, which recently led to the training of a Deep RL agent able to robustly <a href="https://openai.com/blog/solving-rubiks-cube/">solve a Rubik’s cube</a> with a real-world robotic hand, leveraging intensive training in simulation. To facilitate the development and comparative analysis of Deep RL algorithms that generalize, propositions of benchmark environments emerges from the community, such as <a href="https://openai.com/blog/procgen-benchmark/">Open AI’s ProcGen</a>, a suite of 16 procedural 2D games, or <a href="https://github.com/Unity-Technologies/obstacle-tower-challenge">Unity’s Obstacle Tower Challenge</a>, a complex 3D procedural escape game. However, a limitation of these benchmarks is that they do not allow to study whether the ability to <em>control the procedural generation</em> can be beneficial for training Deep RL agents.</p>
+
+<p><strong>Teacher algorithms that dynamically adapt the distribution of procedurally generated environments.</strong> Given such a possibility, how can a teacher algorithm control the sequence of training environments enabling a Deep RL agent to acquire fastly skills that generalize to many environments? A simple approach is to propose randomly generated environments. If the amount of unfeasible environments from the set is not too high for the given learner, this might work reasonably well (as in CoinRun). But for more challenging scenarios, one would need smarter training strategies that avoid proposing too easy or too difficult environments, while ensuring forgetting does not happen. This brings us in the domain of <em>Curriculum Learning</em> (CL).</p>
+
+<p><strong>Automated Curriculum Learning</strong>. Given enough time and expert knowledge on the given benchmark, one could design a learning curriculum tailored for the considered learner. This is likely to work well, however, for real-world applications of Deep RL, it might be interesting to try to relax the time (i.e money) and expert knowledge (i.e money) required to design the curriculum. And there might also be cases where acquiring expert knowledge is not possible (as when <a href="https://openlab-flowers.inria.fr/t/discovery-of-independently-controllable-features-through-autonomous-goal-setting/494">choosing tasks from a task space embedding learned online</a>). One more versatile approach which alleviates this need for domain knowledge is to rely on <em>Automatic Curriculum Learning</em>.</p>
+
+<p>In our recent <a href="https://arxiv.org/abs/1910.07224">CoRL 2019 paper</a>, we propose such an approach based on the use of <em>Absolute Learning Progress</em> as a signal to organise the curriculum. We frame this generalization challenge as a <a href="https://flowers.inria.fr/mlopes/myrefs/12-ssp.pdf"><em>Strategic Student problem</em></a>, formalizing a setting where one has to sequentially select distributions of environments to train on, and where the objective is to maximize average competence over the whole space of environments after a given number of interactions. Importantly, we explicitly do not assume to know the learnable subset of environments that can be generated, and we consider the learner as a black-box whose abilites are unknown. Thus, a teacher algorithm needs to incrementally learn a model of how the Deep RL agent performs in various parameterized environments, and to use this model to organize the learning curriculum.</p>
+
+<h2 id="the-continuous-teacher-student-framework">The Continuous Teacher-Student Framework</h2>
+
+<div align="center" style="margin-bottom:40px">
+<img class="80" src="/images/posts/2021-06-02-teachDRL/CTS_framework_pipeline_v2.png" width="60%" alt="The CTS framework" />
+</div>
+
+<p>This Continuous Teacher-Student framework, depicted above, enables us to address the “curriculum generation towards generalization” problem. The <em>Teacher</em> algorithm samples an environment (i.e a parameter vector given to the procedural generation engine) from its current environment distribution, proposes it to its Deep RL <em>Student</em>, observes the associated episodic reward and updates its sampling distribution accordingly. Importantly, the Student is considered as a Black-Box, meaning that the Teacher does not have access to its internal state and does not know its learning mechanisms, making this approach applicable to any learning system. Likewise, to extend this approach to a wide range of scenarii, we do not assume to have expert knowledge on the environment space (aka parameter space) , and therefore assume that it could contain unfeasible subspaces, irrelevant dimensions and non-linear difficulty gradients.</p>
+
+<h2 id="learning-progress-based-teacher-algorithms">Learning-Progress based Teacher algorithms</h2>
+
+<p>The learning signal used to organize a learning curriculum is absolute learning progress. This learning signal was extensively studied as a <a href="http://www.pyoudeyer.com/oudeyerGottliebLopesPBR16.pdf">theoretical hypothesis</a> to explain why and how human babies spontaneously explore, i.e. as a <a href="http://www.pyoudeyer.com/ims.pdf">model of human curiosity-driven learning</a>. It operationalizes the general idea (formulated by many <a href="https://en.wikipedia.org/wiki/Daniel_Berlyne">psychologists</a>) that humans are intrinsically motivated to explore environments of optimal difficulty, neither too hard nor too easy. Indeed, various models showed that exploration driven by an LP-based intrinsic reward self-organizes learning curriculum of increasing complexity, for e.g. reproducing the developmental progression of <a href="https://en.wikipedia.org/wiki/Daniel_Berlyne">vocalisations</a> or <a href="http://www.pyoudeyer.com/Forestier2016Curiosity.pdf">tool use</a> in infants.</p>
+
+<p>Following this insight, LP was later applied to <a href="https://arxiv.org/abs/1708.02190">automate curriculum learning for efficient learning of skills in robots</a>. For example, <a href="http://www.pyoudeyer.com/TAMDBaranesOudeyer09.pdf">RIAC</a> and <a href="https://hal.archives-ouvertes.fr/hal-00927940">Covar-GMM</a> are two curriculum learning algorithms for continuous environment spaces that were paired with simple population-based <a href="https://studywolf.wordpress.com/2013/11/16/dynamic-movement-primitives-part-1-the-basics/#:~:targetText=Dynamic%20movement%20primitives%20(DMPs)%20are,planning%20from%20Stefan%20Schaal's%20lab.&amp;targetText=The%20basic%20idea%20is%20that,it%20goes%20about%20its%20business.">DMP</a> controllers. In both approaches, the sequential task selection problem is transformed into an <a href="https://epubs.siam.org/doi/abs/10.1137/S0097539701398375?journalCode=smjcat">EXP4</a> <em>Multi-Armed Bandit (MAB) setup</em> in which arms are dynamically mapped to subspaces of the task/environment space, and whose utilities are defined using a local LP measure. The objective is then to optimally select on which subspace to sample an environment in order to maximize LP. In RIAC, arms are defined as hyperboxes over the environment space, their utility is the difference of reward between old and recent environments sampled from the hyperbox. In Covar-GMM, the arms of the MAB are gaussians from a Gaussian Mixture Model. The GMM is periodically fited on tuples composed of an environment’s parameter vector concatenated to its associated reward (obtained by the student) and its relative time value.</p>
+
+<div align="center" style="margin-bottom:40px">
+<img class="80" src="/images/posts/2021-06-02-teachDRL/mab_blogpost_hd.png" width="95%" alt="Multi-Armed Bandit" />
+<div>
+<sub style="display: block; line-height: 1.5em">
+<i> The common recipe between RIAC, Covar-GMM and ALP-GMM (our proposed approach) is to dynamically detect subspaces having different LP value within the task/environment space. Then, they consider each subspace as an arm of a Multi Armed Bandit setup, and compute each of their utility using a local aggregated LP value.
+</i></sub>
+</div>
+</div>
+
+<h2 id="alp-gmm">ALP-GMM</h2>
+<p>Building up on Covar-GMM, we propose Absolute Learning Progress Gaussian Mixture Model (ALP-GMM), a variant based on a richer ALP measure capturing long-term progress variations that is well-suited for RL setups. ALP gives a richer signal than (positive) LP as it enables the teacher to detect when a student is losing competence on a previously mastered environment subspace (thus preventing catastrophic forgetting, which is a well-known issue in DRL).</p>
+
+<div align="center" style="margin-bottom:40px">
+<img class="80" src="/images/posts/2021-06-02-teachDRL/alp-gmm_pipeline_example_V3.png" width="95%" alt="ALP-GMM" />
+<div>
+<sub style="display: block; line-height: 1.5em">
+<i> ALP-GMM periodically fits a GMM on recently sampled environments' parameters paired with their respective Absolute Learning Progress. Then, the Gaussian from which to sample a new parameter (a new environment) is chosen proportionally to its mean ALP.
+</i></sub>
+</div>
+</div>
+
+<p>The key concept of ALP-GMM is to fit a GMM on a dataset of previously sampled environment’s parameters (parameters for short) concatenated to their respective ALP measure. Thus, each gaussian   groups environments sampled so far according to a similarity that depends both on their physical features and the corresponding ALP of the Deep RL agent.  Then, the Gaussian from which to sample a new parameter is chosen using an EXP4 bandit scheme where each Gaussian is viewed as an arm, and ALP is its utility. This enables the teacher to bias the parameter sampling towards high-ALP subspaces. To get this per-parameter ALP value, we take inspiration from <a href="https://arxiv.org/abs/1708.02190">previous work on developmental robotics</a>: for each newly sampled parameter $p_{new}$ and associated episodic reward $r_{new}$, the closest (Euclidean distance) previously sampled parameter $p_{old}$ (with associated episodic reward $r_{old}$) is retrieved using a nearest neighbor algorithm. We then have
+ $alp_{new} = |r_{new} - r_{old}|$.</p>
+
+<p>The GMM is fit periodically on a window $\mathcal{W}$ containing only the most recent parameter-ALP pairs (here the last $ 250 $) to bound its time complexity and make it more sensitive to recent high-ALP subspaces. The number of Gaussians is adapted online by fitting multiple GMMs (here having from $2$ to $k_{max}=10$ Gaussians) and keeping the best one based on <a href="https://link.springer.com/article/10.1007/BF02294361">Akaike’s Information Criterion</a>. Note that the nearest neighbor computation of per-parameter ALP uses a database that contains all previously sampled parameters and associated episodic rewards, which prevents any forgetting of long-term progress. In addition to its main environment sampling strategy, ALP-GMM also samples random parameters to enable exploration (here $p_{rnd}=20%$).</p>
+
+<h2 id="procedurally-generated-bipedalwalker-environments">Procedurally Generated BipedalWalker Environments</h2>
+<p>The <a href="https://gym.openai.com/envs/BipedalWalker-v2/">BipedalWalker environment</a> offers a convenient test-bed for continuous control, allowing to easily build parametric variations of the original version (controlling changes in <a href="https://arxiv.org/abs/1810.03779">walker morphology</a> or <a href="https://eng.uber.com/poet-open-ended-deep-learning/">walking track layout</a>). The learning agent, embodied in a bipedal walker, receives positive rewards for moving forward and penalties for torque usage and angular head movements. Agents are allowed up to $ 2000 $ steps to reach the other side of the map. Episodes are aborted with a reward penalty if the walker’s head touches an obstacle or the ground.</p>
+
+<p>To study the ability of our teachers to guide DRL students, we design two continuously parameterized BipedalWalker environments enabling the procedural generation of walking tracks:</p>
+
+<table>
+<tbody>
+<tr>
+<td align="center">
+  <b>Stump Tracks</b>
+  </td>
+ <td align="center">
+  <b>Hexagon Tracks</b>
+  </td>
+</tr>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/demo_stump_track_22.jpg" width="100%" /></td>
+<td rowspan="3" class="colcenter" align="center">
+          <img src="https://openlab-flowers.inria.fr/uploads/default/original/2X/0/01cc0afbd21a14750353d0b68002ba17cb926ab0.jpeg" width="90%" /> 
+  </td>
+</tr>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/demo_stump_track_36.jpg" width="100%" /></td>
+</tr>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/demo_stump_track_41.jpg" width="100%" />
+  </td>
+</tr>
+<tr>
+<td align="center">
+  <sub style="display: block; line-height: 1.5em">
+<i> A 2D parametric environment producing tracks paved with stumps varying by their height and spacing. </i></sub>
+  </td>
+ <td align="center">
+  <sub style="display: block; line-height: 1.5em">
+<i> A more challenging 12D variation whose parameters are used to generate arbitrary hexagons. </i></sub>
+  </td>
+</tr>
+</tbody>
+</table>
+
+<p>All of the experiments done in these environments were performed using <a href="https://github.com/openai/spinningup">OpenAI’s implementation</a>  of <a href="https://arxiv.org/abs/1801.01290">Soft-Actor Critic</a> (SAC) as the single student algorithm. To test our teachers’ robustness to students with varying abilities, we use $ 3 $ different walker morphologies:</p>
+
+<div align="center">
+<img src="/images/posts/2021-06-02-teachDRL/walker_presentation.jpg" width="100%" />
+<i> <sub style="display: block; line-height: 1.5em"> In addition to the default
+bipedal walker morphology, we designed a bipedal walker with 50% shorter legs and a
+bigger quadrupedal walker. We test all three walker types on Stump Tracks. The quadrupedal walker is also tested in Hexagon Tracks. </sub></i></div>
+
+<h2 id="experiments">Experiments</h2>
+
+<h3 id="alp-gmm-generates-student-specific-curricula">ALP-GMM generates student-specific curricula</h3>
+
+<p>The following videos provide visualizations of the environment sampling trajectory observed in a representative ALP-GMM run when paired with a short (left), default (middle) and quadrupedal (right) walker. In each frame, blue shades represent the Gaussians of the current mixture while dots represent sampled environments.</p>
+
+<table>
+<tbody>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/GMM_gmmcshortcpu21-0611.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/GMM_gmmcdefaultcpu21-063.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/GMM_gmmclongcpu21-060.gif" width="100%" /></td>
+</tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+
+<p>For each walker type one can observe that the curriculum generated by ALP-GMM starts with a random sampling phase (different in length depending on the walker type), which is due to the initial absence of progress of its student. Initial progress is then always detected on the leftmost part of the environment’s parameter space, which correspond to environments with low stump heights. Then, one can see that curricula generated by ALP-GMM significantly diverge depending on the walker type as it is adapted to their unique learning abilities. One can see that the more competent the walker, the more the sampling gradually shifts towards high-stump environments across time.</p>
+
+<p>A single run of ALP-GMM allows to train Soft Actor-Critic controllers to master a wide range of track distributions. Here are examples of learned walking gates for short (left), default (middle) and quadrupedal (right) walkers ($1$ column = $1$ run):</p>
+
+<table>
+<tbody>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_0.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_1.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_2.gif" width="100%" /></td>
+</tr>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_3.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_4.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_5.gif" width="100%" /></td>
+</tr>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_6.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_7.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_8.gif" width="100%" /></td>
+</tr>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_9.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_10.gif" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_demos/st_11.gif" width="100%" /></td>
+</tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+
+<h3 id="comparative-study-on-stump-tracks">Comparative study on Stump Tracks</h3>
+
+<p>To analyze the impact of ALP-GMM teachers on student training, we compare it to RIAC, Covar-GMM and two reference algorithms:</p>
+
+<ul>
+  <li>
+    <p><em>Random Environment Curriculum</em> (Random)  - In Random, parameters are sampled randomly in the parameter space for each new episode. Although simplistic, similar approaches in <a href="https://arxiv.org/abs/1301.4862">previous work</a> proved to be competitive against more elaborate forms of CL.</p>
+  </li>
+  <li>
+    <p><em>Oracle</em> - A hand-constructed approach, sampling random environment distributions in a fixed-size sliding window on the parameter space. This window is initially set to the easiest area of the parameter space and is then slowly moved towards complex ones, with difficulty increments only happening if a minimum average performance is reached. Expert knowledge is used to find the dimensions of the window, the amplitude and direction of increments, and the average performance threshold.</p>
+  </li>
+</ul>
+
+<p>For each condition we perform $ 32 $ seeded runs with each of our $ 3 $ students and periodically measure performance as the percentage of <em>mastered</em> environments ($ r  &gt; 230 $) of a fixed test set ($ n = 50$).</p>
+
+<table>
+<tbody>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/stump_track_exps.png" width="100%" />
+<sub style="display: block; line-height: 1.5em">
+<i> Evolution of mastered track distributions for Teacher-Student approaches in Stump Tracks. The mean performance (32 seeded runs) is plotted with shaded areas representing the standard error of the mean.
+</i></sub>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+
+<p>The figure above shows learning curves for each condition paired with short (a), default (b) and quadrupedal (c) walkers. First of all, for short agents, one can see that Oracle is the best performing algorithm, mastering more than $20$% of the test set after $20$ Million steps. This is an expected result as Oracle knows where to sample simple track distributions, which is crucial when most of the parameter space is unfeasible, as is the case with short agents. ALP-GMM is the LP-based teacher with highest final mean performance, reaching $14.9$% against $10.6$% for Covar-GMM and $8.6$% for RIAC. This performance advantage for ALP-GMM is statistically significant when compared to RIAC (Welch’s t-test at 20M steps: $p&lt;0.04$), however there is no statistically significant difference with Covar-GMM ($p=0.16$). All LP-based teachers are significantly superior to Random ($p&lt;0.001$). For details on how to use statistical tests for Deep RL, check <a href="https://developmentalsystems.org/how_many_random_seeds">this blog</a>.</p>
+
+<p>Regarding default bipedal walkers, our hand-made curriculum (Oracle) performs better than other approaches for the first $10$ Million steps and then rapidly decreases to end up with a performance comparable to RIAC and Covar-GMM. All LP-based conditions end up with a final mean performance statistically superior to Random ($p&lt;10^{-4}$). ALP-GMM is the highest performing algorithm, significantly superior to Oracle ($p&lt;0.04$), RIAC ($p&lt;0.01$) and Covar-GMM ($p&lt;0.01$).</p>
+
+<p>For quadrupedal walkers, Random, ALP-GMM, Covar-GMM and RIAC agents quickly learn to master nearly $100$% of the test set, without significant differences apart from Covar-GMM being superior to RIAC ($p&lt;0.01$). This indicates that, for this agent type, the parameter space of Stump Tracks is simple enough that trying random tracks for each new episode is a sufficient curriculum learning strategy. Oracle teachers perform significantly worse than any other method ($p&lt;10^{-5}$).</p>
+
+<p>Through this analysis we showed how ALP-GMM, Covar-GMM and RIAC, without strong assumptions on the environment, managed to scaffold the learning of multiple students better than Random. Interestingly, ALP-GMM outperformed Oracle with default agents, and RIAC, Covar-GMM and ALP-GMM surpassed Oracle with the quadrupedal agent, despite its advantageous use of domain knowledge. This indicates that training only on track distributions sampled from a sliding window that end up on the most difficult parameter subspace leads to forgetting of simpler environment distributions. Our approaches avoid this issue through efficient tracking of their students’ learning progress.</p>
+
+<h3 id="comparative-study-on-hexagon-tracks-our-environment-with-a-12-d-parameter-space">Comparative study on Hexagon Tracks, our environment with a 12-D parameter space</h3>
+
+<p>To assess whether ALP-GMM is able to scale to parameter spaces of higher dimensionality, containing irrelevant dimensions, and whose difficulty gradients are non-linear, we performed experiments with quadrupedal walkers on Hexagon Tracks, our 12-dimensional parametric BipedalWalker environment.</p>
+
+<p>We analyzed the distributions of the percentage of mastered environments of the test set after training for $80$ Millions (environment) steps, depicted in the figure below (left plot). One can see that ALP-GMM both has the highest median performance and narrowest distribution. Out of the $32$ repeats, only Oracle and ALP-GMM always end-up with positive final performance scores whereas Covar-GMM, RIAC and Random end-up with $0%$ performance in $8/32$, $5/32$ and $16/25$ runs, respectively. Interestingly, in all repeats of any condition, the student manages to master part of the test set at some point (i.e non-zero performance), meaning that runs that end-up with $0%$ final test performance actually experienced catastrophic forgetting. This showcase the ability of ALP-GMM to avoid this forgetting issue through efficient tracking of its student’s absolute learning progress.</p>
+
+<table>
+<tbody>
+<tr>
+<td align="center">
+<br />
+<br />
+<img src="/images/posts/2021-06-02-teachDRL/boxplot_hexa.png" width="100%" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/vizu_quadru_walker.png" width="100%" /></td>
+</tr>
+<tr>
+<td align="center"><i> <sub style="display: block; line-height: 1.5em"> In addition to the default
+bipedal walker morphology, we designed a bipedal walker with 50% shorter legs and a
+bigger quadrupedal walker. We test all three walker types on Stump Tracks. The quadrupedal walker is also tested in Hexagon Tracks. </sub></i></td>
+<td align="center"><i> <sub style="display: block; line-height: 1.5em"> Final performance of each condition run on Hexagon Tracks after 80M steps. Gold lines are medians, surrounded by a box showing the first and third quartile, which are then followed by whiskers extending to the last datapoint or 1.5 times the inter-quartile range. Beyond the whiskers are outlier datapoints.
+ </sub></i></td>
+</tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+
+<p>The following videos shows walking gates learned in a single ALP-GMM run.</p>
+
+<table>
+<tbody>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk1.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk2.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk3.gif" height="165" width="280" /></td>
+</tr>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk4.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk5.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/walk6.gif" height="165" width="280" /></td>
+</tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+<p>In comparison, when using Random curriculum, most runs end-up with bad performances, like this one:</p>
+
+<table>
+<tbody>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_rnd/rnd_0.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_rnd/rnd_1.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_rnd/rnd_2.gif" height="165" width="280" /></td>
+</tr>
+<tr>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_rnd/rnd_3.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_rnd/rnd_4.gif" height="165" width="280" /></td>
+<td><img src="/images/posts/2021-06-02-teachDRL/gif_rnd/rnd_5.gif" height="165" width="280" /></td>
+</tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+
+<h2 id="discussion">Discussion</h2>
+
+<p>This work demonstrated that ALP-based teacher algorithms could successfully guide DRL agents to learn and generalize in difficult continuously parameterized environments. With no prior knowledge of its student’s abilities and learning algorithm, and only loose boundaries on the environment space, ALP-GMM, our proposed teacher, consistently outperformed random heuristics and occasionally even expert-designed curricula. We show that it also scales when the procedural generation includes irrelevant dimensions or produces large proportions of unfeasible environments.</p>
+
+<p>ALP-GMM, which is conceptually simple and has very few crucial hyperparameters, opens-up exciting perspectives inside and outside DRL for curriculum learning problems. Within DRL, it could be applied to <a href="https://openlab-flowers.inria.fr/t/discovery-of-independently-controllable-features-through-autonomous-goal-setting/494">previous work</a> on autonomous goal exploration through incremental building of goal spaces. In this case several ALP-GMM instances could scaffold the learning agent in each of its autonomously discovered goal spaces. Another domain of applicability is <a href="https://arxiv.org/abs/1310.3174">personalization of sequences of exercises for human learners in educational technologies</a>, or training humans for sensorimotor skills in re-habilitation or sports.</p>
+
+<p><strong>The full details of this work are presented in:</strong>
+Rémy Portelas, Cédric Colas, Katja Hofmann, Pierre-Yves Oudeyer (2019)
+<a href="https://arxiv.org/abs/1910.07224">Teacher algorithms for curriculum learning of Deep RL in continuously parameterized environments</a>
+Proceedings of CoRL 2019 - Conference on Robot Learning , Oct 2019, Osaka, Japan. <a href="https://hal.archives-ouvertes.fr/hal-02370165v1/bibtex">Bibtex</a>.</p>
+
+<h2 id="code">Code</h2>
+
+<p>Jointly to this work, we release a <a href="https://github.com/flowersteam/teachDeepRL">github repository</a> featuring implementations of ALP-GMM, RIAC and CovarGMM along with our parameterized BipedalWalker environments.</p>
+
+<h2 id="contact">Contact</h2>
+
+<p>Email: remy.portelas@inria.fr</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+    <p>Togelius J., Champandard A.J., Lanzi, Pier Luca, Mateas M., Paiva A., Preuss Mike, Stanley K.O.. (2013). Procedural content generation: goals, challenges and actionable steps. Dagstuhl Follow-Ups. 6. 61-75. <a href="https://www.researchgate.net/publication/285878527_Procedural_content_generation_goals_challenges_and_actionable_steps/citation/download">link</a></p>
+  </li>
+  <li>
+    <p>Open AI. (2019). Solving Rubik’s Cube with a Robot Hand. <a href="https://openai.com/blog/quantifying-generalization-in-reinforcement-learning/">link</a></p>
+  </li>
+  <li>
+    <p>Blog post: Lilian Weng. (2019). Domain Randomization for Sim2Real Transfer. <a href="https://lilianweng.github.io/lil-log/2019/05/05/domain-randomization.html">link</a></p>
+  </li>
+  <li>
+    <p>Cobbe K., Klimov O., Hesse C., Kim T., Schulman J.. (2019). Quantifying Generalization in Reinforcement Learning. <a href="https://openai.com/blog/quantifying-generalization-in-reinforcement-learning/">link</a></p>
+  </li>
+  <li>
+    <p>Karl Cobbe, Christopher Hesse, Jacob Hilton, John Schulman.(2019). Leveraging Procedural Generation to Benchmark Reinforcement Learning. <a href="https://openai.com/blog/procgen-benchmark/">link</a></p>
+  </li>
+  <li>
+    <p>Laversanne-Finot A., Péré A., Oudeyer P-Y. (2018). Curiosity Driven Exploration of Learned Disentangled Goal Spaces. <a href="https://arxiv.org/abs/1807.01521">link</a></p>
+  </li>
+  <li>
+    <p>Lopes M., Oudeyer P-Y. (2012). The Strategic Student Approach for Life-Long Exploration and Learning. <a href="https://flowers.inria.fr/mlopes/myrefs/12-ssp.pdf">link</a></p>
+  </li>
+  <li>
+    <p>Oudeyer P.-Y., Gottlieb  J., Lopes M. Intrinsic motivation, curiosity, and learning: Theory and applications in educational technologies. (2016). <a href="http://www.pyoudeyer.com/oudeyerGottliebLopesPBR16.pdf">link</a></p>
+  </li>
+  <li>
+    <p>Oudeyer P.-Y., Kaplan F., Hafner V. (2007). Intrinsic Motivation Systems for Autonomous
+Mental Development. <a href="http://www.pyoudeyer.com/ims.pdf">link</a></p>
+  </li>
+  <li>
+    <p>Forestier S., Oudeyer P.-Y.. (2016). Curiosity-Driven Development of Tool Use Precursors: a Computational Model. <a href="http://www.pyoudeyer.com/Forestier2016Curiosity.pdf">link</a></p>
+  </li>
+  <li>
+    <p>Forestier S., Mollard Y., Oudeyer P.-Y.. (2017). Intrinsically Motivated Goal Exploration Processes with Automatic Curriculum Learning <a href="https://arxiv.org/abs/1708.02190">link</a></p>
+  </li>
+  <li>
+    <p>Baranes A., Oudeyer P.-Y.. R-IAC: robust intrinsically motivated exploration and active learning. (2009). <a href="https://ieeexplore.ieee.org/document/5342516">link</a></p>
+  </li>
+  <li>
+    <p>Moulin-Frier C., Nguyen S. M., Oudeyer P.-Y.. Self-organization of early vocal development
+in infants and machines: The role of intrinsic motivation. (2013). <a href="https://hal.archives-ouvertes.fr/hal-00927940">link</a></p>
+  </li>
+  <li>
+    <p>Auer P., Cesa-Bianchi N., Freund Y., Schapire R. E.. (2002). The Nonstochastic Multiarmed Bandit Problem. <a href="https://epubs.siam.org/doi/abs/10.1137/S0097539701398375?journalCode=smjcat&amp;">link</a></p>
+  </li>
+  <li>
+    <p>Bozdogan H.. (1987). Model selection and akaike’s information criterion (aic): The general theory
+and its analytical extensions. <a href="https://link.springer.com/article/10.1007/BF02294361">link</a></p>
+  </li>
+  <li>
+    <p>Ha. D. (2018). Reinforcement learning for improving agent design. <a href="https://designrl.github.io/">link</a></p>
+  </li>
+  <li>
+    <p>Wang R. , Lehman J. , Clune J. , Stanley K. O.. (2019). POET: Endlessly Generating Increasingly Complex and Diverse Learning Environments and their Solutions through the Paired Open-Ended Trailblazer. <a href="https://arxiv.org/abs/1901.01753">link</a></p>
+  </li>
+  <li>
+    <p>Haarnoja T. , Zhou A., Abbeel P., Levine S.. Soft actor-critic: Off-policy maximum entropy
+deep reinforcement learning with a stochastic actor. (2018). <a href="https://arxiv.org/abs/1801.01290">link</a></p>
+  </li>
+  <li>
+    <p>Baranes A., Oudeyer P.-Y.. (2013). Active Learning of Inverse Models with Intrinsically Motivated Goal Exploration in Robots. <a href="https://arxiv.org/abs/1301.4862">link</a></p>
+  </li>
+  <li>
+    <p>Colas C., Sigaud O., Oudeyer P.-Y.. (2019). How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments. <a href="https://openlab-flowers.inria.fr/t/how-many-random-seeds-should-i-use-statistical-power-analysis-in-deep-reinforcement-learning-experiments/457">link</a></p>
+  </li>
+  <li>
+    <p>Clément B., Roy D., Oudeyer P.-Y., Lopes. M.. (2015). Multi-Armed Bandits for Intelligent Tutoring Systems. <a href="https://arxiv.org/abs/1310.3174">link</a></p>
+  </li>
+</ul>
+
+<hr />
+<h6 id="subscribe-to-our-twitter">Subscribe to our <a href="https://twitter.com/@flowersINRIA">Twitter</a>.</h6>
+<hr />
+
+</article>
+
+
+  <div class="share-page">
+  Share this post!
+
+  <div class="share-links">
+    
+      <a class="fa fa-facebook" href="https://facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fteacher_algorithms_for_drl_learners" rel="nofollow" target="_blank" title="Share on Facebook"></a>
+    
+
+    
+      <a class="fa fa-twitter" href="https://twitter.com/intent/tweet?text=Teacher+Algorithms+for+Deep+RL+Agents+that+Generalize+in+Procedurally+Generated+Environments&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fteacher_algorithms_for_drl_learners" rel="nofollow" target="_blank" title="Share on Twitter"></a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <a class="fa fa-reddit" href="http://reddit.com/submit?url=http%3A%2F%2Flocalhost%3A4000%2Fteacher_algorithms_for_drl_learners&amp;title=Teacher+Algorithms+for+Deep+RL+Agents+that+Generalize+in+Procedurally+Generated+Environments" rel="nofollow" target="_blank" title="Share on Reddit"></a>
+    
+
+    
+
+    
+      <a class="fa fa-hacker-news" onclick="parent.postMessage('submit','*')" href="https://news.ycombinator.com/submitlink?u=http%3A%2F%2Flocalhost%3A4000%2Fteacher_algorithms_for_drl_learners&amp;t=Teacher+Algorithms+for+Deep+RL+Agents+that+Generalize+in+Procedurally+Generated+Environments" rel="nofollow" target="_blank" title="Share on Hacker News"></a>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--<footer class="center">
+  <div class="measure">
+    <small>
+      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+      &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">GitHub</a>.
+    </small>
+  </div>
+
+
+
+</footer>
+
+<script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js")
+    }
+</script>
+
+
+    <script type="text/javascript">
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" +
+           katex.renderToString(tex) +
+           "</span>";
+});
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" +
+           katex.renderToString("\\displaystyle "+tex) +
+           "</div>";
+});
+
+
+
+</script>
+
+
+
+<!--<script>-->
+      <!--renderMathInElement(-->
+          <!--document.body,-->
+          <!--{-->
+              <!--delimiters: [-->
+                  <!--{left: "$$", right: "$$", display: true},-->
+                  <!--{left: "\\[", right: "\\]", display: true},-->
+                  <!--{left: "$", right: "$", display: false},-->
+                  <!--{left: "\\(", right: "\\)", display: false}-->
+              <!--]-->
+          <!--}-->
+      <!--);-->
+    <!--</script>-->-->
+</body>
+</html>

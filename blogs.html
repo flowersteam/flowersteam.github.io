@@ -1,0 +1,165 @@
+---
+layout: page
+title: Blogs
+permalink: /blogs
+---
+
+
+<h1>Filters</h1>
+
+<div class="search-filter">
+  <input type="text" id="search-input" placeholder="Search by title…" oninput="applyFilters()" />
+</div>
+
+
+Tags rule: </br>
+<button id="tag-logic-toggle" class="tag-logic-btn" onclick="toggleLogic()">OR</button>
+</br>
+Selected tags:
+<div class="tag-buttons">
+
+  <button class="post-tag active" data-tag="all" onclick="toggleTag(null, this)">All</button>
+  {% assign all_tags = site.posts | map: 'tags' | join: '~~~' | split: '~~~' | uniq | sort %}
+  {% for tag in all_tags %}
+    {% unless tag == '' %}
+      <button class="post-tag" id="btn-{{ tag | slugify }}" data-tag="{{ tag | slugify }}" onclick="toggleTag('{{ tag | slugify }}', this)">{{ tag }}</button>
+    {% endunless %}
+  {% endfor %}
+</div>
+
+
+
+<div class="date-filter">
+  <label for="date-start">From</label>
+  <input type="text" id="date-start" placeholder="DD/MM/YYYY" maxlength="10" oninput="applyFilters()" />
+  <label for="date-end">to</label>
+  <input type="text" id="date-end" placeholder="DD/MM/YYYY" maxlength="10" oninput="applyFilters()" />
+</div>
+
+<h1>Filtered blogs</h1>
+<div id="post-list">
+  {% for post in site.posts %}
+    <div class="post py2 tag-post"
+         data-tags="{% for tag in post.tags %}{{ tag | slugify }} {% endfor %}"
+         data-date="{{ post.date | date: '%Y-%m-%d' }}"
+         data-title="{{ post.title | xml_escape }}"
+         data-summary="{{ post.summary | xml_escape }}"
+         data-content="{{ post.content | strip_html | truncate: 3000 | xml_escape }}">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">{{ post.date | date: site.date_format }}</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          {% if post.external_url %}
+          <a href="{{ post.external_url }}" class="post-link" target="_blank" rel="noopener">
+            <h2 class="h2 post-title">{{ post.title }} <span class="external-link-icon">↗</span></h2>
+          </a>
+          {% else %}
+          <a href="{{ post.url | relative_url }}" class="post-link">
+            <h2 class="h2 post-title">{{ post.title }}</h2>
+          </a>
+          {% endif %}
+          <div class="post-meta post-authors">
+            {% for auth in post.authors %}<a href="{{ auth.link }}">{{ auth.name }}</a>{{ auth.next }}{% endfor %}
+          </div>
+          {% if post.summary %}<p class="post-summary">{{ post.summary }}</p>{% endif %}
+          {% if post.tags and post.tags != empty %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+              <a href="#btn-{{ tag | slugify }}" class="post-tag" onclick="event.preventDefault(); toggleTag('{{ tag | slugify }}', document.getElementById('btn-{{ tag | slugify }}'))">{{ tag }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% if post.thumbnail %}
+        <a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | relative_url }}{% endif %}" {% if post.external_url %}target="_blank" rel="noopener"{% endif %} style="flex-shrink: 0;">
+          <img src="{{ post.thumbnail }}" alt="{{ post.title | xml_escape }}" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+var activeTags = new Set();
+var tagLogic = 'OR'; // 'OR' or 'AND'
+
+function toggleLogic() {
+  tagLogic = tagLogic === 'OR' ? 'AND' : 'OR';
+  document.getElementById('tag-logic-toggle').textContent = tagLogic;
+  applyFilters();
+}
+
+function toggleTag(tag, btn) {
+  var allBtn = document.querySelector('.tag-buttons .post-tag[data-tag="all"]');
+  if (tag === null) {
+    activeTags.clear();
+    document.querySelectorAll('.tag-buttons .post-tag').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    allBtn.classList.add('active');
+  } else {
+    allBtn.classList.remove('active');
+    if (activeTags.has(tag)) {
+      activeTags.delete(tag);
+      btn.classList.remove('active');
+    } else {
+      activeTags.add(tag);
+      btn.classList.add('active');
+    }
+    if (activeTags.size === 0) {
+      allBtn.classList.add('active');
+    }
+  }
+  applyFilters();
+}
+
+function parseDMY(str) {
+  var parts = str.trim().split('/');
+  if (parts.length !== 3 || parts[2].length !== 4) return '';
+  var dd = parts[0].padStart(2, '0');
+  var mm = parts[1].padStart(2, '0');
+  var yyyy = parts[2];
+  return yyyy + '-' + mm + '-' + dd;
+}
+
+function applyFilters() {
+  var keyword = document.getElementById('search-input').value.toLowerCase().trim();
+  var dateStart = parseDMY(document.getElementById('date-start').value);
+  var dateEnd = parseDMY(document.getElementById('date-end').value);
+  document.querySelectorAll('.tag-post').forEach(function(post) {
+    var tagMatch = activeTags.size === 0;
+    if (!tagMatch) {
+      var postTags = post.dataset.tags.trim().split(/\s+/).filter(function(t) { return t; });
+      if (tagLogic === 'OR') {
+        activeTags.forEach(function(tag) {
+          if (postTags.indexOf(tag) !== -1) tagMatch = true;
+        });
+      } else {
+        tagMatch = true;
+        activeTags.forEach(function(tag) {
+          if (postTags.indexOf(tag) === -1) tagMatch = false;
+        });
+      }
+    }
+    var keywordMatch = true;
+    if (keyword) {
+      var title = (post.dataset.title || '').toLowerCase();
+      keywordMatch = title.indexOf(keyword) !== -1;
+    }
+    var postDate = post.dataset.date || '';
+    var dateMatch = (!dateStart || postDate >= dateStart) && (!dateEnd || postDate <= dateEnd);
+    post.style.display = (tagMatch && keywordMatch && dateMatch) ? '' : 'none';
+  });
+}
+
+// Activate tag from URL hash on page load
+window.addEventListener('DOMContentLoaded', function() {
+  var hash = window.location.hash.replace('#', '');
+  if (hash) {
+    var btn = document.getElementById(hash);
+    if (btn) toggleTag(hash.replace('btn-', ''), btn);
+  }
+});
+</script>
