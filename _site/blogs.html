@@ -19,7 +19,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?202604021447" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202604060950" type="text/css">
 
     <!-- Fonts -->
     
@@ -455,6 +455,51 @@ Selected tags:
               <a href="#btn-language-models" class="post-tag" onclick="event.preventDefault(); toggleTag('language-models', document.getElementById('btn-language-models'))">language-models</a>
             
           </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="post py2 tag-post"
+         data-tags=""
+         data-date="2026-02-27"
+         data-title="The Phylogenetics of Artifacts - A deep dive into the evolution of cultural objects, artificial life forms and language models"
+         data-summary="The blog shows that phylogenetic methods — originally designed to reconstruct evolutionary trees of biological species from DNA — can be extended to any system that replicates and varies. It demonstrates this progression across three domains - cat breeds as a concrete biological example, myths as a cultural one, and finally language models, where next-token probability distributions serve as artificial DNA to reconstruct the family trees of LLMs in a black-box setting."
+         data-content="
+
+The aim of this blog is to show that phylogenetic methods — traditionally used to reconstruct the evolutionary history of biological species — can be applied far beyond their original scope. This idea was first theorised by Dawkins in 1976 [1] and has since been demonstrated on cultural artifacts by researchers such as Julien d’Huy [2]. Here, we take it a step further and apply it to the intelligence of Large Language Models (LLMs).
+
+This is a particularly timely question in a world where the number of LLMs is growing at an extraordinary pace — around 300 new models are published every day on the HuggingFace hub — and where transparency about training details is increasingly limited. Reconstructing the phylogenetic history of models in a black-box setting, without any prior information beyond interacting with them, would provide a powerful tool to map the landscape of modern AI, shed light on lineages that are not always made explicit, and inform the evaluation of AI capabilities — with potential applications to AI safety and the monitoring of emerging risks.
+
+Part I: What is Phylogenetics ?
+
+Phylogenetics is the study of evolutionary relationships among organisms. It involves reconstructing the evolutionary history and relatedness of different species or populations, by analyzing their characteristics and determining how they descended from common ancestors.
+
+The main goal is to understand how different organisms are connected through evolution, typically represented in tree-like diagrams called phylogenetic trees. These trees illustrate which species share recent common ancestors, how lineages branched over time, and the sequence in which different groups evolved.
+
+Populations of individuals that frequently reproduce with each other (sexual reproduction) or share genetic material (as bacteria often do) tend to maintain some homogeneity in their genetic data. However, when a population splits in two — think of insects in a forest divided by a fire, suddenly unable to reach one another — the genetic sharing stops, and the two groups begin evolving much more independently. When they eventually become too genetically different to reproduce with each other, they are said to have speciated: they are now two distinct species. The scenario described above — separation by geography — is known as allopatric speciation, and it’s just one of several ways speciation can occur.
+
+With that foundation in place, let’s look at how we actually reconstruct the evolutionary history of living species from the speciations that shaped them and then how these ideas can be relevant to study the evolution of cultural artefacts and LLMs.
+
+Methods to reconstruct phylogenetic trees in biological systems
+This blog will only explore one method of reconstructing biological evolution through genetic material to give a concrete example of how such methods work.
+
+Given a set of populations (species, animal races, communities, etc.) that we want to reconstruct the genetic evo...">
+      <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 90px; text-align: right;">
+          <p class="post-meta" style="margin: 0;">Feb 27, 2026</p>
+        </div>
+        <div style="flex: 1; min-width: 0;">
+          
+          <a href="/phylolm" class="post-link">
+            <h2 class="h2 post-title">The Phylogenetics of Artifacts - A deep dive into the evolution of cultural objects, artificial life forms and language models</h2>
+          </a>
+          
+          <div class="post-meta post-authors">
+            <a href="https://scholar.google.com/citations?user=FQHbrA4AAAAJ&hl=en">Nicolas Yax</a>, <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a>, <a href="https://sites.google.com/site/stefanopalminteri/home">Palminteri Stefano</a>
+          </div>
+          <p class="post-summary">The blog shows that phylogenetic methods — originally designed to reconstruct evolutionary trees of biological species from DNA — can be extended to any system that replicates and varies. It demonstrates this progression across three domains - cat breeds as a concrete biological example, myths as a cultural one, and finally language models, where next-token probability distributions serve as artificial DNA to reconstruct the family trees of LLMs in a black-box setting.</p>
           
         </div>
         
