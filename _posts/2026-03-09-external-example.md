@@ -3,7 +3,7 @@ layout: post
 title: 'When LLMs Play the Telephone Game: An Interactive Tool'
 date: 2026-03-09
 external_url: https://sites.google.com/view/llms-play-telephone
-tags: [human-autotelic-learning, machine-autotelic-learning, language-models]
+tags: [human-autotelic-learning, machine-autotelic-learning, language-models,cultural-evolution]
 authors:
 - name: 'Jérémy Perez'
   link: https://scholar.google.com/citations?user=isuFqLIAAAAJ&hl=fr

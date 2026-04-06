@@ -19,7 +19,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Developmental Systems, a Blog of the Flowers Lab" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?202604060950" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202604060954" type="text/css">
 
     <!-- Fonts -->
     
@@ -291,6 +291,10 @@ Selected tags:
     
   
     
+      <button class="post-tag" id="btn-cultural-evolution" data-tag="cultural-evolution" onclick="toggleTag('cultural-evolution', this)">cultural-evolution</button>
+    
+  
+    
       <button class="post-tag" id="btn-curiosity" data-tag="curiosity" onclick="toggleTag('curiosity', this)">curiosity</button>
     
   
@@ -425,7 +429,7 @@ Selected tags:
 <div id="post-list">
   
     <div class="post py2 tag-post"
-         data-tags="human-autotelic-learning machine-autotelic-learning language-models "
+         data-tags="human-autotelic-learning machine-autotelic-learning language-models cultural-evolution "
          data-date="2026-03-09"
          data-title="When LLMs Play the Telephone Game: An Interactive Tool"
          data-summary=""
@@ -454,6 +458,8 @@ Selected tags:
             
               <a href="#btn-language-models" class="post-tag" onclick="event.preventDefault(); toggleTag('language-models', document.getElementById('btn-language-models'))">language-models</a>
             
+              <a href="#btn-cultural-evolution" class="post-tag" onclick="event.preventDefault(); toggleTag('cultural-evolution', document.getElementById('btn-cultural-evolution'))">cultural-evolution</a>
+            
           </div>
           
         </div>
@@ -462,7 +468,7 @@ Selected tags:
     </div>
   
     <div class="post py2 tag-post"
-         data-tags=""
+         data-tags="machine-autotelic-learning language-models cultural-evolution interpretability "
          data-date="2026-02-27"
          data-title="The Phylogenetics of Artifacts - A deep dive into the evolution of cultural objects, artificial life forms and language models"
          data-summary="The blog shows that phylogenetic methods — originally designed to reconstruct evolutionary trees of biological species from DNA — can be extended to any system that replicates and varies. It demonstrates this progression across three domains - cat breeds as a concrete biological example, myths as a cultural one, and finally language models, where next-token probability distributions serve as artificial DNA to reconstruct the family trees of LLMs in a black-box setting."
@@ -501,7 +507,23 @@ Given a set of populations (species, animal races, communities, etc.) that we wa
           </div>
           <p class="post-summary">The blog shows that phylogenetic methods — originally designed to reconstruct evolutionary trees of biological species from DNA — can be extended to any system that replicates and varies. It demonstrates this progression across three domains - cat breeds as a concrete biological example, myths as a cultural one, and finally language models, where next-token probability distributions serve as artificial DNA to reconstruct the family trees of LLMs in a black-box setting.</p>
           
+          <div class="post-tags">
+            
+              <a href="#btn-machine-autotelic-learning" class="post-tag" onclick="event.preventDefault(); toggleTag('machine-autotelic-learning', document.getElementById('btn-machine-autotelic-learning'))">machine-autotelic-learning</a>
+            
+              <a href="#btn-language-models" class="post-tag" onclick="event.preventDefault(); toggleTag('language-models', document.getElementById('btn-language-models'))">language-models</a>
+            
+              <a href="#btn-cultural-evolution" class="post-tag" onclick="event.preventDefault(); toggleTag('cultural-evolution', document.getElementById('btn-cultural-evolution'))">cultural-evolution</a>
+            
+              <a href="#btn-interpretability" class="post-tag" onclick="event.preventDefault(); toggleTag('interpretability', document.getElementById('btn-interpretability'))">interpretability</a>
+            
+          </div>
+          
         </div>
+        
+        <a href="/phylolm"  style="flex-shrink: 0;">
+          <img src="/images/posts/2026-02-27-phylolm/full_dendrogram.png" alt="The Phylogenetics of Artifacts - A deep dive into the evolution of cultural objects, artificial life forms and language models" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+        </a>
         
       </div>
     </div>
