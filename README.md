@@ -137,7 +137,7 @@ Each entry in `authors` has three keys:
 
 ---
 
-### 3. Images [#installation]
+### 3. Images
 
 Store post images in a dedicated subdirectory:
 
