@@ -38,11 +38,21 @@ When pushing, only add the files you modified '.md', '.css', images etc..
 
 ***
 ## More details
-### 0. Ask permission for pull and push
+### Ask permission for pull and push
 
 TODO
 
 Julien R: I have no idea. For now, Julien P granted me access to the repository as collaborator. Yet, I see only Cédric and I as collaborators, and 25 unidentified members that I don't trace back to *flowersteam* either. By default, you can send your blog to me and I update the website.
+
+---
+
+### Two options
+
+You can either host your blog (1) outside of this website or (2) on this website.
+
+For option (1), follow step 1 and 2. Also check step 4 for the tags.
+
+For option (2), all steps (1 to 5) may be of interest to you. 
 
 ---
 
@@ -208,4 +218,5 @@ See https://www.markdown-cheatsheet.com/
 
 ## TODO
 
-0. Ask permission for pull and push
+- [ ] 0. Ask permission for pull and push
+- [ ] have another branch for development and where others could see other test versions.
