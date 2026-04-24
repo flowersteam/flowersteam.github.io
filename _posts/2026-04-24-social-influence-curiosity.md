@@ -1,12 +1,18 @@
 ---
 layout: post
 title: "Learning together: how others can fuel (or hinder) our curiosity"
-date: 2026-04-16 10:00:00 +0200
-description: "How do the presence, gaze, and activity of others influence our motivation to learn and our curiosity?"
-tags: [curiosity, motivation, learning, social influence, education]
-categories: [research]
+date: 2026-04-24 10:00:00 +0200
+summary: "How do the presence, gaze, and activity of others influence our motivation to learn and our curiosity?"
+categories: jekyll
 featured: false
-thumbnail: assets/img/Gateaux.PNG
+use_math:   true
+thumbnail:  /images/posts/2026-04-24-social-influence-curiosity/Gateaux.PNG
+tags: [curiosity, motivation, learning, social influence, education, human-autotelic-learning]
+permalink:  2026-04-24-social-influence-curiosity
+authors:
+- name: 'Leslie Tricoche'
+  link: https://l-tricoche.github.io/
+  next: ', '
 ---
 
 <figure style="text-align: center;">
