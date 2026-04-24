@@ -7,22 +7,22 @@ categories: jekyll
 featured: false
 use_math:   true
 thumbnail:  /images/posts/2026-04-24-social-influence-curiosity/Gateaux.PNG
-tags: [curiosity, motivation, learning, social influence, education, human-autotelic-learning]
+tags: [intrinsic-motivation, social-learning, cognitive-science, developmental-learning, human-autotelic-learning]
 permalink:  2026-04-24-social-influence-curiosity
 authors:
 - name: 'Leslie Tricoche'
   link: https://l-tricoche.github.io/
-  next: ', '
+  next: ''
 ---
 
 <figure style="text-align: center;">
-  <img src="/assets/img/Gateaux.PNG" width="50%" />
+  <img src="/images/posts/2026-04-24-social-influence-curiosity/Gateaux.PNG" width="50%" />
 </figure>
 
 
 ## A story of “motivating” cakes
 
-A few days ago, our team gathered around a table for a collective writing session — a “blogathon,” as we called it [Click here to see other posts from the team](https://developmentalsystems.org/). Each of us had to write a post on a research topic related to the team’s focus. The goal was to learn or practice writing scientific content in this format. Between bites of the small cakes brought by a colleague, I started typing my first lines… a situation that perfectly illustrated, in real conditions, the very topic I wanted to address.
+A few days ago, our team gathered around a table for a collective writing session — a “blogathon,” as we called it. Each of us had to write a post on a research topic related to the team’s focus. The goal was to learn or practice writing scientific content in this format. Between bites of the small cakes brought by a colleague, I started typing my first lines… a situation that perfectly illustrated, in real conditions, the very topic I wanted to address.
 
 Why am I writing this article? To learn how to write a blog post? To share my research? To deepen my own understanding of the literature? To be part of a team dynamic initiated by our director? Because my colleagues were there too, writing, creating a focused and supportive working atmosphere around me?
 
@@ -68,7 +68,7 @@ Moreover, to briefly address brain networks, this imitation system is notably su
 
 
 <figure style="text-align: center;">
-  <img src="/assets/img/Figure_SocialLearning.jpg" width="70%" />
+  <img src="/images/posts/2026-04-24-social-influence-curiosity/Figure_SocialLearning.jpg" width="70%" />
 
   <figcaption style="text-align: center; font-size: 0.9em; margin-top: 10px;">
     <strong>Top figure:</strong> from Arioli and Canessa (2019) in <em>Human Brain Mapping</em>: brain network involved in social learning (learning by observation), including premotor cortex, parietal areas, inferior frontal gyrus, superior temporal sulcus, and occipital regions.<br>
@@ -104,7 +104,7 @@ Three **forms of social presence** are typically distinguished:
 [For more exhaustive content on the mere presence effect](https://theses.hal.science/tel-04196751) 
 
 <figure style="text-align: center;">
-  <img src="/assets/img/Figure_SimplePresence.jpg" width="70%" />
+  <img src="/images/posts/2026-04-24-social-influence-curiosity/Figure_SimplePresence.jpg" width="70%" />
 
   <figcaption style="text-align: center; font-size: 0.9em; margin-top: 10px;">
     <strong>Top figure:</strong> experimental device used by Triplett in his 1898 study on the mere presence effect in children. It was a device resembling a fishing rod, in which children had to turn a reel as quickly as possible.<br>
@@ -119,7 +119,7 @@ I carried out a survey of the PubMed database, crossing terms related to mere pr
 A few studies related to educational skills, in children and adolescents, show effects of social presence, notably on **reasoning** (Wolf et al., 2015), **creativity** (Camarda et al., 2021), or **numerical and language skills** (Tricoche et al., 2021). In addition, neuroimaging studies seem to indicate that the presence of another person does not act only on **attentional processes**, but also on **motivational and emotional processes**, even in the absence of any explicit reward (Tricoche et al., 2023). In other words, others, through their mere presence, could be a form of implicit extrinsic motivation, capable of influencing intrinsic motivation, without individuals necessarily being aware of it. Likewise, brain regions involved in **social cognition** are activated when others are present, in order to enable the **mentalizing process**. Indeed, as soon as another human being enters our environment, our mentalizing processes are activated—this capacity to infer the mental states of others, commonly referred to as **theory of mind**. “They can see me,” “what do they think of my performance?”, “do they like me?”: these questions, even when formulated unconsciously, mobilize cognitive and emotional resources that modify our engagement in the task. Others then become associated with a form of implicit social reward—being well perceived, approved of, accepted.
 
 <figure style="text-align: center;">
-  <img src="/assets/img/Figure_Brain.jpg" width="70%" />
+  <img src="/images/posts/2026-04-24-social-influence-curiosity/Figure_Brain.jpg" width="70%" />
 
   <figcaption style="text-align: center; font-size: 0.9em; margin-top: 10px;">
     <strong>Top figure:</strong> from Arioli and Canessa (2019) in <em>Human Brain Mapping</em>: brain network involved in mentalizing (theory of mind), including mainly the temporo-parietal junction, the medial prefrontal cortex, and the precuneus extending into the posterior cingulate cortex.<br>
@@ -137,7 +137,7 @@ The team is known for its work on the computational mechanisms of curiosity and 
 However, up to now, this work has mainly focused on the individual dynamics of curiosity. The explicit integration of social factors therefore constitutes a natural extension of this research program. 
 
 <figure style="text-align: center;">
-  <img src="/assets/img/Figure_Tasks.jpg" width="60%" />
+  <img src="/images/posts/2026-04-24-social-influence-curiosity/Figure_Tasks.jpg" width="60%" />
 
   <figcaption style="text-align: center; font-size: 0.9em; margin-top: 10px;">
     Paradigms studying how individuals orient their exploration choices as a function of learning progress.<br>
