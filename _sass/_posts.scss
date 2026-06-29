@@ -47,7 +47,7 @@
 
 .post-footer .avatar {
   margin: 2rem 0;
-  width: 100px;
+  width: 75px;
   border-radius: 50%;
 }
 
@@ -92,8 +92,12 @@
   }
 }
 
+.post-summary {
+  margin-bottom: 0.1em;
+}
+
 .post-tags {
-  margin-top: 0.4em;
+  margin-top: 0.1em;
 }
 
 .tag-logic-btn {

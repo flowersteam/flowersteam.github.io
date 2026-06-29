@@ -4,7 +4,6 @@ title: Blogs
 permalink: /blogs
 ---
 
-
 <h1>Filters</h1>
 
 <div class="search-filter">
@@ -50,19 +49,28 @@ Selected tags:
           <p class="post-meta" style="margin: 0;">{{ post.date | date: site.date_format }}</p>
         </div>
         <div style="flex: 1; min-width: 0;">
-          {% if post.external_url %}
-          <a href="{{ post.external_url }}" class="post-link" target="_blank" rel="noopener">
-            <h2 class="h2 post-title">{{ post.title }} <span class="external-link-icon">↗</span></h2>
-          </a>
-          {% else %}
-          <a href="{{ post.url | relative_url }}" class="post-link">
-            <h2 class="h2 post-title">{{ post.title }}</h2>
-          </a>
-          {% endif %}
-          <div class="post-meta post-authors">
-            {% for auth in post.authors %}<a href="{{ auth.link }}">{{ auth.name }}</a>{{ auth.next }}{% endfor %}
+          <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+            <div style="flex: 1; min-width: 0;">
+              {% if post.external_url %}
+              <a href="{{ post.external_url }}" class="post-link" target="_blank" rel="noopener">
+                <h2 class="h2 post-title">{{ post.title }} <span class="external-link-icon">↗</span></h2>
+              </a>
+              {% else %}
+              <a href="{{ post.url | relative_url }}" class="post-link">
+                <h2 class="h2 post-title">{{ post.title }}</h2>
+              </a>
+              {% endif %}
+              <div class="post-meta post-authors">
+                {% for auth in post.authors %}<a href="{{ auth.link }}">{{ auth.name }}</a>{{ auth.next }}{% endfor %}
+              </div>
+              {% if post.summary %}<p class="post-summary">{{ post.summary }}</p>{% endif %}
+            </div>
+            {% if post.thumbnail %}
+            <a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | relative_url }}{% endif %}" {% if post.external_url %}target="_blank" rel="noopener"{% endif %} style="flex-shrink: 0;">
+              <img src="{{ post.thumbnail }}" alt="{{ post.title | xml_escape }}" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
+            </a>
+            {% endif %}
           </div>
-          {% if post.summary %}<p class="post-summary">{{ post.summary }}</p>{% endif %}
           {% if post.tags and post.tags != empty %}
           <div class="post-tags">
             {% for tag in post.tags %}
@@ -71,11 +79,6 @@ Selected tags:
           </div>
           {% endif %}
         </div>
-        {% if post.thumbnail %}
-        <a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | relative_url }}{% endif %}" {% if post.external_url %}target="_blank" rel="noopener"{% endif %} style="flex-shrink: 0;">
-          <img src="{{ post.thumbnail }}" alt="{{ post.title | xml_escape }}" style="width: 400px; height: 267px; object-fit: cover; border-radius: 4px;">
-        </a>
-        {% endif %}
       </div>
     </div>
   {% endfor %}

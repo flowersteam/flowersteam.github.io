@@ -4,7 +4,7 @@ email:       pierre-yves.oudeyer@inria.fr
 author:      INRIA Flowers Team
 description: "Developmental Systems, a Blog of the Flowers Lab"
 baseurl:     ""
-url:         "http://flowersteam.github.io"
+url:         "https://flowersteam.github.io"
 date_format: "%b %-d, %Y"
 header_pages:
  - discover.md
